@@ -1,0 +1,38 @@
+---
+title: "syslog Notifications"
+description: "Send syslog notifications."
+---
+
+## Syslog Notifications
+* **Source**: https://tools.ietf.org/html/rfc5424
+* **Icon Support**: No
+* **Message Format**: Text
+* **Message Limit**: 32768 Characters per message
+
+Leverage the local syslog server if loaded.
+
+### Syntax
+Valid syntax is as follows:
+* `syslog://`
+* `syslog://{facility}`
+
+One might change the facility from it's default like so:
+* `syslog://local5`
+
+
+### Parameter Breakdown
+| Variable    | Required | Description
+| ----------- | -------- | -----------
+is used by default.
+| facility    | No       | The facility to use, by default it is `user`. Valid options are **kern**, **user**, **mail**, **daemon**, **auth**, **syslog**, **lpr**, **news**, **uucp**, **cron**, **local0**, **local1**, **local2**, **local3**, **local4**, **local5**, **local6**,  and **local7**
+| logperror  | No       | Additionally send the log message to _stderr_.  This method is ignored when preforming a remote query.
+| logpid     | Yes      | Include PID as part of the log output.
+
+
+### Example
+Send a Syslog notification
+```bash
+# The following sends a syslog notification to the `user` facility
+apprise -vv -t "Test Message Title" -b "Test Message Body" \
+   syslog://
+```

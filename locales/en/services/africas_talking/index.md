@@ -1,0 +1,38 @@
+---
+title: "africas_talking Notifications"
+description: "Send africas_talking notifications."
+---
+
+## Africas Talking Notifications
+
+* **Source**: https://africastalking.com/
+* **Icon Support**: No
+* **Message Format**: Text
+* **Message Limit**: 160 Characters per message
+
+### Account Setup
+Sign up for Africas Talking  [from here](https://africastalking.com/). You can access your API Key from the management section from your account.
+
+### Syntax
+Valid syntax is as follows:
+* `atalk://{appuser}@{apikey}/{toPhoneNo}`
+* `atalk://{appuser}@{apikey}/{toPhoneNo1}/{toPhoneNo2}/{toPhoneNoN}`
+
+### Parameter Breakdown
+| Variable        | Required | Description
+| --------------- | -------- | -----------
+| apikey    | Yes      | The API Key associated with your SMS Manager Account.
+| to         | **\*No**   | A phone number and/or group you wish to send your notification to. You can use comma's to separate multiple entries if you wish. This is an alias to `targets`. 
+| from         | **\*No**   | Your registered short code or alphanumeric; Defaults to `AFRICASTKNG`
+| batch     |  No  | Send multiple specified notifications in a single batch (1 upstream post to the end server).  By default this is set to `no`.
+| mode     |  No  |Allows you to send your SMS under different modes; options are `bulksms` (default), `premium`, or `sandbox`.
+
+#### Example
+Send a SMS Manager Message:
+```bash
+# Assuming our {appuser} is user123
+# Assuming our {apikey} is hard-to-guess
+# Assuming our {PhoneNo} we wish to notify is +134-555-1223
+apprise -vv -t "Test Message Title" -b "Test Message Body" \
+   atalk://user123@hard-to-guess@+134-555-1223
+```
