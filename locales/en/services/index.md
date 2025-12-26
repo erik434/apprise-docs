@@ -1,140 +1,47 @@
 ---
-title: "Services"
+title: "Suported Services"
 description: "Browse and search all supported Apprise services."
+tableOfContents: false
+sidebar:
+  label: "Services"
 ---
 
-<!-- SERVICES:BEGIN -->
+Apprise supports **<!-- SERVICES:COUNT -->** services.
 
-| Service | Description |
-|---|---|
-| [46elks Notifications](./46elks/) | Send 46elks notifications. |
-| [africas_talking Notifications](./africas_talking/) | Send africas_talking notifications. |
-| [Apprise API](./apprise_api/) | Send apprise_api notifications. |
-| [aprs Notifications](./aprs/) | Send aprs notifications. |
-| [bark Notifications](./bark/) | Send bark notifications. |
-| [bluesky Notifications](./bluesky/) | Send bluesky notifications. |
-| [boxcar Notifications](./boxcar/) | Send boxcar notifications. |
-| [brevo Notifications](./brevo/) | Send brevo notifications. |
-| [bulksms Notifications](./bulksms/) | Send bulksms notifications. |
-| [bulkvs Notifications](./bulkvs/) | Send bulkvs notifications. |
-| [burst_sms Notifications](./burst_sms/) | Send burst_sms notifications. |
-| [chanify Notifications](./chanify/) | Send chanify notifications. |
-| [clickatell Notifications](./clickatell/) | Send clickatell notifications. |
-| [clicksend Notifications](./clicksend/) | Send clicksend notifications. |
-| [d7networks Notifications](./d7networks/) | Send d7networks notifications. |
-| [dapnet Notifications](./dapnet/) | Send dapnet notifications. |
-| [dbus Notifications](./dbus/) | Send dbus notifications. |
-| [dingtalk Notifications](./dingtalk/) | Send dingtalk notifications. |
-| [discord Notifications](./discord/) | Send discord notifications. |
-| [dot Notifications](./dot/) | Send dot notifications. |
-| [Email Notifications](./email/) | Send notifications using SMTP and built-in email providers. |
-| [emby Notifications](./emby/) | Send emby notifications. |
-| [enigma2 Notifications](./enigma2/) | Send enigma2 notifications. |
-| [faast Notifications](./faast/) | Send faast notifications. |
-| [fcm Notifications](./fcm/) | Send fcm notifications. |
-| [feishu Notifications](./feishu/) | Send feishu notifications. |
-| [flock Notifications](./flock/) | Send flock notifications. |
-| [freemobile Notifications](./freemobile/) | Send freemobile notifications. |
-| [gitter Notifications](./gitter/) | Send gitter notifications. |
-| [gnome Notifications](./gnome/) | Send gnome notifications. |
-| [googlechat Notifications](./googlechat/) | Send googlechat notifications. |
-| [gotify Notifications](./gotify/) | Send gotify notifications. |
-| [growl Notifications](./growl/) | Send growl notifications. |
-| [guilded Notifications](./guilded/) | Send guilded notifications. |
-| [homeassistant Notifications](./homeassistant/) | Send homeassistant notifications. |
-| [httpsms Notifications](./httpsms/) | Send httpsms notifications. |
-| [ifttt Notifications](./ifttt/) | Send ifttt notifications. |
-| [jira Notifications](./jira/) | Send jira notifications. |
-| [Join Notifications](./join/) | Send Join notifications. |
-| [kavenegar Notifications](./kavenegar/) | Send kavenegar notifications. |
-| [kodi Notifications](./kodi/) | Send kodi notifications. |
-| [kumulos Notifications](./kumulos/) | Send kumulos notifications. |
-| [lametric Notifications](./lametric/) | Send lametric notifications. |
-| [lark Notifications](./lark/) | Send lark notifications. |
-| [line Notifications](./line/) | Send line notifications. |
-| [lunasea Notifications](./lunasea/) | Send lunasea notifications. |
-| [macosx Notifications](./macosx/) | Send macosx notifications. |
-| [mailgun Notifications](./mailgun/) | Send mailgun notifications. |
-| [mastodon Notifications](./mastodon/) | Send mastodon notifications. |
-| [matrix Notifications](./matrix/) | Send matrix notifications. |
-| [mattermost Notifications](./mattermost/) | Send mattermost notifications. |
-| [messagebird Notifications](./messagebird/) | Send messagebird notifications. |
-| [misskey Notifications](./misskey/) | Send misskey notifications. |
-| [mqtt Notifications](./mqtt/) | Send mqtt notifications. |
-| [msg91 Notifications](./msg91/) | Send msg91 notifications. |
-| [msteams Notifications](./msteams/) | Send msteams notifications. |
-| [nexmo Notifications](./nexmo/) | Send nexmo notifications. |
-| [nextcloud Notifications](./nextcloud/) | Send nextcloud notifications. |
-| [nextcloudtalk Notifications](./nextcloudtalk/) | Send nextcloudtalk notifications. |
-| [notica Notifications](./notica/) | Send notica notifications. |
-| [notifiarr Notifications](./notifiarr/) | Send notifiarr notifications. |
-| [notificationapi Notifications](./notificationapi/) | Send notificationapi notifications. |
-| [notifico Notifications](./notifico/) | Send notifico notifications. |
-| [Ntfy Notifications](./ntfy/) | Send Ntfy (Notify) notifications. |
-| [office365 Notifications](./office365/) | Send office365 notifications. |
-| [OneSignal Notifications](./onesignal/) | Send OneSignal notifications. |
-| [opsgenie Notifications](./opsgenie/) | Send opsgenie notifications. |
-| [pagerduty Notifications](./pagerduty/) | Send pagerduty notifications. |
-| [pagertree Notifications](./pagertree/) | Send pagertree notifications. |
-| [parseplatform Notifications](./parseplatform/) | Send parseplatform notifications. |
-| [plivo Notifications](./plivo/) | Send plivo notifications. |
-| [popcornnotify Notifications](./popcornnotify/) | Send popcornnotify notifications. |
-| [prowl Notifications](./prowl/) | Send prowl notifications. |
-| [pushalot Notifications](./pushalot/) | Send pushalot notifications. |
-| [pushbullet Notifications](./pushbullet/) | Send pushbullet notifications. |
-| [pushdeer Notifications](./pushdeer/) | Send pushdeer notifications. |
-| [pushed Notifications](./pushed/) | Send pushed notifications. |
-| [pushjet Notifications](./pushjet/) | Send pushjet notifications. |
-| [pushme Notifications](./pushme/) | Send pushme notifications. |
-| [pushover Notifications](./pushover/) | Send pushover notifications. |
-| [pushplus Notifications](./pushplus/) | Send pushplus notifications. |
-| [pushsafer Notifications](./pushsafer/) | Send pushsafer notifications. |
-| [pushy Notifications](./pushy/) | Send pushy notifications. |
-| [qq Notifications](./qq/) | Send qq notifications. |
-| [reddit Notifications](./reddit/) | Send reddit notifications. |
-| [Remote Syslog Notifications](./rsyslog/) | Send remote syslog messages. |
-| [resend Notifications](./resend/) | Send resend notifications. |
-| [Revolt Notifications](./revolt/) | Send Revolt notifications. |
-| [rocketchat Notifications](./rocketchat/) | Send rocketchat notifications. |
-| [ryver Notifications](./ryver/) | Send ryver notifications. |
-| [sendgrid Notifications](./sendgrid/) | Send sendgrid notifications. |
-| [sendpulse Notifications](./sendpulse/) | Send sendpulse notifications. |
-| [serverchan Notifications](./serverchan/) | Send serverchan notifications. |
-| [ses Notifications](./ses/) | Send ses notifications. |
-| [seven Notifications](./seven/) | Send seven notifications. |
-| [sfr Notifications](./sfr/) | Send sfr notifications. |
-| [signal Notifications](./signal/) | Send signal notifications. |
-| [signl4 Notifications](./signl4/) | Send signl4 notifications. |
-| [simplepush Notifications](./simplepush/) | Send simplepush notifications. |
-| [sinch Notifications](./sinch/) | Send sinch notifications. |
-| [slack Notifications](./slack/) | Send slack notifications. |
-| [sms_manager Notifications](./sms_manager/) | Send sms_manager notifications. |
-| [smseagle Notifications](./smseagle/) | Send smseagle notifications. |
-| [smtp2go Notifications](./smtp2go/) | Send smtp2go notifications. |
-| [sns Notifications](./sns/) | Send sns notifications. |
-| [sparkpost Notifications](./sparkpost/) | Send sparkpost notifications. |
-| [splunk Notifications](./splunk/) | Send splunk notifications. |
-| [spontit Notifications](./spontit/) | Send spontit notifications. |
-| [spugpush Notifications](./spugpush/) | Send spugpush notifications. |
-| [streamlabs Notifications](./streamlabs/) | Send streamlabs notifications. |
-| [stride Notifications](./stride/) | Send stride notifications. |
-| [synology_chat Notifications](./synology_chat/) | Send synology_chat notifications. |
-| [syslog Notifications](./syslog/) | Send syslog notifications. |
-| [techulus Notifications](./techulus/) | Send techulus notifications. |
-| [telegram Notifications](./telegram/) | Send telegram notifications. |
-| [threema Notifications](./threema/) | Send threema notifications. |
-| [toasty Notifications](./toasty/) | Send toasty notifications. |
-| [twilio Notifications](./twilio/) | Send twilio notifications. |
-| [twist Notifications](./twist/) | Send twist notifications. |
-| [twitter Notifications](./twitter/) | Send twitter notifications. |
-| [voipms Notifications](./voipms/) | Send voipms notifications. |
-| [wecombot Notifications](./wecombot/) | Send wecombot notifications. |
-| [whatsapp Notifications](./whatsapp/) | Send whatsapp notifications. |
-| [windows Notifications](./windows/) | Send windows notifications. |
-| [workflows Notifications](./workflows/) | Send workflows notifications. |
-| [wxpusher Notifications](./wxpusher/) | Send wxpusher notifications. |
-| [wxteams Notifications](./wxteams/) | Send wxteams notifications. |
-| [xbmc Notifications](./xbmc/) | Send xbmc notifications. |
-| [xmpp Notifications](./xmpp/) | Send xmpp notifications. |
-| [Zulip Notifications](./zulip/) | Send Zulip notifications. |
-<!-- SERVICES:END -->
+## Reference
+The Features column identifies some useful 'at-a-glance' details about the URL should you be researching services from this page.
+
+| Feature Icon | Switch | Description |
+|----|----|----|
+| 📎 | `has_attachments` | The notification service provides attachment support |
+| 📱 | `has_sms` | Offers a notification service that has a focus on sms/mms messages |
+| 🏠 | `has_selfhosted` | Offers a notification service that supports a **Self Hosted** solution |
+| 🖼️ | `has_image` | The notification service supports the delivery of the message status through graphical images.  This provides a more aesthetic look and feel.
+
+The protocols defined are additionally flagged with an icon for quick reference identifying if it is SSL/TLS encrypted or not:
+
+| Protocol Icon | Encrypted/Secure |
+|----|----|
+| 🔒 | Yes |
+| 🔓 | No |
+
+## General
+Apprise supports the following <!-- SERVICES:GENERAL:COUNT --> general services from email, Internet of Things (iot), to social media.
+<div class="services-table">
+<!-- SERVICES:GENERAL:BEGIN -->
+<!-- SERVICES:GENERAL:END -->
+</div>
+
+## Social Media
+Apprise supports the following <!-- SERVICES:SOCIAL:COUNT --> Social Media based services.
+<div class="services-table">
+<!-- SERVICES:SOCIAL:BEGIN -->
+<!-- SERVICES:SOCIAL:END -->
+</div>
+
+## Custom
+Apprise supports the following <!-- SERVICES:CUSTOM:COUNT --> plugins which wrap a unique protocol, structure, flow, and/or format.
+<div class="services-table">
+<!-- SERVICES:CUSTOM:BEGIN -->
+<!-- SERVICES:CUSTOM:END -->
+</div>

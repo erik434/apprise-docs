@@ -1,6 +1,8 @@
 ---
 title: "Apprise TEXT-Based Configuration"
 description: "Explains how to leverage the Apprise TEXT based configuration"
+sidebar:
+  label: "TEXT Based"
 ---
 
 ## Text Based Apprise Configuration

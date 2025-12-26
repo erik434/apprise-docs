@@ -14,80 +14,161 @@ website code, build tooling, or frontend frameworks.
 
 ## Purpose
 
-This repository exists so the community can contribute documentation without
-needing to understand how the Apprise website is built or deployed.
+This repository exists to provide a **single, authoritative source** for all
+Apprise documentation, including:
+
+- End-user documentation
+- Notification service reference material
+- Configuration and usage guides
+- Troubleshooting and FAQ content
+- Developer and contributor documentation
+- Localized translations
 
 If you can write Markdown, you can contribute here.
 
-Content from this repository is automatically synced into the official Apprise
-documentation website.
+Content from this repository is synced into [the official Apprise
+documentation website](https://appriseit.com/).
 
----
+## What This Repository Is
 
-## Repository structure
+- 📚 A **Markdown-only** documentation repository
+- 🌍 Home to **all locales and translations**
+- 🧩 The canonical source for **service documentation**
+- 🤝 Open to community contributions
+- 🧠 Free of build systems and rendering logic
 
-Documentation is organised by language and topic.
+If it can be written as Markdown and helps users understand Apprise, it belongs
+here.
+
+## Repository Layout
+
+All documentation lives under the `locales/` directory. Each locale mirrors the
+same structure to ensure consistency and predictable navigation.
+
 ```
 locales/
-  en/
-    services/
+  <locale>/
+    index.md
+    getting-started/
     guides/
+    services/
+      <service>/
+        index.md
+    config/
+    qa/
+    dev/
+    contributing/
     assets/
 ```
 
-### Directory overview
+### Key Structural Rules
 
-1. services/
+- **Getting Started** - `getting-started/`
+  Introductory material for new users
+- **Guides** - `guides/`
+  Common workflows, patterns, and best practices. This can be How-to articles, tutorials, troubleshooting notes, and usage patterns that
+  may span multiple services.
+- **Config** - `config/`
+  Configuration reference and syntax explanations
+- **QA** - `qa/`
+  Troubleshooting, diagnostics, and frequently asked questions
+- **Dev** - `dev/`
+  Developer-focused documentation and internals
+- **Contributing** - `contributing/`
+  How to help improve Apprise and its ecosystem
+- **Services** - `services/`
   Documentation specific to a notification service. This includes URL syntax,
   targets, configuration options, and examples.
-1. guides/
-  How-to articles, tutorials, troubleshooting notes, and usage patterns that
-  may span multiple services.
-1. assets/
+   ```
+   services/<service>/index.md
+   ```
+- `assets/`
   Shared images or reusable documentation assets.
 
+
+**Note**: Only Markdown and static assets are permitted
+
+
+### Required Front Matter
+
+Every service page must define at least a title:
+
+```md
 ---
-
-## Writing documentation
-
-### Markdown
-```markdown
-- Use standard GitHub-flavoured Markdown
-- Keep formatting simple and readable
-- Avoid HTML unless absolutely necessary
-
-### Front matter
-
-Each page must include a title.
-
----
-title: "Example Page"
----
-
-Optional fields such as descriptions are welcome but not required.
-
+title: "Discord"
+description: "Send notifications to Discord channels using webhooks."
 ---
 ```
 
-## Images
+### Optional Metadata
 
-Images should be stored next to the page that uses them.
-
-Example:
-
+The following is simply [Astro Starlight](https://starlight.astro.build/) configuration:
+```md
+sidebar:
+  # Changes the label on the left panel:
+  label: "Shortened Name"
+  # Optionally specify to control the placement of your label
+  order: 1
+  # Optionally provide if you do not want this to show up in the sidebar.  This
+  # is useful for situations where you're providing more options in a link from
+  # within an item already identified on the sidebar.
+  hidden: true
 ```
-email/
-  index.md
-  images/
-    auth-flow.png
-```
 
-Reference images using relative paths:
+Note that the `services/index.md` has templating built in on it's own.  It is dynamically built using all of the directories defined in the the `services/<service>/index.md` entries.  New services should be defined this way.
 
-```markdown
-![Authentication flow](./images/auth-flow.png)
-```
+Feel free to look at the service template.
+
+## Localization and Translations
+
+- Each locale lives under `locales/<locale>/`
+- All labels and navigation text come from Markdown
+- No hard-coded UI strings exist in the renderer
+
+Contributions in additional languages are welcome. Translating existing content is just as valuable as writing new documentation.
+
 ---
+
+## Contribution Philosophy
+
+This repository is intentionally designed to be **low friction**.
+
+Contributors are encouraged to:
+
+- Improve clarity and accuracy
+- Expand service documentation
+- Add examples and explanations
+- Fix typos and formatting issues
+- Provide translations
+
+If your contribution is valid Markdown and follows the structure, it is likely
+acceptable.
+
+## Project Status
+
+This documentation set is **actively evolving**.
+
+Some sections are still being refined, reorganized, or expanded as Apprise
+continues to grow. Contributions are welcome even while cleanup is ongoing.
+
+Perfection is not required to contribute.
+
+## How You Can Help Today
+
+- Add or improve documentation for a service you use
+- Clarify confusing sections
+- Expand examples
+- Fix mistakes or omissions
+- Translate content into another language
+
+Also consider:
+- Read CONTRIBUTING.md
+- Open a pull request with your changes
+- If unsure where something belongs, open an issue and ask
+
+Thank you for helping improve Apprise.
+
+Even small improvements are appreciated.
 
 ## Languages and translations
 
@@ -107,22 +188,19 @@ locales/
     guides/
       getting-started.md
 ```
----
 
 ## License
 
-Documentation in this repository is licensed under Creative Commons Attribution
-4.0 (CC BY 4.0), unless stated otherwise.
+Documentation in this repository is licensed under the
+**Creative Commons Attribution 4.0 International (CC BY 4.0)** license.
 
-By contributing, you agree that your content may be redistributed under this
-license.
+This license allows others to copy, distribute, modify, and build upon this
+content for any purpose, including commercial use, provided appropriate credit
+is given.
 
----
+The full license text is available in the LICENSE file at the root of this
+repository and online at:
+https://creativecommons.org/licenses/by/4.0/
 
-## Getting started
-
-- Read CONTRIBUTING.md
-- Open a pull request with your changes
-- If unsure where something belongs, open an issue and ask
-
-Thank you for helping improve Apprise.
+By contributing to this repository, you agree that your contributions will be
+licensed under CC BY 4.0 unless explicitly stated otherwise.

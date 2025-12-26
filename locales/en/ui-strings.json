@@ -1,0 +1,36 @@
+{
+  "common": {
+    "yes": "Yes",
+    "no": "No"
+  },
+  "service_details": {
+    "heading": "Overview",
+    "source": "Source",
+    "image_support": "Image Support",
+    "attachment_support": "Attachment Support",
+    "message_character_limits": "Message Character Limits",
+    "default_limit_name": "Body"
+  },
+  "tables": {
+    "service": "Service",
+    "schemas": "Schemas",
+    "features": "Features",
+    "description": "Description",
+    "ended": "Ended"
+  },
+  "service": {
+	 "group": {
+	  "general": "General Notifications",
+	   "custom": "Custom Notifications",
+	   "social": "Social Media Based Notifications"
+	 },
+    "feature": {
+      "attachments": "Attachment Support",
+      "sms": "SMS/MMS Support",
+      "selfhosted": "Upstream App can be Self Hosted",
+      "image": "Image Support"
+    },
+	 "secure": "Secure",
+	 "insecure": "Insecure"
+  }
+}

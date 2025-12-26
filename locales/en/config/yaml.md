@@ -1,6 +1,8 @@
 ---
 title: "Apprise YAML-Based Configuration"
 description: "Explains how to leverage the Apprise YAML based configuration"
+sidebar:
+  label: "YAML Based"
 ---
 
 ## YAML Based Apprise Configuration

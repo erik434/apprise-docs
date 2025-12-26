@@ -1,9 +1,17 @@
 ---
-title: "twitter Notifications"
-description: "Send twitter notifications."
+title: "X (Formerly Twitter) Notifications"
+description: "Send X Notifications."
+sidebar:
+  label: "X (Formerly Twitter)"
+group: "social"
+schemas:
+   - x
+   - twitter
+   - tweet
+has_attachments: true
 ---
 
-## Twitter (X) Notifications
+## Overview
 * **Source**: https://x.com/
 * **Attachment Support**: Yes
 * **Icon Support**: No

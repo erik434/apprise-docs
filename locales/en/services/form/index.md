@@ -1,14 +1,18 @@
 ---
 title: "Custom FORM Notifications"
 description: "Send HTML/FORM based notifications."
+sidebar:
+  label: "HTTP/Form"
+group: "custom"
+schemas:
+   - form: insecure
+   - forms
+has_selfhosted: true
+has_attachments: true
+has_image: true
 ---
 
-## FORM HTTP POST Notifications
-* **Source**: n/a
-* **Icon Support**: No
-* **Attachment Support**: yes
-* **Message Format**: application/x-www-form-urlencoded
-* **Message Limit**: 32768 Characters per message
+<!-- SERVICE:DETAILS -->
 
 This is just a custom Notification that allows you to have this tool post to a web server as a simple FORM (`application/x-www-form-urlencoded`). This is useful for those who want to be notified via their own custom methods.
 
@@ -20,7 +24,7 @@ The *type* will be one of the following:
 * **failure**: A failure report
 * **warning**: A warning report
 
-### Syntax
+## Syntax
 Valid syntax is as follows:
 * `form://{hostname}`
 * `form://{hostname}:{port}`
@@ -37,7 +41,7 @@ The secure versions:
 * `forms://{user}:{password}@{hostname}`
 * `forms://{user}:{password}@{hostname}:{port}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 | Variable    | Required | Description
 | ----------- | -------- | -----------
 | hostname    | Yes      | The Web Server's hostname
@@ -49,14 +53,16 @@ The secure versions:
 
 **Note:**: If you include file attachments; each one is concatenated into the same single post to the upstream server. The `Content-Type` header request also changes from `application/x-www-form-urlencoded` to `multipart/form-data` in this case.
 
-#### Example
+<!-- GLOBAL:SERVICE:PARAMS -->
+
+## Example
 Send a FORM Based web request to our web server listening on port 80:
 ```bash
 # Assuming our {hostname} is my.server.local
 apprise form://my.server.local
 ```
 
-### Header Manipulation
+## Header Manipulation
 Some users may require special HTTP headers to be present when they post their data to their server.  This can be accomplished by just sticking a plus symbol (**+**) in front of any parameter you specify on your URL string.
 ```bash
 # Below would set the header:
@@ -78,7 +84,7 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" \
    "form://localhost:8080/path/?+X-Token=abcdefg&+X-Apprise=is%20great"
 ```
 
-### Payload Manipulation
+## Payload Manipulation
 The payload can have entries added to it in addition to the default `body`, `title`, and `type` values.  This can be accomplished by just sticking a colon symbol (**:**) in front of any parameter you specify on your URL string.
 
 ```bash
@@ -91,7 +97,7 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" \
    "form://localhost/?:app=payload"
 ```
 
-### GET Parameter Manipulation
+## GET Parameter Manipulation
 Some users may require GET parameters to be part of their POST. Any parameters you pass onto the Apprise command line are interpreted by Apprise itself as options/actions you wish to perform (such as changing `method=update`, or `cto=3`). To have Apprise ignore what was specified and past the content `as-is` upstream, you just need to prefix your entries with a minus (`-`) symbol.
 ```bash
 # The below for example would post to http://localhost:8000?token=abcdefg
@@ -109,7 +115,7 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" \
    "forms://example.ca/my/path?-key1=value1&-key2=value2"
 ```
 
-### Attach-As Over-Ride Options
+## Attach-As Over-Ride Options
 This section expands further on the `?attach-as=` override option.
 
 Simply add this to the URL: such as:

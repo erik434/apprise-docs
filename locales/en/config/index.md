@@ -1,9 +1,11 @@
 ---
 title: "Apprise Configuration"
 description: "Explains how to leverage the Apprise configuration"
+sidebar:
+  label: "Introduction"
 ---
 
-## :mega: Apprise Configuration
+## :mega: Introduction
 Configuration allows you to identify all of your notification services in one or more secure spots.
 
 There are 2 supported formats:

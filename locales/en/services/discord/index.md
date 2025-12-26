@@ -1,16 +1,25 @@
 ---
-title: "discord Notifications"
-description: "Send discord notifications."
+title: "Discord Notifications"
+description: "Send Discord Notifications."
+sidebar:
+  label: "Discord"
+
+# Apprise Service Details
+source: https://discordapp.com/
+group: "social"
+schemas:
+   - discord
+has_attachments: true
+has_image: true
+limits:
+  - name: "Body"
+    max_chars: 2000
 ---
 
-## Discord Notifications
-* **Source**: https://discordapp.com/
-* **Icon Support**: Yes
-* **Attachment Support**: Yes
-* **Message Format**: Text
-* **Message Limit**: 2000 Characters per message
+<!-- SERVICE:DETAILS -->
 
-### Account Setup
+
+## Account Setup
 Creating a Discord account is easy.  The only part that requires a little bit of extra work is once you've got a channel set up (by default discord puts you in a #General channel).  Click on the Gear icon (Settings) and from here you need to enable webhooks.
 
 The webhook will end up looking something like this:
@@ -31,7 +40,7 @@ The discord message body can contain content such as the following to trigger th
 -  **role**: `<@&456>`
 -  **tag**: `@everyone`
 
-### Syntax
+## Syntax
 Valid syntax is as follows:
 * `https://discordapp.com/api/webhooks/{WebhookID}/{WebhookToken}`
 * `discord://{WebhookID}/{WebhookToken}/`
@@ -40,7 +49,7 @@ Valid syntax is as follows:
 Discord can also support a variety of website arguments, the below identifies the defaults and therefore do not need to be specified unless you want to override them:
 * `discord://{WebhookID}/{WebhookToken}/?tts=No&avatar=Yes&footer=No&image=Yes`
 
-### Parameter Breakdown
+## Parameter Breakdown
 | Variable    | Required | Description
 | ----------- | -------- | -----------
 | WebhookID   | Yes      | The first part of 2 tokens provided to you after creating a *incoming-webhook*
@@ -56,7 +65,9 @@ Discord can also support a variety of website arguments, the below identifies th
 | thread   | No      | Optionally set the `thread_id` you wish your message to be applied to.
 | ping   | No      | Optionally identify a role, user, our parsed name (such as `everyone`) that should always be pinged when them message is sent. Follow the syntax [identified above](https://github.com/caronc/apprise/wiki/Notify_discord/#pinging-roles-tags-and-users) for the format.
 
-#### Example
+<!-- GLOBAL:SERVICE:PARAMS -->
+
+## Example
 Send a discord notification:
 ```bash
 # Assuming our {WebhookID} is 4174216298
