@@ -31,7 +31,7 @@ The README email table has also been updated to include Brevo alongside other em
 5. Construct your `brevo://` URL using the syntax below, substituting your API key, From address, and target recipients.
 6. Use this URL in your Apprise configuration file or CLI calls.
 
-:warning: Brevo may send you a confirmation email (`subject: Security Alert: Verify a new IP`) indicating that `Someone tried to use your organization account and make an API call with an IP address you have never used before. We wanted to check this activity with you.`. You then need to use the confirmation link to approve the IP in question. From that point forward Apprise should work uninterrupted.
+⚠️ Brevo may send you a confirmation email (`subject: Security Alert: Verify a new IP`) indicating that `Someone tried to use your organization account and make an API call with an IP address you have never used before. We wanted to check this activity with you.`. You then need to use the confirmation link to approve the IP in question. From that point forward Apprise should work uninterrupted.
 
 ---
 

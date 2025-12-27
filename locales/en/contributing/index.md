@@ -17,7 +17,7 @@ merge your contributions smoothly.
   tox -e lint
   ```
 
-- ✔️ Your changes are covered by tests. Apprise has just shy of :100: test coverage; it would be ideal to keep it this way (within reason).
+- ✔️ Your changes are covered by tests. Apprise has just shy of 💯 test coverage; it would be ideal to keep it this way (within reason).
   ```bash
   tox -e qa
   ```

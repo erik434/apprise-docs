@@ -14,11 +14,11 @@ A Custom notification works the same way by letting Apprise know you want to map
 
 The advantage of having your own custom hook is that you can now extend Apprise to do just about anything. You're free to write any logic you want within the confines of your custom wrapper. You could:
 1. Process the message `body` as an instruction set to run and admin task such as:
-   - :broom: Cleaning a directory of old files
-   - :computer: performing server maintenance
-   - :closed_lock_with_key: Updating your SSL Certificates on your website
-   - :rocket: Trigger a puppet call into your fleet of servers
-   - :coin: Trigger code to sell stocks/bitcoins or buy some
+   - 🧹 Cleaning a directory of old files
+   - 🖥️ performing server maintenance
+   - 🔐 Updating your SSL Certificates on your website
+   - 🚀 Trigger a puppet call into your fleet of servers
+   - 🪙 Trigger code to sell stocks/bitcoins or buy some
 1. Trigger your own custom notification service
 1. Anything you want can be mapped to it's own `schema://` that you define.
 

@@ -12,7 +12,7 @@ description: "Send line notifications."
 
 ## Account Setup
 1. First download Line in order to use it via [Google Play](https://play.google.com/store/apps/details?id=jp.naver.line.android) or [Apple](https://apps.apple.com/us/app/line/id443904275).
-1. Once installed, you need to open up the software on your mobile device and access the :gear: icon and click on **Accounts**.  From here you need to associate an Email address with your account if you haven't done so already.  There is a validation process you must complete.
+1. Once installed, you need to open up the software on your mobile device and access the ⚙️ icon and click on **Accounts**.  From here you need to associate an Email address with your account if you haven't done so already.  There is a validation process you must complete.
 
 ### Generate a Token
 In order to generate a token, you need to have associated an email address with your account so that you can log into the [developer console here](https://developers.line.biz/console/).

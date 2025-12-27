@@ -1,4 +1,29 @@
 {
+  "site": {
+    "title": "Apprise Documentation"
+  },
+  "nav": {
+    "categories": {
+      "getting-started": "Getting Started",
+      "guides": "Guides",
+      "services": "Services",
+      "config": "Configuration",
+      "qa": "Troubleshooting",
+      "dev": "Developers",
+      "contributing": "Contributing",
+      "tools": "Tools"
+    },
+    "social": {
+      "github": "GitHub",
+      "discord": "Apprise Discord Chat",
+      "url_builder": "URL Builder",
+      "sponsor": "Support Apprise"
+    },
+    "tools": {
+      "title": "Tools",
+      "url_builder": "URL Builder"
+    }
+  },
   "common": {
     "yes": "Yes",
     "no": "No"
@@ -16,6 +41,7 @@
     "schemas": "Schemas",
     "features": "Features",
     "description": "Description",
+    "examples": "Examples",
     "ended": "Ended"
   },
   "service": {

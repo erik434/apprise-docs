@@ -3,7 +3,7 @@ title: "Apprise CLI Usage"
 description: "Details on how to use the Apprise CLI."
 ---
 
-## :mega: Apprise CLI
+## 📣 Apprise CLI
 This small tool wraps the apprise python library to allow individuals such as Developers, DevOps, and Administrators to send notifications from the command line.
 
 ### Getting Started
@@ -170,11 +170,11 @@ apprise -v --title="A Great Github Cheatsheet" --body="see attached" \
    --attach="https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf"
 ```
 
-### :label: Leverage Tagging
+### 🏷️ Leverage Tagging
 Consider the case where you've defined all of your Apprise URLs in one file, but you don't want to notify all of them each and every time.
-* :inbox_tray: Maybe you have special notifications that only fire when a download completed.
-* :rotating_light: Maybe you have home monitoring that requires you to notify several different locations
-* :construction_worker_man: Perhaps you work as an Administrative, Developer, and/or Devops role and you want to just notify certain people at certain times (such as when a software build completes, or a unit test fails, etc).
+* 📥 Maybe you have special notifications that only fire when a download completed.
+* 🚨 Maybe you have home monitoring that requires you to notify several different locations
+* 👷 Perhaps you work as an Administrative, Developer, and/or Devops role and you want to just notify certain people at certain times (such as when a software build completes, or a unit test fails, etc).
 
 Apprise makes this easy by simply allowing you to tag your URLs.  There is no limit to the number of tags associate with a URL.  Let's make a simple apprise configuration file; this can be done with any text editor of your choice:
 ```apache
@@ -277,7 +277,7 @@ If you use the **--dry-run** (**-d**) switch, then some rules don't apply. For o
 apprise --tag=team,email --dry-run
 ```
 
-## :heavy_check_mark: Compatibility and Notification Details
+## ✅ Compatibility and Notification Details
 Apprise offers a lot of services at your fingertips, but some of them may or may not be available to you depending on your Operating system and/or what packages you have installed.  You can see a list of what is available by doing the following:
 ```bash
 # List all of the supported services available to you
@@ -288,7 +288,7 @@ apprise --details
 Here is an example of the output (as it is now) on the CLI:
 ![image](https://user-images.githubusercontent.com/850374/142778418-11e87c7f-1b07-4314-ab86-cbf8d268dabf.png)
 
-## :baggage_claim: Message Body Source
+## 💼 Message Body Source
 The Apprise CLI doesn't know what you are feeding it when sending a message to a Notification provider. It just assumes that whatever you message you feed it, it should just pass it along *as is* to the upstream provider *as text*.  In most cases, this is perfect and this is the default behaviour. However, if you are passing along HTML content or markdown content, you should just let Apprise know by specifying the `--input-format` (`-i`) switch. For example:
 ```bash
 # An HTML Example:
@@ -305,8 +305,8 @@ There is more, but I want to keep my message short. :)
 _EOF
 ```
 
-## :ok_hand: Emoji Support
-Apprise now offers you the ability to pass in entries like `:slightly_smiling_face:` to have it automatically change this into a :slightly_smiling_face: unicode equivalent. Apprise is loaded with all of the emojis (and their mappings) as defined [here](https://github.com/ikatyang/emoji-cheat-sheet)
+## 👌 Emoji Support
+Apprise now offers you the ability to pass in entries like `🙂` to have it automatically change this into a 🙂 unicode equivalent. Apprise is loaded with all of the emojis (and their mappings) as defined [here](https://github.com/ikatyang/emoji-cheat-sheet)
 
 There are 2 ways to orchestrate the emoji engine and begin your translations:
 - **Globally** (impact all Apprise endpoints added):
@@ -324,14 +324,14 @@ There are 2 ways to orchestrate the emoji engine and begin your translations:
   # No use of the --interpret-emojis (-j) flag, however explicit
   # reference on the URL we're notifying.
   apprise --title=":+1: Great work everyone!" \
-   --body="So proud of you all! :rocket:." \
+   --body="So proud of you all! :rocket." \
    "myschema://credentials?emojis=yes"
    ```
 Emojis offer a more rich use of Apprise. The above example would have passed the following to all upstream services:
-  - **title**: :+1: Great work everyone!
-  - **body**: So proud of you all! :rocket:.
+  - **title**: 👍 Great work everyone!
+  - **body**: So proud of you all! 🚀.
 
-## :star2: Tricks and Additional Notes
+## ⭐ Tricks and Additional Notes
 ### Tmux Alert Bell Integration
 Users of Tmux can link their `alert-bell` to use Apprise like so:
 ```bash

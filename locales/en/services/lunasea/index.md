@@ -1,20 +1,36 @@
 ---
-title: "lunasea Notifications"
-description: "Send lunasea notifications."
+title: "Lunasea Notifications"
+description: "Send Lunasea notifications."
+
+sidebar:
+  label: "Lunasea"
+
+source: https://www.lunasea.app/
+schemas:
+   - lunasea
+
+sample_urls:
+  - lunasea://{toFireBaseUser}
+  - lunasea://{toFireBaseUser1}/{toFireBaseUser2}/{toFireBaseUserN}
+  - lunasea://+{toFireBaseDevice}
+  - lunasea://+{toFireBaseDevice1}/{toFireBaseDevice2}/{toFireBaseDeviceN}
+
+limits:
+  - max_chars: 160
+
+ended: 2025-04-30
 ---
 
-## LunaSea Notifications
-* **Source**: https://www.lunasea.app/
-* **Icon Support**: No
-* **Attachment Support**: No
-* **Message Format**: Text
-* **Message Limit**: 160 Characters per message
-
-### Service End Reason
+:::note
+## Service End Reason
 Taken from their website:
 ![Screenshot From 2025-07-06 13-20-14](https://github.com/user-attachments/assets/d36ab716-e87f-44ac-b95f-0f63b48cb043)
+💡The Service was removed from Apprise in [apprise/1318](https://github.com/caronc/apprise/issues/1318)
+:::
 
-### Syntax
+<!-- SERVICE:DETAILS -->
+
+## Syntax
 Valid syntax is as follows:
 
 **Cloud Hosting**
@@ -55,7 +71,7 @@ Use `lunaseas://` for a Secure (`https://`) connection and `lunasea://` for Inse
 | image     |  No  | Map the image associated with the notification type to the payload.  By default this is set to `no`.
 | mode     |  No  | The default mode to treat the URL provided as.  Possible values are `cloud` and `private`.  This is detected if no otherwise specified.   When set to `private`, a hostname must be provided as part of the URL.  When set to `cloud`, all elements are presumed to be notification end points and https://lunasea.app is used.  In cloud mode, all transactions are secure (regardless if you specify `lunasea://` or `lsea://`).
 
-#### Example
+## Example
 Send a LunaSea notification:
 ```bash
 # Assuming our {FireBaseDeviceID} is abcd_abcd_abcd

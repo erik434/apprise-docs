@@ -5,7 +5,7 @@ sidebar:
   label: "Introduction"
 ---
 
-## :mega: Introduction
+## 📣 Introduction
 Configuration allows you to identify all of your notification services in one or more secure spots.
 
 There are 2 supported formats:
@@ -156,7 +156,7 @@ a.notify("A message!", title="An Optional Title")
 a.notify(tag="devops")
 ```
 
-## :label: Tagging from the CLI:
+## 🏷️ Tagging from the CLI:
 Tagging (with the **--tag=** (or **-g**) allows you to only notify entries from the configuration you defined that you want to.  You could define hundreds of entries and through tagging, just notify a few (or if any at all).
 
 ```bash

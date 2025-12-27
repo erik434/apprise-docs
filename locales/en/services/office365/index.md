@@ -29,7 +29,7 @@ You will need to have a valid Microsoft Personal Account AND you will require Ad
 1. Click on **Application Permissions** and search for **Mail.Send**; You will want to check this box too on the match found.
 1. Additionally grant access to the (**Application Permission**) **Mail.ReadWrite** scope to allow the sending of large attachments (> 3MB in size). **Mail.ReadWrite** allows Apprise to prepares a Draft message with the large attachment so that it can be sent thereafter.
 1. Additionally grant access to the (**Application Permission**) **User.Read.All** if you intend to pass in an ObjectID as the `source` and not an email.  Apprise will use the ObjectID to acquire the email associated with the account; this is nessisary to be able to support the `From` portion of the email address.
-1. Now you're good to go. :slightly_smiling_face: 
+1. Now you're good to go. 🙂 
 
 ## Syntax:
 

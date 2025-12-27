@@ -16,7 +16,7 @@ description: "Send homeassistant notifications."
 ### Syntax
 Valid syntax is as follows:
 * `hassio://{host}/{long-lived-access-token}`
-   * :point_up: This is the one that is most commonly used.
+   * ☝️ This is the one that is most commonly used.
 
 By default `hassio://` will use port `8123` (unless you otherwise specify).  If you use `hassios://` (adding an `s`) to the end, then you use the `https` protocol on port `443` (unless otherwise specified).
 

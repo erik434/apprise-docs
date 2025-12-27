@@ -5,11 +5,8 @@ sidebar:
   order: 1
 ---
 
-## Introduction
-
-Apprise is a powerful and flexible push notification library that allows you to send notifications to a wide variety of services using a simple, unified interface.
-
 ## What is Apprise?
+Apprise is a powerful and flexible push notification library that allows you to send notifications to a wide variety of services using a simple, unified interface.
 
 Apprise allows you to send notifications to services like:
 

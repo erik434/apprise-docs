@@ -13,7 +13,7 @@ SimplePush is a pretty straight forward messaging system you can get for your An
 
 You can optionally add additional notification encryption in the settings where it provides you with a **{salt}** value and allows you to configure/set your own encryption **{password}**.
 
-### :lock: AES-CBC-128 Encryption Weakness
+### 🔒 AES-CBC-128 Encryption Weakness
 The Apprise team recognizes that the encryption used by this plugin is AES-CBC-128 which has been identified to have weaknesses including being vulnerable to the padding oracle attack ([Reference](https://soatok.blog/2020/07/12/comparison-of-symmetric-encryption-methods/#aes-gcm-vs-aes-cbc)).
 
 If the level of encryption is not satisfactory to you, your options are:

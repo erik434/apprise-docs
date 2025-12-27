@@ -1,19 +1,36 @@
 ---
-title: "faast Notifications"
-description: "Send faast notifications."
+title: "Faast Notifications"
+description: "Send Faast notifications."
+sidebar:
+  label: "Faast"
+
+source: http://www.faast.io/
+schemas:
+   - faast
+
+has_image: true
+sample_urls:
+  - faast://{authorizationtoken}
+
+ended: 2022
 ---
 
-## Faast Notifications
-* **Source**: http://www.faast.io/
-* **Icon Support**: Yes
-* **Message Format**: Text
-* **Message Limit**: 32768 Characters per message
+:::note
+## Service End Reason
+Unknown
+
+💡The Service was removed from Apprise in [apprise/1022](https://github.com/caronc/apprise/issues/1222)
+:::
+
+<!-- SERVICE:DETAILS -->
+
+## Account Setup
 
 There isn't too much configuration for Faast notifications.  The message is basically just passed to your online Faast account and then gets relayed to your device(s) you've setup from there.
 
-### Syntax
+## Syntax
 Valid syntax is as follows:
-* **faast**://**{authorizationtoken}**
+* `faast://{authorizationtoken}`
 
 ### Parameter Breakdown
 | Variable    | Required | Description
@@ -21,7 +38,9 @@ Valid syntax is as follows:
 | authorizationtoken    | Yes      | The authorization token associated with your Faast account.
 | image       | No       | Associate an image with the message. By default this is enabled.
 
-#### Example
+<!-- GLOBAL:SERVICE:PARAMS -->
+
+## Example
 Send a Faast notification
 ```bash
 # Assuming our {authorizationtoken} is abcdefghijklmnop-abcdefg

@@ -1,22 +1,32 @@
 ---
-title: "stride Notifications"
-description: "Send stride notifications."
+title: "Stride Notifications"
+description: "Send Stride notifications."
+sidebar:
+  label: "Stride"
+
+source: https://www.stride.com/
+schemas:
+   - stride
+
+sample_urls:
+  - stride://{auth_token}/{cloud_id}/{convo_id}
+
+limits:
+  - max_chars: 2000
+
+ended: 2019-02-14
 ---
 
-## :skull: Stride Notifications
-* **Source**: https://www.stride.com/
-* **Icon Support**: No
-* **Message Format**: Text
-* **Message Limit**: 2000 Characters per message
-* **Service End Date**: **Feb 14th 2019**
-
-### Service End Reason
+:::note
+## Service End Reason
 The creators of Stride ([Atlassian](https://www.atlassian.com)) performed partnership with [Slack](https://slack.com) and therefore are discontinuing both _Stride_ and _Hipchat_ services. [See their official announcement here](https://www.atlassian.com/blog/announcements/new-atlassian-slack-partnership). This was what was displayed on their website when looking up info on these products:<br/>
 ![Screenshot from 2019-09-07 14-28-34](https://user-images.githubusercontent.com/850374/64478836-58f34a80-d17c-11e9-8779-940f57303b10.png).
+💡The Service was removed from Apprise in [apprise/56](https://github.com/caronc/apprise/issues/56)
+:::
 
-## Legacy Setup Details
+<!-- SERVICE:DETAILS -->
 
-### Account Setup
+## Account Setup
 _Stride_ is the successor to _Hipchat_. It requires you to create a custom app and assign it to your channel you create.
 
 Let's start from the beginning:
@@ -27,19 +37,21 @@ Let's start from the beginning:
    * When it completes it will generate a token that looks something like:<br/>```HQFtq4pF8rKFOlKTm9Th```<br/>This is important and we'll referenced it as your **{auth_token}**.
    * If you scroll down it will also generate you a conversation URL that might look like:<br/>```https://api.atlassian.com/site/ce171c45-09ae-4fac-a73d-5a4b7a322872/conversation/a54a80b3-eaad-4524-9a3a-f6653bcfb100/message```<br/>Think of this URL like this:<br/>```https://api.atlassian.com/site/{cloud_id}/conversation/{convo_id}/message```. Specifically pay close attention to the **{cloud_id}** and **{convo_id}** because you will need this to build your custom URL with.
 
-### Syntax
+## Syntax
 The valid syntax is as follows:
-* **stride**://**{auth_token}**/**{cloud_id}**/**{convo_id}**
+* `stride://{auth_token}/{cloud_id}/{convo_id}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 | Variable    | Required | Description
 | ----------- | -------- | -----------
 | auth_token  | Yes      | The Authorization token that is created for you once you create your Custom App (that you associate with your channel).
 | cloud_id    | Yes      | This is extracted from the URL that is created for you when you create your Custom App (the same one that is identified above).<br/>**Note**: This is the first part of the conversation URL:<br/>https\:\/\/api.atlassian.com/site/**{cloud_id}**/conversation/{convo_id}/message
 | convo_id    | Yes      | This is extracted from the URL that is created for you when you create your Custom App (the same one that is identified above).<br/>**Note**: This is the second part of the conversation URL:<br/>https\:\/\/api.atlassian.com/site/{cloud_id}/conversation/**{convo_id}**/message
 
-#### Example
-Send a stride notification:
+<!-- GLOBAL:SERVICE:PARAMS -->
+
+## Example
+Send a Stride notification:
 ```bash
 # Assuming our {auth_token} is HQFtq4pF8rKFOlKTm9Th
 # Assuming our {cloud_id} is ce171c45-09ae-4fac-a73d-5a4b7a322872

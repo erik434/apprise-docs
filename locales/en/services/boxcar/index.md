@@ -1,19 +1,39 @@
 ---
-title: "boxcar Notifications"
-description: "Send boxcar notifications."
+title: "Boxcar Notifications"
+description: "Send Boxcar notifications."
+sidebar:
+  label: "Boxcar"
+
+source: https://boxcar.io/
+schemas:
+   - boxcar
+
+has_image: true
+sample_urls:
+  - boxcar://{access_key}/{secret_key}/{device_id}
+  - boxcar://{access_key}/{secret_key}/{device_id01}/{device_id02}/{device_idNN}
+
+limits:
+   - max_chars: 10000
+
+ended: 2019-02
 ---
 
-## Boxcar Notifications
-* **Source**: https://boxcar.io/
-* **Icon Support**: No
-* **Message Format**: Text
-* **Message Limit**: 10000 Characters per Message
+:::note
+## Service End Reason
+Unknown
 
+💡The Service was removed from Apprise in [apprise/1219](https://github.com/caronc/apprise/issues/1219)
+:::
+
+<!-- SERVICE:DETAILS -->
+
+## Account Setup
 Boxcar just has a development platform these days.  You can't get notifications through your AppleOS or Android devices anymore. You can still however sign up for an account [on their website](https://boxcar.io/). From there you can create projects through them.
 
 Each _project_ you create with them will grant you access to your own unique **Access Key** and a **Secret Key**. You can post notifications knowing these 2 values.
 
-### Syntax
+## Syntax
 Valid authentication syntaxes are as follows:
 * `boxcar://{access_key}/{secret_key}`
 
@@ -28,7 +48,7 @@ Device Tokens:
 You can also form any combination of the above and perform updates from one url:
 * `boxcar://{access_key}/{secret_key}/@{tag_id}**/{device_id}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 | Variable    | Required | Description
 | ----------- | -------- | -----------
 | access_key  | Yes      | This is required for your account to work. You will be provided one from boxcar's website upon creating an account with them.
@@ -36,7 +56,9 @@ You can also form any combination of the above and perform updates from one url:
 | device_id   | No       | Associated devices with your Boxcar setup. All _device_ids_ are 64 characters in length.
 | tag_id      | No       | Tags must be prefixed with a @ symbol or they will be interpreted as a _device_id_ and/or _alias_.
 
-#### Example
+<!-- GLOBAL:SERVICE:PARAMS -->
+
+## Example
 Send a Boxcar notification to all devices associated with a project:
 ```bash
 # Assume:
