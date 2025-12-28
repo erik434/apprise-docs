@@ -4,7 +4,8 @@ description: "Send xbmc notifications."
 ---
 
 ## XBMC Notifications
-* **Source**: http://kodi.tv/
+
+* **Source**: <http://kodi.tv/>
 * **Icon Support**: Yes
 * **Message Format**: Text
 * **Message Limit**: 250 Characters per message
@@ -12,13 +13,15 @@ description: "Send xbmc notifications."
 **Note:** XMBC is a legacy product and has been replaced by [[KODI|Notify_kodi]]. However for systems that can't be updated (such as a Jail Broken Apple TV2) you can use this protocol.
 
 ### Syntax
+
 Valid syntaxes are as follows:
+
 * **xbmc**://**{hostname}**
 * **xbmc**://**{hostname}**:**{port}**
 * **xbmc**://**{userid}**:**{password}**@**{hostname}**:**{port}**
 
-
 ### Parameter Breakdown
+
 | Variable    | Required | Description
 | ----------- | -------- | -----------
 | hostname    | Yes      | The server XBMC is listening on.
@@ -27,7 +30,9 @@ Valid syntaxes are as follows:
 | password    | No       | The password associated with your XBMC Server.
 
 #### Example
+
 Send a XBMC notification to our server listening on port 8080:
+
 ```bash
 # Assuming our {hostname} is xbmc.server.local
 apprise -vv -t "Test Message Title" -b "Test Message Body" \

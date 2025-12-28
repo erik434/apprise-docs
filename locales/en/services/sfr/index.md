@@ -4,17 +4,21 @@ description: "Send sfr notifications."
 ---
 
 ## Société Française du Radiotéléphone (SFR)
-* **Source**: https://www.sfr.fr/
+
+* **Source**: <https://www.sfr.fr/>
 * **Icon Support**: No
 * **Message Format**: Text
 * **Message Limit**: 160 Characters per message
 
 ### Syntax
+
 Valid syntax is as follows:
+
 * `sfr://{user}:{password}@{space_id}/{PhoneNo}`
 * `sfr://{user}:{password}@{space_id}/{PhoneNo1}/{PhoneNo2}/{PhoneNoN}`
 
 ### Parameter Breakdown
+
 | Variable        | Required | Description
 | --------------- | -------- | -----------
 | user       | Yes      | The user associated with your SFR account.
@@ -28,7 +32,9 @@ timeout | No | This is the time after which the SMS will be dropped by SFR. Defa
 voice | No | This is the voice used when SMS is encoded as a vocal. Not applicable in apprise, but must be set for API compatibility reasons. Default to `claire08s`.
 
 #### Example
+
 Send a SFR Notification:
+
 ```bash
 # Assuming our {user} is foo
 # Assuming our {password} is bar

@@ -20,7 +20,9 @@ ended: 2022
 ---
 
 :::note
+
 ## Service End Reason
+
 Unknown
 
 💡The Service was removed from Apprise in [apprise/1226](https://github.com/caronc/apprise/issues/1226)
@@ -29,17 +31,21 @@ Unknown
 <!-- SERVICE:DETAILS -->
 
 ## Account Setup
-1. Visit https://spontit.com to create your account.
-2. To acquire your `{user}`: Visit your profile at https://spontit.com/profile and take note of your User ID here.  It will look something like: `user12345678901`
-3. To acquire your `{apikey}`: Generate an API key at https://spontit.com/secret_keys (if you haven't already done so).
+
+1. Visit <https://spontit.com> to create your account.
+2. To acquire your `{user}`: Visit your profile at <https://spontit.com/profile> and take note of your User ID here.  It will look something like: `user12345678901`
+3. To acquire your `{apikey}`: Generate an API key at <https://spontit.com/secret_keys> (if you haven't already done so).
 
 ## Syntax
+
 Channels are optional; if no channel is specified then you are just personally notified.
+
 * `spontit://{user}@{apikey}`
 * `spontit://{user}@{apikey}/{channel_id}`
 * `spontit://{user}@{apikey}/{channel_id1}/{channel_id2}/{channel_idN}/`
 
 ## Parameter Breakdown
+
 | Variable    | Required | Description
 | ----------- | -------- | -----------
 | user        | Yes      | This is the User ID associated with your Spontit account.  It can be found on your [Spontit Profile page](https://spontit.com/profile).
@@ -50,7 +56,9 @@ Channels are optional; if no channel is specified then you are just personally n
 <!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Example
+
 Send a Spontit notification to all devices associated with a project:
+
 ```bash
 # Assume:
 #  - our {user} is user28635710302

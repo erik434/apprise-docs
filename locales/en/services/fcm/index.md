@@ -4,21 +4,25 @@ description: "Send fcm notifications."
 ---
 
 ## Firebase Cloud Messaging (FCM)
-* **Source**: https://firebase.google.com/docs/cloud-messaging
+
+* **Source**: <https://firebase.google.com/docs/cloud-messaging>
 * **Icon Support**: No
 * **Message Format**: Text
 * **Message Limit**: 5000 Characters per message
 
 ### Account Setup
+
 You'll need to create an account with Google's Firebase Cloud Messaging Service (FCM) first to use this.
 
 From there you will access the FCM Management Console and choose which mode you wish to leverage when sending your notifications.  The modes are **legacy** and **oauth2**.  Both have their pros and con.  Depending on which mode you choose, you will be required to construct your Apprise URL slightly diferent:<br/>
 ![Firebase](https://user-images.githubusercontent.com/850374/106963460-9dd33600-670e-11eb-8aaa-8499121e3147.png)
 
 ### Syntax
+
 Valid syntax is as follows:
 
 #### Legacy Mode
+
 The legacy mode doesn't seem to suggest it will be decommissioned anytime soon, however this is how the FCM refers to it as. This only requires the APIKey generated through the FCM Management Console.
 
 * `fcm://{APIKey}/{Device}`
@@ -31,6 +35,7 @@ You can mix and match these entries as well:
 * `fcm://{APIKey}/{Device1}/#{Topic1}/`
 
 #### OAuth2 Mode
+
 The OAuth2 mode is what FCM seems to hint that you use.  But it has much more overhead then the legacy way of doing things. It also requires you to point to a specially generated `JSON` file you can generate from your FCM Management Console.
 
 You can point to the `JSON` file generated locally (if you saved it onto your PC) or refer to it by it's web URL (if you're sharing it somewhere on your network) like so:
@@ -45,6 +50,7 @@ You can mix and match these entries as well:
 * `fcm://{Project}/{Device1}/#{Topic1}/?keyfile={JSON_KeyFile}`
 
 ### Parameter Breakdown
+
 | Variable        | Required | Description
 | --------------- | -------- | -----------
 | APIKey          | Yes      | The generated _API Key_ from the FCM Management Console. This is only required if you intend to use the **Legacy** method.
@@ -61,7 +67,9 @@ You can mix and match these entries as well:
 **Note:** This notification service does not use the title field; only the _body_ is passed along.
 
 #### Example
+
 Send a Legacy FCM notification:
+
 ```bash
 # Assuming our {APIKey} is bu1dHSdO22pfaaVy
 # Assuming our {Device} is ABCD:12345
@@ -72,6 +80,7 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" \
 ```
 
 Send a OAuth2 FCM notification:
+
 ```bash
 # Assuming our {Project} is Apprise
 # Assuming the path to our JSON  {Keyfile} is /etc/apprise/fcm/keyfile.json

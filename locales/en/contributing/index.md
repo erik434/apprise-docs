@@ -2,7 +2,8 @@
 title: "Apprise Core"
 description: "Contributing to the Apprise Core Library"
 ---
-# 🤝 Contributing to Apprise Core Library
+
+## 🤝 Contributing to Apprise Core Library
 
 Thank you for your interest in contributing to Apprise!
 
@@ -10,21 +11,31 @@ We welcome bug reports, feature requests, documentation improvements, and new
 notification plugins. Please follow the guidelines below to help us review and
 merge your contributions smoothly.
 
+## Retrieve from GitHub
+
+``` bash
+# Acquire the core library from it's official resting spot on GitHub
+git clone git@github.com:caronc/apprise.git
+
+```
+
 ## ✅ Quick Checklist Before You Submit
 
 - ✔️ Your code passes all lint checks:
+
   ```bash
   tox -e lint
   ```
 
 - ✔️ Your changes are covered by tests. Apprise has just shy of 💯 test coverage; it would be ideal to keep it this way (within reason).
+
   ```bash
   tox -e qa
   ```
 
 - ✔️ All tests pass locally.
-
 - ✔️ Your code is clean and consistently formatted:
+
   ```bash
   tox -e format
   ```
@@ -33,15 +44,16 @@ merge your contributions smoothly.
 - ✔️ You included inline docstrings and respected the BSD 2-Clause license.
 - ✔️ Your commit message is descriptive.
 
-
 ## Directory Structure
-- `tests/`: You will find all unit tests in this directory and there are plenty of examples of how to build your own or add to existing ones.  
+
+- `tests/`: You will find all unit tests in this directory and there are plenty of examples of how to build your own or add to existing ones.
 - `packaging/`: You will find the MAN pages here and the SPEC files used to construct an RPM files
 - `apprise/plugins/`: This is where Apprise plugins are found
 
-# Building Your Own Notification Plugin
+## Building Your Own Notification Plugin
 
 It basically boils down to this:
+
 ```python
 # plugins/foorbar.py might look like:
 
@@ -124,6 +136,7 @@ class NotifyFooBar(NotifyBase):
 ```
 
 With respect to the above example:
+
 - You just need to create a single notification python file as `/plugins/service_name.py`
 - Make sure you call the class inside `NotifyServiceName` and inherit from `NotifyBase`
 - Make sure your class object name is the same as the filename you create.  This is very important!
@@ -136,15 +149,16 @@ With respect to the above example:
 
   - **the functions**:
      1. `__init__(self, *args, **kwargs)`: Define what is required to initialize your object/notification. Just make sure to cross reference it in the `template*` stuff (explained above).
-     1. `send(self, body, title='', *args, **kwargs)` at a bare minimum. See other Notify scripts as to how you can expand on this.  But just take the `body` and `title` and construct your message and send it.  
+     1. `send(self, body, title='', *args, **kwargs)` at a bare minimum. See other Notify scripts as to how you can expand on this.  But just take the `body` and `title` and construct your message and send it.
      1. `url()`.  This function must be able to construct a URL that would re-generate a copy of the exact same object if passed into `parse_url()`
      1. `parse_url(url)`: this is a **staticmethod** that parses the Apprise URL and breaks it into a dictionary of the components.  The dictionary it creates must map up to what the `__init__()` takes as it's arguments
-     
+
   - **Putting it together**:
+
        ```python
        from apprise.plugins.foobar import NotifyFooBar
        import Apprise
-       
+
        # Apprise is nothing but a manager of individual plugins
        a = Apprise()
 
@@ -159,11 +173,11 @@ With respect to the above example:
        # index element 0 exists because we added it successfully above (assuming you properly
        # followed all the rules above):
        assert isinstance(a[0], NotifyFooBar)
-       
+
        # So we know we can access the notification, then this would create a second notification service:
        # The only thing add does is match the schema up with the class it should use and then call it's
        # NotifyFooBar.parse_url()
-       
+
        # So parse_url() is in charge of preparing all of the arguments we can use to instantiate our object
        #  With that, it can then do Object(**parse_url_response)
        a.add(a[0].url())
@@ -172,19 +186,20 @@ With respect to the above example:
        # and if we built our 3 core functions (__init__, `url()` and `parse_url()` correctly, they should be almost
        # copies of one another (yet 2 instances)
        assert(len(a) == 2)
-      
+
        # URLs are the same
        assert(a[0].url() == a[1].url())
-      
+
        # that's really all there is too it... when you call `a.notify()`; there is some functions and tools
        # that handle some common things, but at the end of the day, it will call your `send()` function
        # you defined.
        ```
 
   - **Putting it together without the overhead of the Apprise manager**:
+
        ```python
        from apprise.plugins.foobar import NotifyFooBar
-       
+
        # You can do this manually too if you want to test around the overhead
        # of the Apprise manager itself:
        results = NotifyFooBar.parse_url('foobar://details/?more=details&are=optional')
@@ -218,20 +233,16 @@ With respect to the above example:
       Just avoid conflicting with any function written in `NotifyBase()` and `URLBase()`
 
       If your service is really complex (and requires a lot of code), maybe it's easier to split your code into multiple files. This is how i handled the [FCM plugin I wrote](https://github.com/caronc/apprise/tree/master/apprise/plugins/fcm) which was based on Google's version.
-- Don't be afraid to just copy and paste another already created service and update it for your own usage. 
-    - [plugins/custom_json.py](https://github.com/caronc/apprise/blob/master/apprise/plugins/custom_json.py) is a bit advanced; but shows the general idea of the structure.
-    - [plugin/fcm](https://github.com/caronc/apprise/tree/master/apprise/plugins/fcm) is a much more complex design but illustrates how you can build your notification into smaller components.
-    - All in all.... just have a look at the [plugins directory](https://github.com/caronc/apprise/tree/master/apprise/plugins) and feel free to use this as a reference to help structure and solve your own notification service you might be building
+- Don't be afraid to just copy and paste another already created service and update it for your own usage.
+  - [plugins/custom_json.py](https://github.com/caronc/apprise/blob/master/apprise/plugins/custom_json.py) is a bit advanced; but shows the general idea of the structure.
+  - [plugin/fcm](https://github.com/caronc/apprise/tree/master/apprise/plugins/fcm) is a much more complex design but illustrates how you can build your notification into smaller components.
+  - All in all.... just have a look at the [plugins directory](https://github.com/caronc/apprise/tree/master/apprise/plugins) and feel free to use this as a reference to help structure and solve your own notification service you might be building
 
 You can have a look at the NotifyBase object and see all of the other entries you can define that Apprise can look after for you (such as restricting the message length, title length, handling TEXT -> Markdown, etc). You can also look at how other classes were built.
 
 ## Demo Plugins
+
 Some people learn by just working with already pre-written code.   So here are some sample plugins I put together that you can copy and paste and start your own notification service off of.  Each plugin tries to explain with a lot of in-line code comments what is going on and why things are the way they are:
 
 - [A Very Basic Plugin](DemoPlugin_Basic) That simply posts the message to stdout
 - [An HTTP Web Request Based Plugin](DemoPlugin_WebRequest)
-
-# Testing
-There is a few tools that work right out of the box in the root of any branch you're working in. These tools allow you to clone the Apprise branch and immediately test your changes without having to install anything into your environment.
-
-More details can be found [here](https://github.com/caronc/apprise/tree/master/bin) about them.

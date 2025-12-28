@@ -4,7 +4,8 @@ description: "Send pagertree notifications."
 ---
 
 ## PagerTree Notifications
-* **Source**: https://pagertree.com
+
+* **Source**: <https://pagertree.com>
 * **Icon Support**: No
 * **Attachment Support**: No
 * **Message Format**: Text
@@ -12,18 +13,21 @@ description: "Send pagertree notifications."
 
 1. For this to work, you'll need to signup for a [PagerTree](https://pagertree.com) account (free trial is fine). Make sure you follow the setup wizard (you'll want to be on-call for the team the integration is pointed to in Step 2)
 2. Create a [webhook integration](https://pagertree.com/docs/integration-guides/webhook) and point it to the team (default: "Devops Team")
-3. From the integration page, copy the integration Prefix ID (used for the apprise url) 
+3. From the integration page, copy the integration Prefix ID (used for the apprise url)
 ![image](https://user-images.githubusercontent.com/9020194/217587441-cfbf0f43-f736-4b9d-85dc-18acc6cc418c.png)
 4. Use the Prefix ID for the apprise URL `./bin/apprise -t test -b message "pagertree://int_xxxxxxxxxx"`
 You need to have an account with [PagerTree](https://pagertree.com) and create a [webhook integration](https://pagertree.com/docs/integration-guides/webhook).
 
 ### Syntax
+
 Valid syntax is as follows:
+
 * `pagertree://{integration}`
 * `pagertree://{integration}?action=resolve&thirdparty_id=abc123`
 * `pagertree://{integration}?+pagertree-token=123&:env=prod&-incident=true&-incident_severity=SEV-1&-incident-message=Please join the bridge&tags=prod,server,outage`
 
 ### Parameter Breakdown
+
 | Variable    | Required | Description
 | ----------- | -------- | -----------
 | integration | Yes      | This is the Prefix ID of your webhook integration. Found at the top of the integration page.
@@ -33,7 +37,9 @@ Valid syntax is as follows:
 | tags | No | Comma seperated list of tags. (ex: "prod,server,outage") |
 
 #### Example
+
 Send a PagerTree create command.
+
 ```bash
 
 # Assuming our {integration_id} is int_0123456789
@@ -42,6 +48,7 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" \
 ```
 
 ### Payload Manipulation
+
 Making use of the `:` on the Apprise URL allows you to alter and add to the body content posted upstream to PagerTree. This is useful when using the [Capture Additional Data feature](https://pagertree.com/docs/integration-guides/webhook#integration-options).
 
 ```bash
@@ -54,6 +61,7 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" \
 ```
 
 The above would post a message such as:
+
 ```json
 {
    "id": "0f85aa1c-711e-4873-95b6-e441c291537d",
@@ -65,7 +73,9 @@ The above would post a message such as:
 ```
 
 ### Header Manipulation
+
 Some users may require special HTTP headers to be present when they post their data to PagerTree.  This can be accomplished by just sticking a plus symbol (**+**) in front of any parameter you specify on your URL string. This is useful when making use of the [PagerTree Token feature](https://pagertree.com/docs/integration-guides/webhook#integration-options).
+
 ```bash
 # Below would set the header:
 #    pagertree-token: abcdefg
@@ -77,7 +87,9 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" \
 ```
 
 ### Meta Manipulation
+
 Some PagerTree functionality (like incidents) lives in the `meta` property of the payload. To add to the meta property you just need to prefix your entries with a minus (`-`) symbol. [See example.](https://pagertree.com/docs/integration-guides/webhook#example-request-2)
+
 ```bash
 # Indicate to PagerTree this alert should be marked as an incident
 # The `-` symbol will get stripped off when the upstream post takes place

@@ -4,13 +4,16 @@ description: "Send gotify notifications."
 ---
 
 ## Gotify Notifications
-* **Source**: https://github.com/gotify/server
+
+* **Source**: <https://github.com/gotify/server>
 * **Icon Support**: No
 * **Message Format**: Text
 * **Message Limit**: 32768 Characters per Message
 
 ### Syntax
+
 Valid syntaxes are as follows:
+
 * `gotify://{hostname}/{token}`
 * `gotifys://{hostname}/{token}`
 * `gotifys://{hostname}:{port}/{token}`
@@ -21,6 +24,7 @@ Valid syntaxes are as follows:
 Secure connections (via https) should be referenced using **gotifys://** where as insecure connections (via http) should be referenced via **gotify://**.
 
 ### Parameter Breakdown
+
 | Variable    | Required | Description
 | ----------- | -------- | -----------
 | hostname    | Yes      | The Gotify server you're sending your notification to.
@@ -31,7 +35,9 @@ Secure connections (via https) should be referenced using **gotifys://** where a
 | format    | No       | The message format to announce to Gotify.  By default all information is identified as `text`. But you can alternatively set this value to `markdown` as well.
 
 #### Example
+
 Send a Gotify message:
+
 ```bash
 # Assuming our {hostname} is localhost
 # Assuming our {token} is abcdefghijklmn
@@ -48,6 +54,7 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" \
 ```
 
 There is also **markdown** support if you want to leverage it; simply add `format=markdown` into your URL:
+
 ```bash
 # Assuming our {hostname} is localhost
 # Assuming our {token} is abcdefghijklmn
@@ -58,9 +65,13 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" \
 ```
 
 ## Setup
-Here is how I set up a quick Gotify server to test against.  This may or may not be useful to other people. 
+
+Here is how I set up a quick Gotify server to test against.  This may or may not be useful to other people.
+
 ### Docker
+
 Based on [this source](https://hub.docker.com/_/gotify/server/):
+
 ```bash
 # Docker (assuming a connection to docker.io)
 sudo docker pull gotify/server

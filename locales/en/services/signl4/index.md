@@ -4,7 +4,8 @@ description: "Send signl4 notifications."
 ---
 
 ## SIGNL4 Notifications
-* **Source**: https://www.signl4.com
+
+* **Source**: <https://www.signl4.com>
 * **Icon Support**: No
 * **Attachment Support**: No
 * **Message Format**: Text
@@ -19,10 +20,13 @@ You need to have an account with [SIGNL4](https://www.signl4.com) and use your S
 3. Your SIGNL4 team or integration secret is the hostname in your Apprise URL.
 
 ### Syntax
+
 Valid syntax is as follows:
+
 * `signl4://{secret}`
 
 ### Parameter Breakdown
+
 | Variable    | Required | Description
 | ----------- | -------- | -----------
 | service | No      | Assigns the alert to the service/system category with the specified name. |
@@ -46,6 +50,7 @@ apprise -vv \
 ```
 
 Here is another example:
+
 ```bash
 apprise -vv --title 'Alert from Apprise' \
   --body 'Hello world.' \

@@ -4,7 +4,8 @@ description: "Send wxpusher notifications."
 ---
 
 ## WxPusher Notifications
-* **Source**: https://wxpusher.zjiecode.com/
+
+* **Source**: <https://wxpusher.zjiecode.com/>
 * **Icon Support**: No
 * **Message Format**: Text
 * **Message Limit**: 32768 Characters per message
@@ -15,28 +16,34 @@ description: "Send wxpusher notifications."
 1. Acquire your App Token from  your profile<br/><img width="1428" alt="appToken" src="https://github.com/caronc/apprise/assets/850374/0ed3fe9c-965b-4543-b778-bb7355346455"><br/>_Note: The above image was taken from [WxPusher's Help Page](https://wxpusher.zjiecode.com/docs/#/?id=%e8%8e%b7%e5%8f%96apptoken)_
 
 Targets can be either a User (`UID_DATA`) or a Topic (`<integer>`).  i.e:
-- `wxpusher://apptoken/123/343/UID_ABCD` would notify 2 topics (`123`, and `343`) plus one user `UID_DATA`)
+
+* `wxpusher://apptoken/123/343/UID_ABCD` would notify 2 topics (`123`, and `343`) plus one user `UID_DATA`)
 
 ### Syntax
+
 Valid syntax is as follows:
+
 * `wxpusher://{app_token}@{userid}`
 * `wxpusher://{app_token}@{userid1}/{userid2}/{useridN}`
 * `wxpusher://{app_token}@{topic}`
 * `wxpusher://{app_token}@{topic1}/{topic2}/{topicN}`
 
 You can also mix/match topic's and user ids:
+
 * `wxpusher://{app_token}@{topic1}/{userid1}/...`
 
 ### Parameter Breakdown
+
 | Variable        | Required | Description
 | --------------- | -------- | -----------
 | app_token       | **Yes**   | The App Token associated with your WxPusher account. It always starts with `AT_`
 | userid          | \*No   | You must specify at least 1 (one) `userid` OR 1 (one) `topic`. A `userid` has a prefix of `UID_`
 | topic          | \*No   | You must specify at least 1 (one) `userid` OR 1 (one) `topic`. A `topic` is an integer value
 
-
 #### Example
+
 Send a WxPusher notification using a topic a topic:
+
 ```bash
 # Assuming our {app_key} is AT_12345
 # Assuming our {topic} is 987
@@ -45,6 +52,7 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" -n failure  \
 ```
 
 Here is an example of notifying a user:
+
 ```bash
 # Assuming our {app_key} is AT_12345
 # Assuming our {user} is UID_123
@@ -53,6 +61,7 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" -n failure  \
 ```
 
 We can notify a variety of users/topics by just specifying htem on the path:
+
 ```bash
 # Assuming our {app_key} is AT_12345
 # Assuming our {user} is UID_123 and UID_456

@@ -4,29 +4,36 @@ description: "Send sinch notifications."
 ---
 
 ## Sinch Notifications
-* **Source**: https://sinch.com
+
+* **Source**: <https://sinch.com>
 * **Icon Support**: No
 * **Message Format**: Text
 * **Message Limit**: 160 Characters per message
 
 ### Account Setup
+
 To use Sinch, you will need to acquire your _Service Plan ID_ and _API Token_. Both of these are accessible via the [Sinch Dashboard](https://dashboard.sinch.com/sms/overview) or through [the API section](https://dashboard.sinch.com/sms/api/rest).
 
 You'll need to have a number defined as an Active Number ([from your dashboard here](https://dashboard.sinch.com/numbers/your-numbers/number)).  This will become your **{FromPhoneNo}** when identifying the details below.
 
 ### Syntax
+
 Valid syntaxes are as follows:
+
 * `sinch://{ServicePlanID}:{ApiToken}@{FromPhoneNo}/{PhoneNo}`
 * `sinch://{ServicePlanID}:{ApiToken}@{FromPhoneNo}/{PhoneNo1}/{PhoneNo2}/{PhoneNoN}`
 
 If no _ToPhoneNo_ is specified, then the _FromPhoneNo_ will be messaged instead; hence the following is a valid URL:
+
 * `sinch://{ServicePlanID}:{ApiToken}@{FromPhoneNo}/`
 
 Short Codes are also supported but require at least 1 Target PhoneNo
+
 * `sinch://{ServicePlanID}:{ApiToken}@{ShortCode}/{PhoneNo}`
 * `sinch://{ServicePlanID}:{ApiToken}@{ShortCode}/{PhoneNo1}/{PhoneNo2}/{PhoneNoN}`
 
 ### Parameter Breakdown
+
 | Variable        | Required | Description
 | --------------- | -------- | -----------
 | ServicePlanID      | Yes      | The _Account SID_ associated with your Sinch account.  This is available to you via the Sinch Dashboard.
@@ -37,7 +44,9 @@ Short Codes are also supported but require at least 1 Target PhoneNo
 | Region     | **No** | Can be either `us` or `eu`.  By default the region is set to `us`.
 
 #### Example
+
 Send a Sinch Notification as an SMS:
+
 ```bash
 # Assuming our {ServicePlanID} is AC735c307c62944b5a
 # Assuming our {ApiToken} is e29dfbcebf390dee9

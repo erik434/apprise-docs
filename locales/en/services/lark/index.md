@@ -4,7 +4,8 @@ description: "Send lark notifications."
 ---
 
 ## Lark (Feishu) Notifications
-* **Source**: https://open.larksuite.com/
+
+* **Source**: <https://open.larksuite.com/>
 * **Icon Support**: No
 * **Message Format**: Plain Text
 * **Message Limit**: ~20,000 Characters
@@ -33,8 +34,9 @@ While you can use the full webhook URL directly, Apprise also supports a simplif
 ### Syntax
 
 Valid syntax is as follows:
-- `https://open.larksuite.com/open-apis/bot/v2/hook/{token}`
-- `lark://{token}`
+
+* `https://open.larksuite.com/open-apis/bot/v2/hook/{token}`
+* `lark://{token}`
 
 ### Parameter Breakdown
 
@@ -45,6 +47,7 @@ Valid syntax is as follows:
 ### Examples
 
 #### 1. Using the simplified Apprise URL
+
 ```bash
 # Assuming our token is abcdef1234567890abcdef1234567890
 
@@ -53,6 +56,7 @@ apprise -vv -t "Lark Title" -b "Body of message" \
 ```
 
 #### 2. Using the full native URL as-is
+
 ```bash
 apprise -vv -t "Lark Title" -b "Body of message" \
    https://open.larksuite.com/open-apis/bot/v2/hook/abcdef1234567890abcdef1234567890

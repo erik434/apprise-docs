@@ -4,17 +4,21 @@ description: "Send parseplatform notifications."
 ---
 
 ## Parse Platform Notifications
-* **Source**: https://parseplatform.org/
+
+* **Source**: <https://parseplatform.org/>
 * **Icon Support**: No
 * **Message Format**: Text
 * **Message Limit**: 32768 Characters per Message
 
 ### Syntax
+
 Channels are optional; if no channel is specified then you are just personally notified.
-- `parsep://{app_id}:{master_key}@{hostname}`
-- `parseps://{app_id}:{master_key}@{hostname}`
+
+* `parsep://{app_id}:{master_key}@{hostname}`
+* `parseps://{app_id}:{master_key}@{hostname}`
 
 ### Parameter Breakdown
+
 | Variable    | Required | Description
 | ----------- | -------- | -----------
 | app_id      | Yes      | The Application ID
@@ -22,7 +26,9 @@ Channels are optional; if no channel is specified then you are just personally n
 | hostname    | Yes      | The Hostname of your Parse Platform Server
 
 #### Example
+
 Send a Parse Platform notification
+
 ```bash
 # Assume:
 #  - our {app_id} is abc123

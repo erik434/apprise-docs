@@ -6,7 +6,9 @@ sidebar:
 ---
 
 ## Text Based Apprise Configuration
+
 The TEXT Based configuration files are pretty straight forward and very easy to work with.  You just provide a list of your notification URLs like so.
+
 ```apache
 # Use pound/hashtag (#) characters to comment lines
 # Here is an example of a very basic entry (without tagging):
@@ -15,6 +17,7 @@ slack://token_a/token_b/token_c
 ```
 
 Tagging is a very feature-rich aspect of Apprise, and you can easily associate tags with your URLs by just placing them before your URL you define. If you want to specify more then one tag, just separate them with a space and/or comma.
+
 ```apache
 # Use pound/hashtag (#) characters to comment lines
 # The syntax is <tags>=<url> or just <url> on each line
@@ -36,7 +39,9 @@ tv,basement=kodi://myuser:mypass@basement.hostame
 ```
 
 ### Tag Grouping
+
 New in v1.6.0 is Tag Grouping!  This allows you to assign a group to previous tags defined.
+
 ```bash
 # Group Example #1
 
@@ -47,9 +52,11 @@ user2=mailto://credentials
 # Then define a group
 friends = user1, user2
 ```
+
 With respect to `Group Example #1` above, you could now send a notification to the tag `friends` and that would in turn trigger a notification to all of the URLs that were included indirectly to that tag.  In this case, `user1` and `user2` would be notified.
 
 Another great thing about groups is you can assign groups to groups to recursively include everything they're apart of:
+
 ```bash
 # Group Example #2
 
@@ -70,9 +77,11 @@ devteam = user3, user4
 company = finance, devteam, boss
 
 ```
+
 With respect to `Group Example #2` above, you could now send a notification to the tag `company` and that would in turn trigger a notification to everyone because they're all associated with the group tag.
 
 You can also assign tags to multiple groups:
+
 ```bash
 # Group Example #3
 
@@ -88,15 +97,19 @@ TeamA, Friends = user1, user3
 TeamB, Friends = user2, user4
 
 ```
+
 With respect to `Group Example #3` above, we have 3 group tags created (TeamA, TeamB, and Friends).  TeamA includes user1 and user3, and Team B contains user2 and user4.  The Friends tag actually includes user1, user2, user3, and user4 (all entries stacked).
 
 **Some Notes:**
+
 - There is no requirement to define the group before or after the URLs that are defined.
 - Tags associated with a group that are not used are just ignored.
 - Reuse of the same group assignment stacks it's values (it does not replace them)
 
 ## Expanding Configuration Sources
+
 The TEXT based configuration also supports the keyword `include` which allows you to pull more configuration down from other locations. For example:
+
 ```apache
 # Perhaps this is your default configuration that is always read
 # stored in ~/.config/apprise (or ~/.apprise)
@@ -107,6 +120,7 @@ include http://localhost:8080/get/apprise
 ```
 
 From there you can easily use the CLI tool from the command line while managing your configuration remotely:
+
 ```bash
 # automatically reads our above configuration
 # Which further imports our additional configuration entries:
@@ -114,6 +128,7 @@ apprise -vv -t "my title" -b "my message body"
 ```
 
 You can freely mix/match include statements and Apprise URLs as well, for example:
+
 ```apache
 # Our config file located in ~/.config/apprise (or ~/.apprise)
 
@@ -141,7 +156,9 @@ All loaded configuration files can also contain the `include` keyword as well.  
 **Note:** For security reasons, an `http://` configuration source can NOT `include` a `file://` source.
 
 ## Web Hosted TEXT Configuration
+
 Apprise can retrieve configuration files from over a network as well using the HTTP protocol.
 For HTTP requests, the **Content-Type** HTTP Header (_which defines Mime Type_) is very important. Apprise will parse remote network hosted configuration files as TEXT so long as you're using one of the following **Content-Type** entries:
+
 - `text/plain`
 - `text/html`

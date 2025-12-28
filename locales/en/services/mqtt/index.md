@@ -4,32 +4,38 @@ description: "Send mqtt notifications."
 ---
 
 ## MQTT Notifications
-* **Source**: https://mqtt.org/
+
+* **Source**: <https://mqtt.org/>
 * **Icon Support**: No
 * **Message Format**: Text
 * **Message Limit**: 268435455 Characters per Message
 
 MQTT Support requires **paho-mqtt** (a version less then v2) to work:
+
 ```bash
 pip install "paho-mqtt<2.0"
 ```
 
 ### Syntax
+
 Valid syntax is as follows:
-- `mqtt://{host}/{topic}`
-- `mqtt://{host}:{port}/{topic}`
-- `mqtt://{user}@{host}:{port}/{topic}`
-- `mqtt://{user}:{password}@{host}:{port}/{topic}`
+
+* `mqtt://{host}/{topic}`
+* `mqtt://{host}:{port}/{topic}`
+* `mqtt://{user}@{host}:{port}/{topic}`
+* `mqtt://{user}:{password}@{host}:{port}/{topic}`
 
 For a secure connection, just use `mqtts` instead.
-- `mqtts://{host}/{topic}`
-- `mqtts://{host}:{port}/{topic}`
-- `mqtts://{user}@{host}:{port}/{topic}`
-- `mqtts://{user}:{password}@{host}:{port}/{topic}`
+
+* `mqtts://{host}/{topic}`
+* `mqtts://{host}:{port}/{topic}`
+* `mqtts://{user}@{host}:{port}/{topic}`
+* `mqtts://{user}:{password}@{host}:{port}/{topic}`
 
 Secure connections should be referenced using **mqtts://** where as insecure connections should be referenced via **mqtt://**.
 
 ### Parameter Breakdown
+
 | Variable    | Required | Description
 | ----------- | -------- | -----------
 | user        | no       | The user associated with your MQTT server.
@@ -43,6 +49,7 @@ Secure connections should be referenced using **mqtts://** where as insecure con
 | retain     | No      | The MQTT publisher retain flag.  By default this is set to `no`, but you may optionally over-ride it and set it to `yes`
 
 ### Example
+
 ```bash
 # Assuming we're just running an MQTT Server locally on your box
 # Assuming we want to post our message to the topic: `my/topic`
@@ -50,7 +57,9 @@ apprise -vvv -b "whatever-payload-want" "mqtt://localhost/my/topic"
 ```
 
 #### Sample Service Setup
+
 I did the following to test this service locally (using docker):
+
 ```bash
 # Pull in Mosquitto (v2.x at the time) - 2021 Sept 16th
 docker pull eclipse-mosquitto

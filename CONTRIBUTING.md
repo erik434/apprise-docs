@@ -2,70 +2,139 @@
 
 Thank you for your interest in contributing to the Apprise documentation.
 
-This repository is intentionally lightweight. If you can write Markdown, you
-can make a valuable contribution.
+This repository is intentionally **low-friction**. If you can write Markdown,
+you can make a meaningful contribution. You do not need to be a developer, and
+you do not need to understand how the website is built.
 
-## What you can contribute
+All content here is validated and synced into the official documentation site
+automatically.
+
+---
+
+## What You Can Contribute
 
 You are welcome to contribute:
 
 - New guides and tutorials
+- Improvements or corrections to existing pages
 - Service-specific documentation
-- Corrections and clarifications
-- Examples and real-world usage notes
+- Real-world examples and usage notes
 - Translations into other languages
 
-You do not need to be a developer to contribute.
+Small improvements are just as valuable as large ones.
 
-## Where content belongs
+## Where Content Belongs
 
-Use the following guidelines:
+Use these guidelines when adding or editing content:
 
-Service documentation:
-```
-  locales/en/services/<service>/
-```
+### Service documentation
 
-Guides and how-to articles:
-```
-  locales/en/guides/
+```text
+locales/<locale>/services/<service>/index.md
 ```
 
-Images
-  Place images in an images/ directory beside the page that uses them
+### Guides and how-to articles
 
-Shared assets:
-```
-  locales/en/assets/
+```text
+locales/<locale>/guides/
 ```
 
-If you are unsure, place your content in guides/ and it can be reorganised later.
+### Images
 
-## Creating a new page
+Place images in an `images/` directory beside the page that uses them.
+
+### Shared assets
+
+```text
+locales/<locale>/assets/
+```
+
+If you are unsure where something belongs, place it under `guides/` and it can
+be reorganized later.
+
+## Creating or Updating Pages
 
 1. Choose the appropriate directory
-2. Create a new Markdown file
-3. Add required front matter
-   ```markdown
-   ---
-   title: "My New Guide"
-   ---
-   ```
+2. Create or edit a Markdown file
+3. Ensure required frontmatter is present (see service template below)
 4. Write clear, concise documentation
-5. Commit your changes and open a pull request
+5. Run validation and open a pull request
 
-## Editing existing pages
+---
 
-- Keep changes focused
-- Avoid large rewrites unless necessary
+## Service Documentation Template
+
+Each service page uses frontmatter metadata to generate parts of the site
+automatically.
+
+A minimal example:
+
+```md
+---
+title: "Example Notifications"
+description: "Send notifications using Example"
+sidebar:
+  label: "Example"
+
+source: https://example.com
+group: general
+
+schemas:
+  - example://
+
+sample_urls:
+  - example://{token}/
+  - example://{token}/{target}
+---
+
+<!-- SERVICE:DETAILS -->
+
+## Account Setup
+How to get set up with Example
+
+## Syntax
+
+Valid syntax is as follows:
+
+- `example://{token}`
+- `example://{token}/{target}`
+
+## Parameter Breakdown
+
+| Variable    | Required | Description
+| ----------- | -------- | -----------
+| token       |  yes     | Token to access the example server
+| target      |  no      | The target you wish to notify. If no target is specified, we send a notification to ourselves.
+
+<!-- GLOBAL:SERVICE:PARAMS -->
+
+## Example
+
+Send a Example notification:
+
+```bash
+apprise -vv -t "My Title" -b "Message Body" \
+   "example://my-token/target"
+```
+
+Markers such as `<!-- SERVICE:DETAILS -->` must be left in place. They are
+replaced automatically when documentation is rendered.
+
+---
+
+## Editing Existing Pages
+
+- Keep changes focused and intentional
 - Preserve existing structure where possible
-- Fix spelling, grammar, and clarity freely
+- Improve clarity, grammar, and examples freely
+- Large rewrites are welcome, but may involve discussion
 
-## Images and media
+## Images and Media
 
-- Place images in an images/ directory beside the page
+- Use local images only (no hot-linking)
+- Keep file sizes reasonable
 - Use descriptive filenames
-- Reference images using relative paths
+- Reference images with relative paths
 - Avoid hot-linking images from external sites
 
 ## Translations
@@ -73,35 +142,50 @@ If you are unsure, place your content in guides/ and it can be reorganised later
 Translations are always welcome, even if incomplete.
 
 Guidelines:
+
 - Mirror the source directory structure
 - Translate titles and headings
 - Leave technical terms unchanged if unsure
 
 Example:
 
-```
+```text
 locales/fr/guides/getting-started.md
 ```
 
-## Style guidelines
+## Validation and Linting
 
-- Be friendly and practical
-- Prefer examples over theory
-- Avoid unnecessary jargon
-- Assume readers are new to Apprise
+This repository uses automated checks to ensure:
 
-There is no strict writing style enforcement. Clarity matters most.
+- Consistent Markdown formatting
+- Supported frontmatter keys
+- Predictable rendering on the site
 
-## Review process
+Most issues are formatting-related and easy to fix.
+
+Run locally with:
+
+```bash
+pnpm lint
+```
+
+Auto-fix common issues with:
+
+```bash
+pnpm lint:fix
+```
+
+## Review Process
 
 - All contributions are reviewed
 - Maintainers may suggest edits
 - Small fixes are merged quickly
 - Larger changes may involve discussion
 
-## Questions
+## Questions or Uncertainty
 
-If you are unsure where to start:
+If you are unsure where to start or how to proceed:
+
 - Open an issue
 - Ask for guidance
 - Suggest improvements

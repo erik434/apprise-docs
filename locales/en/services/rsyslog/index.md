@@ -4,7 +4,8 @@ description: "Send remote syslog messages."
 ---
 
 ## Remote Syslog Notifications
-* **Source**: https://tools.ietf.org/html/rfc5424
+
+* **Source**: <https://tools.ietf.org/html/rfc5424>
 * **Icon Support**: No
 * **Message Format**: Text
 * **Message Limit**: 32768 Characters per message
@@ -12,16 +13,20 @@ description: "Send remote syslog messages."
 Remote Syslog is a way for network devices to send event messages to a logging server – usually known as a Syslog server. The Syslog protocol is supported by a wide range of devices and can be used to log different types of events.
 
 ### Syntax
+
 Valid syntax is as follows:
+
 * `syslog://{host}`
 * `syslog://{host}:{port}`
 * `syslog://{host}/{facility}`
 * `syslog://{host}:{port}/{facility}`
 
 One might change the facility on a remote syslog (rsyslog) server from it's default like so:
+
 * `syslog://localhost/local5`
 
 ### Parameter Breakdown
+
 | Variable    | Required | Description
 | ----------- | -------- | -----------
 | host        | No       | Query a remote Syslog server (rsyslog) by optionally specifying the hostname
@@ -30,7 +35,9 @@ One might change the facility on a remote syslog (rsyslog) server from it's defa
 | logpid     | Yes      | Include PID as part of the log output.
 
 ### Example
+
 Send a Remote Syslog notification
+
 ```bash
 # The following sends a syslog notification to the `user` facility
 apprise -vv -t "Test Message Title" -b "Test Message Body" \
@@ -38,6 +45,7 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" \
 ```
 
 #### Internal RSyslog Test Server
+
 ```bash
 # Setup a simple docker file that will run our our rsyslog server for us:
 cat << _EOF > dockerfile.syslog

@@ -4,17 +4,21 @@ description: "Send OneSignal notifications."
 ---
 
 ## OneSignal Notifications
-* **Source**: https://onesignal.com
+
+* **Source**: <https://onesignal.com>
 * **Icon Support**: Yes
 * **Message Format**: Text
 * **Message Limit**: 32768 Characters per Message
 
 ### Account Setup
-1. Visit https://onesignal.com to create your account.
+
+1. Visit <https://onesignal.com> to create your account.
 2. To acquire your `{appid}` and `{apikey}` Clic on the **Keys and IDs**.<br/>![OneSignalAppKeys](https://user-images.githubusercontent.com/850374/103224241-65616080-48f5-11eb-97c0-fa32a28524b4.png)
 
 ### Syntax
+
 The syntax is as follows:
+
 * `onesignal://{app_id}@{apikey}/#{include_segment}`
 * `onesignal://{app_id}@{apikey}/#{include_segment1}/#{include_segment2}/#{include_segmentN}`
 * `onesignal://{app_id}@{apikey}/{player_id}/`
@@ -25,9 +29,11 @@ The syntax is as follows:
 * `onesignal://{app_id}@{apikey}/{email1}/{email2}/{emailN}`
 
 You can also mix/match the targets:
+
 * `onesignal://{app_id}@{apikey}/{email}/@{user_id}/#{include_segment}/{player_id}`
 
 If you defined a template with OneSignal, you can use it as well:
+
 * `onesignal://{template_id}:{app_id}@{apikey}/#{include_segment}`
 * `onesignal://{template_id}:{app_id}@{apikey}/#{include_segment1}/#{include_segment2}/#{include_segmentN}`
 * `onesignal://{template_id}:{app_id}@{apikey}/{player_id}/`
@@ -38,6 +44,7 @@ If you defined a template with OneSignal, you can use it as well:
 * `onesignal://{template_id}:{app_id}@{apikey}/{email1}/{email2}/{emailN}`
 
 ### Parameter Breakdown
+
 | Variable    | Required | Description
 | ----------- | -------- | -----------
 | app_id      | Yes      | This is the Application ID associated with your OneSignal account.
@@ -53,7 +60,9 @@ If you defined a template with OneSignal, you can use it as well:
 | batch       | No       | Set it to **Yes** if you want all identified targets to be notified notified in batches (instead of individually). By default this is set to **No**.
 
 #### Example
+
 Send a OneSignal notification to all devices associated with a project:
+
 ```bash
 # Assume:
 #  - our {app_id} is abc123
@@ -69,6 +78,7 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" \
 ```
 
 ### Custom Data (Templates)
+
 Making use of the `:` on the Apprise URL allows you to alter and add to the payload of your onesignal post.
 
 ```bash
@@ -78,6 +88,7 @@ apprise -vv -b "Test Message Body" \
 ```
 
 The above would additional these assignments into the payload  as `custom_data':
+
 ```json
 {
    ... previous payload elements... and then:
@@ -85,10 +96,9 @@ The above would additional these assignments into the payload  as `custom_data':
 }
 ```
 
-
 ### Data
-Making use of the `+` on the Apprise URL allows you to alter and add to the payload of your onesignal post.
 
+Making use of the `+` on the Apprise URL allows you to alter and add to the payload of your onesignal post.
 
 ```bash
 # As an example:
@@ -97,10 +107,10 @@ apprise -vv -b "Test Message Body" \
 ```
 
 The above would additional these assignments into the payload  as `data':
+
 ```json
 {
    ... previous payload elements... and then:
    "data": {"key1": "value1"}
 }
 ```
-

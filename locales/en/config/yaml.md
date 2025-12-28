@@ -6,9 +6,11 @@ sidebar:
 ---
 
 ## YAML Based Apprise Configuration
+
 YAML Support offers a much more advance use then what is provided by the TEXT format. Apprise expects configuration files to be found with the extension of `.yml` or `.yaml`.
 
 Here is a configuration example in it's absolute simplest form:
+
 ```yaml
 #
 # Minimal Configuration Example
@@ -31,6 +33,7 @@ urls:
 ```
 
 To expand on **tags**, you can also identify a _global entry_ that will be applied _to ALL of the subsequent URL entries defined in the YAML file_. Example
+
 ```yaml
 #
 # Global Tag Configuration Example
@@ -50,6 +53,7 @@ urls:
 ```
 
 You can over-ride the AppriseAsset Object too if you know the objects you want to update using the special keyword **asset**.
+
 ```yaml
 #
 # Asset Override Configuration Example
@@ -70,6 +74,7 @@ urls:
 ```
 
 YAML configuration gets more powerful when you want to utilize a URL more then once. Here is a more complicated example:
+
 ```yaml
 # if no version is specified then version 1 is presumed. Thus this is a
 # completely optional field. It's a good idea to just add this line because it
@@ -120,7 +125,9 @@ urls:
 ```
 
 ### Tag Grouping
+
 New in v1.6.0 is Tag Grouping!  This allows you to assign a group to previous tags defined.
+
 ```yaml
 # Group Example #1
 
@@ -136,9 +143,11 @@ urls:
   - mailto://credentials:
       - tag: user2
 ```
+
 With respect to `Group Example #1` above, you could now send a notification to the tag `friends` and that would in turn trigger a notification to all of the URLs that were included indirectly to that tag.  In this case, `user1` and `user2` would be notified.
 
 Another great thing about groups is you can assign groups to groups to recursively include everything they're apart of:
+
 ```yaml
 # Group Example #2
 
@@ -170,6 +179,7 @@ urls:
 With respect to `Group Example #2` above, you could now send a notification to the tag `company` and that would in turn trigger a notification to everyone because they're all associated with the group tag.
 
 You can also assign tags to multiple groups:
+
 ```yaml
 # Group Example #3
 
@@ -196,6 +206,7 @@ urls:
 With respect to `Group Example #3` above, we have 3 group tags created (TeamA, TeamB, and Friends).  TeamA includes user1 and user3, and Team B contains user2 and user4.  The Friends tag actually includes user1, user2, user3, and user4 (all entries stacked).
 
 Finally with YAML Files, you can define your groups as lists
+
 ```yaml
 # Group Example #4
 
@@ -233,12 +244,15 @@ urls:
 With respect to `Group Example #4` above, we have 2 group tags created (buddies and friends). The list just shows other ways the groups can be defined.
 
 **Some Notes:**
+
 - There is no requirement to define the group before or after the URLs that are defined.
 - Tags associated with a group that are not used are just ignored.
 - Reuse of the same group assignment stacks it's values (it does not replace them)
 
 ## Expanding Configuration Sources
+
 The YAML based configuration also supports the keyword `include` which allows you to pull more configuration down from other locations. For example:
+
 ```yaml
 # Perhaps this is your default configuration that is always read
 # stored in ~/.config/apprise.yml (or ~/.apprise.yml)
@@ -249,6 +263,7 @@ include:
 ```
 
 From there you can easily use the CLI tool from the command line while managing your configuration remotely:
+
 ```bash
 # automatically reads our above configuration
 # Which further imports our additional configuration entries:
@@ -256,6 +271,7 @@ apprise -vv -t "my title" -b "my message body"
 ```
 
 You can freely mix/match include statements and Apprise URLs as well, for example:
+
 ```yaml
 # Our config file located in ~/.config/apprise.yml (or ~/.apprise.yml)
 
@@ -286,9 +302,11 @@ All loaded configuration files can also contain the `include` keyword as well.  
 **Note:** For security reasons, an `http://` configuration source can NOT `include` a `file://` source.
 
 ## Web Hosted YAML Configuration
+
 Apprise can retrieve configuration files from over a network as well using the HTTP protocol.
 For HTTP requests, the **Content-Type** HTTP Header (_which defines Mime Type_) is very important. Apprise will parse remote network hosted configuration files as YAML so long as you're using one of the following **Content-Type** entries:
-* `text/yaml`
-* `text/x-yaml`
-* `application/yaml`
-* `application/x-yaml`
+
+- `text/yaml`
+- `text/x-yaml`
+- `application/yaml`
+- `application/x-yaml`

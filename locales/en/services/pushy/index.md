@@ -4,7 +4,8 @@ description: "Send pushy notifications."
 ---
 
 ## Pushy Notifications
-* **Source**: https://pushy.me/
+
+* **Source**: <https://pushy.me/>
 * **Icon Support**: No
 * **Attachment Support**: No
 * **Message Format**: Text
@@ -13,10 +14,13 @@ description: "Send pushy notifications."
 You need to have an account with [Pushy](https://pushy.me/) and create an App.
 
 ### Syntax
+
 Valid syntax is as follows:
+
 * `pushy://{apikey}/{targets}`
 
 ### Parameter Breakdown
+
 | Variable    | Required | Description
 | ----------- | -------- | -----------
 | apikey | Yes      | This is the **Secret API Key** associated with your Pushy App
@@ -25,7 +29,9 @@ Valid syntax is as follows:
 | badge | No     | Provide a numerical value of 0 (zero) or greater to associate a badge with the bark icon on the iOS device.
 
 #### Example
+
 Send a Pushy notification:
+
 ```bash
 # Assuming our {apikey} is abcdefghijklmnopqrstuvwxyzabc
 # Assuming our {target} is a device with the id abcabcabc

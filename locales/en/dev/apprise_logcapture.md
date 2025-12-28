@@ -4,13 +4,17 @@ description: "An indepth look at the LogCapture() tool to help capture output fr
 ---
 
 # LogCapture
+
 `apprise.LogCapture()` allows you to capture all of the logging information within your program.  You may wish to relay the information to screen, or maybe you just want to have a look at it's contents when one or more notifications fail to be delivered.
 
 The class can capture information into a temporary (or permanent) log file, or you can just capture it straight into memory.  It's incredibly easy to use too.
 
 ## Learn by Example
+
 ### Capture to Memory
+
 **Your code changes from this:**
+
 ```python
 import apprise
 
@@ -26,6 +30,7 @@ apobj.notify(title="hello", body="world")
 ```
 
 **To this:**
+
 ```python
 import apprise
 
@@ -49,7 +54,9 @@ with apprise.LogCapture(level=apprise.logging.INFO) as output:
 ```
 
 ### Capture to File
+
 The class can write directly to memory (as you saw above) where content was written into a `io.StringIO` object.  You can also write content into a temporary file as well:
+
 ```python
 # In this example:
 # - we write to a log file /tmp/apprise.tmp
@@ -71,6 +78,7 @@ with apprise.LogCapture(path='/tmp/apprise.tmp', level=apprise.logging.WARNING) 
 ```
 
 If you want to write to a file and have it persist after your `with` block has completed, the syntax is very similar, you just need to add `delete=False` to the **LogCapture()** initialization like so:
+
 ```python
 # In this example:
 # - we write to a log file /tmp/apprise.tmp
@@ -96,9 +104,10 @@ with apprise.LogCapture(
 
 - By default if no `level=` is specified, then the log level you set globally in your program is used.
 
-
 ### Tricks
+
 Format your logs for HTML:
+
 ```python
 # The default fmt for LogCapture() is: '%(asctime)s - %(levelname)s - %(message)s'
 

@@ -47,7 +47,7 @@ ok = apobj.add([
 ])
 ```
 
-- **Returns**: `True` if all URLs parsed and added; `False` otherwise.
+* **Returns**: `True` if all URLs parsed and added; `False` otherwise.
 
 ---
 
@@ -221,10 +221,10 @@ info = apobj.details()
 
 Returns a `dict` containing:
 
-- **version** — Apprise version  
-- **asset** — current `AppriseAsset` settings  
-- **schemas** — supported services and URLs  
-- **details** — templates, tokens, args, kwargs  
+* **version** — Apprise version  
+* **asset** — current `AppriseAsset` settings  
+* **schemas** — supported services and URLs  
+* **details** — templates, tokens, args, kwargs  
 
 <details>
 <summary>Example JSON</summary>
@@ -237,6 +237,7 @@ Returns a `dict` containing:
   "details": { /* ... */ }
 }
 ```
+
 </details>
 
 ---
@@ -245,11 +246,11 @@ Returns a `dict` containing:
 
 `AppriseAsset` is the central configuration object that controls the look, feel, and behaviour of your notifications. Even when you simply instantiate `Apprise()`, it creates a default `AppriseAsset()` under the hood (using the “default” theme in `apprise/assets/themes/default`). By customizing `AppriseAsset`, you can:
 
-- Override the application identifier, description, and URL  
-- Point to your own local or hosted images (logos and type-specific icons)  
-- Enable or disable asynchronous delivery, logging filters, and escape-sequence interpretation  
-- Configure persistent storage (caching) for repeated notifications  
-- Add your own plugin directories or files  
+* Override the application identifier, description, and URL  
+* Point to your own local or hosted images (logos and type-specific icons)  
+* Enable or disable asynchronous delivery, logging filters, and escape-sequence interpretation  
+* Configure persistent storage (caching) for repeated notifications  
+* Add your own plugin directories or files  
 
 ---
 
@@ -313,7 +314,8 @@ asset = apprise.AppriseAsset(
 | **storage_mode**      | `Optional[str]`        | `None`                                                                                                                     | Enable persistent storage: `"auto"` (on-demand) or `"flush"` (per notification).                     |
 | **storage_path**      | `Optional[str]`        | `None`                                                                                                                     | Custom file path to use for persistent storage (overrides default).                                 |
 
-Here is an example of what the `html_notify_map` may look like (below is the default settings): 
+Here is an example of what the `html_notify_map` may look like (below is the default settings):
+
 ```python
 html_notify_map = {
     NotifyType.INFO:    '#3AA3E3',
@@ -322,7 +324,6 @@ html_notify_map = {
     NotifyType.WARNING: '#CACF29',
 }
 ```
-
 
 ---
 
@@ -378,12 +379,14 @@ apobj.notify(
 ```
 
 > **Tip:** You can also override any attribute on the fly:
+>
 > ```python
 > asset.theme = "night-mode"
 > asset.secure_logging = False
 > ```
 
 ## The Apprise Notification Object
+
 The **[[The Apprise Object|Development_API#the-apprise-object]]** actually already does a really good managing these for you.  But if you want to manage the notifications yourself here is how you can do it:
 
 ```python
@@ -416,8 +419,11 @@ obj.send(
 ```
 
 # Features
+
 ## Pickle/Serialization Support
+
 You can Serialize your loaded notifications so they can be restored later on:
+
 ```python
 import apprise
 import pickle
@@ -440,6 +446,7 @@ with open("myfile.txt", "w") as file:
 ```
 
 With respect to the above example, we could later (or in another application) reload our object back as it was without having to re-add all the URLs again:
+
 ```python
 # Restore our Apprise Object
 apobj = pickle.loads(serialized)

@@ -4,25 +4,30 @@ description: "Send synology_chat notifications."
 ---
 
 ## Synology Notifications
-* **Source**: https://kb.synology.com/en-au/DSM/help/Chat/chat_integration?version=7
+
+* **Source**: <https://kb.synology.com/en-au/DSM/help/Chat/chat_integration?version=7>
 * **Icon Support**: No
 * **Message Format**: Text
 * **Message Limit**: not set
 
 ### Syntax
+
 Valid syntax is as follows:
+
 * `synology://{hostname}}/{token}`
 * `synology://{hostname}:{port}/{token}`
 * `synology://{user}:{password}@{hostname}/{token}`
 * `synology://{user}:{password}@{hostname}:{port}/{token}`
 
 The secure versions (https):
+
 * `synologys://{hostname}/{token}`
 * `synologys://{hostname}:{port}/{token}`
 * `synologys://{user}:{password}@{hostname}/{token}`
 * `synologys://{user}:{password}@{hostname}:{port}/{token}`
 
 ### Parameter Breakdown
+
 | Variable    | Required | Description
 | ----------- | -------- | -----------
 | hostname    | Yes      | The Web Server's hostname
@@ -33,7 +38,9 @@ The secure versions (https):
 | file_url      | No       | Synology allows you to directly link to a URL containing an attachment.  If you set this on the Apprise URL, it will be passed down to the synology request made under the hood.
 
 #### Example
+
 Send a Synology notification to all devices associated with a project:
+
 ```bash
 # Assume:
 #  - our {hostname} is synology.home.arpa

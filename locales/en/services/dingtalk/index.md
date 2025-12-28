@@ -4,15 +4,18 @@ description: "Send dingtalk notifications."
 ---
 
 ## DingTalk
-* **Source**: https://www.dingtalk.com/
+
+* **Source**: <https://www.dingtalk.com/>
 * **Icon Support**: No
 * **Message Format**: Text
 * **Message Limit**: 160 Characters per message
 
 ### Account Setup
+
 To use DingTalk, you will need to acquire your _API Key_.
 
 ### Syntax
+
 Valid syntax is as follows:
 
 * `dingtalk://{ApiKey}/{ToPhoneNo}`
@@ -21,6 +24,7 @@ Valid syntax is as follows:
 * `dingtalk://{Secret}@{ApiKey}/{ToPhoneNo1}/{ToPhoneNo2}/{ToPhoneNoN}`
 
 ### Parameter Breakdown
+
 | Variable        | Required | Description
 | --------------- | -------- | -----------
 | ApiKey         | Yes      | The _API Key_ associated with your DingTalk account.  This is available to you via the DingTalk Dashboard.
@@ -28,7 +32,9 @@ Valid syntax is as follows:
 | Secret         | No       | The optional secret key to associate with the message signing
 
 #### Example
+
 Send a DingTalk Notification as an SMS:
+
 ```bash
 # Assuming our {APIKey} is gank339l7jk3cjaE
 # Assuming our {ToPhoneNo} - is in the US somewhere making our country code +1

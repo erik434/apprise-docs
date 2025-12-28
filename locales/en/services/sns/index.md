@@ -4,15 +4,18 @@ description: "Send sns notifications."
 ---
 
 ## Amazon Web Service (AWS) - Simple Notification Service (SNS)
-* **Source**: https://aws.amazon.com/sns/
+
+* **Source**: <https://aws.amazon.com/sns/>
 * **Icon Support**: No
 * **Message Format**: Text
 * **Message Limit**: 160 Characters per message
 
 ### Account Setup
+
 You'll need to create an account with Amazon Web Service (AWS) first to use this.  If you don't have one, you'll need your credit card (even though the first 12 months are free).  Alternatively, if you already have one (or are using it through your company), you're good to go to the next step.
 
 The next thing you'll need to do is generate an _Access Key ID_ and _Secret Access Key_.:
+
 1. From the [AWS Management Console](https://console.aws.amazon.com) search for **IAM** under the _AWS services_ section or simply click [here](https://console.aws.amazon.com/iam/home?#/security_credentials).
 1. Expand the section reading **Access keys (access key ID and secret access key)**
 1. Click on **Create New Access Key**
@@ -25,18 +28,22 @@ You now have all the tools you need to send SMS messages.
 If you want to take advantage of sending your notifications to _topics_: from the [AWS Management Console](https://console.aws.amazon.com) search for **Simple Notification Service** under the _AWS services_ section and configure as many topics as you want.  You'll be able to reference them as well using this notification service.
 
 ### Syntax
+
 Valid syntaxes are as follows:
+
 * **sns**://**{AccessKeyID}**/**{AccessKeySecret}**/**{Region}**/+**{PhoneNo}**
 * **sns**://**{AccessKeyID}**/**{AccessKeySecret}**/**{Region}**/+**{PhoneNo1}**/+**{PhoneNo2}**/+**{PhoneNoN}**
 * **sns**://**{AccessKeyID}**/**{AccessKeySecret}**/**{Region}**/#**{Topic}**
 * **sns**://**{AccessKeyID}**/**{AccessKeySecret}**/**{Region}**/#**{Topic1}**/#**{Topic2}**/#**{TopicN}**
 
 You can mix and match these entries as well:
+
 * **sns**://**{AccessKeyID}**/**{AccessKeySecret}**/**{Region}**/+**{PhoneNo1}**/#**{Topic1}**
 
 Enforcing a hashtag (#) for _topics_ and a plus sign (+) in-front of phone numbers helps eliminate cases where ambiguity could be an issue such as a _topic_ that is comprised of all numbers. These characters are purely optional.
 
 ### Parameter Breakdown
+
 | Variable        | Required | Description
 | --------------- | -------- | -----------
 | AccessKeyID     | Yes      | The generated _Access Key ID_ from the AWS Management Console
@@ -48,7 +55,9 @@ Enforcing a hashtag (#) for _topics_ and a plus sign (+) in-front of phone numbe
 **Note:** This notification service does not use the title field; only the _body_ is passed along.
 
 #### Example
+
 Send a AWS SNS notification as an SMS:
+
 ```bash
 # Assuming our {AccessKeyID} is AHIAJGNT76XIMXDBIJYA
 # Assuming our {AccessKeySecret} is bu1dHSdO22pfaaVy/wmNsdljF4C07D3bndi9PQJ9

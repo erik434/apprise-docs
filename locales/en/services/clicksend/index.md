@@ -4,17 +4,21 @@ description: "Send clicksend notifications."
 ---
 
 ## ClickSend
-* **Source**: https://clicksend.com
+
+* **Source**: <https://clicksend.com>
 * **Icon Support**: No
 * **Message Format**: Text
 * **Message Limit**: 160 Characters per message
 
 ### Syntax
+
 Valid syntax is as follows:
+
 * `clicksend://{user}:{password}@{PhoneNo}`
 * `clicksend://{user}:{password}@{PhoneNo1}/{PhoneNo2}/{PhoneNoN}`
 
 ### Parameter Breakdown
+
 | Variable        | Required | Description
 | --------------- | -------- | -----------
 | user            | Yes      | The _username_ associated with your ClickSend account.
@@ -23,7 +27,9 @@ Valid syntax is as follows:
 | batch           | No       | ClickSend allows a batch mode.  If you identify more then one phone number, you can send all of the phone numbers you identify on the URL in a single shot instead of the normal _Apprise_ approach (which sends them one by one). Enabling batch mode has both it's pro's and cons. By default batch mode is disabled.
 
 #### Example
+
 Send a ClickSend Notification as an SMS:
+
 ```bash
 # Assuming our {user} is l2g
 # Assuming our {password} is appriseIsAwesome

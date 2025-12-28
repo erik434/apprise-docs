@@ -1,29 +1,47 @@
 ---
-title: "bark Notifications"
-description: "Send bark notifications."
+title: "Bark Notifications"
+description: "Send Bark notifications."
+sidebar:
+  label: "Bark"
+
+source: https://github.com/Finb/Bark
+
+schemas:
+  - bark: insecure
+  - barks
+
+sample_urls:
+  - barks://{host}/{device_key}
+  - barks://{host}:{port}/{device_key}
+
+has_selfhosted: true
+
 ---
 
-## Bark Notifications
-* **Source**: https://github.com/Finb/bark-server ([Bark itself identified here](https://github.com/Finb/Bark))
-* **Icon Support**: No
-* **Message Format**: Text
-* **Message Limit**: not set
+<!-- SERVICE:DETAILS -->
 
-Bark is an iOS App which allows you to push custom notifications to your iPhone.
+## Account Setup
 
-### Syntax
+Bark is an iOS App which allows you to push custom notifications to your iPhone. Download the server for a self-hosted solution.
+
+## Syntax
+
 Valid authentication syntax is as follows:
+
 * `bark://{host}/{device_key}`
 * `bark://{host}:{port}/{device_key}`
 
 The secure versions:
+
 * `barks://{host}/{device_key}`
 * `barks://{host}:{port}/{device_key}`
 
 You can also notify more the one device at a time.
+
 * `bark://{host}:{port}/{device_key1}/{device_key2}/{device_keyN}/`
 
-### Parameter Breakdown
+## Parameter Breakdown
+
 | Variable    | Required | Description
 | ----------- | -------- | -----------
 | device_key  | Yes      | The device key you wish to notify
@@ -36,8 +54,12 @@ You can also notify more the one device at a time.
 | image       | No       | Set to `no` if you do not want the Apprise alert level being placed as the icon associated with the message.
 | call        | No       | Boolean-like input. Accepts `yes/no`, `true/false`, `1/0`, `+/-`. When enabled, payload includes `1`. |
 
-#### Example
+<!-- GLOBAL:SERVICE:PARAMS -->
+
+## Example
+
 Send a Bark notification to all devices associated with a project:
+
 ```bash
 # Assume:
 #  - our {hostname} is localhost

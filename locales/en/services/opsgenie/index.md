@@ -4,35 +4,41 @@ description: "Send opsgenie notifications."
 ---
 
 ## Opsgenie Notifications
-* **Source**: https://www.opsgenie.com
+
+* **Source**: <https://www.opsgenie.com>
 * **Icon Support**: No
 * **Message Format**: Text
 * **Message Limit**: 15000 Characters per Message
 
 ### Account Setup
-1. Visit https://www.opsgenie.com to create your account.
+
+1. Visit <https://www.opsgenie.com> to create your account.
 2. [Generate your Integration API Key](https://app.opsgenie.com/settings/integration/add/API/)
 
 **Note**: You must generate an Integration API Key; this is not to be confused with the Opsgenie Management API Key.
 
 ### Syntax
+
 The syntax is as follows:
--  `opsgenie://{apikey}/`
--  `opsgenie://{apikey}/@{user}`
--  `opsgenie://{apikey}/@{user1}/@{user2}/@{userN}`
--  `opsgenie://{apikey}/*{schedule}`
--  `opsgenie://{apikey}/*{schedule1}}/*{schedule2}/*{scheduleN}`
--  `opsgenie://{apikey}/^{escalation}`
--  `opsgenie://{apikey}/^{escalation1}/^{escalation2}/^{escalationN}`
--  `opsgenie://{apikey}/#{team}`
--  `opsgenie://{apikey}/#{team1}/#{team2}/#{teamN}`
+
+* `opsgenie://{apikey}/`
+* `opsgenie://{apikey}/@{user}`
+* `opsgenie://{apikey}/@{user1}/@{user2}/@{userN}`
+* `opsgenie://{apikey}/*{schedule}`
+* `opsgenie://{apikey}/*{schedule1}}/*{schedule2}/*{scheduleN}`
+* `opsgenie://{apikey}/^{escalation}`
+* `opsgenie://{apikey}/^{escalation1}/^{escalation2}/^{escalationN}`
+* `opsgenie://{apikey}/#{team}`
+* `opsgenie://{apikey}/#{team1}/#{team2}/#{teamN}`
 
 **Note:** If no prefix character is specified, then the target is presumed to be a user (an `@` symbol is presumed to be in front of it).
 
 You can also mix/match the targets:
-- `opsgenie://{apikey}/@{user}/#{team}/*{schedule}/^{escalation}`
+
+* `opsgenie://{apikey}/@{user}/#{team}/*{schedule}/^{escalation}`
 
 ### Parameter Breakdown
+
 | Variable    | Required | Description
 | ----------- | -------- | -----------
 | apikey      | Yes      | This is the API Key associated with your Opsgenie account.
@@ -48,7 +54,9 @@ You can also mix/match the targets:
 | entity      | No       | The entity to associate with the message.
 
 #### Example
+
 Send a Opsgenie notification to all devices associated with a project:
+
 ```bash
 # Assuming our {apikey} is a6k4ABnck26hDh8AA3EDHoOVdDEUlw3nty
 apprise -vv -t "Test Message Title" -b "Test Message Body" \
@@ -56,7 +64,9 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" \
 ```
 
 ### Include Details (Key/Value Pairs)
+
 Opsgenie allows you to provide details composed of key/value pairs you can set with messages. This can be accomplished by just sticking a plus symbol (**+**) in front of any parameter you specify on your URL string.
+
 ```bash
 # Below would set the key/value pair of foo=bar:
 # Assuming our {apikey} is a6k4ABnck26hDh8AA3EDHoOVdDEUlw3nty

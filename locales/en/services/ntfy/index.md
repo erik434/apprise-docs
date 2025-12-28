@@ -4,7 +4,8 @@ description: "Send Ntfy (Notify) notifications."
 ---
 
 ## Ntfy Notifications
-* **Source**: https://ntfy.sh/
+
+* **Source**: <https://ntfy.sh/>
 * **Icon Support**: No
 * **Attachment Support**: yes
 * **Message Format**: Text
@@ -13,11 +14,14 @@ description: "Send Ntfy (Notify) notifications."
 [Ntfy](https://ntfy.sh/) is a easy to use messaging service.
 
 ### Syntax
+
 Ntfy can send notifications through the following **modes**:
+
 * **private**: A locally hosted private server ([github source](https://github.com/binwiederhier/ntfy))
-* **cloud**: A setup pointing to https://ntfy.sh
+* **cloud**: A setup pointing to <https://ntfy.sh>
 
 Valid syntax is as follows:
+
 * `ntfy://{topic}`
 * `ntfy://{host}/{topic}`
 * `ntfy://{host}:{port}/{topics}`
@@ -28,6 +32,7 @@ Valid syntax is as follows:
 * `ntfy://{token}@{hostname}/{topics}`
 
 The secure versions:
+
 * `ntfys://{topic}`
 * `ntfys://{host}/{topic}`
 * `ntfys://{host}:{port}/{topics}`
@@ -38,17 +43,19 @@ The secure versions:
 * `ntfys://{token}@{hostname}/{topics}`
 
 You can specify more then 1 topic such as:
+
 * **ntfy**://**{user}**:**{password}**/**{hostname}**/**{topic1}**/**{topic2}**
 
 ### Parameter Breakdown
+
 | Variable    | Required | Description
 | ----------- | -------- | -----------
 | user        | *No     | The user account to perform the authentication with
 | password    | *No     | The password to perform the authentication with
-| hostname    | *No      | The ntfy server you're sending your notification to. 
+| hostname    | *No      | The ntfy server you're sending your notification to.
 | port        | No       | The port the ntfy server is listening on. By default the port is **80** for **ntfy://** and **443** for all **ntfys://** references.
-| topic      | Yes       | All notifications to a ntfy server MUST have at least one topic defined. 
-| token | No | This is detected, but can otherwise be explicitly specified as a parameter. 
+| topic      | Yes       | All notifications to a ntfy server MUST have at least one topic defined.
+| token | No | This is detected, but can otherwise be explicitly specified as a parameter.
 | mode       | No       | The authentication mode is automatically detected based what it parses from the URL provided.  You only need to set this if you feel it is being detected incorrectly.  The possible modes are **private** and **cloud** and are explained above.
 | auth | No | Can be set to either `basic` (default) or `token` . `basic` is for User/Password authentication with the Ntfy server while `token` assumes that the provided credentials was a Authorization Token and authenticates in a different fashion.
 | email      | No       | An email to associate the ntfy post with.
@@ -62,9 +69,10 @@ You can specify more then 1 topic such as:
 | image | No      | This defaults to 'Yes' and hauls in the image associated with the notification
 | avatar_url | No       | Optionally over-ride the Apprise Icon notifications and explicitly identify your own
 
-
 #### Example
+
 Send a ntfy notification to our server
+
 ```bash
 # Assuming our {hostname} is localhost
 # Assuming our {topic} is great-place
@@ -73,6 +81,7 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" \
 ```
 
 We can also send a notification to the ntfy.sh server:
+
 ```bash
 # Assuming our {topic} is great-place
 apprise -vv -t "Test Message Title" -b "Test Message Body" \
@@ -80,6 +89,7 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" \
 ```
 
 Ntfy also supports Markdown; if you want to leverage this, simply add `?format=markdown` to your Apprise URL; eg:
+
 ```bash
 # Assuming our {hostname} is localhost
 # Assuming our {topic} is great-place
@@ -89,6 +99,7 @@ apprise -vv -t "Test Message Title" -b "# Markdown Support" \
 ```
 
 If your Ntfy server is behind an HTTPS (Secure) hosted setup, then you simply use `ntfys://`:
+
 ```bash
 # Assuming our SECURE {hostname} is localhost
 # Assuming our {topic} is great-topic
@@ -97,6 +108,7 @@ apprise -vv -t "Test Secure Message Title" -b "Test Message Body" \
 ```
 
 Sends a ntfy message leveraging the `action=`
+
 ```bash
 apprise -vv -t "Title" -b "Message content" \
     ntfy://ntfy.selfhostedexample.com/mytopic?actions=view%2CGoogle%2Chttps://www.google.com%3Bview%2CBing%2Chttps://www.bing.com

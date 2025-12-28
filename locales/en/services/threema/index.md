@@ -4,35 +4,40 @@ description: "Send threema notifications."
 ---
 
 ## Threema Gateway Notifications
-* **Source**: https://gateway.threema.ch/
+
+* **Source**: <https://gateway.threema.ch/>
 * **Icon Support**: No
 * **Message Format**: Text
 * **Message Limit**: 3500 Characters per message
 
 ### Setup
+
 You need to set up a [Threema Gateway](https://gateway.threema.ch/) account first, which will allow you to request and access one or more 8-character Gateway IDs (each starting with an asterisk (`*`), e.g., `*THREEMA`).
 
 **Important**: Please make sure to request a "Basic" ID for now, as end-to-end encrypted Threema Gateway messages are not yet supported by Apprise. End-to-end Gateway IDs cannot be used for sending Simple Messages (encrypted on Threema Servers).
 
 ## Account Setup
-* Create your Threema Gateway account at https://gateway.threema.ch/, and confirm your e-mail address
+
+* Create your Threema Gateway account at <https://gateway.threema.ch/>, and confirm your e-mail address
 * For credits:
-     * Ask Threema Gateway support via e-mail (support-gateway at threema.ch) for test credits, and they will get you covered for some testing
-     * OR acquire them after logging into your Gateway account.
+  * Ask Threema Gateway support via e-mail (support-gateway at threema.ch) for test credits, and they will get you covered for some testing
+  * OR acquire them after logging into your Gateway account.
 * [Request](https://gateway.threema.ch/en/id-request?type=simple) your Simple Gateway ID. After a short review, Threema will then create your ID, and you will find the corresponding ID secret on the ID overview page. This usually takes no more than one or two business days.
 
 ### Syntax
+
 Valid syntax is as follows:
 
-- ```threema://{gateway_id}@{secret}/{user}```
-- ```threema://{gateway_id}@{secret}/{user1}/{user2}/{user3}/{userN}```
-- ```threema://{gateway_id}@{secret}/{email}```
-- ```threema://{gateway_id}@{secret}/{email1}/{email2}/{email3}/{emailN}```
-- ```threema://{gateway_id}@{secret}/{phone}```
-- ```threema://{gateway_id}@{secret}/{phone1}/{phone2}/{phone3}/{phoneN}```
+* ```threema://{gateway_id}@{secret}/{user}```
+* ```threema://{gateway_id}@{secret}/{user1}/{user2}/{user3}/{userN}```
+* ```threema://{gateway_id}@{secret}/{email}```
+* ```threema://{gateway_id}@{secret}/{email1}/{email2}/{email3}/{emailN}```
+* ```threema://{gateway_id}@{secret}/{phone}```
+* ```threema://{gateway_id}@{secret}/{phone1}/{phone2}/{phone3}/{phoneN}```
 
 You can also freely mix/match the variables:
-- ```threema://{gateway_id}@{secret}/{phone1}/{user1}/{email1}/...```
+
+* ```threema://{gateway_id}@{secret}/{phone1}/{user1}/{email1}/...```
 
 ### Parameter Breakdown
 
@@ -42,9 +47,10 @@ You can also freely mix/match the variables:
 | secret | Yes| The ID secret associated with your Gateway ID.  You may use `?secret=` as an alias to this variable. |
 | target | No| Specfiy the recipient Threema ID, e-mail address, or phone no.  There is no limit to the number of targets you may specify.  You may use `?to=` as an alias to this variable.|
 
-
 #### Example
+
 Send a Threema (Gateway) Simple Notification
+
 ```bash
 # Assume:
 #  - our {gateway_id} is *MYGWYID
@@ -55,6 +61,7 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" \
 ```
 
 Send a Threema (Gateway) Simple Notification to a Threema User by specifying their ID:
+
 ```bash
 # Assume:
 #  - our {gateway_id} is *MYGWYID

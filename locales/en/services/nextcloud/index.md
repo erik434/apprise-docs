@@ -4,18 +4,22 @@ description: "Send nextcloud notifications."
 ---
 
 ## Nextcloud Notifications
-* **Source**: https://nextcloud.com
+
+* **Source**: <https://nextcloud.com>
 * **Icon Support**: No
 * **Message Format**: Text
 * **Message Limit**: 4000 Characters per message
 
 ### Account Setup
+
 The official [Notifications app](https://github.com/nextcloud/notifications) will need to be installed.  An 'app password' (also referred to as 'device-specific' password/token) of the admin-user will need to be created, see the [documentation](https://docs.nextcloud.com/server/19/user_manual/session_management.html#device-specific-passwords-and-password-changes) for more information.  Don't forget to disable file system access for this password.  
 
 ### Syntax
+
 Secure connections (via https) should be referenced using **nclouds://** where as insecure connections (via http) should be referenced via **ncloud://**.
 
 Valid syntaxes are as follows:
+
 * `ncloud://{hostname}/{targets}`
 * `ncloud://{hostname}:{port}/{targets}`
 * `ncloud://{admin_user}:{password}@{hostname}/{targets}`
@@ -28,16 +32,19 @@ Valid syntaxes are as follows:
 Targets can either be a `user` or `@group`.
 
 You can notify more then one user by simply chaining them at the end of the URL.
+
 * `ncloud://{admin_user}:{password}@{hostname}/{notify_user1}/{notify_user2}/{notify_userN}`
 * `nclouds://{admin_user}:{password}@{hostname}/{notify_user1}/{notify_user2}/{notify_userN}`
 * `ncloud://{admin_user}:{password}@{hostname}/{notify_group1}/{notify_group2}/{notify_groupN}`
 * `nclouds://{admin_user}:{password}@{hostname}/{notify_group1}/{notify_group2}/{notify_groupN}`
 
 You can mix/match `@group` and `user` values as well:
+
 * `ncloud://{admin_user}:{password}@{hostname}/{notify_group1}/{notify_user1}`
 * `nclouds://{admin_user}:{password}@{hostname}/{notify_group1}/{notify_user1}`
 
 ### Parameter Breakdown
+
 | Variable    | Required | Description
 | ----------- | -------- | -----------
 | hostname    | Yes      | The hostname of the server hosting your Nextcloud service.
@@ -48,7 +55,9 @@ You can mix/match `@group` and `user` values as well:
 | version     | No       | NextCloud changed their API around with v21.  By default Apprise uses their latest API spec.  If you're using an older version, you can sent this value accordingly and Apprise will accommodate (switching back to the older API).
 
 #### Example
+
 Send a secure nextcloud notification to the user _chucknorris_:
+
 ```bash
 # Assuming our {host} is localhost
 # Assuming our {admin_user} is admin
@@ -57,7 +66,9 @@ apprise nclouds://admin:12345-67890-12345-67890-12345@localhost/chucknorris
 ```
 
 ### Header Manipulation
+
 Some users may require special HTTP headers to be present when they post their data to their server.  This can be accomplished by just sticking a hyphen (**-**) in front of any parameter you specify on your URL string.
+
 ```bash
 # Below would set the header:
 #    X-Token: abcdefg
@@ -89,26 +100,35 @@ apprise -t "Title" -b "Body" "ncloud://admin:12345-67890-12345-67890-12345@local
 ```
 
 Users:
+
 ```
 apprise -vv -t "Title" -b "Message" \
   "ncloud://admin:pass@host/user1/user2"
 ```
+
 Group:
+
 ```
 apprise -vv -t "Title" -b "Message" \
   "ncloud://admin:pass@host/#DevTeam"
 ```
+
 Everyone:
+
 ```
 apprise -vv -t "Title" -b "Message" \
   "ncloud://admin:pass@host/all"
 ```
+
 Mixed (deduplicated):
+
 ```
 apprise -vv -t "Title" -b "Message" \
   "ncloud://admin:pass@host/#DevTeam/user3/all"
 ```
+
 Sub-path:
+
 ```
 apprise -vv -t "Title" -b "Message" \
   "ncloud://admin:pass@host:8080/#Ops?url_prefix=/nextcloud"

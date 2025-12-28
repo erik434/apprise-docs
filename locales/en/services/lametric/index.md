@@ -4,56 +4,67 @@ description: "Send lametric notifications."
 ---
 
 ## LaMetric Time/Clock Notifications
-* **Source**: https://lametric.com
+
+* **Source**: <https://lametric.com>
 * **Icon Support**: Yes
 * **Message Format**: Text
 * **Message Limit**: 32768 Characters per message
 
 ## Setup
+
 You now have to methods of notifying your LaMetric Device:
+
 1. **Device Mode**: Directly query your LaMetric Device on your local network to send it a notification.
 2. **Cloud Mode**: A secure query to LaMetric's API server in the cloud to send a message to your clock.  You will have limited options with this method.
 
 #### Device Mode Setup
+
 With Device Mode, your Apprise query will directly interface with the LaMetric Time Device on your local network.
+
 1. Sign Up and login to the [Developer Webpage](https://developer.lametric.com).
-1.  Locate your Device **API Key**; you can find it [here](https://developer.lametric.com/user/devices):
-1.  You now need to know the IP address your device resides on. Your devices **IP Address** can be found in LaMetric Time app at: **Settings** -> **Wi-Fi** -> **IP Address**
+1. Locate your Device **API Key**; you can find it [here](https://developer.lametric.com/user/devices):
+1. You now need to know the IP address your device resides on. Your devices **IP Address** can be found in LaMetric Time app at: **Settings** -> **Wi-Fi** -> **IP Address**
 
 #### Cloud Mode Setup
 
 **Note**:  It appears that at some point in time Lametric dropped support and usage of their cloud mode.  While documented in their forums with screenshots and usage examples.  None of this seems to be available for the end user anymore to play/work with.  For those who still have access to their upstream servers can leverage this.  Alternatively those who use this Apprise plugin will need to focus on the normal Device Mode (explained above) instead.
 
 Using Cloud Mode, you will interface with your LaMetric Time device through the internet.
+
 1. Sign Up and login to the [Developer Webpage](https://developer.lametric.com).
 2. Create a **Indicator App** if you haven't already done so from [here](https://developer.lametric.com/applications/sources).
-   - There is a great official tutorial on how to do this [here](https://lametric-documentation.readthedocs.io/en/latest/guides/first-steps/first-lametric-indicator-app.html#publish-app-and-install-it-to-your-lametric-time)
+   * There is a great official tutorial on how to do this [here](https://lametric-documentation.readthedocs.io/en/latest/guides/first-steps/first-lametric-indicator-app.html#publish-app-and-install-it-to-your-lametric-time)
 3. Make sure to set the **Communication Type** to **PUSH**
 4. You will be able to **Publish** your app once you've finished setting it up.  This will allow it to be accessible from the internet using the `cloud` mode of this Apprise Plugin. The **Publish** button shows up from within the settings of your Lametric App upon clicking on the **Draft Vx** folder (where `x` is the version - usually a 1)
 
 5. When you've completed the above steps, the site would have provided you a **PUSH URL** that looks like this:
-   - `https://developer.lametric.com/api/v1/dev/widget/update/com.lametric.{app_id}/{app_ver}`
+   * `https://developer.lametric.com/api/v1/dev/widget/update/com.lametric.{app_id}/{app_ver}`
 
    You will need to record the `{app_id}` and `{app_ver}` to use the `cloud` mode.
 
    The same page should also provide you with an Application **Access Token**.  It's approximately 86 characters with two equal (`=`) characters at the end of it. This becomes your `{app_access_token}`. Here is an example of what one might look like:
-   - `K2MxWI0NzU0ZmI2NjJlZYTgViMDgDRiN8YjlmZjRmNTc4NDVhJzk0RiNjNh0EyKWW==`
+   * `K2MxWI0NzU0ZmI2NjJlZYTgViMDgDRiN8YjlmZjRmNTc4NDVhJzk0RiNjNh0EyKWW==`
 
 ### Syntax
+
 Device Mode syntaxes are as follows:
+
 * `lametric://{apikey}@{hostname}`
 * `lametric://{apikey}@{hostname}:{port}`
 * `lametric://{userid}:{apikey}@{hostname}`
 * `lametric://{userid}:{apikey}@{hostname}:{port}`
 
 Cloud Mode syntax is as follows:
+
 * `lametric://{app_access_token}@{app_id}`
 * `lametric://{app_access_token}@{app_id}/{app_version}`
 
 ### Parameter Breakdown
-The breakdown of parameters depend on whether you are using the Cloud Mode or Device Mode. 
+
+The breakdown of parameters depend on whether you are using the Cloud Mode or Device Mode.
 
 #### Device Mode
+
 | Variable    | Required | Description
 | ----------- | -------- | -----------
 | apikey      | Yes      | Your Device **API Key** can be found on LaMetric's website [here](https://developer.lametric.com/user/devices)
@@ -67,6 +78,7 @@ The breakdown of parameters depend on whether you are using the Cloud Mode or De
 | icon_type  | No       | Represents the nature of notification; the possible values are `info`, `alert`, and `none`. By default `none` is used if nothing is specified.
 
 #### Cloud Mode
+
 | Variable    | Required | Description
 | ----------- | -------- | -----------
 | app_id      | Yes   | Your Indicator App's **Application ID** can be found in your *Indicator App Configuration**. You can access your application's configuration from the LaMetric's website [here](https://developer.lametric.com/applications/).
@@ -75,7 +87,9 @@ The breakdown of parameters depend on whether you are using the Cloud Mode or De
 | mode        | No       | Define the Apprise/Lametric mode to use.  This can be either set to `cloud` or `device`.  It's worth pointing out that Apprise is smart enough to detect the mode you're using based on the URL you provide it. But for those who want to explicitly provide it's value, they can do so.
 
 #### Example
+
 Send a LaMetric Time notification using Device Mode (local to our network):
+
 ```bash
 # Assuming our {apikey} is abc123
 # Assuming our {hostname} is 192.168.1.3
@@ -83,6 +97,7 @@ apprise -vv -b "Test Message Body" lametric://abc123@192.168.1.3
 ```
 
 Send a LaMetric Time notification using Cloud Mode (using LaMetrics Developer API):
+
 ```bash
 # Assuming our {app_id} ABCD1234
 # Assuming our {app_access_token} is abcdefg==

@@ -4,7 +4,8 @@ description: "Send notificationapi notifications."
 ---
 
 ## NotificationAPI Notifications
-* **Source**: https://www.notificationapi.com
+
+* **Source**: <https://www.notificationapi.com>
 * **Icon Support**: Yes
 * **Message Format**: Plain Text and HTML
 * **Message Limit**: Varies by channel
@@ -17,28 +18,30 @@ NotificationAPI lets you trigger email, SMS, calls, push, and in‑app notificat
 2. In the dashboard, locate your **clientId** and **clientSecret** under *Environments*.
 3. Create or identify the **notification type** you want to trigger (for example, `order_tracking`).
 4. Make sure your recipients have the correct identifiers:
-   - **Email** notifications require an email address on the `to` object.
-   - **SMS** notifications require a phone number in **E.164** format, for example `+15005550006`.
-   - You can also address users by a NotificationAPI **user id**.
+   * **Email** notifications require an email address on the `to` object.
+   * **SMS** notifications require a phone number in **E.164** format, for example `+15005550006`.
+   * You can also address users by a NotificationAPI **user id**.
 5. If you are hosted outside the US, note your region’s API host (US default, CA, or EU).
 
 #### Syntax
 
 Valid URL forms:
 
-- `napi://{ClientID}/{ClientSecret}/{Target}`  
-- `napi://{Type}@{ClientID}/{ClientSecret}/{Target}`  
-- `notificationapi://{...}` (alias of `napi://`)
+* `napi://{ClientID}/{ClientSecret}/{Target}`  
+* `napi://{Type}@{ClientID}/{ClientSecret}/{Target}`  
+* `notificationapi://{...}` (alias of `napi://`)
 
 **Targets** can be combined in a single path and are grouped by a leading **id**. Each `{Target}` segment may be:  
-- a user id (`userid` or `@userid`)  
-- an email (`name@example.com`)  
-- an E.164 phone number (`+15551234567`)
+
+* a user id (`userid` or `@userid`)  
+* an email (`name@example.com`)  
+* an E.164 phone number (`+15551234567`)
 
 Examples of grouped targets:
-- `userid/test@example.com` → id + email  
-- `userid/+15551234567` → id + SMS  
-- `userid/+15551234567/test@example.com` → id + SMS + email
+
+* `userid/test@example.com` → id + email  
+* `userid/+15551234567` → id + SMS  
+* `userid/+15551234567/test@example.com` → id + SMS + email
 
 ### Parameter Breakdown
 
@@ -58,7 +61,7 @@ Examples of grouped targets:
 
 \* Required when not already set in the URL path component.
 
-###  NotificationAPI Default Parameters
+### NotificationAPI Default Parameters
 
 Each NotificationAPI request sent through Apprise includes the following default parameters:
 
@@ -80,47 +83,56 @@ These defaults are common across all Apprise plugins, in addition to the service
 ### Examples
 
 Send to one email recipient by type and let NotificationAPI pick the channel:
+
 ```bash
 apprise -vv -t "Order Update" -b "Your order shipped."   napi://order_tracking@CLIENT_ID/CLIENT_SECRET/id/user@example.com
 ```
 
 Send the same notification to multiple recipients using path segments:
+
 ```bash
 apprise -vv -t "Status" -b "Processing complete."   napi://order_tracking@CLIENT_ID/CLIENT_SECRET/\
      id/user@example.com/+15552341234/alice_123
 ```
 
 Force the SMS channel and set the region to Canada:
+
 ```bash
 apprise -vv -t "Code" -b "Your verification code is 123456"   'napi://order_tracking@CLIENT_ID/CLIENT_SECRET/id/+16475550123?channel=sms&region=ca'
 ```
 
 Set *From*, CC and BCC for an email:
+
 ```bash
 apprise -vv -t "Release" -b "v2.0.1 is live."   'napi://release_note@CLIENT_ID/CLIENT_SECRET/id/dev@example.ca?from=Dev%20Team&cc=qa@example.ca&bcc=ops@example.ca'
 ```
 
 Pass dynamic template tokens that your NotificationAPI template references:
+
 ```bash
 apprise -vv -t "Order" -b " "   'napi://order_tracking@CLIENT_ID/CLIENT_SECRET/user@example.com?:orderId=12345&:status=shipped'
 ```
 
 Use a query‑only form, handy in YAML:
+
 ```bash
 apprise -vv -t "Hello" -b "Hi there"   'napi://?id=CLIENT_ID&secret=CLIENT_SECRET&type=greeting&to=id,user@example.com'
 ```
 
 Minimal (id + email):
+
 ```bash
 apprise -vv -t "Welcome" -b "Hello from Apprise"   "napi://welcome_email@CID/SECRET/user123/test@example.com"
 ```
 
 EU region + token substitutions
+
 ```bash
 apprise -vv -b "<b>Your order shipped!</b>" --format=html   "napi://order_update@CID/SECRET/user123/test@example.com?region=eu&:firstName=Chris&:trackingUrl=https://t.example/ABC123"
 ```
 
 Setting From / CC / BCC / Reply‑To (email)
+
 ```bash
 apprise -vv -b "Body"   "napi://newsletter@CID/SECRET/user123/test@example.com?from=Team<team@example.com>&cc=dev@example.com&bcc=ops@example.com&reply=help@example.com"
 ```

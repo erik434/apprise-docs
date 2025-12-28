@@ -4,18 +4,22 @@ description: "Send xmpp notifications."
 ---
 
 ## XMPP Notifications
-* **Source**: https://xmpp.org/
+
+* **Source**: <https://xmpp.org/>
 * **Icon Support**: No
 * **Message Format**: Text
 * **Message Limit**: 32768 Characters per message
 
 XMPP Support requires **sleekxmpp** to work:
+
 ```bash
 pip install sleekxmpp
 ```
 
 ### Syntax
+
 Valid syntaxes are as follows:
+
 * `xmpp://{user}/{password}@{hostname}`
 * `xmpps://{user}/{password}@{hostname}`
 * `xmpp://{user}/{password}@{hostname}/{jid}`
@@ -24,6 +28,7 @@ Valid syntaxes are as follows:
 Secure connections should be referenced using **xmpps://** where as insecure connections should be referenced via **xmpp://**.
 
 ### Parameter Breakdown
+
 | Variable    | Required | Description
 | ----------- | -------- | -----------
 | hostname    | Yes      | The server XMPP is listening on.
@@ -35,7 +40,9 @@ Secure connections should be referenced using **xmpps://** where as insecure con
 | to          | No       | The JID to notify
 
 #### Example
+
 Send a XMPP notification to our server listening on port 5223:
+
 ```bash
 # Assuming the xmpp {hostname} is localhost
 # Assuming the jid is user@localhost

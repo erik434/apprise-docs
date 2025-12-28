@@ -1,25 +1,30 @@
 ---
 title: "Discord Notifications"
-description: "Send Discord Notifications."
+description: "Send Discord notifications."
 sidebar:
   label: "Discord"
 
-# Apprise Service Details
 source: https://discordapp.com/
 group: "social"
 schemas:
-   - discord
+  - discord
+
+sample_urls:
+  - https://discordapp.com/api/webhooks/{WebhookID}/{WebhookToken}
+  - discord://{WebhookID}/{WebhookToken}/
+  - discord://{botname}@{WebhookID}/{WebhookToken}/
+
 has_attachments: true
 has_image: true
+
 limits:
-  - name: "Body"
-    max_chars: 2000
+  max_chars: 2000
 ---
 
 <!-- SERVICE:DETAILS -->
 
-
 ## Account Setup
+
 Creating a Discord account is easy.  The only part that requires a little bit of extra work is once you've got a channel set up (by default discord puts you in a #General channel).  Click on the Gear icon (Settings) and from here you need to enable webhooks.
 
 The webhook will end up looking something like this:
@@ -31,30 +36,37 @@ This effectively equates to:
 **Note:** Apprise supports this URL _as-is_ (_as of v0.7.7_); you no longer need to parse the URL any further.  However there is slightly less overhead (internally) if you do.
 
 The last part of the URL you're given make up the 2 tokens you need to send notifications with.  With respect to the above example the tokens are as follows:
+
 1. **WebhookID** is ```4174216298```
 2. **WebhookToken** is ```JHMHI8qBe7bk2ZwO5U711o3dV_js```
 
 ### Pinging Roles, Tags, and Users
+
 The discord message body can contain content such as the following to trigger the appropriate pings
--  **user**: `<@123>`
--  **role**: `<@&456>`
--  **tag**: `@everyone`
+
+- **user**: `<@123>`
+- **role**: `<@&456>`
+- **tag**: `@everyone`
 
 ## Syntax
+
 Valid syntax is as follows:
-* `https://discordapp.com/api/webhooks/{WebhookID}/{WebhookToken}`
-* `discord://{WebhookID}/{WebhookToken}/`
-* `discord://{botname}@{WebhookID}/{WebhookToken}/`
+
+- `https://discordapp.com/api/webhooks/{WebhookID}/{WebhookToken}`
+- `discord://{WebhookID}/{WebhookToken}/`
+- `discord://{botname}@{WebhookID}/{WebhookToken}/`
 
 Discord can also support a variety of website arguments, the below identifies the defaults and therefore do not need to be specified unless you want to override them:
-* `discord://{WebhookID}/{WebhookToken}/?tts=No&avatar=Yes&footer=No&image=Yes`
+
+- `discord://{WebhookID}/{WebhookToken}/?tts=No&avatar=Yes&footer=No&image=Yes`
 
 ## Parameter Breakdown
+
 | Variable    | Required | Description
 | ----------- | -------- | -----------
-| WebhookID   | Yes      | The first part of 2 tokens provided to you after creating a *incoming-webhook*
-| WebhookToken| Yes      | The second part of 2 tokens provided to you after creating a *incoming-webhook*
-| botname     | No       | Identify the name of the bot that should issue the message.  If one isn't specified then the default is to just use your account (associated with the *incoming-webhook*).
+| WebhookID   | Yes      | The first part of 2 tokens provided to you after creating a _incoming-webhook_
+| WebhookToken| Yes      | The second part of 2 tokens provided to you after creating a _incoming-webhook_
+| botname     | No       | Identify the name of the bot that should issue the message.  If one isn't specified then the default is to just use your account (associated with the _incoming-webhook_).
 | tts         | No       | Enable Text-To-Speech (by default is is set to **No**)
 | footer      | No       | Include a message footer (by default is is set to **No**)
 | image       | No       | Include an image in-line with the message describing the notification type (by default is is set to **Yes**)
@@ -68,7 +80,9 @@ Discord can also support a variety of website arguments, the below identifies th
 <!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Example
-Send a discord notification:
+
+Send a Discord notification:
+
 ```bash
 # Assuming our {WebhookID} is 4174216298
 # Assuming our {WebhookToken} is JHMHI8qBe7bk2ZwO5U711o3dV_js
@@ -77,6 +91,7 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" \
 ```
 
 If you want to have your own custom avatar URL you're already hosting from another website, you could set the following:
+
 ```bash
 # Assuming our {WebhookID} is 4174216298
 # Assuming our {WebhookToken} is JHMHI8qBe7bk2ZwO5U711o3dV_js
@@ -84,7 +99,9 @@ If you want to have your own custom avatar URL you're already hosting from anoth
 apprise -vv -t "Test Message Title" -b "Test Message Body" \
    "discord://4174216298/JHMHI8qBe7bk2ZwO5U711o3dV_js?avatar_url=https://i.imgur.com/FsEpmwg.jpeg"
 ```
+
 Send a notification that notifies `@everyone` in the channel:
+
 ```bash
 # Assuming our {WebhookID} is 4174216298
 # Assuming our {WebhookToken} is JHMHI8qBe7bk2ZwO5U711o3dV_js
@@ -93,6 +110,7 @@ apprise -vv -t "Hello All" -b "Test Message that pings @everyone" \
 ```
 
 Send a notification that leverages the built in `markdown` support of Discord:
+
 ```bash
 # Assuming our {WebhookID} is 4174216298
 # Assuming our {WebhookToken} is JHMHI8qBe7bk2ZwO5U711o3dV_js

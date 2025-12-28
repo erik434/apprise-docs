@@ -3,7 +3,7 @@ title: "burst_sms Notifications"
 description: "Send burst_sms notifications."
 ---
 
-* **Source**: https://burstsms.com/
+* **Source**: <https://burstsms.com/>
 * **Icon Support**: No
 * **Attachment Support**: No
 * **Message Format**: Text
@@ -14,22 +14,27 @@ You need to have an account with [Burst SMS](https://burstsms.com/). Visit your 
 Burst SMS will set you up with a Sender ID that you're notifications will originate from.  This must be provided as part of the Apprise URL as well.
 
 ### Syntax
+
 The syntax is as follows
+
 * `burstsms://{api_key}:{secret}@{sender_id}/{targets}`
 
 ### Parameter Breakdown
+
 | Variable    | Required | Description
 | ----------- | -------- | -----------
 | api_key | Yes      | This is the **API Key** associated with your Bulk SMS Account
 | secret | Yes      | This is the **Client Secret** associated with your Bulk SMS Account
-| sender_id | Yes      | This is the **Phone Number** associated with your Bulk SMS  Account. 
+| sender_id | Yes      | This is the **Phone Number** associated with your Bulk SMS  Account.
 | targets | Yes | Optionally identify the phone numbers you wish to send your **SMS** Message to.  |
 | country | No      | Optionally specify the `countrycode` which is either `en`, `gb`, `au` or `nz`. By default this is set to `us`
 | validity | No       | Optionally define how long an unsent SMS message is valid for (and will be attempted to be resent).  By default this is set to zero (0) for the maximum amount of validity.  This value is defined in minutes.
 | batch | No       | Optionally send notifications in a batch (vs individually).  By default this is set to `No`.
 
 #### Example
+
 Send a Burst SMS Notification:
+
 ```bash
 # Assuming our {APIKey} is bc1451bd
 # Assuming our {APISecret} is gank339l7jk3cjaE

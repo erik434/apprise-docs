@@ -4,15 +4,17 @@ description: "Send ifttt notifications."
 ---
 
 ## IFTTT (If This Than That) Notifications
-* **Source**: https://ifttt.com/
+
+* **Source**: <https://ifttt.com/>
 * **Icon Support**: No
 * **Message Format**: Text
 * **Message Limit**: 32768 Characters per message
 
 ### Account Setup
+
 Creating a IFTTT account is easy.  Visit there website and create your free account.
 
-Once you're hooked up, you'll want to visit [this URL](https://ifttt.com/services/maker_webhooks/settings) on Webhooks.  This will be the gateway Apprise will use to signal any Applets you create.  When you visit this page it will give you your API key in the form of a URL. 
+Once you're hooked up, you'll want to visit [this URL](https://ifttt.com/services/maker_webhooks/settings) on Webhooks.  This will be the gateway Apprise will use to signal any Applets you create.  When you visit this page it will give you your API key in the form of a URL.
 
 The URL might something like this:
 ```https://maker.ifttt.com/use/b1lUk7b9LpGakJARKBwRIZ```
@@ -25,7 +27,9 @@ In the above example the **WebhookID** is ```b1lUk7b9LpGakJARKBwRIZ```. You will
 **Note:** Apprise supports this URL _as-is_ (_as of v0.7.7_); you no longer need to parse the URL any further.  However there is slightly less overhead (internally) if you do.
 
 ### Syntax
+
 Valid syntaxes are as follows:
+
 * `https://maker.ifttt.com/use/{WebhookID}`
 * **ifttt**://**{WebhookID}**@**{Event}**/
 * **ifttt**://**{WebhookID}**@**{Event1}**/**{Event2}**/**{EventN}**/
@@ -33,11 +37,13 @@ Valid syntaxes are as follows:
 * **ifttt**://**{WebhookID}**@**{Event}**/**?-value3**
 
 By default these are the the assign default template entries:
+
 * **{value1}** : The **title** will go here
 * **{value2}** : The **body** will go here
 * **{value3}** : The **message type** will go here (it will read either _info_, _warning_, _critical_, or _success_)
 
 ### Parameter Breakdown
+
 | Variable    | Required | Description
 | ----------- | -------- | -----------
 | WebhookID   | Yes      | Your webhooks API Key you got from [the settings area of the webhooks service itself](https://ifttt.com/services/maker_webhooks)
@@ -46,7 +52,9 @@ By default these are the the assign default template entries:
 | -Arg        | No       | This is useful if you want to eliminate one of the pre-defined arguments discussed below.  You might want to include **?-value1&-value2** to just pass **value3** in the payload. It's very important that your argument starts with a hyphen/minus (**-**) symbol in order to use this option. As mentioned above, your payload will ALWAYS include **value1**, **value2**, and **value3** in it unless you specify otherwise.
 
 #### Examples
+
 Send a IFTTT notification:
+
 ```bash
 # Assuming our {WebhookID} is b1lUk7b9LpGakJARKBwRIZ
 # Assuming our {Event} is sms_message
@@ -58,6 +66,7 @@ apprise -vv -t "My Title" -b "My Value" \
 ```
 
 Now I realize not everyone will want to use the default **{valueX}** entries defined.  In fact, you may want to just use apprise to turn on a light switch and set some complete different value like **{switch}** to '_on_'.   Here is how you could accomplish this:
+
 ```
 # Send {switch} a value of 'on'
 # Assuming our {WebhookID} is b1lUk7b9LpGakJARKBwRIZ

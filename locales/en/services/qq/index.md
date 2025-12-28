@@ -4,7 +4,8 @@ description: "Send qq notifications."
 ---
 
 ## QQ Push Notifications
-* **Source**: https://github.com/songquanpeng/message-pusher
+
+* **Source**: <https://github.com/songquanpeng/message-pusher>
 * **Icon Support**: No
 * **Message Format**: Plain Text
 * **Message Limit**: ~10,000 Characters
@@ -30,9 +31,10 @@ You can use the full native webhook or a simplified Apprise URL.
 ### Syntax
 
 Valid syntax is as follows:
-- `https://qmsg.zendee.cn/send/{token}`
-- `qq://{token}`
-- `qq://?token={token}`
+
+* `https://qmsg.zendee.cn/send/{token}`
+* `qq://{token}`
+* `qq://?token={token}`
 
 ### Parameter Breakdown
 
@@ -43,18 +45,21 @@ Valid syntax is as follows:
 ### Examples
 
 #### 1. Using the simplified Apprise URL
+
 ```bash
 apprise -vv -t "QQ Title" -b "Message content" \
     qq://abc123def456ghi789jkl012mno345pq
 ```
 
 #### 2. Using the query parameter form
+
 ```bash
 apprise -vv -t "QQ Title" -b "Message content" \
     qq://?token=abc123def456ghi789jkl012mno345pq
 ```
 
 #### 3. Using the native webhook URL
+
 ```bash
 apprise -vv -t "QQ Title" -b "Message content" \
     https://qmsg.zendee.cn/send/abc123def456ghi789jkl012mno345pq

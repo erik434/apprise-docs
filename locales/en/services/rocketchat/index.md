@@ -4,20 +4,25 @@ description: "Send rocketchat notifications."
 ---
 
 ## Rocket.Chat Notifications
-* **Source**: https://rocket.chat/
+
+* **Source**: <https://rocket.chat/>
 * **Icon Support**: Yes
 * **Message Format**: Text
 * **Message Limit**: 1000 Characters per Message
 
 ### Syntax
+
 Rocket.Chat can send notifications through the following **modes**:
+
 * **webhook**: A configured Incoming Webhook; this can be set up in the **Administration** area under **Integrations** heading.
 * **basic**: A user/password combination.
 
 Secure connections (via https) should be referenced using **rockets://** where as insecure connections (via http) should be referenced via **rocket://**.
 
 #### Basic Mode
+
 Valid syntax is as follows:
+
 * `rocket://{user}:{password}@{hostname}/#{channel}`
 * `rocket://{user}:{password}@{hostname}:{port}/#{channel}`
 * `rocket://{user}:{password}@{hostname}/{room_id}`
@@ -30,12 +35,15 @@ Valid syntax is as follows:
 **Note:** the `?avatar=yes` option will only work if your user has the `bot` permission setting.
 
 You can also form any combination of the above and perform updates from one url:
+
 * **rocket**://**{user}**:**{password}**@**{hostname}**/#**{channel_id}**/**{room_id}**
 
 For the Basic Mode Only: if neither a **{room_id}** or **#{channel}** is specified then this notification will fail.
 
 #### Webhook Mode
+
 Valid syntax is as follows:
+
 * `rocket://{webhook}@{hostname}/#{channel}`
 * `rocket://{webhook}@{hostname}/{room_id}`
 * `rocket://{webhook}@{hostname}/{@user}`
@@ -45,15 +53,19 @@ Valid syntax is as follows:
 * `rockets://{webhook}@{hostname}:{port}/{room_id}`
 
 You can also form any combination of the above and perform updates from one url:
+
 * **rocket**://**{webhook}**@**{hostname}**:**{port}**/#**{channel_id}**/**{room_id}**/**@{user}**
 
 By default a webhook is set up to be associated with a channel.  Thus the following syntax is also valid:
+
 * **rocket**://**{webhook}**@**{hostname}**/
 
 **Note:** Some webhooks have slashes in them.  For these you need to make sure you escape the slash (`/`) with `%2F`.  So your URL may look like:
+
 * `rocket://abcd%2F12345@{hostname}/` - Note the `%2F` (to swap out for `/` found in webhook)
 
 ### Parameter Breakdown
+
 | Variable    | Required | Description
 | ----------- | -------- | -----------
 | user        | *Yes     | The user identifier you've associated with your Rocket.Chat server. This is only required if you are not providing a **webhook** instead.  This can be optionally combined with the **webhook** if you wish to over-ride the bot name.
@@ -68,7 +80,9 @@ By default a webhook is set up to be associated with a channel.  Thus the follow
 | avatar     | No      | Override the default avatar associated with the message to match that of the notification type (be that of a Warning, Error, Info, etc).  By default this is set to **No** for **basic** mode and **Yes** for **webhook** mode.
 
 #### Example
+
 Send a Rocket.Chat notification to the channel *#nuxref*:
+
 ```bash
 # Assuming our {user} is l2g
 # Assuming our {password} is awes0m3!

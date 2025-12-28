@@ -4,6 +4,7 @@ description: "Send enigma2 notifications."
 ---
 
 ## Enimga2 Device Notifications
+
 * **Source**: n/a
 * **Icon Support**: No
 * **Message Format**: XML
@@ -16,7 +17,9 @@ Once [OpenWebif](https://github.com/E2OpenPlugins/e2openplugin-OpenWebif) is ins
 Installation instructions on how to install OpenWebif onto your Engima2 device can be found on it's [GitHub Page](https://github.com/E2OpenPlugins/e2openplugin-OpenWebif).
 
 ### Syntax
+
 Valid syntax is as follows:
+
 * `enigma2://{host}`
 * `enigma2://{host}/{fullpath}`
 * `enigma2://{host}:{port}`
@@ -43,6 +46,7 @@ Valid syntax is as follows:
 * `enigma2s://{user}:{password}@{host}:{port}/{fullpath}`
 
 ### Parameter Breakdown
+
 | Variable    | Required | Description
 | ----------- | -------- | -----------
 | hostname    | Yes      | The Enigma2 devices IP/hostname
@@ -53,7 +57,9 @@ Valid syntax is as follows:
 | fullpath    | No       | Those hosting this internally may wish to specify the (prefix) path their service is listening on.
 
 #### Example
+
 Send an notification to our Enigma2 Device:
+
 ```bash
 # Assuming our {hostname} is dreambox
 apprise -vv -t "Test Message Title" -b "Test Message Body" \
@@ -69,7 +75,9 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" \
 ```
 
 ### Header Manipulation
+
 Some users may require special HTTP headers to be present when they post their data to their server.  This can be accomplished by just sticking a hyphen (**-**) in front of any parameter you specify on your URL string.
+
 ```bash
 # Below would set the header:
 #    X-Token: abcdefg

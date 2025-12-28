@@ -4,29 +4,33 @@ description: "Send mastodon notifications."
 ---
 
 ## Mastodon Notifications
-* **Source**: https://joinmastodon.org
+
+* **Source**: <https://joinmastodon.org>
 * **Attachment Support**: Yes
 * **Icon Support**: No
 * **Message Format**: Text
 * **Message Limit**: 500
 
 ### Account Setup
+
 Sign up for any Mastodon based service. [Here are a few you can choose from today](https://joinmastodon.org/servers).
 
 In the **Settings** of your account, you can access the **Development** tab and create an **Application**. This is what Apprise will use to send your notifications.
 
 At the bare minimum you need to grant the following scopes on your application:
 
-- `write:statuses`: So Apprise can post a message
-- `write:media`: So Apprise can send an attachment
-- `read:accounts`: If you want to be able to send a DM to yourself 
+* `write:statuses`: So Apprise can post a message
+* `write:media`: So Apprise can send an attachment
+* `read:accounts`: If you want to be able to send a DM to yourself
 
 **Note**: If you change/add/remove scope entries associated with your Mastodon Application, you **MUST** regenerate your **Access Token** or your app will not take in effect the scope changes.
 
 After you create your Application, revisit it's configuration as it will now provide you with a `key`, `secret`, and `access_token`.  You ONLY need the **Access Token** to have Apprise work.
- 
+
 ### Syntax
+
 Valid syntax is as follows:
+
 * `mastodon://{token}@{host}`
 * `mastodons://{token}@{host}`
 * `toot://{token}@{host}`
@@ -39,6 +43,7 @@ Valid syntax is as follows:
 Simply use `mastodon://` or `toot://` if access in an insecure server and `mastodons://` or `toots://` if accessing a secure one (https).
 
 ### Parameter Breakdown
+
 | Variable        | Required | Description
 | --------------- | -------- | -----------
 | token     | Yes      | The Access Token associated with the Application you created (in Mastodon's Account Settings).  Your token MUST have at the bare minimum `write:statuses` access.  Additionally provide `write:media` if you intend to provide attachments.
@@ -50,18 +55,22 @@ Simply use `mastodon://` or `toot://` if access in an insecure server and `masto
 | key            | No       | Prevent duplicate submissions of the same status. Idempotency keys are stored for up to 1 hour, and can be any arbitrary string. Consider using a hash or UUID generated client-side.
 
 ### Smart Processing
+
 With Mastodon, routing of `direct` messages entirely depends on the `@users` identified in the message body. For this reason it's possible to post a status message like:
+
 ```bash
 apprise -b "Hey guys, this message was sent from Apprise" \
    "mastodon://accesskey/host/@caronc?visibility=direct"
 ```
 
 This will cause the message body to be created as
+
 ```
 Hey guys, this message was sent from Apprise @caronc 
 ```
 
 It's important to state that if you identify `/@users` entries on your Apprise URL, they will be appended into the message so they are notified. However, that said, if you prepare a URL for `direct` visibility and do not provide a user. Apprise will look up your own credentials automatically and send the message to yourself.
+
 ```
 # Here is an example where we're specifying a `direct` message
 # as our intentions are to create a DM.  This will cause Apprise to look
@@ -77,11 +86,14 @@ apprise -b "Hey guys, this message was sent from Apprise" \
 ```
 
 Apprise is also smart enough to pre-scan the message being posted and if it finds a `@user` identified in the body that is also identified in the URL, it will NOT be added to the end of the body. Hence; consider a status message that reads:
+
 ```bash
 apprise -b "Hey @caronc, Thanks for showing me the Apprise plugin!" \
    "mastodon://accesskey/host/@caronc?visibility=direct"
 ```
+
 In the above case, `@caronc` is identified as both a target to be delivered to AND also already exists in the status message being sent. As a result, no `@caronc` will be appended at the end and the message will be sent as is.
+
 ```
 Hey @caronc, Thanks for showing me the Apprise plugin!
 ```
@@ -89,17 +101,22 @@ Hey @caronc, Thanks for showing me the Apprise plugin!
 Let's do one more example just to show other cases:
 
 Consider the following:
+
 ```bash
 apprise -b "Hey @caronc, Thanks for showing me the Apprise plugin!" \
    "mastodon://accesskey/host/@caronc/@joe/@sam?visibility=direct"
 ```
+
 The following has 3 people set up as targets, but it has already identified 1 of them in the message.  The other 2 are automatically appended to the end of your status message:
+
 ```
 Hey @caronc, Thanks for showing me the Apprise plugin! @joe @sam
 ```
 
 #### Example
+
 Send a Mastodon toot:
+
 ```bash
 # Assuming our {AccessKey} is T1JJ3T3L2
 # Assuming our {Host} is noc.social
@@ -108,6 +125,7 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" \
 ```
 
 Send a Mastodon DM to `@testaccount`:
+
 ```bash
 # Assuming our {AccessKey} is T1JJ3T3L2
 # Assuming our {Host} is noc.social
@@ -117,10 +135,10 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" \
 ```
 
 Send a Mastodon DM to ourselves using the built in smart-detection:
+
 ```bash
 # Assuming our {AccessKey} is T1JJ3T3L2
 # Assuming our {Host} is noc.social
 apprise -vv -t "Test Message Title" -b "Test Message Body" \
    "mastodons://T1JJ3T3L2@noc.social/?visibility=direct"
 ```
-

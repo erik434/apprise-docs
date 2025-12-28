@@ -4,12 +4,14 @@ description: "Send streamlabs notifications."
 ---
 
 ## Streamlabs Notifications
-* **Source**: https://streamlabs.com/
+
+* **Source**: <https://streamlabs.com/>
 * **Icon Support**: Yes
 * **Message Format**: Text
 * **Message Limit**: 32768 Characters per message
 
 ### Account Setup
+
 The process to get signed up with Streamlabs is a bit lengthy.  
 
 **Note:** The screenshots and instructions below are 100% full credit to the **[LNBits Project](https://github.com/Fittiboy/lnbits)** ([found here](https://github.com/Fittiboy/lnbits/tree/master/lnbits/extensions/streamalerts#stream-alerts)).
@@ -34,27 +36,35 @@ copy the url param code that is specified in the browser url bar
 `http://localhost/?code=<YOURCODE>`
 1. Generate an access token using your code generated in the last step, your Client ID, and your Secret
 Open a terminal and make a request to generate an access token that Apprise will utilize
+
 ```bash
 curl --request POST --url 'https://streamlabs.com/api/v1.0/token' -d  'grant_type=authorization_code&code=<YOURCODE>&client_id=<YOURCLIENTID>&client_secret=<YOURSECRET>&redirect_uri=http%3A%2F%2Flocalhost'
 ```
+
 ``
 Similar JSON should be returned
 `{"access_token":<YOURACCESSTOKEN>,"token_type":"Bearer","expires_in":3600,"refresh_token":""}`
 Note that the access token does not expire
+
 1. Now copy and paste your access token to build the streamlabs url
 `strmlabs://<YOURACCESSTOKEN>/?call=DONATIONS`
 
 ### Syntax
+
 Valid syntax is as follows:
+
 * `strmlabs://{access_token}/`
 
 ### Parameter Breakdown
+
 | Variable     | Required | Description
 | ------------ | -------- | -----------
 | access_token | Yes      |The access token generated from your Streamlabs account.
 
 #### Example
+
 Send a streamlabs notification:
+
 ```bash
 # Assuming our {access_token} is abcdefghij1234567890
 apprise -vv -t "Test Message Title" -b "Test Message Body" \

@@ -6,28 +6,30 @@ description: "Common issues, diagnostics, and fixes when Apprise notifications d
 ## Table of Contents
 
 <!--ts-->
-   * [General Troubleshooting](#general-troubleshooting)
-   * [Tag Matching Issues](#tag-matching-issues)
-   * [Too Much Data and Overflow Directive](#too-much-data-and-overflow-directive)
-   * [Special Characters and URL Conflicts](#special-characters-and-url-conflicts)
-   * [Formatting Issues](#formatting-issues)
-   * [Apprise URLs on Command Line Do Not Behave Correctly](#apprise-urls-on-command-line-do-not-behave-correctly)
-   * [PyInstaller Support](#pyinstaller-support)
-   * [Docker Instance](#docker-instance)
-   * [General Exceptions and/or Messages](#general-exceptions-andor-messages)
-      * [RuntimeError: asyncio.run() cannot be called from a running event loop
+* [General Troubleshooting](#general-troubleshooting)
+* [Tag Matching Issues](#tag-matching-issues)
+* [Too Much Data and Overflow Directive](#too-much-data-and-overflow-directive)
+* [Special Characters and URL Conflicts](#special-characters-and-url-conflicts)
+* [Formatting Issues](#formatting-issues)
+* [Apprise URLs on Command Line Do Not Behave Correctly](#apprise-urls-on-command-line-do-not-behave-correctly)
+* [PyInstaller Support](#pyinstaller-support)
+* [Docker Instance](#docker-instance)
+* [General Exceptions and/or Messages](#general-exceptions-andor-messages)
+  * [RuntimeError: asyncio.run() cannot be called from a running event loop
 ](#runtimeerror-asynciorun-cannot-be-called-from-a-running-event-loop)
 <!--te-->
 
 ## General Troubleshooting
 
 The best thing you can do when troubleshooting problems with your notification is to work it out using the _apprise_ command line tool. You can add verbosity what is going on with the notification you're troubleshooting by simply specifying **-v**; the more v's you specify, the more verbose it gets:
+
 ```bash
 # In the below example, I am trying to figure out why my mailto:// line
 # isn't working:
 apprise -vvv -t "test title" -b "test body" \
     "mailto://user:password@gmail.com"
 ```
+
 The output can help you pinpoint what is wrong with your URL.
 
 If the output appears cryptic, or you feel that you've exhausted all avenues, Don't be afraid to [open a ticket and ask here](https://github.com/caronc/apprise/issues). It greatly helps if you share the output received from your debug response.  It might be just a simple tweak to your URL that is needed, otherwise we might have a good bug we need to solve.
@@ -39,6 +41,7 @@ Just be cautious as the debugging information can potentially expose personal in
 ## Tag Matching Issues
 
 If you tagged your URLs, they're not going to be notified unless you explicitly reference them with **--tag=** (or **-g**).  You can always check to see what URLs have been loaded using the `all` tag directive paired with **--dry-run**:
+
 ```bash
 # This simply lists all of the tags found in the apprise.txt file
 # You don't even need to specify the --config if you're reading files
@@ -60,9 +63,10 @@ python apprise --dry-run --tag=devops \
 
 ## Too Much Data and Overflow Directive
 
-Out of the box, Apprise passes the full message (and title) you provide right along to the notification source(s). Some sources can handle a large surplus of data while others might not. These limitations are documented (*to the best of my knowledge*) on each of the [individual services corresponding wiki pages](https://github.com/caronc/apprise/wiki#notification-services).
+Out of the box, Apprise passes the full message (and title) you provide right along to the notification source(s). Some sources can handle a large surplus of data while others might not. These limitations are documented (_to the best of my knowledge_) on each of the [individual services corresponding wiki pages](https://github.com/caronc/apprise/wiki#notification-services).
 
 However if you don't want to be bothered with upstream restrictions, Apprise has a somewhat _non-elegant_ way of handling these kinds of situations that you can leverage. You simply need to tack on the **overflow** parameter somewhere in your Apprise URL; for example:
+
 * `schema://path/?overflow=split`
 * `schema://path/?overflow=truncate`
 * `schema://path/?overflow=upstream`
@@ -77,6 +81,7 @@ The possible **overflow=** options are defined as:
 | **upstream** | Simply let the the upstream notification service handle all of the data passed to it (large or small). Apprise will not mangle/change it's content in any way.<br/>**Note**: This is the default configuration option used when the `overflow=` directive is not set.
 
 Please note that the **overflow=** option isn't a perfect solution:
+
 * It can fail for services like Telegram which can take content in the format of _HTML_ (in addition to _Markdown_). If you're using _HTML_, then there is a very strong possibility that both the `overflow=split` and/or `overflow=truncate` option could cut your message in the middle of an un-closed HTML tag.  Telegram doesn't fair to well to this and in the past (at the time of writing this wiki entry) would error and not display the data.
 * It does however do it's best to elegantly split/truncate messages at the end of a word (near the message limits).
 * The `overflow=split` can work against you. Consider a situation where you send thousands of log entries accidentally to you via an SMS notification service.  Be prepared to get hundreds of text messages to re-construct all of the data you asked it to deliver! This may or may not be what you wanted to happen; in this case, perhaps `overflow=truncate` is a better choice. Some services might even concur extra costs on you if you exceed a certain message threshold. The point is, just be open minded when you choose to enable the _split_ option with notification services that have very small message size limits. The good news that each supported notification service on the [Apprise Wiki](https://github.com/caronc/apprise/wiki) identifies what each hard limit is set to.
@@ -103,7 +108,7 @@ Below is a chart of special characters and the value you should set them:
 | **?**      | **%3F**      | The question mark divides a url path from the arguments you pass into it.  You should ideally escape this if this resides in your password or is intended to be one of the variables you pass into your url string.
 | _(a space)_    | **%20**      | While most URLs will work with the space, it's a good idea to escape it so that it can be clearly read from the URL.  
 | **/**    | **%2F**      | The slash is the most commonly used delimiter that exists in a URL and helps define a path and/or location.
-| **@**    | **%40**      | The at symbol is what divides the user and/or password from hostname in a URL.  if your username and/or password contains an '@' symbol, it can cause the url parser to get confused. 
+| **@**    | **%40**      | The at symbol is what divides the user and/or password from hostname in a URL.  if your username and/or password contains an '@' symbol, it can cause the url parser to get confused.
 | **+**    | **%2B**      | By default a addition/plus symbol **(+)** is interpreted as a _space_ when specified in the URL. It must be escaped if you actually want the character to be represented as a **+**.
 | **,**    | **%2C**      | A comma only needs to be escaped in _extremely rare circumstances_ where one exists at the very end of a specific URL that has been chained with others using a comma. [See PR#104](https://github.com/caronc/apprise/pull/104) for more details as to why you _may_ need this.
 | **:**    | **%3A**      | A colon will never need to be escaped unless it is found as part of a user/pass combination.  Hence in a url `http://user:pass@host` you can see that a colon is already used to separate the _username_ from the _password_.  Thus if your _{user}_ actually has a colon in it, it can confuse the parser into treating what follows as a password (and not the remaining of your username).   This is a very rare case as most systems don't allow a colon in a username field.
@@ -118,6 +123,7 @@ The thing with Apprise is it doesn't know what you're feeding it (the format the
 1. Change your email URL to read this instead (adding the `format=text` parameter)
    * `mailtos://example.com?user=username&pass=password&to=myspy@example.com&format=text`
 1. For developers, your call to `notify()` to include should include the `body_format` value set:
+
    ```python
    # one more include to keep your code clean
    from apprise import NotifyFormat
@@ -128,7 +134,9 @@ The thing with Apprise is it doesn't know what you're feeding it (the format the
        body_format=NotifyFormat.TEXT,
    )
    ```
+
 1. For developers, you can actually make a global variable out of the `body_format` so you don't have to keep setting it every time you call `notify` (in-case you intend to call this throughout your code in several locations):
+
    ```python
    import apprise
    from apprise import NotifyFormat
@@ -162,14 +170,18 @@ The thing with Apprise is it doesn't know what you're feeding it (the format the
        title='My Notification Title',
    )
    ```
+
 **What it boils down to is:**
+
 * Developers can use the `body_format` tag which is telling Apprise what the **INPUT source** is. If a Apprise knows this it can go ahead and make special accommodations for the services that are expecting another format. By default the `body_format` is `None` and no modifications to the data fed to Apprise is touched at all (it's just passed right through to the upstream provider).
 * End User can modify their URL to specify a `format=` which can be either `text`, `markdown`, or `html` which sets the **OUTPUT source**.  Notification Plugins can use this information to accommodate the data it's being fed and behave differently to help accommodate your situation.
 
 ## Apprise URLs on Command Line Do Not Behave Correctly
+
 If you are passing a URL on the Command Line Interface (CLI) of your Linux/Windows/Mac shell, it is important that you surround the URL with "quotes".   URL's leverage the `&` character which delimits one parameter from another (e.g. `schema://config?parm=value&parm2=value`).
 
 The problem is that `&` characters are also interpreted by the CLI.  The `&` causes the shell to execute everything defined before them into a background process. As a result, you would actually loose and not register any parameters beyond the first.
+
 ```bash
 # Here is an example of a problematic Apprise URL without "quotes":
 apprise -vvv -b "Test Email" \
@@ -196,8 +208,10 @@ apprise -vvv -b "Test Email" \
 ```
 
 ## Scripting Multi-Line Input/Output with CLI
+
 If you're using the `apprise` tool from the command line, you may be trying to script it to send multiple lines.  To acomplish this, there are a number of tweaks you can do with `bash`, `sh`, or `ksh` such as:
 Those who want to deliver multiple line output can use the CLI as follows:
+
 ```bash
 # Send ourselves a DBus related multi-line notification using `stdin` and
 # the `cat` tool:
@@ -228,6 +242,7 @@ apprise -vv -t "Multi-line Variable Example" -b "$MULTILINE_VAR" \
 ```
 
 ## Pyinstaller Support
+
 [Pyinstaller](https://pyinstaller.org/) allows to package a python application with its dependencies in a single exe.
 
 It is possible to package an application that is using Apprise but there is a trick.
@@ -247,14 +262,13 @@ Then package with pytinstaller :
 pyinstaller -F myscript.py
 ```
 
-And launch it 
+And launch it
 
 ```shell
 ./dist/myscript
 ```
 
-
-We get 
+We get
 
 ```shell
 FileNotFoundError: [Errno 2] No such file or directory: '/tmp/_MEIEbGkgo/apprise/attachment'
@@ -275,13 +289,16 @@ pyinstaller -F --collect-all apprise myscript.py
 No more errors, notifications are sent.
 
 ## Docker Instance
+
 A lot of us might use Apprise through a third party application.  When we put in our URL's, we question why they don't work.  We wonder where the logging is (As every third party program does things differently).  Here is a way you can test your Apprise URL's outside of this application in efforts to get everything the way you want:
 
 You'll need to just do 2 things:
-1.  Pick a [Python version to test with](https://hub.docker.com/_/python); in the below example, we use the `:latest`. But you can also use things like `:3.8.10`.
+
+1. Pick a [Python version to test with](https://hub.docker.com/_/python); in the below example, we use the `:latest`. But you can also use things like `:3.8.10`.
 1. Pick a version of Apprise you want to test/install.  In this case you can use the stable releases straight from PyPi, or you can use the master branch on Github.
 
 Here is the `Dockerfile` at it's simplest that you need to create:
+
 ```dockerfile
 ##
 ## First define your Base - un-comment only ONE `FROM` line below for a specific
@@ -317,6 +334,7 @@ RUN pip3 install apprise
 ```
 
 Next we need to build our docker container we set up the blueprints for above:
+
 ```bash
 ##
 ## Build Your Config
@@ -344,13 +362,18 @@ docker run -it apprise-test bash
 ## General Exceptions and/or Messages
 
 ### RuntimeError: asyncio.run() cannot be called from a running event loop
+
 If your calling program runs it's own event loop, then Apprise can cause some commotion when it tries to work with it's own. For these circumstances you have 2 options.
+
 1. Do not call `notify()`.  Instead `await` the `async_notify()` call itself.  [See here for more details](#async_notify--leveraging-await-to-send-notifications).  
 1. Leverage a library that handles this exact case called [nest-asyncio](https://pypi.org/project/nest-asyncio/):
+
    ```bash
    pip3 install nest-asyncio
    ```
+
    Then from within your python application just import it at the top:
+
    ```python
    import nest_asyncio
    # apply it
@@ -358,4 +381,3 @@ If your calling program runs it's own event loop, then Apprise can cause some co
    ```
 
    An issue related to FastCGI was brought forth [here](https://github.com/caronc/apprise/issues/610) and solved using this method.
-

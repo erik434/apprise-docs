@@ -4,11 +4,13 @@ description: "A templated example of how one might structure a Apprise service t
 ---
 
 # A Web Request Apprise Notification Example
+
 This example shows a basic template of how one might build a Notification Service that is required to connect to an upstream web service and send a payload.
 
 It's very important that the filename `apprise/plugins/service.py` does not align with the class name inside of it.  In this example, the class is `NotifyDemo`.  So perhaps a good filename might be `apprise/plugins/demo.py`.
 
 ## The Code
+
 ```python
 import requests
 import json
@@ -370,19 +372,21 @@ class NotifyDemo(NotifyBase):
 ```
 
 ## Testing
+
 If you pasted the above file correctly into your Apprise library, you can test it with a tool such as netcat (`nc`).
 
 In one terminal window you can set yourself up to listen on port `8080`:
+
 ```bash
 # Listen on port 80 so we can watch apprise delivery our new payload
 nc -l -p 8080
 ```
 
 While in another terminal window you can test your **NotifyDemo** class using the `demo://` schema:
+
 ```bash
 # using the `apprise` found in the local bin directory allows you to test
 # the new plugin right away. Use the `demo://` schema we defined.  You can also
 # set a couple of extra `-v` switches to add some verbosity to the output:
 ./bin/apprise -vvv -t test -b message demo://localhost:8080/myapikey
 ```
-

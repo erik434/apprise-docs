@@ -4,7 +4,8 @@ description: "Send dapnet notifications."
 ---
 
 ## DAPNET/Hampager Notifications
-* **Source**: https://hampager.de/
+
+* **Source**: <https://hampager.de/>
 * **Icon Support**: No
 * **Message Format**: Text
 * **Message Limit**: 80 Characters per message
@@ -12,14 +13,18 @@ description: "Send dapnet notifications."
 ![apprise](https://user-images.githubusercontent.com/76180229/147219640-6ce23b59-bc12-4a30-b5f2-f4d4d2d3fd3c.jpg)
 
 ### Account Setup
+
 Make sure you register your Amateur Radio Call Sign and create an account with [Hampager](https://hampager.de).
 
 ### Syntax
+
 Valid syntax's are as follows:
+
 * `dapnet://{userid}:{password}@{callsign}`
 * `dapnet://{userid}:{password}@{callsign1}/{callsign2}/{callsignN}/`
 
 ### Parameter Breakdown
+
 | Variable    | Required | Description
 | ----------- | -------- | -----------
 | callsign    | Yes      | One or more Amateur Radio Call sign's is required to send a notification.

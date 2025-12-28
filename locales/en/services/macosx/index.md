@@ -4,6 +4,7 @@ description: "Send macosx notifications."
 ---
 
 ## MacOS X Desktop Notifications
+
 * **Source**: n/a
 * **Icon Support**: Yes
 * **Message Format**: Text
@@ -17,10 +18,13 @@ brew install terminal-notifier
 ```
 
 ### Syntax
+
 There are currently no options you can specify for this kind of notification, so it's really easy to reference:
+
 * `macosx://`
 
 You can also choose to set a sound to play (such as `default`):
+
 * `macosx://_/?sound=default`
 
 The `sound` can be set any of the sound names listed in _Sound Preferences_ of your Mac OS.
@@ -33,7 +37,9 @@ The `sound` can be set any of the sound names listed in _Sound Preferences_ of y
 | image       | No       | Associate an image with the message. By default this is enabled.
 
 #### Example
+
 We can send a notification to ourselves like so:
+
 ```bash
 # Send ourselves a MacOS desktop notification
 apprise -vv -t "Test Message Title" -b "Test Message Body" \

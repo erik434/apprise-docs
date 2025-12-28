@@ -1,34 +1,50 @@
 ---
 title: "Apprise API Notifications"
-description: "Send apprise_api notifications."
+description: "Send Apprise API notifications."
 sidebar:
   label: "Apprise API"
+
+source: https://github.com/caronc/apprise-api
+group: "custom"
+schemas:
+   - apprise: insecure
+   - apprises
+
+sample_urls:
+   - apprises://{host}/{token}
+   - apprises://{host}:{port}/{token}
+   - apprises://{user}@{host}:{port}/{token}
+   - apprises://{user}:{password}@{host}:{port}/{token}
+
+has_attachments: true
+has_selfhosted: true
+
 ---
 
-## Apprise API Notifications
-* **Source**: https://github.com/caronc/apprise-api
-* **Icon Support**: No
-* **Attachment Support**: yes
-* **Message Format**: Text
-* **Message Limit**: 32768 Characters per message
+<!-- SERVICE:DETAILS -->
 
-The idea is to allow users to use Apprise and hit an existing Apprise API server.
+## Account Setup
 
-### Syntax
+Get yourself a self-hosted setup of the [Apprise-API](https://github.com/caronc/apprise-api) and use this service to integrate with it remotely.
+
+## Syntax
+
 The syntax is as follows:
+
 - `apprise://{host}/{token}`
 - `apprise://{host}:{port}/{token}`
 - `apprise://{user}@{host}:{port}/{token}`
 - `apprise://{user}:{password}@{host}:{port}/{token}`
 
 For a secure connection, just use `apprises` instead.
-- `apprises://{host}:{port}/{token}`
+
+- `apprises://{host}/{token}`
 - `apprises://{host}:{port}/{token}`
 - `apprises://{user}@{host}:{port}/{token}`
 - `apprises://{user}:{password}@{host}:{port}/{token}`
 
+## Parameter Breakdown
 
-### Parameter Breakdown
 | Variable    | Required | Description
 | ----------- | -------- | -----------
 | hostname    | Yes      | The Web Server's hostname
@@ -37,8 +53,12 @@ For a secure connection, just use `apprises` instead.
 | password    | No       | If you're system is set up to use HTTP-AUTH, you can provide _password_ for authentication to it.
 | tags        | No       | You can optional set the tags you want to supply with your call to the Apprise API server
 
-#### Example
+<!-- GLOBAL:SERVICE:PARAMS -->
+
+## Example
+
 Send a notification along to an Apprise API server listening on port 80:
+
 ```bash
 # Assuming our {hostname} is apprise.server.local
 # Assuming our {token} is token
@@ -47,6 +67,7 @@ apprise -vv --body="Test Message" \
 ```
 
 Here is another example where you can call your Apprise server based on Tags provided:
+
 ```bash
 # Assuming our {hostname} is apprise.server.local
 # Assuming our {token} is token
@@ -56,6 +77,7 @@ apprise -vv --body="Test Message" \
 ```
 
 You can also leverage the Logic of AND and OR when passing Tags:
+
 ```bash
 #
 # OR Example
@@ -79,7 +101,9 @@ apprise -vv --body="Test Message" \
 ```
 
 ### Header Manipulation
+
 Some users may require special HTTP headers to be present when they post their data to their server.  This can be accomplished by just sticking a plus symbol (**+**) in front of any parameter you specify on your URL string.
+
 ```bash
 # Below would set the header:
 #    X-Token: abcdefg
@@ -105,6 +129,7 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" \
 ```
 
 **Note:** this service is a little redundant because you can already use the CLI and point it's configuration to an existing Apprise API server (using the `--config` on the CLI or `AppriseConfig()` class via it's own internal API).
+
 ```bash
 # A simple example of the Apprise CLI using a Config file instead:
 # pulling down previously stored configuration
@@ -113,4 +138,3 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" \
 # Assuming our {token} is apprise
 apprise --body="test message" --config=http://localhost:8080/get/apprise
 ```
-

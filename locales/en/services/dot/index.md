@@ -5,7 +5,7 @@ description: "Send dot notifications."
 
 ## Dot. Notifications
 
-* **Source**: https://dot.mindreset.tech
+* **Source**: <https://dot.mindreset.tech>
 * **Icon Support**: Yes (Text API accepts a 40×40 PNG icon via base64)
 * **Message Format**: Plain Text
 * **Message Limit**: Not documented
@@ -24,22 +24,22 @@ The Dot. smart display exposes two REST endpoints—Text API and Image API—for
 
 ### Syntax
 
-- **Text API**  
+* **Text API**  
   `dot://{token}@{device_id}/text/?signature={footer}&icon={base64_icon}`
   
   Title and message can be provided at runtime via `apprise.notify(title="...", body="...")`.
 
-- **Image API**  
+* **Image API**  
   `dot://{token}@{device_id}/image/?image={base64_png}&link={tap_url}&border={0|1}&dither_type={type}&dither_kernel={kernel}`
 
 ### Attachment Support
 
 The plugin supports file attachments that are automatically converted to base64 encoding:
 
-- **Text mode**: The first attachment is automatically used as the `icon` parameter (40×40 PNG) if no `icon` is provided via URL or configuration
-- **Image mode**: The first attachment is automatically used as the `image` parameter (296×152 PNG) if no `image` is provided via URL or configuration
-- If multiple attachments are provided, only the first one is used and a warning is logged
-- If `icon` (text mode) or `image` (image mode) is already provided via URL/configuration, attachments are ignored
+* **Text mode**: The first attachment is automatically used as the `icon` parameter (40×40 PNG) if no `icon` is provided via URL or configuration
+* **Image mode**: The first attachment is automatically used as the `image` parameter (296×152 PNG) if no `image` is provided via URL or configuration
+* If multiple attachments are provided, only the first one is used and a warning is logged
+* If `icon` (text mode) or `image` (image mode) is already provided via URL/configuration, attachments are ignored
 
 ---
 

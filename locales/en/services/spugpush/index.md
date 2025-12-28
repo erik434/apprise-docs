@@ -4,7 +4,8 @@ description: "Send spugpush notifications."
 ---
 
 ## SpugPush Notifications
-* **Source**: https://push.spug.dev/
+
+* **Source**: <https://push.spug.dev/>
 * **Icon Support**: No
 * **Message Format**: Plain Text
 * **Message Limit**: ~10,000 Characters
@@ -30,8 +31,9 @@ Apprise supports both the full native webhook and a simplified URL form.
 ### Syntax
 
 Valid syntax is as follows:
-- `https://push.spug.dev/send/{token}`
-- `spugpush://{token}`
+
+* `https://push.spug.dev/send/{token}`
+* `spugpush://{token}`
 
 ### Parameter Breakdown
 
@@ -44,18 +46,21 @@ You may also use the query format: `spugpush://?token=YOUR_TOKEN`.
 ### Examples
 
 #### 1. Using the simplified Apprise URL
+
 ```bash
 apprise -vv -t "SpugPush Title" -b "Notification content" \
    spugpush://abc123def456ghi789jkl012mno345pq
 ```
 
 #### 2. Using the token as a query parameter
+
 ```bash
 apprise -vv -t "SpugPush Title" -b "Notification content" \
    spugpush://?token=abc123def456ghi789jkl012mno345pq
 ```
 
 #### 3. Using the full native webhook URL
+
 ```bash
 apprise -vv -t "SpugPush Title" -b "Notification content" \
    https://push.spug.dev/send/abc123def456ghi789jkl012mno345pq

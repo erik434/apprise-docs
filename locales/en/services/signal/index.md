@@ -4,25 +4,28 @@ description: "Send signal notifications."
 ---
 
 ## Signal API
-* **Source**: https://github.com/bbernhard/signal-cli-rest-api
+
+* **Source**: <https://github.com/bbernhard/signal-cli-rest-api>
 * **Icon Support**: No
 * **Attachment Support**: Yes
 * **Message Format**: Text
 * **Message Limit**: 32768 Characters per message
 
 ### Account Setup
+
 First of all you need a Signal account.  So it is presumed you've either got the Apple or Android version of the Signal software.
 
 From here, the plugin assumes you have configured yourself up with the [Signal Rest API Service](https://github.com/bbernhard/signal-cli-rest-api).
 
 A simple setup might be:
+
 ```bash
 # Create a directory for our configuration to get stored into
 mkdir -p $HOME/.signal-api
 
 # Launch a Signal API instance that listens on port 9922
 docker run -d --name signal-api --restart=always -p 9922:8080 \
-	-v $HOME/.signal-api:/home/.local/share/signal-cli \
+ -v $HOME/.signal-api:/home/.local/share/signal-cli \
    -e 'MODE=native' -e SIGNAL_CLI_UID=$(id -u) -e SIGNAL_CLI_GID=$(id -g) \
    bbernhard/signal-cli-rest-api
 ```
@@ -32,17 +35,21 @@ If all goes well, you should be able to point your browser to: `http://localhost
 The **{FromPhoneNo}** must be the number associated with your account.
 
 ### Syntax
+
 Valid syntax is as follows:
+
 * `signal://{user}:{password}@{hostname}/{from_phone}`
 * `signal://{user}:{password}@{hostname}:{port}/{from_phone}`
 * `signal://{user}:{password}@{hostname}/{from_phone}/{target}`
 * `signal://{user}:{password}@{hostname}:{port}/{from_phone}/{target}`
 
 You can post in multiple chats by simply chaining them at the end of the URL.
+
 * `signal://{user}:{password}@{hostname}:{port}/{from_phone}/{target1}/{target2}/{target3}`
 * `signals://{user}:{password}@{hostname}:{port}/{from_phone}/{target1}/{target2}/{target3}`
 
 ### Parameter Breakdown
+
 | Variable        | Required | Description
 | --------------- | -------- | -----------
 | hostname    | Yes      | The Web Server's hostname
@@ -55,13 +62,16 @@ You can post in multiple chats by simply chaining them at the end of the URL.
 | status     |  No  | Optionally include a small little ASCII string representing the notification status being sent (inline with it)  by default this is set to `yes`.
 
 ### Acquiring A Group ID
+
 Groups can be created in the app, or via the [Signal Rest API Service](https://github.com/bbernhard/signal-cli-rest-api).
 To get a list of available groups and their ids run:
+
 ```bash
 curl -X GET -H "Content-Type: application/json" localhost:9922/v1/groups/+15555551234 | jq
 ```
 
 Example output is as follows:
+
 ```
 [
   {
@@ -84,10 +94,13 @@ Example output is as follows:
 
 The takeaway from the above is the group 
 ```
+
 Example sending a notification to a group: `group.aabbccdd/eeffgghh=` identified by the `id`.
 
 ### Example
+
 Send a Signal Notification (via Signal API):
+
 ```bash
 # Assuming our {Hostname} is localhost (hosting the bbernhard/signal-cli-rest-api)
 # Assuming our {FromPhoneNo} is +1-900-555-9999
@@ -103,6 +116,7 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" \
 ```
 
 Based on my personal experiences, I was able to send a notification to myself by simply doing the following:
+
 ```bash
 # Assuming our {Hostname} is localhost (hosting the bbernhard/signal-cli-rest-api)
 # Assuming our {Port} is 9922
@@ -112,6 +126,7 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" \
 ```
 
 If you know the Group ID you want to notify, you can idenify it as well on the command line:
+
 ```bash
 # Assuming our {Hostname} is localhost (hosting the bbernhard/signal-cli-rest-api)
 # Assuming our {Port} is 9922
@@ -121,8 +136,8 @@ apprise -vv -t "Group Message:" -b "Hello group members" \
     "signal://localhost:9922/+1555555551234/group.abcdefghijklmnop="
 ```
 
-
 I could even send an attachment without a problem:
+
 ```bash
 apprise -vv -t -b "test" \
    signal://localhost:9922/15555551234 --attach apprise-test.gif
@@ -130,4 +145,3 @@ apprise -vv -t -b "test" \
 
 Which produced:
 ![image](https://user-images.githubusercontent.com/850374/168930313-05e2bfb2-48f3-4a0a-b0ef-e5c601c97703.png)
-

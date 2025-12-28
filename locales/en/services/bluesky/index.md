@@ -1,31 +1,46 @@
 ---
-title: "bluesky Notifications"
-description: "Send bluesky notifications."
+title: "Bluesky Notifications"
+description: "Send Bluesky notifications."
+sidebar:
+  label: "Bluesky"
+
+source: https://bsky.app/
+group: social
+schemas:
+  - bluesky
+
+sample_urls:
+  - bluesky://user@app_pw
+  - bluesky://user.host@app_pw
+
+has_attachments: true
+
+limits:
+  max_chars: 280
 ---
 
-## BlueSky Notifications
-* **Source**: https://bsky.app/
-* **Attachment Support**: Yes
-* **Icon Support**: No
-* **Message Format**: Text
-* **Message Limit**: 280 characters
+<!-- SERVICE:DETAILS -->
 
-### Account Setup
+## Account Setup
+
 1. Create a BlueSky account
 1. Access Settings -> Privacy and Security
 1. Generate an App Password
 1. Assemble your Apprise URL like:
    - bluesky://handle@you-token-here
 
-### Syntax
+## Syntax
+
 Valid syntax is as follows:
+
 - `bluesky://user@app_pw`
 - `bluesky://user.host@app_pw`
-    - This is only required if the `host` is not `bsky.social`
+  - This is only required if the `host` is not `bsky.social`
 
+## Example
 
-#### Example
 Send a public message:
+
 ```bash
 # Assuming our {Handle} is @John
 # Assuming our {AppID} is abcd-1234-efghi-6789

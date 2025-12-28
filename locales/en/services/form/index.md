@@ -19,13 +19,16 @@ This is just a custom Notification that allows you to have this tool post to a w
 The payload will include a `body`, `title`, `version`, and `type` in it's response.  You can add more (see below for details).
 
 The *type* will be one of the following:
+
 * **info**: An informative type message
 * **success**: A successful report
 * **failure**: A failure report
 * **warning**: A warning report
 
 ## Syntax
+
 Valid syntax is as follows:
+
 * `form://{hostname}`
 * `form://{hostname}:{port}`
 * `form://{user}:@{hostname}`
@@ -34,6 +37,7 @@ Valid syntax is as follows:
 * `form://{user}:{password}@{hostname}:{port}`
 
 The secure versions:
+
 * `forms://{hostname}`
 * `forms://{hostname}:{port}`
 * `forms://{user}:@{hostname}`
@@ -42,12 +46,13 @@ The secure versions:
 * `forms://{user}:{password}@{hostname}:{port}`
 
 ## Parameter Breakdown
+
 | Variable    | Required | Description
 | ----------- | -------- | -----------
 | hostname    | Yes      | The Web Server's hostname
 | port        | No       | The port our Web server is listening on. By default the port is **80** for **form://** and **443** for all **forms://** references.
-| user        | No       | If you're system is set up to use HTTP-AUTH, you can provide _username_ for authentication to it.
-| password    | No       | If you're system is set up to use HTTP-AUTH, you can provide _password_ for authentication to it.
+| user        | No       | If you're system is set up to use HTTP-AUTH, you can provide *username* for authentication to it.
+| password    | No       | If you're system is set up to use HTTP-AUTH, you can provide *password* for authentication to it.
 | method      | No       | Optionally specify the server http method; possible options are `post`, `put`, `get`, `delete`, `patch`, and `head`.  By default if no method is specified then `post` is used.
 | attach-as      | No       | Optionally override the meta filename set when there are attachments.  Each attachment by default gets posted as `file01`, `file02`, etc.   There have been use-cases where someone's end point expects the meta name (where the file is found on the HTTP request) to be named something specific such as `document`.  Utilize this over-ride to accomplish such a feat. Also use the `*` character to allow the numbering.  Hence `?attach-as=meta*` would cause Apprise to store the files as `meta01`, `meta02`, etc.
 
@@ -56,14 +61,18 @@ The secure versions:
 <!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Example
+
 Send a FORM Based web request to our web server listening on port 80:
+
 ```bash
 # Assuming our {hostname} is my.server.local
 apprise form://my.server.local
 ```
 
 ## Header Manipulation
+
 Some users may require special HTTP headers to be present when they post their data to their server.  This can be accomplished by just sticking a plus symbol (**+**) in front of any parameter you specify on your URL string.
+
 ```bash
 # Below would set the header:
 #    X-Token: abcdefg
@@ -85,6 +94,7 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" \
 ```
 
 ## Payload Manipulation
+
 The payload can have entries added to it in addition to the default `body`, `title`, and `type` values.  This can be accomplished by just sticking a colon symbol (**:**) in front of any parameter you specify on your URL string.
 
 ```bash
@@ -98,7 +108,9 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" \
 ```
 
 ## GET Parameter Manipulation
+
 Some users may require GET parameters to be part of their POST. Any parameters you pass onto the Apprise command line are interpreted by Apprise itself as options/actions you wish to perform (such as changing `method=update`, or `cto=3`). To have Apprise ignore what was specified and past the content `as-is` upstream, you just need to prefix your entries with a minus (`-`) symbol.
+
 ```bash
 # The below for example would post to http://localhost:8000?token=abcdefg
 #
@@ -116,16 +128,19 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" \
 ```
 
 ## Attach-As Over-Ride Options
+
 This section expands further on the `?attach-as=` override option.
 
 Simply add this to the URL: such as:
+
 ```bash
 # apply the override of `file{:02d}` to be `document`
 bin/apprise -vvvv 'forms://webhook.site/<webhook>?attach-as=document' \
    --attach test/var/apprise-test.png -b test 
 ```
 
-In order to support other variations, you can do : 
+In order to support other variations, you can do :
+
 ```bash
 # Set the file array object in the request as `{:02d}meta`
 bin/apprise -vvvv 'forms://webhook.site/<webhook>?attach-as=*meta' \

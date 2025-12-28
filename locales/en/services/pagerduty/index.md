@@ -4,7 +4,8 @@ description: "Send pagerduty notifications."
 ---
 
 ## PagerDuty Notifications
-* **Source**: https://www.pagerduty.com
+
+* **Source**: <https://www.pagerduty.com>
 * **Icon Support**: No
 * **Attachment Support**: Yes
 * **Message Format**: Text
@@ -15,12 +16,15 @@ You need to have an account with [PagerDuty](https://www.pagerduty.com) and gene
 From there you can define an API V2 Integration.
 
 ### Syntax
+
 Valid syntax is as follows:
+
 * `pagerduty://{integration_key}@{api_key}`
 * `pagerduty://{integration_key}@{api_key}/{source}`
 * `pagerduty://{integration_key}@{api_key}/{source}/{component}`
 
 ### Parameter Breakdown
+
 | Variable    | Required | Description
 | ----------- | -------- | -----------
 | integration_key    | Yes      | This  is provided to you on the Events API V2 integration's detail page. This can also be referred to as a Routing Key.
@@ -35,7 +39,9 @@ Valid syntax is as follows:
 | severity | No       | The notification severity is otherwise detected on it's own, however if you wish to force a specific mode always, you can do so by providing this as part of the URL.  Possible values are: `info`, `warning`, `critical`, and `error`.
 
 #### Example
+
 Send a Pager Duty trigger to our **source** `node01.local` and the **component** `drive_sda`
+
 ```bash
 
 # Assuming our {integration_key} is A1BRTD4JD
@@ -46,8 +52,10 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" \
    "pagerduty://A1BRTD4JD@TIiajkdnlazkcOXrIdevi7F/node01.local/drive_sda/"
 ```
 
-### Custom Details 
+### Custom Details
+
 You can provide custom details as part of the payload as well. This can be accomplished by just sticking a plus symbol (**+**) in front of any parameter you specify on your URL string.
+
 ```bash
 # Below would pass along in the `custom_details` payload of the API
 #    "disk_space_left": "145GB"

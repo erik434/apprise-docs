@@ -4,25 +4,31 @@ description: "Send popcornnotify notifications."
 ---
 
 ## PopcornNotify Notifications
-* **Source**: https://popcornnotify.com/
+
+* **Source**: <https://popcornnotify.com/>
 * **Icon Support**: No
 * **Message Format**: Text
 * **Message Limit**: 32768 Characters per message
 
 ### Account Setup
-Get yourself an API Key from [their website](https://popcornnotify.com/) and you're already to use the service. 
+
+Get yourself an API Key from [their website](https://popcornnotify.com/) and you're already to use the service.
 
 ### Syntax
+
 Valid syntaxes are as follows:
+
 * `popcorn://{ApiKey}/{PhoneNo}/`
 * `popcorn://{ApiKey}/{PhoneNo1}/{PhoneNo2}/{PhoneNoN}/`
 * `popcorn://{ApiKey}/{Email}/`
 * `popcorn://{ApiKey}/{Email1}/{Email2}/{EmailN}/`
 
 You can mix and match the information too:
+
 * `popcorn://{ApiKey}/{PhoneNo1}/{Email1}/{EmailN}/{PhoneNoN}`
 
 ### Parameter Breakdown
+
 | Variable    | Required | Description
 | ----------- | -------- | -----------
 | ApiKey      | Yes      | The Personal API Token associated with your account.
@@ -32,7 +38,9 @@ You can mix and match the information too:
 | batch       | No       | PopcornNotify allows a batch mode.  If you identify more then one phone number and/or email, you can send all of these targets you identify on the URL in a single shot instead of the normal _Apprise_ approach (which sends them one by one). Enabling batch mode has both it's pro's and cons. By default batch mode is disabled.
 
 #### Example
+
 Send a PopcornNotify notification as an SMS:
+
 ```bash
 # Assuming our {ApiKey} is abc123456
 # Assuming our {PhoneNo} - is in the US somewhere making our country code +1
@@ -47,6 +55,7 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" \
 ```
 
 You can also send emails just as easily:
+
 ```bash
 # Assuming our {ApiKey} is abc123456
 # Assuming our {Email} is user@example.com

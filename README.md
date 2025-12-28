@@ -1,51 +1,40 @@
 # Apprise Documentation
 
-This repository contains the **community-maintained documentation** for
-[Apprise](https://github.com/caronc/apprise).
+This repository contains the **community-maintained documentation** for  
+[Apprise](https://github.com/caronc/apprise) and [Apprise-API](https://github.com/caronc/apprise-api)
 
-The goal of this repository is to provide clear, practical, and approachable
-documentation that helps both new and experienced users get the most out of
-Apprise.
+> All content here is validated and synced into the [official site](https://appriseit.com/) automatically.
 
-This repository contains **documentation only**. It does not include any
-website code, build tooling, or frontend frameworks.
+## How This Content Is Used
 
----
+Content from this repository is **synced into the official Apprise documentation website**:
 
-## Purpose
+👉 <https://appriseit.com/>
 
-This repository exists to provide a **single, authoritative source** for all
-Apprise documentation, including:
+You do not need to run the site locally or understand Astro or Starlight.  
+If your Markdown is valid and passes linting, it can be published.
 
-- End-user documentation
-- Notification service reference material
-- Configuration and usage guides
-- Troubleshooting and FAQ content
-- Developer and contributor documentation
-- Localized translations
-
-If you can write Markdown, you can contribute here.
-
-Content from this repository is synced into [the official Apprise
-documentation website](https://appriseit.com/).
+This repository exists so that **anyone who can write Markdown** can help improve Apprise’s
+documentation, while providing a **single, authoritative source** for all
+Apprise and Apprise-API documentation.
 
 ## What This Repository Is
 
-- 📚 A **Markdown-only** documentation repository
-- 🌍 Home to **all locales and translations**
-- 🧩 The canonical source for **service documentation**
-- 🤝 Open to community contributions
-- 🧠 Free of build systems and rendering logic
+- 📚 A **Markdown-only** documentation source
+- 🧩 The canonical home for **service documentation**
+- 🌍 The source of **all translations and locales**
+- 🤝 Open to **small and large contributions alike**
 
-If it can be written as Markdown and helps users understand Apprise, it belongs
+If it can be written as Markdown and helps users understand [Apprise](https://github.com/caronc/apprise) and its companion [Apprise-API](https://github.com/caronc/apprise-api), then it belongs
 here.
 
 ## Repository Layout
 
-All documentation lives under the `locales/` directory. Each locale mirrors the
-same structure to ensure consistency and predictable navigation.
+All documentation lives under the `locales/` directory.
 
-```
+Each locale mirrors the same structure so navigation remains predictable across languages.
+
+```text
 locales/
   <locale>/
     index.md
@@ -61,146 +50,186 @@ locales/
     assets/
 ```
 
-### Key Structural Rules
+### Directory Guide
 
-- **Getting Started** - `getting-started/`
+- **Getting Started** (`getting-started/`)  
   Introductory material for new users
-- **Guides** - `guides/`
-  Common workflows, patterns, and best practices. This can be How-to articles, tutorials, troubleshooting notes, and usage patterns that
-  may span multiple services.
-- **Config** - `config/`
-  Configuration reference and syntax explanations
-- **QA** - `qa/`
-  Troubleshooting, diagnostics, and frequently asked questions
-- **Dev** - `dev/`
+
+- **Guides** (`guides/`)  
+  How-to articles, workflows, best practices, and troubleshooting patterns
+
+- **Config** (`config/`)  
+  Configuration syntax and reference material
+
+- **QA** (`qa/`)  
+  Troubleshooting, diagnostics, and FAQs
+
+- **Dev** (`dev/`)  
   Developer-focused documentation and internals
-- **Contributing** - `contributing/`
+
+- **Contributing** (`contributing/`)  
   How to help improve Apprise and its ecosystem
-- **Services** - `services/`
-  Documentation specific to a notification service. This includes URL syntax,
-  targets, configuration options, and examples.
+
+- **Services** (`services/`)  
+  Documentation specific to a notification service, including URL syntax,
+  configuration options, and examples
+
+## Getting Started as a Contributor
+
+### Prerequisites
+
+- Node.js (LTS recommended)
+- `pnpm` (version pinned in `package.json`)
+- Git
+
+### Quick Start
+
+1. Install dependencies:
+
+   ```bash
+   pnpm install
    ```
-   services/<service>/index.md
+
+2. Make your documentation changes  
+   Add, edit, or improve any Markdown file.
+
+3. Run validation:
+
+   ```bash
+   pnpm lint
    ```
-- `assets/`
-  Shared images or reusable documentation assets.
 
+   Most formatting issues can be fixed automatically with:
 
-**Note**: Only Markdown and static assets are permitted
+   ```bash
+   pnpm lint:fix
+   ```
 
+4. Open a pull request 🎉
 
-### Required Front Matter
+> If linting fails, it will tell you exactly what needs attention.
 
-Every service page must define at least a title:
+## Adding or Improving a Service
 
-```md
----
-title: "Discord"
-description: "Send notifications to Discord channels using webhooks."
----
+Each service lives at:
+
+```text
+locales/<locale>/services/<service>/index.md
 ```
 
-### Optional Metadata
+Optionally, a service may include an `images/` directory for logos or diagrams.
 
-The following is simply [Astro Starlight](https://starlight.astro.build/) configuration:
+```text
+services/<service>/
+├── index.md
+└── images/
+    └── logo.svg
+```
+
+### Service Logos
+
+Service logos are optional, but encouraged when an official logo is available.
+
+- Supported formats: `.svg`, `.png`, `.jpg`, `.jpeg`
+- Raster images should not exceed:
+  - **200px height**
+  - **440px width**
+
+If present, logos are automatically rendered on the service page.
+
+---
+
+## Service Page Template
+
+Each service page starts with a frontmatter block that describes its capabilities.
+
+This metadata is **used to generate the Overview section automatically** on the site.
+
+A minimal example:
+
 ```md
+---
+title: "Example Notifications"
+description: "Send notifications using Example"
 sidebar:
-  # Changes the label on the left panel:
-  label: "Shortened Name"
-  # Optionally specify to control the placement of your label
-  order: 1
-  # Optionally provide if you do not want this to show up in the sidebar.  This
-  # is useful for situations where you're providing more options in a link from
-  # within an item already identified on the sidebar.
-  hidden: true
+  label: "Example"
+
+source: https://example.com
+group: general
+
+schemas:
+  - example://
+
+sample_urls:
+  - example://{token}/
+  - example://{token}/{target}
+---
+
+<!-- SERVICE:DETAILS -->
+
+## Account Setup
+How to get set up with Example
+
+## Syntax
+
+Valid syntax is as follows:
+
+- `example://{token}`
+- `example://{token}/{target}`
+
+## Parameter Breakdown
+
+| Variable    | Required | Description
+| ----------- | -------- | -----------
+| token       |  yes     | Token to access the example server
+| target      |  no      | The target you wish to notify. If no target is specified, we send a notification to ourselves.
+
+<!-- GLOBAL:SERVICE:PARAMS -->
+
+## Example
+
+Send a Example notification:
+
+```bash
+apprise -vv -t "My Title" -b "Message Body" \
+   "example://my-token/target"
 ```
 
-Note that the `services/index.md` has templating built in on it's own.  It is dynamically built using all of the directories defined in the the `services/<service>/index.md` entries.  New services should be defined this way.
-
-Feel free to look at the service template.
+> The markers such as `<!-- SERVICE:DETAILS -->` are intentional and must be left in place.  
+> They are replaced automatically when the documentation is rendered.
 
 ## Localization and Translations
 
-- Each locale lives under `locales/<locale>/`
-- All labels and navigation text come from Markdown
-- No hard-coded UI strings exist in the renderer
+- Each language lives under `locales/<locale>/`
+- English (`en`) is the default
+- Translations may be partial and incremental
 
-Contributions in additional languages are welcome. Translating existing content is just as valuable as writing new documentation.
+Even partial translations are welcome.
 
----
+## Linting and Validation
 
-## Contribution Philosophy
+This repository uses automated checks to ensure:
 
-This repository is intentionally designed to be **low friction**.
+- Consistent Markdown formatting
+- Supported frontmatter keys and structure
+- Predictable rendering on the website
 
-Contributors are encouraged to:
+Linting exists to **help contributors**, not to block them. Most failures are
+formatting or unsupported metadata issues and are easy to fix.
 
-- Improve clarity and accuracy
-- Expand service documentation
-- Add examples and explanations
-- Fix typos and formatting issues
-- Provide translations
+## How You Can Help
 
-If your contribution is valid Markdown and follows the structure, it is likely
-acceptable.
-
-## Project Status
-
-This documentation set is **actively evolving**.
-
-Some sections are still being refined, reorganized, or expanded as Apprise
-continues to grow. Contributions are welcome even while cleanup is ongoing.
-
-Perfection is not required to contribute.
-
-## How You Can Help Today
-
-- Add or improve documentation for a service you use
+- Improve documentation for a service you use
 - Clarify confusing sections
-- Expand examples
-- Fix mistakes or omissions
+- Add examples
+- Fix typos or formatting issues
 - Translate content into another language
 
-Also consider:
-- Read CONTRIBUTING.md
-- Open a pull request with your changes
-- If unsure where something belongs, open an issue and ask
-
-Thank you for helping improve Apprise.
-
-Even small improvements are appreciated.
-
-## Languages and translations
-
-English (en) is the default language.
-
-Translations are welcome, even if incomplete.
-
-To add a new language:
-1. Create a directory under locales/
-2. Copy the page you want to translate
-3. Translate what you can
-
-Example:
-```
-locales/
-  fr/
-    guides/
-      getting-started.md
-```
+If you are unsure where something belongs, open an issue and ask.
 
 ## License
 
-Documentation in this repository is licensed under the
-**Creative Commons Attribution 4.0 International (CC BY 4.0)** license.
+All documentation in this repository is licensed under  
+**Creative Commons Attribution 4.0 International (CC BY 4.0)**.
 
-This license allows others to copy, distribute, modify, and build upon this
-content for any purpose, including commercial use, provided appropriate credit
-is given.
-
-The full license text is available in the LICENSE file at the root of this
-repository and online at:
-https://creativecommons.org/licenses/by/4.0/
-
-By contributing to this repository, you agree that your contributions will be
-licensed under CC BY 4.0 unless explicitly stated otherwise.
+By contributing, you agree that your work will be licensed under CC BY 4.0 unless stated otherwise.

@@ -4,7 +4,8 @@ description: "Send pushover notifications."
 ---
 
 ## Pushover Notifications
-* **Source**: https://pushover.net/
+
+* **Source**: <https://pushover.net/>
 * **Icon Support**: No
 * **Attachment Support**: Yes
 * **Message Format**: Text
@@ -13,19 +14,25 @@ description: "Send pushover notifications."
 There isn't too much configuration for Pushover notifications. The message is basically just passed to your online Pushover account and then gets relayed to your device(s) you've setup from there.
 
 ### Getting Your User Key
-Once you log into [the website](https://pushover.net/), your dashboard will present your **{user_key}** in front of you. 
+
+Once you log into [the website](https://pushover.net/), your dashboard will present your **{user_key}** in front of you.
 
 ### Getting Your API Token
+
 On the dashboard after logging in, if you scroll down you'll have the ability to generate an application. Upon doing so, you will be provided an API Token to associate with this application you generated.  This will become your **{token}**.
 
 ### Syntax
+
 Valid syntax is as follows:
+
 * `pover://{user_key}@{token}`
 * `pover://{user_key}@{token}/{device_id}`
 * `pover://{user_key}@{token}/{device_id1}/{device_id2}/{device_idN}`
 * `pover://{user_key}@{token}?priority={priority}`
 * `pover://{user_key}@{token}?priority=emergency&expire={expire}&retry={retry}`
+
 ### Parameter Breakdown
+
 | Variable    | Required | Description
 | ----------- | -------- | -----------
 | user_key     | Yes      | The user key identifier associated with your Pushover account. This is NOT your email address.  The key can be acquired from your Pushover dashboard.
@@ -39,17 +46,20 @@ Valid syntax is as follows:
 | url_title  | No | Can optionally provide a Supplementary URL Title to go with your message
 
 ## Custom Sounds
+
 Pushover integration constrains notification sounds to a predefined list. This change adds support for custom sound in notifications, which must be uploaded and given a name. This change updates the pushover integration to allow for that name to be specified instead of throwing an error.
 
 1. Go to Settings -> Alert Settings -> Manage custom sounds -> Upload a sound
 1. Upload a sound and specify a name (e.g. "mysound").
-1. Validate the sound is accessible and present in the sounds list for your app via https://api.pushover.net/1/sounds.json?token={app-token}
+1. Validate the sound is accessible and present in the sounds list for your app via <https://api.pushover.net/1/sounds.json?token={app-token}>
 1. Specify a sound in your pover call, i.e. apprise -vv -t "title" -b "test message" pover://user@app?sound=mysound
 
 You should hear your custom sound on the notification. In cases where the custom sound name is not found, the default pushover notification sound will play.
 
 #### Example
+
 Send a Pushover notification to all of our configured devices:
+
 ```bash
 # Assuming our {user_key} is 435jdj3k78435jdj3k78435jdj3k78
 # Assuming our {token} is abcdefghijklmnop-abcdefg
@@ -58,6 +68,7 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" \
 ```
 
 Send a Pushover notification with the Emergency Priority:
+
 ```bash
 # Emergency priority advises you to also specify the expire and
 # retry values.

@@ -3,27 +3,38 @@ title: "X (Formerly Twitter) Notifications"
 description: "Send X Notifications."
 sidebar:
   label: "X (Formerly Twitter)"
+
+source: https://x.com/
 group: "social"
 schemas:
    - x
    - twitter
    - tweet
+
+sample_urls:
+  - x://{ScreenName}@{ConsumerKey}/{ConsumerSecret}/{AccessToken}/{AccessSecret}
+  - x://{ConsumerKey}/{ConsumerSecret}/{AccessToken}/{AccessSecret}/{ScreenName}
+  - x://{ConsumerKey}/{ConsumerSecret}/{AccessToken}/{AccessSecret}?mode=tweet
+
 has_attachments: true
+
+limits:
+  - name: "Private Message"
+    max_chars: 25000
+  - name: "Tweet"
+    max_chars: 280
 ---
 
-## Overview
-* **Source**: https://x.com/
-* **Attachment Support**: Yes
-* **Icon Support**: No
-* **Message Format**: Text
-* **Message Limit**: 10000 Characters per message if a private DM otherwise public posts are limited to 280 character (up to 25000 characters for public posts if you subscribe to X Premium).
+<!-- SERVICE:DETAILS -->
 
-### Account Setup
+## Account Setup
+
 You need to register to X developer account at [developer.x.com](https://developer.x.com/en).
 
 X Direct Messages are slightly more complicated then some of the other notification services, so here is quick breakdown of what you need to know and do in order to send Notifications through it using this tool:
 
-#### If there are Project and App
+### If there are Project and App
+
 When you registered to X developer account, you may have already created a default project and app. You can use this app and it's through an X App we will be able to send our DMs.
 
 1. First off, you'll need to **regenerate the API Keys**. This is done by accessing the app name under **Projects & Apps** (on left menu), then under the **Consumer Keys** from the "*Keys and tokens*" Tab. Once generated, copy it to a safe place. This is **Consumer Keys**.<br/>![X Generate Tokens](https://room.taikun.blog/wp-content/uploads/2025/05/X-Generate-Tokens.png)
@@ -38,7 +49,8 @@ When you registered to X developer account, you may have already created a defau
    Once you entered them all, click **Save**.
 3. Lastly, you'll need to **regenerate the Access Tokens**. This is done under the **Authentication Tokens** from the "*Keys and tokens*" Tab. Once generated, copy it to a safe place.<br/>![X Generate Tokens](https://room.taikun.blog/wp-content/uploads/2025/05/X-Generate-Tokens.png)
 
-#### If there is no Project and App
+### If there is no Project and App
+
 1. First off, you need to create a project and an X App (not Standalone apps) from [developer.x.com](https://developer.x.com/en/portal/projects-and-apps). It's through an X App we will be able to send our DMs.<br/>![X Create Project](https://room.taikun.blog/wp-content/uploads/2025/05/X-Create-Project.png)<br/>X asks you to justify why you need it as long as you specify the purpose of your app in detail.
 2. Once you created the app, you'll see the **API Tokens** on the screen, so copy it to a safe place. This is **Consumer Keys**.<br/>![X App API Key](https://room.taikun.blog/wp-content/uploads/2025/05/X-App-API-Key.png)
 3. Next, grant the appropriate access permissions so that you can post or send DMs. After clicking on the app name under **Projects & Apps** (on left menu), click on **Set up** under the **User authentication settings** section.<br/>![X User authentication set up](https://room.taikun.blog/wp-content/uploads/2025/05/X-User-authentication-set-up.png)<br/>On the **User authentication settings** page, set the following
@@ -61,7 +73,8 @@ You should now have the following 4 tokens ready to use.
 
 From here you're ready to go. You can post public posts or simply create DMs through the use of the `mode=` variable. By default Direct Messaging (DM) is used.
 
-### Syntax
+## Syntax
+
 Valid syntax is as follows:
 
 * `twitter://{ConsumerKey}/{ConsumerSecret}/{AccessToken}/{AccessSecret}`
@@ -90,7 +103,8 @@ A Public post can be referenced like so:
 * `twitter://{ConsumerKey}/{ConsumerSecret}/{AccessToken}/{AccessSecret}?mode=tweet`
 * `x://{ConsumerKey}/{ConsumerSecret}/{AccessToken}/{AccessSecret}?mode=tweet`
 
-### Parameter Breakdown
+## Parameter Breakdown
+
 | Variable    | Required | Description
 | ----------- | -------- | -----------
 | ScreenName      | Yes      | The UserID of your account such as *l2gnux* (if your id is @l2gnux). You must specify a `{userid}` *or* an `{ownerid}`.
@@ -101,7 +115,10 @@ A Public post can be referenced like so:
 | Mode             | No       | The X mode you want to operate in. Possible values are `dm` (for Private Direct Messages) and `tweet` to make a public post. By default this is set to `dm`
 | batch            | No       | By default images are batched together. However if you want your attachments to be posted 1 post per attachment, set this to False.
 
-#### Example
+<!-- GLOBAL:SERVICE:PARAMS -->
+
+## Example
+
 Send a X DM to @testaccount:
 
 ```bash

@@ -20,7 +20,9 @@ ended: 2019-02
 ---
 
 :::note
+
 ## Service End Reason
+
 Unknown
 
 💡The Service was removed from Apprise in [apprise/1219](https://github.com/caronc/apprise/issues/1219)
@@ -29,26 +31,33 @@ Unknown
 <!-- SERVICE:DETAILS -->
 
 ## Account Setup
+
 Boxcar just has a development platform these days.  You can't get notifications through your AppleOS or Android devices anymore. You can still however sign up for an account [on their website](https://boxcar.io/). From there you can create projects through them.
 
 Each _project_ you create with them will grant you access to your own unique **Access Key** and a **Secret Key**. You can post notifications knowing these 2 values.
 
 ## Syntax
+
 Valid authentication syntaxes are as follows:
+
 * `boxcar://{access_key}/{secret_key}`
 
 Tags support:
+
 * `boxcar://{access_key}/{secret_key}/@{tag_id}`
 * `boxcar://{access_key}/{secret_key}/@{tag_id01}/@{tag_id02}/@{tag_idNN}`
 
 Device Tokens:
+
 * `boxcar://{access_key}/{secret_key}/{device_id}`
 * `boxcar://{access_key}/{secret_key}/{device_id01}/{device_id02}/{device_idNN}`
 
 You can also form any combination of the above and perform updates from one url:
+
 * `boxcar://{access_key}/{secret_key}/@{tag_id}**/{device_id}`
 
 ## Parameter Breakdown
+
 | Variable    | Required | Description
 | ----------- | -------- | -----------
 | access_key  | Yes      | This is required for your account to work. You will be provided one from boxcar's website upon creating an account with them.
@@ -59,7 +68,9 @@ You can also form any combination of the above and perform updates from one url:
 <!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Example
+
 Send a Boxcar notification to all devices associated with a project:
+
 ```bash
 # Assume:
 #  - our {access_key} is pJz1KEP5zGo9KwDnIb-7_Kab

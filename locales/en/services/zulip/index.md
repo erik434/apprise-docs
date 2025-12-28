@@ -4,13 +4,16 @@ description: "Send Zulip notifications."
 ---
 
 ## Zulip Notifications
-* **Source**: https://zulipchat.com/
+
+* **Source**: <https://zulipchat.com/>
 * **Icon Support**: No
 * **Message Format**: Text
 * **Message Limit**: 10000 Characters per message
 
 ### Account Setup
+
 To use this Zulip, you must have a Zulip Chat bot defined; See [here for more details](https://zulipchat.com/help/add-a-bot-or-integration).  At the time of writing this plugin the instructions were:
+
 1. From your desktop, click on the gear icon in the upper right corner.
 2. Select Settings.
 3. On the left, click Your bots.
@@ -22,7 +25,9 @@ If you know your organization **{ID}** (as it's part of your zulipchat.com url),
 Upon creating a bot successfully, you'll now be able to access it's API Token.
 
 ### Syntax
+
 Valid syntaxes are as follows:
+
 * **zulip**://**{botname}**@**{organization}**/**{token}**/
 * **zulip**://**{botname}**@**{organization}**/**{token}**/**{stream}**
 * **zulip**://**{botname}**@**{organization}**/**{token}**/**{stream1}**/**{stream2}**/**{streamN}**
@@ -32,9 +37,11 @@ Valid syntaxes are as follows:
 **Note**: If neither a **{stream}** or **{email}** is specified then by default the stream **general** is notified.
 
 You can also mix and match the entries above too:
+
 * **zulip**://**{botname}**@**{organization}**/**{token}**/**{stream1}**/**{email1}**/
 
 ### Parameter Breakdown
+
 | Variable    | Required | Description
 | ----------- | -------- | -----------
 | organization| Yes      | The organization you created your webhook under. The trailing part of the organization reading `.zulipchat.com` is not required here, however this is gracefully handled if specified.
@@ -44,7 +51,9 @@ You can also mix and match the entries above too:
 | stream     | No       | A stream to notify.
 
 #### Example
+
 Send a Zulip notification to default #general (default) stream:
+
 ```bash
 # Assuming our {organization} is apprise
 # Assuming our {token} is T1JJ3T3L2
@@ -54,6 +63,7 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" \
 ```
 
 Send a Zulip notification to the #support stream:
+
 ```bash
 # Assuming our {organization} is apprise
 # Assuming our {token} is T1JJ3T3L2

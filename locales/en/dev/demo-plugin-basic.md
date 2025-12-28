@@ -4,11 +4,13 @@ description: "A templated example of how one might structure a basic Apprise ser
 ---
 
 # A Basic Apprise Notification Example
+
 This example shows a basic template of how one might build a Notification Service that does a task as simple as writing to `stdout` (Standard Out)
 
 It's very important that the filename `apprise/plugins/service.py` does not align with the class name inside of it.  In this example, the class is `NotifyDemo`.  So perhaps a good filename might be `apprise/plugins/demo.py`.
 
 ## The Code
+
 ```python
 # -*- coding: utf-8 -*-
 from .base import NotifyBase
@@ -135,7 +137,9 @@ class NotifyDemo(NotifyBase):
 ```
 
 ## Testing
+
 You can test your **NotifyDemo** class using the `demo://` schema:
+
 ```bash
 # using the `apprise` found in the local bin directory allows you to test
 # the new plugin right away. Use the `demo://` schema we defined.  You can also

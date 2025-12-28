@@ -4,7 +4,8 @@ description: "Send googlechat notifications."
 ---
 
 ## Google Chat Notifications
-* **Source**: https://chat.google.com/
+
+* **Source**: <https://chat.google.com/>
 * **Icon Support**: No
 * **Message Format**: Markdown
 * **Message Limit**: 4000 Characters per message
@@ -19,23 +20,29 @@ For this to work correctly you a GSuite account (there are free trials if you do
 1. Click outside the dialog box to close.
 
 When you've completed, you'll get a URL that looks a little like this:
+
 ```
 https://chat.googleapis.com/v1/spaces/AAAAkM/messages?key=AIzaSSjMm-WEfqKqqsHI&token=O7bnyri_WEXKcyFk%3D
                                       ^    ^              ^                  ^       ^                 ^
                                       |    |              |                  |       |                 |
                                      workspace             ... webhook_key...         ..webhook_token..
 ```
+
 Simplified, it looks like this:
-- `https://chat.googleapis.com/v1/spaces/WORKSPACE/messages?key=WEBHOOK_KEY&token=WEBHOOK_TOKEN`
+
+* `https://chat.googleapis.com/v1/spaces/WORKSPACE/messages?key=WEBHOOK_KEY&token=WEBHOOK_TOKEN`
 
 Now it's important to note that while this Apprise plugin uses `gchat://`, you can also just use this URL exactly the way it was provided to you from Google when you copied and pasted.  This is a perfectly valid Google Chat Apprise URL as well.
 
 ### Syntax
+
 Valid syntax is as follows:
-- `https://chat.googleapis.com/v1/spaces/{workspace}/messages?key={webhook_key}&token={webhook_token}`
-- `gchat://{workspace}/{webhook_key}/{webhook_token}`
+
+* `https://chat.googleapis.com/v1/spaces/{workspace}/messages?key={webhook_key}&token={webhook_token}`
+* `gchat://{workspace}/{webhook_key}/{webhook_token}`
 
 ### Parameter Breakdown
+
 | Variable    | Required | Description
 | ----------- | -------- | -----------
 | workspace   | Yes      | The workspace associated with your Google Chat account.
@@ -44,7 +51,9 @@ Valid syntax is as follows:
 | thread      | No       | You can optionally specify a `ThreadKey` on the URL to focus it's notifications there.
 
 #### Example
+
 Send a Google Chat notification
+
 ```bash
 # Assuming our {workspace} is AAAAkM
 # Assuming our {webhook_key} is AIzaSSjMm-WEfqKqqsHI
@@ -56,6 +65,7 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" \
 
 Remember, you can also just use the URL as it was provided to you when configuring your Webhook:
 Send a Google Chat notification
+
 ```bash
 # Assuming our {workspace} is AAAAkM
 # Assuming our {webhook_key} is AIzaSSjMm-WEfqKqqsHI
@@ -66,6 +76,7 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" \
 ```
 
 Want to target a specific threadKey?  Just do the following:
+
 ```bash
 # Assuming our {workspace} is AAAAkM
 # Assuming our {webhook_key} is AIzaSSjMm-WEfqKqqsHI

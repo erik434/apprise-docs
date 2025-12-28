@@ -4,23 +4,27 @@ description: "Send d7networks notifications."
 ---
 
 ## Direct 7 (D7) Networks
-* **Source**: https://d7networks.com
+
+* **Source**: <https://d7networks.com>
 * **Icon Support**: No
 * **Message Format**: Text
 * **Message Limit**: 160 Characters per message
 
 ### Account Setup
+
 To use this service you will need a D7 Networks account from their [website](https://d7networks.com/)
 
 After you've established your account you can get your API Token from the API Details section from within your [account profile area](https://d7networks.com/accounts/profile/).
 
 ### Syntax
+
 Valid syntax is as follows:
+
 * `d7sms://{token}@{PhoneNo}`
 * `d7sms://{token}@{PhoneNo1}/{PhoneNo2}/{PhoneNoN}`
 
-
 ### Parameter Breakdown
+
 | Variable        | Required | Description
 | --------------- | -------- | -----------
 | token      | Yes      | The _API Token_ associated with your D7 Networks account.  This is available to you via the **API Details** section from within your [account profile area](https://d7networks.com/accounts/profile/).
@@ -30,7 +34,9 @@ Valid syntax is as follows:
 | batch        | No  | D7 Networks allows a batch mode.  If you identify more then one phone number, you can send all of the phone numbers you identify on the URL in a single shot instead of the normal _Apprise_ approach (which sends them one by one). Enabling batch mode has both it's pro's and cons. By default batch mode is disabled.
 
 #### Example
+
 Send a D7 Network Notification as an SMS:
+
 ```bash
 # Assuming our {token} is AJfkafjA4Baghkr0Zkjk
 # Assuming our {PhoneNo} - is in the US somewhere making our country code +1

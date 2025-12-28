@@ -4,6 +4,7 @@ description: "A more indepth look at the Apprise.details() fuction"
 ---
 
 # Apprise details()
+
 ```python
 {
     "version": "X.Y.Z",
@@ -13,11 +14,13 @@ description: "A more indepth look at the Apprise.details() fuction"
 ```
 
 A call to the **Apprise().details()** object returns a list of supported notification services available. It's syntax can be broken down into 3 major categories:
+
 * **version**: A string representation of the current version of the Apprise library.
 * **asset**: Some developers will provide their own [[Apprise Asset Object|Development_API#the-apprise-asset-object]] tailored to their own system.  This is merely a view into the current loaded configuration.
 * **schemas**: This is a identifying all of the supported notification services and a very high level point of reference to them such as their official documentation, the apprise documentation, and the name of the service itself.
 
 A simple way to look at all of the data available to you can be done like so:
+
 ```python
 import apprise
 from json import dumps
@@ -32,6 +35,7 @@ print(dumps(a.details(), indent=2)
 ```
 
 ## Version
+
 This is just a simple string that you can use as a reference to help identify what version of Apprise is loaded.  The version identified here can have a direct impact on what notification services have been made available to you and additions to this very API.
 
 While there is no intent to change the API at this time, the API IS subject to potentially be structured differently or _could_ include potential breaking changes _IF the major changes_. Hence given a version of **X**.Y.Z, **X** would be identified as _the major_.
@@ -39,9 +43,11 @@ While there is no intent to change the API at this time, the API IS subject to p
 In all other circumstances, content may be added to the API, but NEVER removed or changed in such a way it would break systems referencing it.
 
 ## Asset
+
 [[The Apprise Asset Object|Development_API#the-apprise-asset-object]] during the initialization of Apprise can be altered to conform to different products.  The Asset object really just defines some static globals that are referenced through-out the entire life of the Apprise object itself.
 
 This section of the JSON response simply allows one to review what was set/specified. By default, the output might look like this:
+
 ```python
     "asset": {
         "app_id": "Apprise",
@@ -57,9 +63,11 @@ This section of the JSON response simply allows one to review what was set/speci
 ```
 
 ## Schemas
+
 Here is where all of the supported notification services are identified and all of the details you need to know about in order to use one.
 
 Below is an example of what the output  would look like:
+
 ```python
     "schemas": {
             "service_name": "Boxcar",
@@ -98,11 +106,12 @@ Below is an example of what the output  would look like:
             "requirements": {...}
         },
 ```
+
 * `service_name` gives you a general description of the notification service itself.
 * `service_url` provides information to the official source of the notification service.
 * `setup_url` provides the URL you can reference to see examples on how to construct your Apprise URL.
 * `protocols` identifies the accepted schema for non-encrypted references to the service. It is not uncommon to have this field set to `null` simply stating that there simply isn't a non-encrypted form of using this service.
-* `secure_protocols` identifies the accepted schema for encrypted references to the service. 
+* `secure_protocols` identifies the accepted schema for encrypted references to the service.
 * `enabled` is set to either True or False if the service/plugin is available (based on administrative/platform/environment dependencies).  This field is ONLY present if you specified `show_disabled=True` on your call to **details()**
 * `requirements` provides details on what is required for a plugin to be functional (With respect to the platform/environment.  This field is ONLY present if you specified `show_requirements=True` on your call to **details()**
 * `details` goes into a much more granular view of the protocol.  This is covered in the next section.
@@ -110,6 +119,7 @@ Below is an example of what the output  would look like:
 All services will have _AT LEAST_ one protocol/schema you can use to access it by.
 
 The details function can also take a few keyword arguments that generate a little more overhead, but can additionally provide you information on services Apprise supports that you do not have access to (due to your Platform/Environment).
+
 ```python
 import apprise
 from json import dumps
@@ -120,14 +130,17 @@ a = apprise.Apprise()
 # Get our details and include all other services available to us as well:
 details = apprise.details(show_disabled=True)
 ```
+
 The payload from the above call will look almost identical as it did except that it will additionally include a variable called **enabled** which is set to either `True` or `False`.  One difference is that the call without this flag set ONLY returns enabled plugins.
 
 ### Details
+
 This identifies a much more granular view of the schema object itself. There is enough details in here on every single supported notification service that an end user could ask for simple to read arguments like `token`, `password`, `target_users` and dynamically construct the URL on their own.  You can also just feed these tokens into the [[Apprise Notification Object|Development_API#the-apprise-notification-object]] directly for those using this product at a very low level.
 
 This section was the newest addition to what is provided. There are 4 core sections within the `details` part of the of the JSON output:
 
 1. **templates**: Identifies the URL structure associated with the specific service, eg:
+
 ```json
     {
       "service_name": "Discord", 
@@ -141,7 +154,9 @@ This section was the newest addition to what is provided. There are 4 core secti
      }
 ...
 ```
+
 2. **tokens**: This provides the full mappings of each entry identified in the **templates** (identified above).  It gives some data to easily build a web page and/or application from by allowing developers to dynamically generate the Apprise URLs.<br/> It also provides a **map_to** argument which maps the token directly to the Apprise Notification Class (should you want to manually initialize it this way instead of via a URL). Some tokens can be combined into one single token (as a list).  The **map_to** argument additionally provides this connection as well.  This is discussed more below.
+
 ```json
     {
       "service_name": "Discord", 
@@ -185,8 +200,10 @@ This section was the newest addition to what is provided. There are 4 core secti
       ...
      }
 ...
-``` 
+```
+
 3. **args**: This identifies any URL arguments you want to define.  The arguments reside after the URL is defined, such as `http://path/?arg=val&arg2=val2`.  URL arguments are never mandatory for a URL's construction with Apprise and merely provide extended options.  A continued example (with respect to Discord) would look like this:
+
 ```json
 ...
     {
@@ -257,8 +274,9 @@ This section was the newest addition to what is provided. There are 4 core secti
       ...
      }
 ...
-``` 
-4. **kwargs**: Simiar to args, these are never required, the subtle difference between **args** and **kwargs* is with **args** the key names are already defined.  with **kwargs** the user defines both the key and it's value when building the `?+key=value&-key2=value`.  Custom **kwargs** in Apprise are _ALWAYS_ prefixed with a plus (**+**) or minus (**-**) symbol; for this reason there will ALWAYS be a **prefix** field that identities which symbol is applicable.  There are very few notification services at this time that use this, but to support them, you'll find them here. JSON and XML URLs for example allow one to set the _HTTP Headers_ passed to the server they _POST_ to.
+```
+
+4. **kwargs**: Simiar to args, these are never required, the subtle difference between **args** and *_kwargs_ is with **args** the key names are already defined.  with **kwargs** the user defines both the key and it's value when building the `?+key=value&-key2=value`.  Custom **kwargs** in Apprise are _ALWAYS_ prefixed with a plus (**+**) or minus (**-**) symbol; for this reason there will ALWAYS be a **prefix** field that identities which symbol is applicable.  There are very few notification services at this time that use this, but to support them, you'll find them here. JSON and XML URLs for example allow one to set the _HTTP Headers_ passed to the server they _POST_ to.
 
 ```json
 ...
@@ -281,7 +299,9 @@ This section was the newest addition to what is provided. There are 4 core secti
      }
 ...
 ```
+
 ## Argument Breakdown
+
 Here I'll break down the arguments a bit more and what they mean:
 
 | Argument  | Values        | Description  |
@@ -301,9 +321,11 @@ Here I'll break down the arguments a bit more and what they mean:
 | **map_to**  | **string** | This has one core meaning and one helping one.   First off, it's primary reason for existence is for those people who don't want to build URLs from the **templates** and want to directly _instantiate_ their own instance of the Notification service manually (using the class object).  **map_to** always points to the function argument name.<br/> The other use of this is in cases where the **prefix** is used.  You should always check the **token** table to see if the **map_to** can be mapped back to an element already identified here.
 
 ## Using The Tokens
+
 So, let's presume you built your website and/or application and provided all of these options to the user.  They provided you with all of these options/tokens populated with their data and now you need to send a notification for them.
 
 No problem, the **Apprise.add()** function now supports dictionaries of URL arguments (not just the URL strings themselves).
+
 ```python
 import apprise
 
@@ -330,14 +352,17 @@ a.add(results)
 
 # Done!
 ```
+
 **Note:** The dictionary keys that you pass into Apprise.add() must be based on the **map_to** directive.
 
 ## Internationalization
+
 Full I18n support is built into this pull request allowing the **name** directive to be translated into other languages (making the **details()** support people who've built their website around multi-language support).
 
 The language is automatically translated on the fly to each call to **details()**.  At this time only English is supported, but I welcome anyone wishing to help with translations into other languages.
 
 Here is how it works:
+
 ```python
 import apprise
 
@@ -357,6 +382,7 @@ details = a.details('fr')
 ```
 
 Here is how you can help if you want to.  Let's say you want to help translate apprise into another language:
+
 ```bash
 # First checkout your own copy of apprise and change into the directory
 # it downloaded to

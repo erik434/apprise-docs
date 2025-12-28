@@ -8,17 +8,21 @@ description: "Allows Apprise to avoid requesting the same data over and over aga
 Persistent Storage greatly reduces the API transactions between you and the service(s) you may use. Developers need to enable this but the Apprise CLI has this enabled by default.
 
 For things like:
+
 - The Matrix plugin: persistent cache allows login information to be cached locally for re-use (saving extra API calls to authenticate again each time).
 - The Telegram plugin: persistent cache allows Apprise to remember your user account saving extra fetches to the service to determine it each and every time.
 
 Aditional Notes:
+
 - Apprise stores all of it's persistent data in it's own directory unique to the Apprise URL you create. By default all directories are 8 characters in length and a combination of letters an numbers.
 - All Apprise persistent files have a `.psdata` extension and are written to a cache directory chosen by you otherwise it defaults to the locations provided by your operating system.
 
 ## Developer Usage
 
 When developing your plugin, you can access the persistent storage via `self.store`.  There are 2 main features:
-* **Key/Value Entries**: This is the easiest as the store behaves very much like a dictionary.  But under the hood it is handling the data based on the operational mode.  For the most part you can set most types (int, float, etc).  Content is flushed to disk using the `json.dumps` call.
+
+- **Key/Value Entries**: This is the easiest as the store behaves very much like a dictionary.  But under the hood it is handling the data based on the operational mode.  For the most part you can set most types (int, float, etc).  Content is flushed to disk using the `json.dumps` call.
+
    ```python
    # Set a key:
    self.store['keyname'] = 'value'
@@ -36,7 +40,9 @@ When developing your plugin, you can access the persistent storage via `self.sto
    if 'keyname' in self.store:
        print('Yup, I found it').
    ```
-* **Data Files**: You may find yourself wanting to write content straight to disk (all files have a `psdata` extension).
+
+- **Data Files**: You may find yourself wanting to write content straight to disk (all files have a `psdata` extension).
+
    ```python
    # write data (no key specified, so the value `default` is used)
    # You can pass in a string or bytes object.  Note that when you read the content back it will be bytes
@@ -55,10 +61,11 @@ When developing your plugin, you can access the persistent storage via `self.sto
    # Make sure to read the file back with the same parameters:
    content = self.store.read('custom-key', compress=False)
    ```
-   
+
    **Note:** Read/write functions work similar to how `read/write` would otherwise work.  If Persistent Storage is disable then `write()` will always return `None`. `read()` however will return content if it's present
 
 Here are more examples
+
 ```python
 
 class MyNotification(NotifyBase):

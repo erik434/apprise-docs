@@ -4,17 +4,21 @@ description: "Send plivo notifications."
 ---
 
 ## Plivo Notifications
-* **Source**: https://plivo.com
+
+* **Source**: <https://plivo.com>
 * **Icon Support**: No
 * **Attachment Support**: No
 * **Message Format**: Text
 * **Message Limit**: 140 Characters per message
 
 ### Account Setup
+
 Signup with Plivo [from here](https://plivo.com). From within your account you can genrate both our **Auth ID** and **Auth Token**
 
 ### Syntax
+
 Valid syntax is as follows:
+
 * `plivo://{auth_id}@{token}/{from_phone}/`
 * `plivo://{auth_id}@{token}/{from_phone}/{ToPhoneNo}`
 * `plivo://{auth_id}@{token}/{from_phone}/{ToPhoneNo1}/{ToPhoneNo2}/{ToPhoneNoN}`
@@ -24,6 +28,7 @@ Valid syntax is as follows:
 **Note**: All Phone Numbers must be in E.164 format (e.g., `+14151234567`)
 
 ### Parameter Breakdown
+
 | Variable   | Required | Description
 | ---------- | -------- | -----------
 | auth_id    | Yes      | The **Auth ID** Associated with your Plivo account.
@@ -33,7 +38,9 @@ Valid syntax is as follows:
 | batch      |  No      | Send multiple specified notifications in a single batch (1 upstream post to the end server).  By default this is set to `no`.
 
 #### Example
+
 Send a Plivo notification:
+
 ```bash
 # Assuming our {auth_id} is abcd123
 # Assuming our {token} is 9876test

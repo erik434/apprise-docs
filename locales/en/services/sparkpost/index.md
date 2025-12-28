@@ -4,36 +4,44 @@ description: "Send sparkpost notifications."
 ---
 
 ## SparkPost Notifications
-* **Source**: https://sparkpost.com/
+
+* **Source**: <https://sparkpost.com/>
 * **Icon Support**: No
 * **Attachment Support**: yes
 * **Message Format**: Text
 * **Message Limit**: 32768 Characters per message
 
 ### Account Setup
+
 You can create an account for free [on their website](https://sparkpost.com/) but it comes with restrictions.
 
 For each domain you set up with them, you'll be able access them all from your dashboard once you're signed in. You'll need to generate an API key and grant it `transmission` access.
 
 ### Syntax
+
 Valid syntaxes are as follows:
+
 * `sparkpost://{user}@{domain}/{apikey}/`
 * `sparkpost://{user}@{domain}/{apikey}/{email}/`
 * `sparkpost://{user}@{domain}/{apikey}/{email1}/{email2}/{emailN}/`
 
 You may also identify your region if you aren't using the US servers like so:
+
 * `sparkpost://{user}@{domain}/{apikey}/?region=eu`
 
 You can adjust what the Name associated with the From email is set to as well:
+
 * `sparkpost://{user}@{domain}/{apikey}/?From=Darth%20Vader`
 
 ### Email Extensions
+
 If you wish to utilize extensions, you'll need to escape the addition/plus (+) character with **%2B** like so:<br/>
 `sparkpost://{user}@{domain}/{apikey}/chris%2Bextension@example.com`
 
 The Carbon Copy (**cc=**) and Blind Carbon Copy (**bcc=**) however are applied to each email sent.  Hence if you send an email to 3 target users, the entire *cc* and *bcc* lists will be part of all 3 emails.
 
 ### Parameter Breakdown
+
 | Variable    | Required | Description
 | ----------- | -------- | -----------
 | apikey      | Yes      | The API Key associated with the domain you want to send your email from. This is available to you after signing into their website an accessing the [dashboard](https://app.sparkpost.com/app/domains).
@@ -48,7 +56,9 @@ The Carbon Copy (**cc=**) and Blind Carbon Copy (**bcc=**) however are applied t
 | bcc   | No     | Blind Carbon Copy email address(es).  More than one can be separated with a space and/or comma.
 
 #### Example
+
 Send a sparkpost notification to the email address `bill.gates@microsoft.com`
+
 ```bash
 # Assuming the {domain} we set up with our sparkpost account is example.com
 # Assuming our {apikey} is  4b4f2918fddk5f8f91f
@@ -58,7 +68,9 @@ apprise sparkpost:///noreply@example.com/4b4f2918fddk5f8f91f/bill.gates@microsof
 ```
 
 ### Header Manipulation
+
 Some users may require special HTTP headers to be present when they post their data to their server.  This can be accomplished by just sticking a plus symbol (**+**) in front of any parameter you specify on your URL string. The below examples send a sparkpost notification to the email address `bill.gates@microsoft.com` while leveraging the header manipulation.
+
 ```bash
 # Below would set the header:
 #    X-Token: abcdefg
@@ -84,7 +96,9 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" \
 ```
 
 ### Global Substitution
+
 SparkPost allows you to identify `{{tokens}}` that are wrapped in 2 curly braces. [See here on their section of templating](https://developers.sparkpost.com/api/template-language/) for more details.  If you wish to pass in a keyword and it's substituted value, simply use the colon (**:**) in front of any parameter you specify on your URL string. The below examples send a sparkpost notification to the email address `bill.gates@microsoft.com` while leveraging the header manipulation.
+
 ```bash
 # Below would set the token {{software}} to be substituted with Microsoft:
 # Assuming the {domain} we set up with our sparkpost account is example.com
@@ -96,6 +110,7 @@ apprise -vv -t "Test Message Title" -b "Bill Gates works at {{software}}" \
 ```
 
 You can specify as many tokens as you like. Apprise automatically provides some default (out of the box) translated tokens if you wish to use them; they are as follows:
+
 * **app_id**: The Application identifier; usually set to `Apprise`, but developers of custom applications may choose to over-ride this and place their name here.  this is how you acquire this value.
 * **app_desc**:  Similar the the Application Identifier, this is the Application Description. It's usually just a slightly more descriptive alternative to the *app_id*.  This is usually set to `Apprise Notification` unless it has been over-ridden by a developer.
 * **app_color**: A hex code that identifies a colour associate with a message.  For instance, `info` type messages are generally blue where as `warning` ones are orange, etc.

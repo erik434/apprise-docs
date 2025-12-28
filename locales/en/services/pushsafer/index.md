@@ -4,7 +4,8 @@ description: "Send pushsafer notifications."
 ---
 
 ## Pushsafer Notifications
-* **Source**: https://www.pushsafer.com/
+
+* **Source**: <https://www.pushsafer.com/>
 * **Icon Support**: No
 * **Attachment Support**: Yes
 * **Message Format**: Text
@@ -13,10 +14,13 @@ description: "Send pushsafer notifications."
 There isn't too much effort requires to use PushSafer notifications. The message is basically just passed to your online PushSafer account and then gets relayed to your device(s) you've setup from there.
 
 ### Getting Your Private Key
+
 Once you log into their official [website](https://www.pushsafer.com/), you can find the **{private_key}** on your [dashboard](https://www.pushsafer.com/dashboard/).
 
 ### Syntax
+
 Valid syntax is as follows:
+
 * `psafers://{private_key}`
 * `psafers://{private_key}/{device_id}`
 * `psafers://{private_key}/{device_id1}/{device_id2}/{device_idN}`
@@ -29,6 +33,7 @@ If no device is specified, the `a` reserved device is used by default. the `a` n
 Secure connections are always made when you use `psafers://` however `psafer://` also works if you wish to use an unencrypted connection.
 
 ### Parameter Breakdown
+
 | Variable    | Required | Description
 | ----------- | -------- | -----------
 | private_key     | Yes      | The private key associated with your PushSafer account.  This can be found on your [dashboard](https://www.pushsafer.com/dashboard/) after successfully logging in.
@@ -38,7 +43,9 @@ Secure connections are always made when you use `psafers://` however `psafer://`
 | vibration  | No | Android and iOS devices can be set to vibrate upon the reception of a notification.  By setting this, you're effectively setting the strength of the vibration.  You can set this to **1**, **2** or **3** where 3 is a maximum vibration setting and 1 causes a lighter vibration. By default this variable isn't set at all causing your device default settings to take effect.
 
 #### Example
+
 Send a PushSafer notification to all of our configured devices:
+
 ```bash
 # Assuming our {private_key} is 435jdj3k78435jdj3k78435jdj3k78
 apprise -vv -t "Test Message Title" -b "Test Message Body" \
@@ -46,6 +53,7 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" \
 ```
 
 Send a PushSafer notification with the Emergency Priority:
+
 ```bash
 # Emergency priority advises you to also specify the expire and
 # retry values.

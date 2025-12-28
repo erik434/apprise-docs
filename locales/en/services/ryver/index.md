@@ -4,22 +4,25 @@ description: "Send ryver notifications."
 ---
 
 ## Ryver Notifications
-* **Source**: https://ryver.com/
+
+* **Source**: <https://ryver.com/>
 * **Icon Support**: Yes
 * **Message Format**: Markdown
 * **Message Limit**: 1000 Characters per message
 
 ### Account Setup
+
 To use Ryver you'll need to have the forum(s) you intend to notify already pre-created.  You'll need to do this before you follow the next set of instructions.
- 
+
 Next you need to define a new webhook and get the corresponding URL.  This is done through:
+
 1. click on the **Integrations** > **Incoming Webhooks** beneath your settings on the left
 2. click on the **Create Webhook** button
 3. choose either **Slack** or **Plain/text Ryver** as this plugin currently supports both.
 4. Regardless of what webhook type you choose to create (Slack or Ryver), the next steps are still the same:
-    - Set the webhook type to **Chat Message**
-    - Select the forum(s) you already have set up to allow this webhook to access.
-    - Click next.
+    * Set the webhook type to **Chat Message**
+    * Select the forum(s) you already have set up to allow this webhook to access.
+    * Click next.
 
  When you've completed this process you will receive a URL that looks something like this:
 ```https://apprise.ryver.com/application/webhook/ckhrjW8w672m6HG```
@@ -31,26 +34,31 @@ This effectively equates to:<br/>
 
 The last part of the URL you're given is the token we're most interested in. With respect to the above example:
 
-- the **token** is ```ckhrjW8w672m6HG```
-- the **organization** is ``apprise``
+* the **token** is ```ckhrjW8w672m6HG```
+* the **organization** is ``apprise``
 
 ### Syntax
+
 Valid syntaxes are as follows:
+
 * `https://{organization}.ryver.com/application/webhook/{token}`
 * `ryver://{organization}/{token}/`
 * `ryver://{botname}@{organization}/{token}/`
 * `ryver://{organization}/{token}/?webhook=slack`
 
 ### Parameter Breakdown
+
 | Variable    | Required | Description
 | ----------- | -------- | -----------
 | organization| Yes      | The organization you created your webhook under.
-| token       | Yes      | The token provided to you after creating a *incoming-webhook*
+| token       | Yes      | The token provided to you after creating a _incoming-webhook_
 | botname     | No       | Set the display name the message should appear from.
 | webhook     | No       | The type of webhook you created (Slack or Ryver). The only possible values are **slack** and **ryver**. The default value is **ryver** if the webhook value isn't specified.
 
 #### Example
+
 Send a ryver notification:
+
 ```bash
 # Assuming our {organization} is apprise
 # Assuming our {token} is T1JJ3T3L2

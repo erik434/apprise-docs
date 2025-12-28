@@ -4,7 +4,8 @@ description: "Send pushplus notifications."
 ---
 
 ## Pushplus Notifications
-* **Source**: https://www.pushplus.plus/
+
+* **Source**: <https://www.pushplus.plus/>
 * **Icon Support**: No
 * **Message Format**: Plain Text
 * **Message Limit**: ~20,000 Characters
@@ -20,6 +21,7 @@ Once you create an account and subscribe to a channel, you will be issued a **to
 3. Optionally configure the Pushplus app in WeChat for mobile delivery.
 
 Your notification URL will look like this:
+
 ```
 https://www.pushplus.plus/send?token=abc123def456ghi789jkl012mno345pq
 ```
@@ -31,8 +33,9 @@ Apprise supports both the full Pushplus native webhook URL and its simplified ve
 ### Syntax
 
 Valid syntax is as follows:
-- `https://www.pushplus.plus/send?token={token}`
-- `pushplus://{token}`
+
+* `https://www.pushplus.plus/send?token={token}`
+* `pushplus://{token}`
 
 ---
 
@@ -47,18 +50,21 @@ Valid syntax is as follows:
 ### Examples
 
 #### 1. Using the simplified Apprise URL
+
 ```bash
 apprise -vv -t "Title" -b "This is the body" \
     pushplus://abc123def456ghi789jkl012mno345pq
 ```
 
 #### 2. Using the token as a query parameter
+
 ```bash
 apprise -vv -t "Title" -b "This is the body" \
     pushplus://?token=abc123def456ghi789jkl012mno345pq
 ```
 
 #### 3. Using the full native webhook URL
+
 ```bash
 apprise -vv -t "Title" -b "This is the body" \
     https://www.pushplus.plus/send?token=abc123def456ghi789jkl012mno345pq

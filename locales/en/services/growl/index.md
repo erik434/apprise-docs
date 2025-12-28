@@ -4,7 +4,8 @@ description: "Send growl notifications."
 ---
 
 ## Growl Notifications
-* **Source**: http://growl.info/
+
+* **Source**: <http://growl.info/>
 * **Icon Support**: Yes
 * **Message Format**: Text
 * **Message Limit**: 32768 Characters per message
@@ -12,7 +13,9 @@ description: "Send growl notifications."
 Growl requires this script to pre-register the notifications it sends before being able to actually send something. Make sure you are configured to allow application registration!
 
 ### Syntax
+
 Valid syntaxes are as follows:
+
 * **growl**://**{hostname}**
 * **growl**://**{hostname}**:**{port}**
 * **growl**://**{password}**@**{hostname}**
@@ -20,9 +23,11 @@ Valid syntaxes are as follows:
 * **growl**://**{hostname}**/?**priority={priority}**
 
 Depending on the version of your Apple OS, you may wish to enable the legacy protocol version (v1.4) as follows if you have problems receiving the icon in version 2 (the default):
+
 * **growl**://**{password}**@**{hostname}**?version=**1**
 
 ### Parameter Breakdown
+
 | Variable    | Required | Description
 | ----------- | -------- | -----------
 | hostname    | Yes      | The server Growl server is listening on.
@@ -34,7 +39,9 @@ Depending on the version of your Apple OS, you may wish to enable the legacy pro
 | sticky       | No     | The Gotify sticky flag; by default this is set to **no**.
 
 #### Example
+
 Send a Growl notification to our server
+
 ```bash
 # Assuming our {hostname} is growl.server.local
 apprise -vv -t "Test Message Title" -b "Test Message Body" \
@@ -42,6 +49,7 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" \
 ```
 
 Some versions of Growl don't display the image/icon correctly, you can also try the following to see if this solves it for you:
+
 ```bash
 # Send a Growl notification using a a raw binary image (instead of URL - internally)
 apprise -vv -t "Test Message Title" -b "Test Message Body" \
