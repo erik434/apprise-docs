@@ -5,10 +5,10 @@ description: "Send voipms notifications."
 
 ## Voip.ms Notifications
 
-* **Source**: <https://voip.ms/>
-* **Icon Support**: No
-* **Message Format**: Text
-* **Message Limit**: 160 Characters per Message
+- **Source**: <https://voip.ms/>
+- **Icon Support**: No
+- **Message Format**: Text
+- **Message Limit**: 160 Characters per Message
 
 ### Setup
 
@@ -21,18 +21,18 @@ You must edit your `DID` and enable `SMS/MMS ($0.0075/SMS, and $0.02/MMS)`:<br/>
 
 Valid syntax is as follows:
 
-* ```voipms://{password}:{email}/{fromPhoneNo}```
-* ```voipms://{password}:{email}/{fromPhoneNo}/{toPhoneNo}```
-* ```voipms://{password}:{email}/{fromPhoneNo}/{toPhoneNo1}/{toPhoneNo2}/{toPhoneNoN}/```
+- `voipms://{password}:{email}/{fromPhoneNo}`
+- `voipms://{password}:{email}/{fromPhoneNo}/{toPhoneNo}`
+- `voipms://{password}:{email}/{fromPhoneNo}/{toPhoneNo1}/{toPhoneNo2}/{toPhoneNoN}/`
 
 ### Parameter Breakdown
 
-| Variable | Required | Description |
-| ------------- | ------------- | ------------- |
-| email  | Yes  | The email associated with your Voip.ms account |
-| password | Yes  | The password for API access, this is different from your Voip.ms account password |
-| fromPhoneNo | Yes | Specify the phone number you registered with Voip.ms you wish the message to be identified as being sent from. |
-| toPhoneNo | No | A phone number and/or group you wish to send your notification to. You can use comma's to separate multiple entries if you wish. |
+| Variable    | Required | Description                                                                                                                      |
+| ----------- | -------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| email       | Yes      | The email associated with your Voip.ms account                                                                                   |
+| password    | Yes      | The password for API access, this is different from your Voip.ms account password                                                |
+| fromPhoneNo | Yes      | Specify the phone number you registered with Voip.ms you wish the message to be identified as being sent from.                   |
+| toPhoneNo   | No       | A phone number and/or group you wish to send your notification to. You can use comma's to separate multiple entries if you wish. |
 
 #### Example
 
@@ -61,9 +61,9 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" \
 
 ## Troubleshooting
 
-There have been cases where error messages would be sent back from the VoipMS Server that are not very descriptive to what the issue is.  The key things you need to verify for this service to work is:
+There have been cases where error messages would be sent back from the VoipMS Server that are not very descriptive to what the issue is. The key things you need to verify for this service to work is:
 
-* Account has credits available to use
-* SMS/MMS is enabled (see **Setup** section above)
+- Account has credits available to use
+- SMS/MMS is enabled (see **Setup** section above)
 
 In certain cases, it's possible that the Carrier you were delivering to was unable to send the message.

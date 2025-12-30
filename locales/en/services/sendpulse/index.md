@@ -5,11 +5,11 @@ description: "Send sendpulse notifications."
 
 ## SendPulse Notifications
 
-* **Source**: <https://sendpulse.com/>
-* **Icon Support**: no
-* **Attachment Support**: yes
-* **Message Format**: Text
-* **Message Limit**: 32768 Characters per message
+- **Source**: <https://sendpulse.com/>
+- **Icon Support**: no
+- **Attachment Support**: yes
+- **Message Format**: Text
+- **Message Limit**: 32768 Characters per message
 
 ### Account Setup
 
@@ -19,35 +19,35 @@ Once you have an account and access to [your dashboard](https://app.sendpulse.co
 
 Valid syntaxes are as follows:
 
-* `{schema}://{user}@{host}/{client_id}/{client_secret}`
-* `{schema}://{user}@{host}/{client_id}/{client_secret}/{to_email}`
-* `{schema}://{user}@{host}/{client_id}/{client_secret}/{to_email1}/{to_email2}/{to_email3}`
+- `{schema}://{user}@{host}/{client_id}/{client_secret}`
+- `{schema}://{user}@{host}/{client_id}/{client_secret}/{to_email}`
+- `{schema}://{user}@{host}/{client_id}/{client_secret}/{to_email1}/{to_email2}/{to_email3}`
 
-Template support is also supported as well,  You just need to specify the integer assigned to it as part of the URL:
+Template support is also supported as well, You just need to specify the integer assigned to it as part of the URL:
 
-* `{schema}://{user}@{host}/{client_id}/{client_secret}/:{to_email}?template={temlate_int}`
+- `{schema}://{user}@{host}/{client_id}/{client_secret}/:{to_email}?template={temlate_int}`
 
 If you want to take advantage of the `dynamic_template_data` variables, just create arguments prefixed with a plus (+); for example:
 
-* `sendpulse://{user}@{host}/{client_id}/{client_secret}/{to_email}?template={template_int}&+{sub1}=value&+{sub2}=value2`
+- `sendpulse://{user}@{host}/{client_id}/{client_secret}/{to_email}?template={template_int}&+{sub1}=value&+{sub2}=value2`
 
 ### Parameter Breakdown
 
-| Variable    | Required | Description
-| ----------- | -------- | -----------
-| user      | Yes      | Combined with the `host`, it constructs the email address you have configured with your SendPulse account.
-| host      | Yes      | Combined with the `user`, it constructs the email address you have configured with your SendPulse account.
-| client_id      | Yes      | The Client ID associated with your SendPulse account.
-| client_secret      | Yes      | The Client Secret associated with your SendPulse account.
-| from | No      | You can optionally identify who the email is from if you wish.
-| to_email    | No       | This is the email address will identify the email's destination (the _To_ address).  If one isn't specified then the _from_email_ is used instead.
-| template    | No       | You may optionally specify the integer of a previously generated SendPulse  template to base the email on.
-| cc          | No       | The _Carbon Copy_ (CC:) portion of the email.  This is entirely optional.  
-| bcc         | No       | The _Blind Carbon Copy_ (BCC:) portion of the email.
+| Variable      | Required | Description                                                                                                                                       |
+| ------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| user          | Yes      | Combined with the `host`, it constructs the email address you have configured with your SendPulse account.                                        |
+| host          | Yes      | Combined with the `user`, it constructs the email address you have configured with your SendPulse account.                                        |
+| client_id     | Yes      | The Client ID associated with your SendPulse account.                                                                                             |
+| client_secret | Yes      | The Client Secret associated with your SendPulse account.                                                                                         |
+| from          | No       | You can optionally identify who the email is from if you wish.                                                                                    |
+| to_email      | No       | This is the email address will identify the email's destination (the _To_ address). If one isn't specified then the _from_email_ is used instead. |
+| template      | No       | You may optionally specify the integer of a previously generated SendPulse template to base the email on.                                         |
+| cc            | No       | The _Carbon Copy_ (CC:) portion of the email. This is entirely optional.                                                                          |
+| bcc           | No       | The _Blind Carbon Copy_ (BCC:) portion of the email.                                                                                              |
 
 #### Dynamic Template Data
 
-Apprise has template support for SendPulse.  Just define the `?template=` and the optional arguments you want to set. You can identify and set these variables using Apprise by simply sticking a plus (+) in front of any parameter you specify on your URL string.
+Apprise has template support for SendPulse. Just define the `?template=` and the optional arguments you want to set. You can identify and set these variables using Apprise by simply sticking a plus (+) in front of any parameter you specify on your URL string.
 
 Consider the following template: `1234`
 

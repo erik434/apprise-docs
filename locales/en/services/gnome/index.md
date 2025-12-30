@@ -1,28 +1,40 @@
 ---
-title: "gnome Notifications"
-description: "Send gnome notifications."
+title: "Gnome Desktop Notifications"
+description: "Send Gnome Desktop notifications."
+sidebar:
+  label: "Gnome Desktop Notifications"
+
+group: desktop
+
+schemas:
+  - gnome: insecure
+
+has_image: true
+
+sample_urls:
+  - gnome://
+
+limits:
+  max_chars: 250
 ---
 
-## Gnome Desktop Notifications
+<!-- SERVICE:DETAILS -->
 
-* **Source**: n/a
-* **Icon Support**: Yes
-* **Message Format**: Text
-* **Message Limit**: 250 Characters per message
+## Account Setup
 
-Display notifications right on your Gnome desktop.  This only works if you're sending the notification to the same system you're currently accessing.  Hence this notification can not be sent from one PC to another.
+Display notifications right on your Gnome desktop. This only works if you're sending the notification to the same system you're currently accessing. Hence this notification can not be sent from one PC to another.
 
 ### Syntax
 
 There are currently no options you can specify for this kind of notification, so it's really easy to reference:
 
-* **gnome**://
+- `gnome://`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
-There are no parameters at this time.
+<!-- GLOBAL:SERVICE:PARAMS -->
 
-#### Example
+## Example
 
 Assuming we're on an OS that allows us to host the Gnome Desktop, we can send a notification to ourselves like so:
 

@@ -3,7 +3,7 @@ title: "Apprise Core"
 description: "Contributing to the Apprise Core Library"
 ---
 
-## 🤝 Contributing to Apprise Core Library
+## Contributing to Apprise Core Library
 
 Thank you for your interest in contributing to Apprise!
 
@@ -13,13 +13,13 @@ merge your contributions smoothly.
 
 ## Retrieve from GitHub
 
-``` bash
+```bash
 # Acquire the core library from it's official resting spot on GitHub
 git clone git@github.com:caronc/apprise.git
 
 ```
 
-## ✅ Quick Checklist Before You Submit
+## Quick Checklist Before You Submit
 
 - ✔️ Your code passes all lint checks:
 
@@ -139,100 +139,101 @@ With respect to the above example:
 
 - You just need to create a single notification python file as `/plugins/service_name.py`
 - Make sure you call the class inside `NotifyServiceName` and inherit from `NotifyBase`
-- Make sure your class object name is the same as the filename you create.  This is very important!
+- Make sure your class object name is the same as the filename you create. This is very important!
 - From there you just need to at a bare minimum define:
   - **the class objects**:
     - `service_name`: A string that acts as a default descriptive name associated with the Notification
-    - `service_url`: A string that identifies the platform/services URL.  This is used purely as meta data for those who seek it. But this field is required.
-    - `protocol` and/or `secure_protocol`: A string (or can be a list of strings) identifying the scheme:// keyword that apprise uses to map to the Plugin Class it's associated with.  For example, `slack` is mapped to the `NotifySlack` class found in the [`/plugins/slack.py` file](https://github.com/caronc/apprise/blob/master/apprise/plugins/slack.py). This must be defined so that people can leverage your plugin. You must choose a protocol name that isn't already taken.
-    - `setup_url`:  A string that identifies the URL a user can use to get information on how to use this Apprise Notification.  At this time I'm just creating URLs that point back to my GitHub Wiki page.
+    - `service_url`: A string that identifies the platform/services URL. This is used purely as meta data for those who seek it. But this field is required.
+    - `protocol` and/or `secure_protocol`: A string (or can be a list of strings) identifying the scheme:// keyword that apprise uses to map to the Plugin Class it's associated with. For example, `slack` is mapped to the `NotifySlack` class found in the [`/plugins/slack.py` file](https://github.com/caronc/apprise/blob/master/apprise/plugins/slack.py). This must be defined so that people can leverage your plugin. You must choose a protocol name that isn't already taken.
+    - `setup_url`: A string that identifies the URL a user can use to get information on how to use this Apprise Notification. At this time I'm just creating URLs that point back to my GitHub Wiki page.
 
   - **the functions**:
-     1. `__init__(self, *args, **kwargs)`: Define what is required to initialize your object/notification. Just make sure to cross reference it in the `template*` stuff (explained above).
-     1. `send(self, body, title='', *args, **kwargs)` at a bare minimum. See other Notify scripts as to how you can expand on this.  But just take the `body` and `title` and construct your message and send it.
-     1. `url()`.  This function must be able to construct a URL that would re-generate a copy of the exact same object if passed into `parse_url()`
-     1. `parse_url(url)`: this is a **staticmethod** that parses the Apprise URL and breaks it into a dictionary of the components.  The dictionary it creates must map up to what the `__init__()` takes as it's arguments
+    1. `__init__(self, *args, **kwargs)`: Define what is required to initialize your object/notification. Just make sure to cross reference it in the `template*` stuff (explained above).
+    1. `send(self, body, title='', *args, **kwargs)` at a bare minimum. See other Notify scripts as to how you can expand on this. But just take the `body` and `title` and construct your message and send it.
+    1. `url()`. This function must be able to construct a URL that would re-generate a copy of the exact same object if passed into `parse_url()`
+    1. `parse_url(url)`: this is a **staticmethod** that parses the Apprise URL and breaks it into a dictionary of the components. The dictionary it creates must map up to what the `__init__()` takes as it's arguments
 
   - **Putting it together**:
 
-       ```python
-       from apprise.plugins.foobar import NotifyFooBar
-       import Apprise
+    ```python
+    from apprise.plugins.foobar import NotifyFooBar
+    import Apprise
 
-       # Apprise is nothing but a manager of individual plugins
-       a = Apprise()
+    # Apprise is nothing but a manager of individual plugins
+    a = Apprise()
 
-       # Under the table, add just calls the NotifyFooBar.parse_url() and passes
-       # the result set into your new services __init__() function.
-       a.add('foobar://details/?more=details&are=optional')
+    # Under the table, add just calls the NotifyFooBar.parse_url() and passes
+    # the result set into your new services __init__() function.
+    a.add('foobar://details/?more=details&are=optional')
 
-       # There would be one new service added to our manager now:
-       assert(len(a), 1)
+    # There would be one new service added to our manager now:
+    assert(len(a), 1)
 
-       # you can directly access the notification services if you wanted to this way:
-       # index element 0 exists because we added it successfully above (assuming you properly
-       # followed all the rules above):
-       assert isinstance(a[0], NotifyFooBar)
+    # you can directly access the notification services if you wanted to this way:
+    # index element 0 exists because we added it successfully above (assuming you properly
+    # followed all the rules above):
+    assert isinstance(a[0], NotifyFooBar)
 
-       # So we know we can access the notification, then this would create a second notification service:
-       # The only thing add does is match the schema up with the class it should use and then call it's
-       # NotifyFooBar.parse_url()
+    # So we know we can access the notification, then this would create a second notification service:
+    # The only thing add does is match the schema up with the class it should use and then call it's
+    # NotifyFooBar.parse_url()
 
-       # So parse_url() is in charge of preparing all of the arguments we can use to instantiate our object
-       #  With that, it can then do Object(**parse_url_response)
-       a.add(a[0].url())
+    # So parse_url() is in charge of preparing all of the arguments we can use to instantiate our object
+    #  With that, it can then do Object(**parse_url_response)
+    a.add(a[0].url())
 
-       # Hopefully this is making sense so far.... But now we've called add() twice... so we'll ahve 2 entries
-       # and if we built our 3 core functions (__init__, `url()` and `parse_url()` correctly, they should be almost
-       # copies of one another (yet 2 instances)
-       assert(len(a) == 2)
+    # Hopefully this is making sense so far.... But now we've called add() twice... so we'll ahve 2 entries
+    # and if we built our 3 core functions (__init__, `url()` and `parse_url()` correctly, they should be almost
+    # copies of one another (yet 2 instances)
+    assert(len(a) == 2)
 
-       # URLs are the same
-       assert(a[0].url() == a[1].url())
+    # URLs are the same
+    assert(a[0].url() == a[1].url())
 
-       # that's really all there is too it... when you call `a.notify()`; there is some functions and tools
-       # that handle some common things, but at the end of the day, it will call your `send()` function
-       # you defined.
-       ```
+    # that's really all there is too it... when you call `a.notify()`; there is some functions and tools
+    # that handle some common things, but at the end of the day, it will call your `send()` function
+    # you defined.
+    ```
 
   - **Putting it together without the overhead of the Apprise manager**:
 
-       ```python
-       from apprise.plugins.foobar import NotifyFooBar
+    ```python
+    from apprise.plugins.foobar import NotifyFooBar
 
-       # You can do this manually too if you want to test around the overhead
-       # of the Apprise manager itself:
-       results = NotifyFooBar.parse_url('foobar://details/?more=details&are=optional')
+    # You can do this manually too if you want to test around the overhead
+    # of the Apprise manager itself:
+    results = NotifyFooBar.parse_url('foobar://details/?more=details&are=optional')
 
-       # A simple dictionary of all of our arguments ready to go:
-       assert isinstance(results, dict)
+    # A simple dictionary of all of our arguments ready to go:
+    assert isinstance(results, dict)
 
-       # Now instantiate your object:
-       obj = NotifyFooBar(**results)
+    # Now instantiate your object:
+    obj = NotifyFooBar(**results)
 
-       # If you build your NotifyFooBar correctly, then you should be able
-       # to build a copy of the object perfectly using it's url() call
-       # Now instantiate your object:
-       clone_results = NotifyFooBar.parse_url(obj.url())
+    # If you build your NotifyFooBar correctly, then you should be able
+    # to build a copy of the object perfectly using it's url() call
+    # Now instantiate your object:
+    clone_results = NotifyFooBar.parse_url(obj.url())
 
-       # A simple dictionary of all of our arguments ready to go:
-       assert isinstance(clone_results, dict)
+    # A simple dictionary of all of our arguments ready to go:
+    assert isinstance(clone_results, dict)
 
-       # if you did this properly, you'll have a second working instance
-       # you can work with (this is a great test to make sure you coded
-       # your new notification service perfect)
-       clone = NotifyFooBar(**clone_results)
+    # if you did this properly, you'll have a second working instance
+    # you can work with (this is a great test to make sure you coded
+    # your new notification service perfect)
+    clone = NotifyFooBar(**clone_results)
 
-       # The best test of all to ensure you did everything well; both the
-       # clone and original object you created should produce the same
-       # url()
-       assert clone.url() == obj.url()
-       ```
+    # The best test of all to ensure you did everything well; both the
+    # clone and original object you created should produce the same
+    # url()
+    assert clone.url() == obj.url()
+    ```
 
-      Any other functions you want to define can be done to you hearts content (if it helps with organization, structure, etc)
-      Just avoid conflicting with any function written in `NotifyBase()` and `URLBase()`
+    Any other functions you want to define can be done to you hearts content (if it helps with organization, structure, etc)
+    Just avoid conflicting with any function written in `NotifyBase()` and `URLBase()`
 
-      If your service is really complex (and requires a lot of code), maybe it's easier to split your code into multiple files. This is how i handled the [FCM plugin I wrote](https://github.com/caronc/apprise/tree/master/apprise/plugins/fcm) which was based on Google's version.
+    If your service is really complex (and requires a lot of code), maybe it's easier to split your code into multiple files. This is how i handled the [FCM plugin I wrote](https://github.com/caronc/apprise/tree/master/apprise/plugins/fcm) which was based on Google's version.
+
 - Don't be afraid to just copy and paste another already created service and update it for your own usage.
   - [plugins/custom_json.py](https://github.com/caronc/apprise/blob/master/apprise/plugins/custom_json.py) is a bit advanced; but shows the general idea of the structure.
   - [plugin/fcm](https://github.com/caronc/apprise/tree/master/apprise/plugins/fcm) is a much more complex design but illustrates how you can build your notification into smaller components.
@@ -242,7 +243,7 @@ You can have a look at the NotifyBase object and see all of the other entries yo
 
 ## Demo Plugins
 
-Some people learn by just working with already pre-written code.   So here are some sample plugins I put together that you can copy and paste and start your own notification service off of.  Each plugin tries to explain with a lot of in-line code comments what is going on and why things are the way they are:
+Some people learn by just working with already pre-written code. So here are some sample plugins I put together that you can copy and paste and start your own notification service off of. Each plugin tries to explain with a lot of in-line code comments what is going on and why things are the way they are:
 
 - [A Very Basic Plugin](DemoPlugin_Basic) That simply posts the message to stdout
 - [An HTTP Web Request Based Plugin](DemoPlugin_WebRequest)

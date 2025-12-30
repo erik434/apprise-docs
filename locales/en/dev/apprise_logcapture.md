@@ -5,9 +5,9 @@ description: "An indepth look at the LogCapture() tool to help capture output fr
 
 # LogCapture
 
-`apprise.LogCapture()` allows you to capture all of the logging information within your program.  You may wish to relay the information to screen, or maybe you just want to have a look at it's contents when one or more notifications fail to be delivered.
+`apprise.LogCapture()` allows you to capture all of the logging information within your program. You may wish to relay the information to screen, or maybe you just want to have a look at it's contents when one or more notifications fail to be delivered.
 
-The class can capture information into a temporary (or permanent) log file, or you can just capture it straight into memory.  It's incredibly easy to use too.
+The class can capture information into a temporary (or permanent) log file, or you can just capture it straight into memory. It's incredibly easy to use too.
 
 ## Learn by Example
 
@@ -55,7 +55,7 @@ with apprise.LogCapture(level=apprise.logging.INFO) as output:
 
 ### Capture to File
 
-The class can write directly to memory (as you saw above) where content was written into a `io.StringIO` object.  You can also write content into a temporary file as well:
+The class can write directly to memory (as you saw above) where content was written into a `io.StringIO` object. You can also write content into a temporary file as well:
 
 ```python
 # In this example:

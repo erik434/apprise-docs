@@ -10,26 +10,26 @@ schemas:
   - chanify
 
 sample_urls:
-  -  chanify://{token}
+  - chanify://{token}
 ---
 
 <!-- SERVICE:DETAILS -->
 
 ## Account Setup
 
-Sign up for Chanify [from here](https://chanify.net/). You will be provided to create a user and password to associate with your account.  From here you can generate a token; this is all you need to use this through Apprise.
+Sign up for Chanify [from here](https://chanify.net/). You will be provided to create a user and password to associate with your account. From here you can generate a token; this is all you need to use this through Apprise.
 
 ## Syntax
 
 Valid syntax is as follows:
 
-* `chanify://{token}`
+- `chanify://{token}`
 
 ## Parameter Breakdown
 
-| Variable        | Required | Description|
-| --------------- | -------- | -----------|
-| token         | **Yes**   | The token you generated as part of your Chanify account|
+| Variable | Required | Description                                             |
+| -------- | -------- | ------------------------------------------------------- |
+| token    | **Yes**  | The token you generated as part of your Chanify account |
 
 <!-- GLOBAL:SERVICE:PARAMS -->
 

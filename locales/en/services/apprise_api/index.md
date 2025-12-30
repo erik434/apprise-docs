@@ -7,18 +7,17 @@ sidebar:
 source: https://github.com/caronc/apprise-api
 group: "custom"
 schemas:
-   - apprise: insecure
-   - apprises
+  - apprise: insecure
+  - apprises
 
 sample_urls:
-   - apprises://{host}/{token}
-   - apprises://{host}:{port}/{token}
-   - apprises://{user}@{host}:{port}/{token}
-   - apprises://{user}:{password}@{host}:{port}/{token}
+  - apprises://{host}/{token}
+  - apprises://{host}:{port}/{token}
+  - apprises://{user}@{host}:{port}/{token}
+  - apprises://{user}:{password}@{host}:{port}/{token}
 
 has_attachments: true
 has_selfhosted: true
-
 ---
 
 <!-- SERVICE:DETAILS -->
@@ -45,13 +44,13 @@ For a secure connection, just use `apprises` instead.
 
 ## Parameter Breakdown
 
-| Variable    | Required | Description
-| ----------- | -------- | -----------
-| hostname    | Yes      | The Web Server's hostname
-| port        | No       | The port our Web server is listening on. By default the port is **80** for **apprise://** and **443** for all **apprises://** references.
-| user        | No       | If you're system is set up to use HTTP-AUTH, you can provide _username_ for authentication to it.
-| password    | No       | If you're system is set up to use HTTP-AUTH, you can provide _password_ for authentication to it.
-| tags        | No       | You can optional set the tags you want to supply with your call to the Apprise API server
+| Variable | Required | Description                                                                                                                               |
+| -------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| hostname | Yes      | The Web Server's hostname                                                                                                                 |
+| port     | No       | The port our Web server is listening on. By default the port is **80** for **apprise://** and **443** for all **apprises://** references. |
+| user     | No       | If you're system is set up to use HTTP-AUTH, you can provide _username_ for authentication to it.                                         |
+| password | No       | If you're system is set up to use HTTP-AUTH, you can provide _password_ for authentication to it.                                         |
+| tags     | No       | You can optional set the tags you want to supply with your call to the Apprise API server                                                 |
 
 <!-- GLOBAL:SERVICE:PARAMS -->
 
@@ -102,7 +101,7 @@ apprise -vv --body="Test Message" \
 
 ### Header Manipulation
 
-Some users may require special HTTP headers to be present when they post their data to their server.  This can be accomplished by just sticking a plus symbol (**+**) in front of any parameter you specify on your URL string.
+Some users may require special HTTP headers to be present when they post their data to their server. This can be accomplished by just sticking a plus symbol (**+**) in front of any parameter you specify on your URL string.
 
 ```bash
 # Below would set the header:

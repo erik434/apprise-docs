@@ -1,32 +1,42 @@
 ---
-title: "feishu Notifications"
-description: "Send feishu notifications."
+title: "Feishu Notifications"
+description: "Send Feishu notifications."
+sidebar:
+  label: "Feishu"
+
+source: https://open.feishu.cn/
+
+schemas:
+  - feishu
+
+sample_urls:
+  - feishu://{token}
+
+limits:
+  max_chars: 19985
 ---
 
-## Feishu Notifications
+<!-- SERVICE:DETAILS -->
 
-* **Source**: <https://open.feishu.cn/>
-* **Icon Support**: No
-* **Message Format**: Text
-* **Message Limit**: 19985 Characters per message
-
-### Account Setup
+## Account Setup
 
 Register your account with [Feishu](https://open.feishu.cn/) and then [follow these instructions](https://open.feishu.cn/document/client-docs/bot-v3/add-custom-bot) to create a custom bot (and acquire the token you need).
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
-* `feishu://{token}`
+- `feishu://{token}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
-| Variable        | Required | Description
-| --------------- | -------- | -----------
-| token         | **Yes**   | The token you generated as part of your Fieshu Custom Bot Creation (via your account)
+| Variable | Required | Description                                                                           |
+| -------- | -------- | ------------------------------------------------------------------------------------- |
+| token    | **Yes**  | The token you generated as part of your Fieshu Custom Bot Creation (via your account) |
 
-#### Example
+<!-- GLOBAL:SERVICE:PARAMS -->
+
+## Example
 
 Send a notification to your Feishu account:
 

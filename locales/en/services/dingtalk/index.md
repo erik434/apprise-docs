@@ -31,18 +31,18 @@ To use DingTalk, you will need to acquire your _API Key_.
 
 Valid syntax is as follows:
 
-* `dingtalk://{ApiKey}/{ToPhoneNo}`
-* `dingtalk://{ApiKey}/{ToPhoneNo1}/{ToPhoneNo2}/{ToPhoneNoN}`
-* `dingtalk://{Secret}@{ApiKey}/{ToPhoneNo}`
-* `dingtalk://{Secret}@{ApiKey}/{ToPhoneNo1}/{ToPhoneNo2}/{ToPhoneNoN}`
+- `dingtalk://{ApiKey}/{ToPhoneNo}`
+- `dingtalk://{ApiKey}/{ToPhoneNo1}/{ToPhoneNo2}/{ToPhoneNoN}`
+- `dingtalk://{Secret}@{ApiKey}/{ToPhoneNo}`
+- `dingtalk://{Secret}@{ApiKey}/{ToPhoneNo1}/{ToPhoneNo2}/{ToPhoneNoN}`
 
 ## Parameter Breakdown
 
-| Variable        | Required | Description |
-| --------------- | -------- | ----------- |
-| ApiKey         | Yes      | The _API Key_ associated with your DingTalk account.  This is available to you via the DingTalk Dashboard. |
-| ToPhoneNo      | No       | A phone number to send your notification to |
-| Secret         | No       | The optional secret key to associate with the message signing |
+| Variable  | Required | Description                                                                                               |
+| --------- | -------- | --------------------------------------------------------------------------------------------------------- |
+| ApiKey    | Yes      | The _API Key_ associated with your DingTalk account. This is available to you via the DingTalk Dashboard. |
+| ToPhoneNo | No       | A phone number to send your notification to                                                               |
+| Secret    | No       | The optional secret key to associate with the message signing                                             |
 
 ## Example<!-- GLOBAL:SERVICE:PARAMS -->
 

@@ -1,25 +1,73 @@
 ---
 title: Quick Start Guide
 description: Get up and running with Apprise in minutes.
+sidebar:
+  order: 1
 ---
 
 ## Installation
 
-### Python Package
+### PyPI
 
-Install Apprise using pip:
+The easiest way is to install Apprise from PyPI:
 
 ```bash
 pip install apprise
 ```
 
+### Linux Distributions
+
+- RedHat/Rocky/Oracle:
+
+```
+## Enable EPEL Repositories:
+sudo dnf install epel-release
+
+# Now Install Apprise:
+sud dnf install apprise
+```
+
 ### Docker
 
-You can also run Apprise using Docker:
+Or install the Graphical User Interface API version (Apprise API) from [here](https://github.com/caronc/apprise-api) to centralize your configuration and notifications through a manageable webpage.
 
 ```bash
-docker pull caronc/apprise
+# /config is used for a spot to write all of the configuration files
+#         generated through the API. The internal persistent store lives
+#         under /config/store so a single /config volume is sufficient.
+# /plugin is used for a location you can add your own custom apprise plugins.
+#         You do not have to mount this if you don't intend to use it.
+# /attach is used for file attachments
+#
+# /tmp         Temporary files, suitable for `tmpfs` in hardened deployments.
+#
+# The below example sets a the APPRISE_WORKER_COUNT to a small value (over-riding
+# a full production environment setting).  This may be all that is needed for
+# a light-weight self hosted solution.
+#
+# setting APPRISE_STATEFUL_MODE to simple allows you to map your defined {key}
+# straight to a file found in the `/config` path.  In simple home configurations
+# this is sometimes the ideal expectation.
+#
+# Set your User ID or Group ID if you wish to over-ride the default of 1000
+# in the below example, we make sure it runs as the user we created the container as
+
+# pre-create your directories
+mkdir -p /path/to/local/{config,plugin,attach}
+
+docker run --name apprise \
+   -p 8000:8000 \
+   --user "$(id -u):$(id -g)" \
+   -v /path/to/local/config:/config \
+   -v /path/to/local/plugin:/plugin \
+   -v /path/to/local/attach:/attach \
+   -e APPRISE_STATEFUL_MODE=simple \
+   -e APPRISE_WORKER_COUNT=1 \
+   -e APPRISE_ADMIN=y \
+   -d caronc/apprise:latest
 ```
+
+You can visit your new self hosted instance of the Apprise API at: <http://docker-host:8000>
 
 ## Basic Usage
 
@@ -60,10 +108,12 @@ Apprise uses URL schemes to configure notification services. Each service has it
 - **Slack**: `slack://token_a/token_b/token_c`
 - **Telegram**: `tgram://bot_token/chat_id`
 
+They effectively traslate to: `schema://configuration/?options=`
+
 Check out our [URL Builder Tool](/tools/url-builder/) to help construct URLs for different services.
 
 ## Next Steps
 
 - Explore the [Guides](/guides/) section for more detailed examples
 - Try the [URL Builder](/tools/url-builder/) to create service URLs
-- Visit the [main Apprise repository](https://github.com/caronc/apprise) for complete documentation
+- Visit the [Core Apprise repository](https://github.com/caronc/apprise) for complete documentation

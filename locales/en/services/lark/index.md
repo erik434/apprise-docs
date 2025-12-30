@@ -5,10 +5,10 @@ description: "Send lark notifications."
 
 ## Lark (Feishu) Notifications
 
-* **Source**: <https://open.larksuite.com/>
-* **Icon Support**: No
-* **Message Format**: Plain Text
-* **Message Limit**: ~20,000 Characters
+- **Source**: <https://open.larksuite.com/>
+- **Icon Support**: No
+- **Message Format**: Plain Text
+- **Message Limit**: ~20,000 Characters
 
 Lark (also known as Feishu in China) allows you to create **custom bots** that can send notifications to groups and chats using **incoming webhooks**.
 
@@ -35,13 +35,13 @@ While you can use the full webhook URL directly, Apprise also supports a simplif
 
 Valid syntax is as follows:
 
-* `https://open.larksuite.com/open-apis/bot/v2/hook/{token}`
-* `lark://{token}`
+- `https://open.larksuite.com/open-apis/bot/v2/hook/{token}`
+- `lark://{token}`
 
 ### Parameter Breakdown
 
-| Variable | Required | Description |
-|----------|----------|-------------|
+| Variable | Required | Description                                                      |
+| -------- | -------- | ---------------------------------------------------------------- |
 | token    | Yes      | The 32-character integration key at the end of your webhook URL. |
 
 ### Examples

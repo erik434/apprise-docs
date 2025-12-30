@@ -5,10 +5,10 @@ description: "Send msg91 notifications."
 
 ## MSG91
 
-* **Source**: <https://msg91.com>
-* **Icon Support**: No
-* **Message Format**: Text
-* **Message Limit**: 160 Characters per message
+- **Source**: <https://msg91.com>
+- **Icon Support**: No
+- **Message Format**: Text
+- **Message Limit**: 160 Characters per message
 
 ### Account Setup
 
@@ -18,28 +18,28 @@ To use MSG91, you will need to acquire your _Authentication Key_. This is access
 
 Valid syntax is as follows:
 
-* `msg91://{TemplateID}@{AuthKey}/{PhoneNo}`
-* `msg91://{TemplateID}@{AuthKey}/{PhoneNo1}/{PhoneNo2}/{PhoneNoN}`
+- `msg91://{TemplateID}@{AuthKey}/{PhoneNo}`
+- `msg91://{TemplateID}@{AuthKey}/{PhoneNo1}/{PhoneNo2}/{PhoneNoN}`
 
 ### Parameter Breakdown
 
-| Variable        | Required | Description
-| --------------- | -------- | -----------
-| AuthKey         | Yes      | The _Authentication Key_ associated with your MSG91 account.  This is available to you via the [MSG91 Dashboard](https://control.msg91.com/).
-| TemplateID         | Yes      | The _Template ID_ associated with your MSG91 account. This is available to you via the [MSG91 Dashboard](https://control.msg91.com/).
-| PhoneNo         | Yes      | A phone number MUST include the country codes dialing prefix as well when placed.  This field is also very friendly and supports brackets, spaces and hyphens in the event you want to format the number in an easy to read fashion
-| short_url         | No      | A boolean (defaults) to `No` whether the SMS messages should use the Short URL notation.
+| Variable   | Required | Description                                                                                                                                                                                                                        |
+| ---------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| AuthKey    | Yes      | The _Authentication Key_ associated with your MSG91 account. This is available to you via the [MSG91 Dashboard](https://control.msg91.com/).                                                                                       |
+| TemplateID | Yes      | The _Template ID_ associated with your MSG91 account. This is available to you via the [MSG91 Dashboard](https://control.msg91.com/).                                                                                              |
+| PhoneNo    | Yes      | A phone number MUST include the country codes dialing prefix as well when placed. This field is also very friendly and supports brackets, spaces and hyphens in the event you want to format the number in an easy to read fashion |
+| short_url  | No       | A boolean (defaults) to `No` whether the SMS messages should use the Short URL notation.                                                                                                                                           |
 
 ### Template Variables
 
-The templates you generate allow you to specify your own key mappings.  B
+The templates you generate allow you to specify your own key mappings. B
 
 The following keys are automatically passed from Apprise to the MSG91 Template system should you chose to use them or not.
 
-* `##body##`: The Apprise Message Body (Title is prefixed into this if defined)
-* `##type##`: The Apprise Message Type (e.g. `warning`, `info`, `failure`, or `success`)
+- `##body##`: The Apprise Message Body (Title is prefixed into this if defined)
+- `##type##`: The Apprise Message Type (e.g. `warning`, `info`, `failure`, or `success`)
 
-If you wish to assign new types to `body` or `type` from Apprise, these special keywords are specified instead with the `:` (colon) prefix providing the mapping/over-ride.  For example: `?:body=msg` would remap the default message body from apprise to the `msg` keyword instead.
+If you wish to assign new types to `body` or `type` from Apprise, these special keywords are specified instead with the `:` (colon) prefix providing the mapping/over-ride. For example: `?:body=msg` would remap the default message body from apprise to the `msg` keyword instead.
 
 If you wish to remove the `type` from being passed, you simply define it in the URL but do not assign it to anything such as: `?:type`.
 

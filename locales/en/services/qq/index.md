@@ -5,10 +5,10 @@ description: "Send qq notifications."
 
 ## QQ Push Notifications
 
-* **Source**: <https://github.com/songquanpeng/message-pusher>
-* **Icon Support**: No
-* **Message Format**: Plain Text
-* **Message Limit**: ~10,000 Characters
+- **Source**: <https://github.com/songquanpeng/message-pusher>
+- **Icon Support**: No
+- **Message Format**: Plain Text
+- **Message Limit**: ~10,000 Characters
 
 QQ Push is a third-party gateway for sending notifications to QQ users via services like [qmsg.zendee.cn](https://qmsg.zendee.cn/).
 
@@ -32,14 +32,14 @@ You can use the full native webhook or a simplified Apprise URL.
 
 Valid syntax is as follows:
 
-* `https://qmsg.zendee.cn/send/{token}`
-* `qq://{token}`
-* `qq://?token={token}`
+- `https://qmsg.zendee.cn/send/{token}`
+- `qq://{token}`
+- `qq://?token={token}`
 
 ### Parameter Breakdown
 
-| Variable | Required | Description |
-|----------|----------|-------------|
+| Variable | Required | Description                                     |
+| -------- | -------- | ----------------------------------------------- |
 | token    | Yes      | Your personal QQ Push token from qmsg.zendee.cn |
 
 ### Examples

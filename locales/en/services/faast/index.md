@@ -6,7 +6,7 @@ sidebar:
 
 source: http://www.faast.io/
 schemas:
-   - faast
+  - faast
 
 has_image: true
 sample_urls:
@@ -28,20 +28,20 @@ Unknown
 
 ## Account Setup
 
-There isn't too much configuration for Faast notifications.  The message is basically just passed to your online Faast account and then gets relayed to your device(s) you've setup from there.
+There isn't too much configuration for Faast notifications. The message is basically just passed to your online Faast account and then gets relayed to your device(s) you've setup from there.
 
 ## Syntax
 
 Valid syntax is as follows:
 
-* `faast://{authorizationtoken}`
+- `faast://{authorizationtoken}`
 
 ### Parameter Breakdown
 
-| Variable    | Required | Description
-| ----------- | -------- | -----------
-| authorizationtoken    | Yes      | The authorization token associated with your Faast account.
-| image       | No       | Associate an image with the message. By default this is enabled.
+| Variable           | Required | Description                                                      |
+| ------------------ | -------- | ---------------------------------------------------------------- |
+| authorizationtoken | Yes      | The authorization token associated with your Faast account.      |
+| image              | No       | Associate an image with the message. By default this is enabled. |
 
 <!-- GLOBAL:SERVICE:PARAMS -->
 

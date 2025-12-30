@@ -5,10 +5,10 @@ description: "Send nexmo notifications."
 
 ## Vonage (formerly Nexmo)
 
-* **Source**: <https://nexmo.com/>
-* **Icon Support**: No
-* **Message Format**: Text
-* **Message Limit**: 160 Characters per message
+- **Source**: <https://nexmo.com/>
+- **Icon Support**: No
+- **Message Format**: Text
+- **Message Limit**: 160 Characters per message
 
 ### Account Setup
 
@@ -20,23 +20,23 @@ The **{FromPhoneNo}** must be a number provided to you through Nexmo
 
 Valid syntax is as follows:
 
-* **nexmo**://**{ApiKey}**:**{ApiSecret}**@**{FromPhoneNo}**/**{PhoneNo}**
-* **nexmo**://**{ApiKey}**:**{ApiSecret}**@**{FromPhoneNo}**/**{PhoneNo1}**/**{PhoneNo2}**/**{PhoneNoN}**
-* **vonage**://**{ApiKey}**:**{ApiSecret}**@**{FromPhoneNo}**/**{PhoneNo}**
-* **vonage**://**{ApiKey}**:**{ApiSecret}**@**{FromPhoneNo}**/**{PhoneNo1}**/**{PhoneNo2}**/**{PhoneNoN}**
+- **nexmo**://**{ApiKey}**:**{ApiSecret}**@**{FromPhoneNo}**/**{PhoneNo}**
+- **nexmo**://**{ApiKey}**:**{ApiSecret}**@**{FromPhoneNo}**/**{PhoneNo1}**/**{PhoneNo2}**/**{PhoneNoN}**
+- **vonage**://**{ApiKey}**:**{ApiSecret}**@**{FromPhoneNo}**/**{PhoneNo}**
+- **vonage**://**{ApiKey}**:**{ApiSecret}**@**{FromPhoneNo}**/**{PhoneNo1}**/**{PhoneNo2}**/**{PhoneNoN}**
 
 If no _ToPhoneNo_ is specified, then the _FromPhoneNo_ will be messaged instead; hence the following is a valid URL:
 
-* **nexmo**://**{ApiKey}**:**{ApiSecret}**@**{FromPhoneNo}**/
+- **nexmo**://**{ApiKey}**:**{ApiSecret}**@**{FromPhoneNo}**/
 
 ### Parameter Breakdown
 
-| Variable        | Required | Description
-| --------------- | -------- | -----------
-| ApiKey      | Yes      | The _API Key_ associated with your Nexmo account.  This is available to you via the [Vonage Dashboard](https://dashboard.nexmo.com/getting-started-guide).
-| ApiSecret       | Yes   | The _API Secret_ associated with your Nexmo account.  This is available to you via the [Vonage Dashboard](https://dashboard.nexmo.com/getting-started-guide).
-| FromPhoneNo     |  Yes  | This must be a _From Phone Number_ that has been provided to you from the Vonage website.
-| PhoneNo         | **\*No**   | A phone number MUST include the country codes dialling prefix as well when placed.  This field is also very friendly and supports brackets, spaces and hyphens in the event you want to format the number in an easy to read fashion
+| Variable    | Required | Description                                                                                                                                                                                                                         |
+| ----------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ApiKey      | Yes      | The _API Key_ associated with your Nexmo account. This is available to you via the [Vonage Dashboard](https://dashboard.nexmo.com/getting-started-guide).                                                                           |
+| ApiSecret   | Yes      | The _API Secret_ associated with your Nexmo account. This is available to you via the [Vonage Dashboard](https://dashboard.nexmo.com/getting-started-guide).                                                                        |
+| FromPhoneNo | Yes      | This must be a _From Phone Number_ that has been provided to you from the Vonage website.                                                                                                                                           |
+| PhoneNo     | **\*No** | A phone number MUST include the country codes dialling prefix as well when placed. This field is also very friendly and supports brackets, spaces and hyphens in the event you want to format the number in an easy to read fashion |
 
 #### Example
 

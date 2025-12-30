@@ -5,10 +5,10 @@ description: "Send serverchan notifications."
 
 ## ServerChan Notifications
 
-* **Source**: <https://sct.ftqq.com/>
-* **Icon Support**: No
-* **Message Format**: Text
-* **Message Limit**: 32768 Characters per Message
+- **Source**: <https://sct.ftqq.com/>
+- **Icon Support**: No
+- **Message Format**: Text
+- **Message Limit**: 32768 Characters per Message
 
 ## Account Setup
 
@@ -18,13 +18,13 @@ Register your own account on the [ServerChan Official Website](https://sct.ftqq.
 
 Valid authentication syntax is as follows:
 
-* `schan://{sendkey}`
+- `schan://{sendkey}`
 
 ### Parameter Breakdown
 
-| Variable    | Required | Description
-| ----------- | -------- | -----------
-| sendkey     | Yes      | This is token provided to you through your SimpleChan account.
+| Variable | Required | Description                                                    |
+| -------- | -------- | -------------------------------------------------------------- |
+| sendkey  | Yes      | This is token provided to you through your SimpleChan account. |
 
 #### Example
 

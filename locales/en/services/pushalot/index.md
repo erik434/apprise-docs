@@ -6,7 +6,7 @@ sidebar:
 
 source: https://pushalot.com
 schemas:
-   - palot
+  - palot
 
 has_image: true
 sample_urls:
@@ -33,19 +33,19 @@ Presumably service was never restored and they just closed up shop.
 
 ## Account Setup
 
-There isn't too much configuration for Pushalot notifications.  The message is basically just passed to your online Pushalot account and then gets relayed to your Microsoft device(s) from there.
+There isn't too much configuration for Pushalot notifications. The message is basically just passed to your online Pushalot account and then gets relayed to your Microsoft device(s) from there.
 
 ## Syntax
 
 Valid syntax is as follows:
 
-* `palot://{authorizationtoken}`
+- `palot://{authorizationtoken}`
 
 ## Parameter Breakdown
 
-| Variable    | Required | Description
-| ----------- | -------- | -----------
-| authorizationtoken    | Yes      | The authorization token associated with your Pushalot account. This is an alpha-numeric string (32 characters in length)
+| Variable           | Required | Description                                                                                                              |
+| ------------------ | -------- | ------------------------------------------------------------------------------------------------------------------------ |
+| authorizationtoken | Yes      | The authorization token associated with your Pushalot account. This is an alpha-numeric string (32 characters in length) |
 
 <!-- GLOBAL:SERVICE:PARAMS -->
 

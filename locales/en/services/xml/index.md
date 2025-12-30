@@ -5,8 +5,8 @@ sidebar:
   label: "HTTP/XML"
 group: "custom"
 schemas:
-   - xml: insecure
-   - xmls
+  - xml: insecure
+  - xmls
 has_selfhosted: true
 has_attachments: true
 has_image: true
@@ -45,38 +45,38 @@ The format might look something like this:
 </soapenv:Envelope>
 ```
 
-The *MessageType* will be one of the following:
+The _MessageType_ will be one of the following:
 
-* **info**: An informative type message
-* **success**: A successful report
-* **failure**: A failure report
-* **warning**: A warning report
+- **info**: An informative type message
+- **success**: A successful report
+- **failure**: A failure report
+- **warning**: A warning report
 
 ## Syntax
 
 Valid syntax is as follows:
 
-* `xml://{hostname}`
-* `xml://{hostname}:{port}`
-* `xml://{user}:{password}@{hostname}`
-* `xml://{user}:{password}@{hostname}:{port}`
+- `xml://{hostname}`
+- `xml://{hostname}:{port}`
+- `xml://{user}:{password}@{hostname}`
+- `xml://{user}:{password}@{hostname}:{port}`
 
 The secure versions:
 
-* `xmls://{hostname}`
-* `xmls://{hostname}:{port}`
-* `xmls://{user}:{password}@{hostname}`
-* `xmls://{user}:{password}@{hostname}:{port}`
+- `xmls://{hostname}`
+- `xmls://{hostname}:{port}`
+- `xmls://{user}:{password}@{hostname}`
+- `xmls://{user}:{password}@{hostname}:{port}`
 
 ### Parameter Breakdown
 
-| Variable    | Required | Description |
-| ----------- | -------- | ----------- |
-| hostname    | Yes      | The Web Server's hostname |
-| port        | No       | The port our Web server is listening on. By default the port is **80** for **xml://** and **443** for all **xmls://** references. |
-| user        | No       | If you're system is set up to use HTTP-AUTH, you can provide *username* for authentication to it. |
-| password    | No       | If you're system is set up to use HTTP-AUTH, you can provide *password* for authentication to it. |
-| method      | No       | Optionally specify the server http method; possible options are `post`, `put`, `get`, `delete`, `patch`, and `head`.  By default if no method is specified then `post` is used. |
+| Variable | Required | Description                                                                                                                                                                    |
+| -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| hostname | Yes      | The Web Server's hostname                                                                                                                                                      |
+| port     | No       | The port our Web server is listening on. By default the port is **80** for **xml://** and **443** for all **xmls://** references.                                              |
+| user     | No       | If you're system is set up to use HTTP-AUTH, you can provide _username_ for authentication to it.                                                                              |
+| password | No       | If you're system is set up to use HTTP-AUTH, you can provide _password_ for authentication to it.                                                                              |
+| method   | No       | Optionally specify the server http method; possible options are `post`, `put`, `get`, `delete`, `patch`, and `head`. By default if no method is specified then `post` is used. |
 
 <!-- GLOBAL:SERVICE:PARAMS -->
 
@@ -126,7 +126,7 @@ The above would post a message such as:
 
 ### Header Manipulation
 
-Some users may require special HTTP headers to be present when they post their data to their server.  This can be accomplished by just sticking a plus symbol (**+**) in front of any parameter you specify on your URL string.
+Some users may require special HTTP headers to be present when they post their data to their server. This can be accomplished by just sticking a plus symbol (**+**) in front of any parameter you specify on your URL string.
 
 ```bash
 # Below would set the header:

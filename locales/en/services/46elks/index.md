@@ -11,9 +11,9 @@ schemas:
   - elks
 
 sample_urls:
-- 46elks://{user}:{password}@/{from}
-- 46elks://{user}:{password}@/{from}/{to}
-- 46elks://{user}:{password}@/{from}/{to1}/{to2}/{toN}
+  - 46elks://{user}:{password}@/{from}
+  - 46elks://{user}:{password}@/{from}/{to}
+  - 46elks://{user}:{password}@/{from}/{to1}/{to2}/{toN}
 
 has_sms: true
 
@@ -44,11 +44,11 @@ Valid syntax is as follows:
 
 ## Parameter Breakdown
 
-| Variable | Required | Description                                      |
-|----------|----------|--------------------------------------------------|
-| user     | Yes      | Your 46elks API username                         |
-| password | Yes      | Your 46elks API password                         |
-| to       | Yes      | Recipient phone number(s), E.164 recommended     |
+| Variable | Required | Description                                        |
+| -------- | -------- | -------------------------------------------------- |
+| user     | Yes      | Your 46elks API username                           |
+| password | Yes      | Your 46elks API password                           |
+| to       | Yes      | Recipient phone number(s), E.164 recommended       |
 | from     | No       | Sender ID or E.164 number, if configured in 46elks |
 
 <!-- GLOBAL:SERVICE:PARAMS -->

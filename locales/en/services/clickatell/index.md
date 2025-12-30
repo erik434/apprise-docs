@@ -25,22 +25,22 @@ limits:
 
 ## Account Setup
 
-Sign up for BulkSMS account [from here](https://www.clickatell.com/). You will be provided to create a user and password to associate with your account.  From here you can generate an apikey; this is all you need to use this through Apprise.
+Sign up for BulkSMS account [from here](https://www.clickatell.com/). You will be provided to create a user and password to associate with your account. From here you can generate an apikey; this is all you need to use this through Apprise.
 
 ## Syntax
 
 Valid syntax is as follows:
 
-* `clickatell://{source}@{apikey}/{PhoneNo}`
-* `clickatell://{source}@{apikey}/{PhoneNo1}/{PhoneNo2}/{PhoneNoN}`
-* `clickatell://{apikey}/{PhoneNo}`
-* `clickatell://{apikey}/{PhoneNo1}/{PhoneNo2}/{PhoneNoN}`
+- `clickatell://{source}@{apikey}/{PhoneNo}`
+- `clickatell://{source}@{apikey}/{PhoneNo1}/{PhoneNo2}/{PhoneNoN}`
+- `clickatell://{apikey}/{PhoneNo}`
+- `clickatell://{apikey}/{PhoneNo1}/{PhoneNo2}/{PhoneNoN}`
 
 ## Parameter Breakdown
 
-| Variable        | Required | Description |
-| --------------- | -------- | ----------- |
-| apikey         | **Yes**   | The API Key you generated as part of your Clickatell account |
+| Variable | Required | Description                                                  |
+| -------- | -------- | ------------------------------------------------------------ |
+| apikey   | **Yes**  | The API Key you generated as part of your Clickatell account |
 
 <!-- GLOBAL:SERVICE:PARAMS -->
 

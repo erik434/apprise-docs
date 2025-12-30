@@ -5,15 +5,15 @@ description: "Send signal notifications."
 
 ## Signal API
 
-* **Source**: <https://github.com/bbernhard/signal-cli-rest-api>
-* **Icon Support**: No
-* **Attachment Support**: Yes
-* **Message Format**: Text
-* **Message Limit**: 32768 Characters per message
+- **Source**: <https://github.com/bbernhard/signal-cli-rest-api>
+- **Icon Support**: No
+- **Attachment Support**: Yes
+- **Message Format**: Text
+- **Message Limit**: 32768 Characters per message
 
 ### Account Setup
 
-First of all you need a Signal account.  So it is presumed you've either got the Apple or Android version of the Signal software.
+First of all you need a Signal account. So it is presumed you've either got the Apple or Android version of the Signal software.
 
 From here, the plugin assumes you have configured yourself up with the [Signal Rest API Service](https://github.com/bbernhard/signal-cli-rest-api).
 
@@ -38,28 +38,28 @@ The **{FromPhoneNo}** must be the number associated with your account.
 
 Valid syntax is as follows:
 
-* `signal://{user}:{password}@{hostname}/{from_phone}`
-* `signal://{user}:{password}@{hostname}:{port}/{from_phone}`
-* `signal://{user}:{password}@{hostname}/{from_phone}/{target}`
-* `signal://{user}:{password}@{hostname}:{port}/{from_phone}/{target}`
+- `signal://{user}:{password}@{hostname}/{from_phone}`
+- `signal://{user}:{password}@{hostname}:{port}/{from_phone}`
+- `signal://{user}:{password}@{hostname}/{from_phone}/{target}`
+- `signal://{user}:{password}@{hostname}:{port}/{from_phone}/{target}`
 
 You can post in multiple chats by simply chaining them at the end of the URL.
 
-* `signal://{user}:{password}@{hostname}:{port}/{from_phone}/{target1}/{target2}/{target3}`
-* `signals://{user}:{password}@{hostname}:{port}/{from_phone}/{target1}/{target2}/{target3}`
+- `signal://{user}:{password}@{hostname}:{port}/{from_phone}/{target1}/{target2}/{target3}`
+- `signals://{user}:{password}@{hostname}:{port}/{from_phone}/{target1}/{target2}/{target3}`
 
 ### Parameter Breakdown
 
-| Variable        | Required | Description
-| --------------- | -------- | -----------
-| hostname    | Yes      | The Web Server's hostname
-| port        | No       | The port our Web server is listening on. By default the port is **80** for **signal://** and **443** for all **singals://** references.
-| user        | No       | If you're system is set up to use HTTP-AUTH, you can provide _username_ for authentication to it.
-| password    | No       | If you're system is set up to use HTTP-AUTH, you can provide _password_ for authentication to it.
-| from     |  Yes  | This must be a _From Phone Number_ you've added to the API service.
-| to         | **\*No**   |A phone number or group id you wish to send your notification to. If one isn't specified, then the `from` is used instead.
-| batch     |  No  | Send multiple specified notifications in a single batch (1 upstream post to the end server).  By default this is set to `no`.
-| status     |  No  | Optionally include a small little ASCII string representing the notification status being sent (inline with it)  by default this is set to `yes`.
+| Variable | Required | Description                                                                                                                                      |
+| -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| hostname | Yes      | The Web Server's hostname                                                                                                                        |
+| port     | No       | The port our Web server is listening on. By default the port is **80** for **signal://** and **443** for all **singals://** references.          |
+| user     | No       | If you're system is set up to use HTTP-AUTH, you can provide _username_ for authentication to it.                                                |
+| password | No       | If you're system is set up to use HTTP-AUTH, you can provide _password_ for authentication to it.                                                |
+| from     | Yes      | This must be a _From Phone Number_ you've added to the API service.                                                                              |
+| to       | **\*No** | A phone number or group id you wish to send your notification to. If one isn't specified, then the `from` is used instead.                       |
+| batch    | No       | Send multiple specified notifications in a single batch (1 upstream post to the end server). By default this is set to `no`.                     |
+| status   | No       | Optionally include a small little ASCII string representing the notification status being sent (inline with it) by default this is set to `yes`. |
 
 ### Acquiring A Group ID
 
@@ -92,7 +92,7 @@ Example output is as follows:
   }
 ]
 
-The takeaway from the above is the group 
+The takeaway from the above is the group
 ```
 
 Example sending a notification to a group: `group.aabbccdd/eeffgghh=` identified by the `id`.

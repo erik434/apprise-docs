@@ -6,7 +6,7 @@ sidebar:
 
 source: http://supertoasty.com/
 schemas:
-   - toasty
+  - toasty
 
 has_image: true
 sample_urls:
@@ -37,15 +37,15 @@ There isn't too much configuration for Super Toasty notifications. The message i
 
 Valid syntax is as follows:
 
-* `toasty://{user_id}@{device_id}`
-* `toasty://{user_id}@{device_id1}/{device_id2}/{device_idN}`
+- `toasty://{user_id}@{device_id}`
+- `toasty://{user_id}@{device_id1}/{device_id2}/{device_idN}`
 
 ### Parameter Breakdown
 
-| Variable    | Required | Description
-| ----------- | -------- | -----------
-| user_id     | Yes      | The user identifier associated with your Super Toasty account.
-| device_id   | No       | The device identifier to send your notification to.
+| Variable  | Required | Description                                                    |
+| --------- | -------- | -------------------------------------------------------------- |
+| user_id   | Yes      | The user identifier associated with your Super Toasty account. |
+| device_id | No       | The device identifier to send your notification to.            |
 
 <!-- GLOBAL:SERVICE:PARAMS -->
 

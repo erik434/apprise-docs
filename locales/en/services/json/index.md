@@ -5,8 +5,8 @@ sidebar:
   label: "HTTP/JSON"
 group: "custom"
 schemas:
-   - json: insecure
-   - jsons
+  - json: insecure
+  - jsons
 has_selfhosted: true
 has_attachments: true
 has_image: true
@@ -30,45 +30,45 @@ The format might look something like this:
 
 ```json
 {
-   "version": "1.0",
-   "title": "Some Great Software Downloaded Successfully",
-   "message": "Plenty of details here",
-   "type": "info"
+  "version": "1.0",
+  "title": "Some Great Software Downloaded Successfully",
+  "message": "Plenty of details here",
+  "type": "info"
 }
 ```
 
-The *type* will be one of the following:
+The _type_ will be one of the following:
 
-* **info**: An informative type message
-* **success**: A successful report
-* **failure**: A failure report
-* **warning**: A warning report
+- **info**: An informative type message
+- **success**: A successful report
+- **failure**: A failure report
+- **warning**: A warning report
 
 ## Syntax
 
 Valid syntax is as follows:
 
-* `json://{hostname}`
-* `json://{hostname}:{port}`
-* `json://{user}:{password}@{hostname}`
-* `json://{user}:{password}@{hostname}:{port}`
+- `json://{hostname}`
+- `json://{hostname}:{port}`
+- `json://{user}:{password}@{hostname}`
+- `json://{user}:{password}@{hostname}:{port}`
 
 The secure versions:
 
-* `jsons://{hostname}`
-* `jsons://{hostname}:{port}`
-* `jsons://{user}:{password}@{hostname}`
-* `jsons://{user}:{password}@{hostname}:{port}`
+- `jsons://{hostname}`
+- `jsons://{hostname}:{port}`
+- `jsons://{user}:{password}@{hostname}`
+- `jsons://{user}:{password}@{hostname}:{port}`
 
 ## Parameter Breakdown
 
-| Variable    | Required | Description |
-| ----------- | -------- | ----------- |
-| hostname    | Yes      | The Web Server's hostname |
-| port        | No       | The port our Web server is listening on. By default the port is **80** for **json://** and **443** for all **jsons://** references. |
-| user        | No       | If you're system is set up to use HTTP-AUTH, you can provide *username* for authentication to it. |
-| password    | No       | If you're system is set up to use HTTP-AUTH, you can provide *password* for authentication to it. |
-| method      | No       | Optionally specify the server http method; possible options are `post`, `put`, `get`, `delete`, `patch`, and `head`.  By default if no method is specified then `post` is used. |
+| Variable | Required | Description                                                                                                                                                                    |
+| -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| hostname | Yes      | The Web Server's hostname                                                                                                                                                      |
+| port     | No       | The port our Web server is listening on. By default the port is **80** for **json://** and **443** for all **jsons://** references.                                            |
+| user     | No       | If you're system is set up to use HTTP-AUTH, you can provide _username_ for authentication to it.                                                                              |
+| password | No       | If you're system is set up to use HTTP-AUTH, you can provide _password_ for authentication to it.                                                                              |
+| method   | No       | Optionally specify the server http method; possible options are `post`, `put`, `get`, `delete`, `patch`, and `head`. By default if no method is specified then `post` is used. |
 
 <!-- GLOBAL:SERVICE:PARAMS -->
 
@@ -99,11 +99,11 @@ The above would post a message such as:
 
 ```json
 {
-   "version": "1.0",
-   "title": "Test Message Title",
-   "message": "Test Message Body",
-   "type": "info",
-   "sound": "oceanwave"
+  "version": "1.0",
+  "title": "Test Message Title",
+  "message": "Test Message Body",
+  "type": "info",
+  "sound": "oceanwave"
 }
 ```
 
@@ -121,8 +121,8 @@ The above would post a message such as:
 
 ```json
 {
-   "title": "Test Message Title",
-   "message": "Test Message Body"
+  "title": "Test Message Title",
+  "message": "Test Message Body"
 }
 ```
 
@@ -142,16 +142,16 @@ The above would post a message such as:
 
 ```json
 {
-   "version": "1.0",
-   "title": "Test Message Title",
-   "body": "Test Message Body",
-   "type": "info"
+  "version": "1.0",
+  "title": "Test Message Title",
+  "body": "Test Message Body",
+  "type": "info"
 }
 ```
 
 ### Header Manipulation
 
-Some users may require special HTTP headers to be present when they post their data to their server.  This can be accomplished by just sticking a plus symbol (**+**) in front of any parameter you specify on your URL string.
+Some users may require special HTTP headers to be present when they post their data to their server. This can be accomplished by just sticking a plus symbol (**+**) in front of any parameter you specify on your URL string.
 
 ```bash
 # Below would set the header:

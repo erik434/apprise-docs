@@ -5,11 +5,11 @@ description: "Send Revolt notifications."
 
 ## Revolt Notifications
 
-* **Source**: <https://revolt.chat>
-* **Icon Support**: Yes
-* **Attachment Support**: No
-* **Message Format**: Text
-* **Message Limit**: 2000 Characters per message
+- **Source**: <https://revolt.chat>
+- **Icon Support**: Yes
+- **Attachment Support**: No
+- **Message Format**: Text
+- **Message Limit**: 2000 Characters per message
 
 ### Account Setup
 
@@ -19,17 +19,17 @@ Set up your account on [Revolt Chat](https://revolt.chat/) and generate a bot to
 
 The following syntax is valid:
 
-* `revolt://{bot_token}/{channel_id}`
-* `revolt://{bot_token}/{channel_id1}/{channel_id2}/{channel_id3}`
+- `revolt://{bot_token}/{channel_id}`
+- `revolt://{bot_token}/{channel_id1}/{channel_id2}/{channel_id3}`
 
 ### Parameter Breakdown
 
-| Variable    | Required | Description
-| ----------- | -------- | -----------
-| bot_token   | Yes      | The token that identifies the bot you created through the Revolt Admin Area.
-| channel_id  | Yes      | Identify the users you want your bot to deliver your notifications to. You must specify at least 1 *channel_id*.
-| url         | No       | Optionally specify an Embed URL with the API
-| icon_url    | No       | Optionally specify a URL to and Image to over-ride defaults
+| Variable   | Required | Description                                                                                                      |
+| ---------- | -------- | ---------------------------------------------------------------------------------------------------------------- |
+| bot_token  | Yes      | The token that identifies the bot you created through the Revolt Admin Area.                                     |
+| channel_id | Yes      | Identify the users you want your bot to deliver your notifications to. You must specify at least 1 _channel_id_. |
+| url        | No       | Optionally specify an Embed URL with the API                                                                     |
+| icon_url   | No       | Optionally specify a URL to and Image to over-ride defaults                                                      |
 
 #### Example
 

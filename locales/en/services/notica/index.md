@@ -5,14 +5,14 @@ description: "Send notica notifications."
 
 ## Notica Notifications
 
-* **Source**: <https://notica.us/>
-* **Icon Support**: No
-* **Message Format**: Text
-* **Message Limit**: 32768 Characters per message
+- **Source**: <https://notica.us/>
+- **Icon Support**: No
+- **Message Format**: Text
+- **Message Limit**: 32768 Characters per message
 
 ### Account Setup
 
-Notica doesn't require you to create an account at all.  You just have to visit [their website](https://notica.us/) at least once to both:
+Notica doesn't require you to create an account at all. You just have to visit [their website](https://notica.us/) at least once to both:
 
 1. Get your token
 1. Enable Browser Notifications (to be sent from the Notica website)
@@ -29,32 +29,32 @@ From here you have two options, you can directly pass the Notica URL into appris
 
 Valid syntaxes are as follows:
 
-* `https://notica.us/?{token}`
-* `notica://{token}`
+- `https://notica.us/?{token}`
+- `notica://{token}`
 
 For self hosted solutions, you can use the following:
 
-* `notica://{host}/{token}`
-* `notica://{host}:{port}/{token}`
-* `notica://{user}@{host}/{token}`
-* `notica://{user}@{host}:{port}/{token}`
-* `notica://{user}:{password}@{host}/{token}`
-* `notica://{user}:{password}@{host}:{port}/{token}`
+- `notica://{host}/{token}`
+- `notica://{host}:{port}/{token}`
+- `notica://{user}@{host}/{token}`
+- `notica://{user}@{host}:{port}/{token}`
+- `notica://{user}:{password}@{host}/{token}`
+- `notica://{user}:{password}@{host}:{port}/{token}`
 
 ### Parameter Breakdown
 
-| Variable    | Required | Description
-| ----------- | -------- | -----------
-| token       | Yes      | The Token that was generated for you after visiting their [website](https://notica.us/). Alternatively this should be the token used by your self hosted solution.
+| Variable | Required | Description                                                                                                                                                        |
+| -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| token    | Yes      | The Token that was generated for you after visiting their [website](https://notica.us/). Alternatively this should be the token used by your self hosted solution. |
 
 A self hosted solution allows for a few more parameters:
 
-| Variable    | Required | Description
-| ----------- | -------- | -----------
-| hostname    | Yes      | The Web Server's hostname.
-| port        | No       | The port our Web server is listening on. By default the port is **80** for **xml://** and **443** for all **xmls://** references.
-| user        | No       | If you're system is set up to use HTTP-AUTH, you can provide _username_ for authentication to it.
-| password    | No       | If you're system is set up to use HTTP-AUTH, you can provide _password_ for authentication to it.
+| Variable | Required | Description                                                                                                                       |
+| -------- | -------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| hostname | Yes      | The Web Server's hostname.                                                                                                        |
+| port     | No       | The port our Web server is listening on. By default the port is **80** for **xml://** and **443** for all **xmls://** references. |
+| user     | No       | If you're system is set up to use HTTP-AUTH, you can provide _username_ for authentication to it.                                 |
+| password | No       | If you're system is set up to use HTTP-AUTH, you can provide _password_ for authentication to it.                                 |
 
 #### Example
 

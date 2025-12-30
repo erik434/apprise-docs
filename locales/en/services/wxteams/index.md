@@ -5,10 +5,10 @@ description: "Send wxteams notifications."
 
 ## Webex Teams Notifications
 
-* **Source**: <https://teams.webex.com>
-* **Icon Support**: No
-* **Message Format**: Markdown
-* **Message Limit**: 1000 Characters per message
+- **Source**: <https://teams.webex.com>
+- **Icon Support**: No
+- **Message Format**: Markdown
+- **Message Limit**: 1000 Characters per message
 
 ### Account Setup
 
@@ -31,28 +31,28 @@ https://api.ciscospark.com/v1/webhooks/incoming/\
 
 The last part of the URL is all you need to be interested in. Think of this URL as:
 
-* `https://api.ciscospark.com/v1/webhooks/incoming/{token}`
+- `https://api.ciscospark.com/v1/webhooks/incoming/{token}`
 
-So as you can see, we have is 3 separate tokens.  These are what you need to build your apprise URL with.  In the above (simplified) example, the tokens are:
+So as you can see, we have is 3 separate tokens. These are what you need to build your apprise URL with. In the above (simplified) example, the tokens are:
 
-* **Token**: `Y3lzY29zcGkyazovL3VzL1dFQkhPT0sajkkzYWU4fTMtMGE4Yy00`
+- **Token**: `Y3lzY29zcGkyazovL3VzL1dFQkhPT0sajkkzYWU4fTMtMGE4Yy00`
 
-**Note:** Apprise supports this URL _as-is_ (_as of v0.7.7_); you no longer need to parse the URL any further.  However there is slightly less overhead (internally) if you do.
+**Note:** Apprise supports this URL _as-is_ (_as of v0.7.7_); you no longer need to parse the URL any further. However there is slightly less overhead (internally) if you do.
 
 ### Syntax
 
 Valid syntax is as follows:
 
-* `https://api.ciscospark.com/v1/webhooks/incoming/{token}`
-* `https://webexapis.com/v1/webhooks/incoming/{token}`
-* `wxteams://{token}/`
-* `webex://{token}/`
+- `https://api.ciscospark.com/v1/webhooks/incoming/{token}`
+- `https://webexapis.com/v1/webhooks/incoming/{token}`
+- `wxteams://{token}/`
+- `webex://{token}/`
 
 ### Parameter Breakdown
 
-| Variable    | Required | Description
-| ----------- | -------- | -----------
-| token       | Yes      | The  tokens provided to you after creating a _incoming-webhook_
+| Variable | Required | Description                                                    |
+| -------- | -------- | -------------------------------------------------------------- |
+| token    | Yes      | The tokens provided to you after creating a _incoming-webhook_ |
 
 #### Example
 

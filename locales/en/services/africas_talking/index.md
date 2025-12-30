@@ -23,24 +23,24 @@ limits:
 
 ## Account Setup
 
-Sign up for Africas Talking  [from here](https://africastalking.com/). You can access your API Key from the management section from your account.
+Sign up for Africas Talking [from here](https://africastalking.com/). You can access your API Key from the management section from your account.
 
 ## Syntax
 
 Valid syntax is as follows:
 
-* `atalk://{appuser}@{apikey}/{toPhoneNo}`
-* `atalk://{appuser}@{apikey}/{toPhoneNo1}/{toPhoneNo2}/{toPhoneNoN}`
+- `atalk://{appuser}@{apikey}/{toPhoneNo}`
+- `atalk://{appuser}@{apikey}/{toPhoneNo1}/{toPhoneNo2}/{toPhoneNoN}`
 
 ## Parameter Breakdown
 
-| Variable        | Required | Description
-| --------------- | -------- | -----------
-| apikey    | Yes      | The API Key associated with your SMS Manager Account.
-| to         | **\*No**   | A phone number and/or group you wish to send your notification to. You can use comma's to separate multiple entries if you wish. This is an alias to `targets`.
-| from         | **\*No**   | Your registered short code or alphanumeric; Defaults to `AFRICASTKNG`
-| batch     |  No  | Send multiple specified notifications in a single batch (1 upstream post to the end server).  By default this is set to `no`.
-| mode     |  No  |Allows you to send your SMS under different modes; options are `bulksms` (default), `premium`, or `sandbox`.
+| Variable | Required | Description                                                                                                                                                     |
+| -------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| apikey   | Yes      | The API Key associated with your SMS Manager Account.                                                                                                           |
+| to       | **\*No** | A phone number and/or group you wish to send your notification to. You can use comma's to separate multiple entries if you wish. This is an alias to `targets`. |
+| from     | **\*No** | Your registered short code or alphanumeric; Defaults to `AFRICASTKNG`                                                                                           |
+| batch    | No       | Send multiple specified notifications in a single batch (1 upstream post to the end server). By default this is set to `no`.                                    |
+| mode     | No       | Allows you to send your SMS under different modes; options are `bulksms` (default), `premium`, or `sandbox`.                                                    |
 
 <!-- GLOBAL:SERVICE:PARAMS -->
 

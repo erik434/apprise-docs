@@ -36,13 +36,13 @@ Valid syntax is as follows:
 
 ## Parameter Breakdown
 
-| Variable | Required | Description|
-|----------| -------- | -----------|
-| `userid`   | Yes      | Your APRS call sign. This is the call sign that will send the message. |
-| `password` | Yes      | Numeric APRS passcode, corresponding to `userid`. Read-only access to APRS-IS (`passcode == -1`) is not supported. |
-| `callsign` | Yes      | One or more Amateur Radio target call sign(s) is/are required to send a notification. |
-| `delay`    | No       | Messages are already sent with a `0.8` (second) throttle to accomodate multiple messages.  However there are certain cases where you may wish to extend this value further.  Any value provided to the `delay` parameter is added to the `0.8s` value already defined.  The minimum (and default value) for this variable is `0.0`.  You can however specified a value up to `5.0` (defined in seconds). Integer values are also accepted (hence setting this to `2`, or `4` is perfectly acceptable) |.
-| `locale`   | No       | Your nearest APRS-IS T2 server locale, see [https://www.aprs2.net](https://www.aprs2.net). Valid values: `NOAM`, `SOAM`, `EURO`, `AUNZ`, `ASIA`. Alternatively, select `ROTA` for `rotate.aprs2.net` in case you do not want to target a specific APRS server locale. Default is `EURO`. Only specify the locale's short code; the plugin will then map the actual server URL respectively. |
+| Variable   | Required | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| ---------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
+| `userid`   | Yes      | Your APRS call sign. This is the call sign that will send the message.                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `password` | Yes      | Numeric APRS passcode, corresponding to `userid`. Read-only access to APRS-IS (`passcode == -1`) is not supported.                                                                                                                                                                                                                                                                                                                                                                                |
+| `callsign` | Yes      | One or more Amateur Radio target call sign(s) is/are required to send a notification.                                                                                                                                                                                                                                                                                                                                                                                                             |
+| `delay`    | No       | Messages are already sent with a `0.8` (second) throttle to accomodate multiple messages. However there are certain cases where you may wish to extend this value further. Any value provided to the `delay` parameter is added to the `0.8s` value already defined. The minimum (and default value) for this variable is `0.0`. You can however specified a value up to `5.0` (defined in seconds). Integer values are also accepted (hence setting this to `2`, or `4` is perfectly acceptable) | .   |
+| `locale`   | No       | Your nearest APRS-IS T2 server locale, see [https://www.aprs2.net](https://www.aprs2.net). Valid values: `NOAM`, `SOAM`, `EURO`, `AUNZ`, `ASIA`. Alternatively, select `ROTA` for `rotate.aprs2.net` in case you do not want to target a specific APRS server locale. Default is `EURO`. Only specify the locale's short code; the plugin will then map the actual server URL respectively.                                                                                                       |
 
 <!-- GLOBAL:SERVICE:PARAMS -->
 
@@ -56,7 +56,7 @@ Valid syntax is as follows:
 - APRS Bulletins ([see APRS101.pdf chapter 14 pg. 73](http://www.aprs.org/doc/APRS101.PDF)) are not supported.
 - With great (ham radio) power comes great responsibility; do not use this plugin for spamming other ham radio operators. Everything that you send to the APRS-IS server will get broadcasted via the APRS / Ham Radio network.
 - In order to gain access to APRS-IS, you need to be a licensed ham radio operator.
-- The plugin uses its own APRS device identifier (`APPRIS`; see [https://github.com/aprsorg/aprs-deviceid](https://github.com/aprsorg/aprs-deviceid) for details). This identifier is unique to each software/device that is allowed to communicate with the APRS network and __must not get modified__ in any way UNLESS you clone this plugin and use its code outside of Apprise - in this case, please request your very own device identifier.
+- The plugin uses its own APRS device identifier (`APPRIS`; see [https://github.com/aprsorg/aprs-deviceid](https://github.com/aprsorg/aprs-deviceid) for details). This identifier is unique to each software/device that is allowed to communicate with the APRS network and **must not get modified** in any way UNLESS you clone this plugin and use its code outside of Apprise - in this case, please request your very own device identifier.
 - Additional (technical) constraints: see plugin's header section. Usually, you should not be required to change these settings.
 
 ## Examples
@@ -79,7 +79,7 @@ apprise -vv -b "Test Message Body" \
 #
 # This will result in three target call signs as the plugin
 # is going to honor the call sign's SSID information
-# 
+#
 apprise -vv -b "Test Message Body" \
    aprs://df1jsl-15:12345@df1jsl-9/df1jsl-8/df1jsl-7
 

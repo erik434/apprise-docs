@@ -5,10 +5,10 @@ description: "Send pushplus notifications."
 
 ## Pushplus Notifications
 
-* **Source**: <https://www.pushplus.plus/>
-* **Icon Support**: No
-* **Message Format**: Plain Text
-* **Message Limit**: ~20,000 Characters
+- **Source**: <https://www.pushplus.plus/>
+- **Icon Support**: No
+- **Message Format**: Plain Text
+- **Message Limit**: ~20,000 Characters
 
 Pushplus is a Chinese notification platform used to send alerts to WeChat or browser endpoints. It uses a token-based webhook system to deliver messages.
 
@@ -34,15 +34,15 @@ Apprise supports both the full Pushplus native webhook URL and its simplified ve
 
 Valid syntax is as follows:
 
-* `https://www.pushplus.plus/send?token={token}`
-* `pushplus://{token}`
+- `https://www.pushplus.plus/send?token={token}`
+- `pushplus://{token}`
 
 ---
 
 ### Parameter Breakdown
 
-| Variable | Required | Description |
-|----------|----------|-------------|
+| Variable | Required | Description                                             |
+| -------- | -------- | ------------------------------------------------------- |
 | token    | Yes      | Your personal Pushplus Token from your account settings |
 
 ---

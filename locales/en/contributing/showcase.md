@@ -10,7 +10,7 @@ description: "A showcase of who uses Apprise and the kind souls that talk about 
 - [Fail2Ban](https://www.fail2ban.org/): scans log files and bans IPs that show the malicious signs -- too many password failures, seeking for exploits, etc. Generally Fail2Ban is then used to update firewall rules to reject the IP addresses for a specified amount of time, although any arbitrary other action (e.g. sending a notification via Apprise) could also be configured.
 - [Uptime Kuma](https://github.com/louislam/uptime-kuma): A popular self-hosted monitoring tool like _[Uptime Robot](https://uptimerobot.com/)_.
 - [SABnzbd](https://sabnzbd.org/): Free and easy binary newsreader.
-- [Apprise-GA](https://github.com/cstuder/apprise-ga): Apprise [GitHub Action](https://github.com/features/actions) integration.  Also available in the [GitHub Marketplace](https://github.com/marketplace/actions/apprise-notification).
+- [Apprise-GA](https://github.com/cstuder/apprise-ga): Apprise [GitHub Action](https://github.com/features/actions) integration. Also available in the [GitHub Marketplace](https://github.com/marketplace/actions/apprise-notification).
 - [Bazarr](https://www.bazarr.media/): A companion application to [Sonarr](https://sonarr.tv) and [Radarr](https://radarr.video). It manages and downloads subtitles based on your requirements. You define your preferences by TV show or movie and Bazarr takes care of everything for you.
 - [Mealie](https://github.com/hay-kot/mealie): Mealie is a self hosted recipe manager and meal planner.
 - [Ouroboros](https://github.com/pyouroboros/ouroboros): Automatically update running docker containers with newest available image.
@@ -44,7 +44,7 @@ Apprise has been mentioned in:
 - [Kumulos Newsletter](https://www.kumulos.com/2019/11/26/kumulos-features-update-fall-19/) - Nov 26, 2019
 - [Home Assistant Podcast 58](https://hasspodcast.io/ha058/) - Oct 31, 2019
 - [Python Bytes Podcast Episode 138](https://pythonbytes.fm/episodes/show/138/will-pyoxidizer-weld-shut-one-of-python-s-major-gaps) - Jul 4, 2019
-- [Python Weekly - Issue 382](https://newsletry.com/Home/Python%20Weekly/b6a9876d-7f17-40f1-c7e5-08d686ed8528) - Jan 24, 2019  
+- [Python Weekly - Issue 382](https://newsletry.com/Home/Python%20Weekly/b6a9876d-7f17-40f1-c7e5-08d686ed8528) - Jan 24, 2019
 
 ## Tutorials
 

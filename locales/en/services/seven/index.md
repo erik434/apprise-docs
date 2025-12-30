@@ -5,11 +5,11 @@ description: "Send seven notifications."
 
 ## Seven Notifications
 
-* **Source**: <https://www.seven.io/>
-* **Icon Support**: No
-* **Attachment Support**: No
-* **Message Format**: Text
-* **Message Limit**: 160 Characters per message
+- **Source**: <https://www.seven.io/>
+- **Icon Support**: No
+- **Attachment Support**: No
+- **Message Format**: Text
+- **Message Limit**: 160 Characters per message
 
 ### Account Setup
 
@@ -19,16 +19,16 @@ Signup [from here](https://www.seven.io/). It is from the device you can access 
 
 Valid syntax is as follows:
 
-* `seven://{token}/{target}`
+- `seven://{token}/{target}`
 
 ### Parameter Breakdown
 
-| Variable        | Required | Description
-| --------------- | -------- | -----------
-| token    | Yes      | This is your generated Access Token associated with your Seven account.
-| target     | Yes   | One or more phone number(s) you wish to send your notification to.
-| flash     | No   | Flash mode (default is `no` ); specify `yes` to enable
-| label     | No   | Defines a label
+| Variable | Required | Description                                                             |
+| -------- | -------- | ----------------------------------------------------------------------- |
+| token    | Yes      | This is your generated Access Token associated with your Seven account. |
+| target   | Yes      | One or more phone number(s) you wish to send your notification to.      |
+| flash    | No       | Flash mode (default is `no` ); specify `yes` to enable                  |
+| label    | No       | Defines a label                                                         |
 
 #### Example
 

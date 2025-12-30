@@ -1,33 +1,45 @@
 ---
-title: "freemobile Notifications"
-description: "Send freemobile notifications."
+title: "Free-Mobile Notifications"
+description: "Send Free-Mobile notifications."
+sidebar:
+  label: "Free-Mobile"
+
+source: https://mobile.free.fr
+
+schemas:
+  - freemobile
+
+has_sms: true
+
+sample_urls:
+  - freemobile://{user}@{password}
+
+limits:
+  max_chars: 160
 ---
 
-## Free-Mobile
+<!-- SERVICE:DETAILS -->
 
-* **Source**: <https://mobile.free.fr/>
-* **Icon Support**: No
-* **Message Format**: Text
-* **Message Limit**: 160 Characters per message
-
-### Account Setup
+## Account Setup
 
 Sign up with Free Mobile ([link](https://mobile.free.fr/)) and use your credentials (user and pass) to send a notification.
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
-* `freemobile://{user}@{password}`
+- `freemobile://{user}@{password}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
-| Variable        | Required | Description
-| --------------- | -------- | -----------
-| user            | Yes      | The user associated with your [Free-Mobile Account](https://mobile.free.fr/)
-| password        | Yes      | The password associated with your [Free-Mobile Account](https://mobile.free.fr/)
+| Variable | Required | Description                                                                      |
+| -------- | -------- | -------------------------------------------------------------------------------- |
+| user     | Yes      | The user associated with your [Free-Mobile Account](https://mobile.free.fr/)     |
+| password | Yes      | The password associated with your [Free-Mobile Account](https://mobile.free.fr/) |
 
-#### Example
+<!-- GLOBAL:SERVICE:PARAMS -->
+
+## Example
 
 Send a Free-Mobile Notification:
 

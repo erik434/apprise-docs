@@ -50,7 +50,7 @@ limits:
     max_chars: 2000
 
 # Place a service into the graveyard by adding one of the following:
-#    ended: YYYY-MM-DD 
+#    ended: YYYY-MM-DD
 #    ended: YYYY-MM
 #    ended: YYYY
 ---
@@ -66,13 +66,15 @@ Describe how to set up an account or the application so that Apprise can send no
 
 Valid syntax is as follows:
 
-* `schema://credentials/`
-* `schema://credentials/{target}`
+- `schema://credentials/`
+- `schema://credentials/{target}`
 
 ## Parameters
+
 <!-- Provide the supported parameters for users to understand/leverage -->
-| Variable    | Required | Description
-| ----------- | -------- | -----------
+
+| Variable | Required | Description |
+| -------- | -------- | ----------- |
 
 <!-- Leave the below as is as it will place our ## Global Parameters section -->
 <!-- GLOBAL:SERVICE:PARAMS -->

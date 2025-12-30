@@ -1,14 +1,27 @@
 ---
 title: "Join Notifications"
 description: "Send Join notifications."
+sidebar:
+  label: "Join"
+
+source: https://joaoapps.com/join/
+
+schemas:
+  - join
+
+sample_urls:
+  - join://{apikey}/
+  - join://{apikey}/{device_id}
+  - join://{apikey}/{group_id}
+  - join://{apikey}/{device_name}
+
+limits:
+  max_chars: 1000
 ---
 
-## Join Notifications
+<!-- SERVICE:DETAILS -->
 
-* **Source**: <https://joaoapps.com/join/>
-* **Icon Support**: Yes
-* **Message Format**: Text
-* **Message Limit**: 1000 Characters per message
+## Account Setup
 
 To use this plugin:
 
@@ -16,44 +29,48 @@ To use this plugin:
 2. To register you just need to allow the page to link with your Google Profile. The good news is it doesn't ask for anything too personal.
 3. Download the app for your phone from the [Android Store here](https://play.google.com/store/apps/details?id=com.joaomgcd.join).
 4. Using your phone, when you first open the application, it will ask for a series of permissions and ask you a couple questions.
-4. If you just recently registered your device (in the previous step), you should now be able to refresh your browser at [joinjoaomgcd.appspot.com](https://joinjoaomgcd.appspot.com/).  Your device should list itself.  From here you can retrieve the API you need to worth with Apprise.
+5. If you just recently registered your device (in the previous step), you should now be able to refresh your browser at [joinjoaomgcd.appspot.com](https://joinjoaomgcd.appspot.com/). Your device should list itself. From here you can retrieve the API you need to worth with Apprise.
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
-* **join**://**{apikey}**/
-* **join**://**{apikey}**/**{device_id}**
-* **join**://**{apikey}**/**{device_id1}**/**{device_id2}**/**{device_idN}**
+- `join://{apikey}/`
+- `join://{apikey}/{device_id}`
+- `join://{apikey}/{device_id1}/{device_id2}/{device_idN}`
 
-**Note**: If no device is specified, then by default **group.all** is used.
+:::note
+If no device is specified, then by default **group.all** is used.
+:::
 
-Groups can be referenced like this (the *group.* part is optional):
+Groups can be referenced like this (the _group._ part is optional):
 
-* **join**://**{apikey}**/group.**{group_id}**
-* **join**://**{apikey}**/group.**{group_id1}**/group.**{group_id2}**/group.**{group_idN}**
-* **join**://**{apikey}**/**{group_id}**
-* **join**://**{apikey}**/**{group_id1}**/**{group_id2}**/**{group_idN}**
+- `join://{apikey}/group.{group_id}`
+- `join://{apikey}/group.{group_id1}/group.{group_id2}/group.{group_idN}`
+- `join://{apikey}/{group_id}`
+- `join://{apikey}/{group_id1}/{group_id2}/{group_idN}`
 
 If what you specify isn't a `group` or `device_id` then it is interpreted as a `device_name` as a fallback:
 
-* **join**://**{apikey}**/**{device_name}**
-* **join**://**{apikey}**/**{device_name1}**/**{device_name1}**/**{device_nameN}**
+- `join://{apikey}/{device_name}`
+- `join://{apikey}/{device_name1}/{device_name1}/{device_nameN}`
 
 You can freely mix and match these combinations as well:
 
-* **join**://**{apikey}**/**{device_id}**/**{group_id}**/**{device_name}**
+- `join://{apikey}/{device_id}/{group_id}/{device_name}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
-| Variable    | Required | Description
-| ----------- | -------- | -----------
-| apikey      | Yes      | The api key associated with your Join account.
-| device_id   | No       | The device identifier to send your notification to (a 32 bit alpha-numeri string).
-| device_name | No       | The device name (PC, Nexus, etc)
-| group_id    | No       | The group identifier to send your notification to.
+| Variable    | Required | Description                                                                        |
+| ----------- | -------- | ---------------------------------------------------------------------------------- |
+| apikey      | Yes      | The api key associated with your Join account.                                     |
+| device_id   | No       | The device identifier to send your notification to (a 32 bit alpha-numeri string). |
+| device_name | No       | The device name (PC, Nexus, etc)                                                   |
+| group_id    | No       | The group identifier to send your notification to.                                 |
 
-#### Example
+<!-- GLOBAL:SERVICE:PARAMS -->
+
+## Example
 
 Send a Join notification to all of our configured devices:
 

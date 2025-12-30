@@ -6,7 +6,7 @@ sidebar:
 
 source: https://spontit.com
 schemas:
-   - spontit
+  - spontit
 
 sample_urls:
   - spontit://{user}@{apikey}
@@ -33,25 +33,25 @@ Unknown
 ## Account Setup
 
 1. Visit <https://spontit.com> to create your account.
-2. To acquire your `{user}`: Visit your profile at <https://spontit.com/profile> and take note of your User ID here.  It will look something like: `user12345678901`
+2. To acquire your `{user}`: Visit your profile at <https://spontit.com/profile> and take note of your User ID here. It will look something like: `user12345678901`
 3. To acquire your `{apikey}`: Generate an API key at <https://spontit.com/secret_keys> (if you haven't already done so).
 
 ## Syntax
 
 Channels are optional; if no channel is specified then you are just personally notified.
 
-* `spontit://{user}@{apikey}`
-* `spontit://{user}@{apikey}/{channel_id}`
-* `spontit://{user}@{apikey}/{channel_id1}/{channel_id2}/{channel_idN}/`
+- `spontit://{user}@{apikey}`
+- `spontit://{user}@{apikey}/{channel_id}`
+- `spontit://{user}@{apikey}/{channel_id1}/{channel_id2}/{channel_idN}/`
 
 ## Parameter Breakdown
 
-| Variable    | Required | Description
-| ----------- | -------- | -----------
-| user        | Yes      | This is the User ID associated with your Spontit account.  It can be found on your [Spontit Profile page](https://spontit.com/profile).
-| apikey      | Yes      | This is the API key you generated for your Spontit account.  It can be found (and generated if it doesn't already exist) [here](https://spontit.com/secret_keys).
-| channel_id  | No       | A Channel you wish to notify _that you created_.
-| subtitle    | No       | The subtitle of your push. Only appears on iOS devices.
+| Variable   | Required | Description                                                                                                                                                      |
+| ---------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| user       | Yes      | This is the User ID associated with your Spontit account. It can be found on your [Spontit Profile page](https://spontit.com/profile).                           |
+| apikey     | Yes      | This is the API key you generated for your Spontit account. It can be found (and generated if it doesn't already exist) [here](https://spontit.com/secret_keys). |
+| channel_id | No       | A Channel you wish to notify _that you created_.                                                                                                                 |
+| subtitle   | No       | The subtitle of your push. Only appears on iOS devices.                                                                                                          |
 
 <!-- GLOBAL:SERVICE:PARAMS -->
 

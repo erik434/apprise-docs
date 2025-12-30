@@ -5,36 +5,36 @@ description: "Send pagertree notifications."
 
 ## PagerTree Notifications
 
-* **Source**: <https://pagertree.com>
-* **Icon Support**: No
-* **Attachment Support**: No
-* **Message Format**: Text
-* **Message Limit**: 32768 Characters per message
+- **Source**: <https://pagertree.com>
+- **Icon Support**: No
+- **Attachment Support**: No
+- **Message Format**: Text
+- **Message Limit**: 32768 Characters per message
 
 1. For this to work, you'll need to signup for a [PagerTree](https://pagertree.com) account (free trial is fine). Make sure you follow the setup wizard (you'll want to be on-call for the team the integration is pointed to in Step 2)
 2. Create a [webhook integration](https://pagertree.com/docs/integration-guides/webhook) and point it to the team (default: "Devops Team")
 3. From the integration page, copy the integration Prefix ID (used for the apprise url)
-![image](https://user-images.githubusercontent.com/9020194/217587441-cfbf0f43-f736-4b9d-85dc-18acc6cc418c.png)
+   ![image](https://user-images.githubusercontent.com/9020194/217587441-cfbf0f43-f736-4b9d-85dc-18acc6cc418c.png)
 4. Use the Prefix ID for the apprise URL `./bin/apprise -t test -b message "pagertree://int_xxxxxxxxxx"`
-You need to have an account with [PagerTree](https://pagertree.com) and create a [webhook integration](https://pagertree.com/docs/integration-guides/webhook).
+   You need to have an account with [PagerTree](https://pagertree.com) and create a [webhook integration](https://pagertree.com/docs/integration-guides/webhook).
 
 ### Syntax
 
 Valid syntax is as follows:
 
-* `pagertree://{integration}`
-* `pagertree://{integration}?action=resolve&thirdparty_id=abc123`
-* `pagertree://{integration}?+pagertree-token=123&:env=prod&-incident=true&-incident_severity=SEV-1&-incident-message=Please join the bridge&tags=prod,server,outage`
+- `pagertree://{integration}`
+- `pagertree://{integration}?action=resolve&thirdparty_id=abc123`
+- `pagertree://{integration}?+pagertree-token=123&:env=prod&-incident=true&-incident_severity=SEV-1&-incident-message=Please join the bridge&tags=prod,server,outage`
 
 ### Parameter Breakdown
 
-| Variable    | Required | Description
-| ----------- | -------- | -----------
-| integration | Yes      | This is the Prefix ID of your webhook integration. Found at the top of the integration page.
-| action | No       | The action for the webhook. Possible values are `create`, `acknowledge`, and `resolve`. When using acknowledge or resolve, please use the `thirdparty_id` parameter to indicate to PagerTree which alert should be actioned.
-| thirdparty | No | An Id PagerTree uses to map thirdparty applications to alerts. You can specify your own, or if not, a random UUID will be generated for you. |
-| urgency | No | Urgency of the alert to be generated. Possible values `silent`, `low`, `medium`, `high`, or `critical`. If not provided, PagerTree will use the integration's default. |
-| tags | No | Comma seperated list of tags. (ex: "prod,server,outage") |
+| Variable    | Required | Description                                                                                                                                                                                                                  |
+| ----------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| integration | Yes      | This is the Prefix ID of your webhook integration. Found at the top of the integration page.                                                                                                                                 |
+| action      | No       | The action for the webhook. Possible values are `create`, `acknowledge`, and `resolve`. When using acknowledge or resolve, please use the `thirdparty_id` parameter to indicate to PagerTree which alert should be actioned. |
+| thirdparty  | No       | An Id PagerTree uses to map thirdparty applications to alerts. You can specify your own, or if not, a random UUID will be generated for you.                                                                                 |
+| urgency     | No       | Urgency of the alert to be generated. Possible values `silent`, `low`, `medium`, `high`, or `critical`. If not provided, PagerTree will use the integration's default.                                                       |
+| tags        | No       | Comma seperated list of tags. (ex: "prod,server,outage")                                                                                                                                                                     |
 
 #### Example
 
@@ -64,17 +64,17 @@ The above would post a message such as:
 
 ```json
 {
-   "id": "0f85aa1c-711e-4873-95b6-e441c291537d",
-   "action": "create",
-   "title": "Test Message Title",
-   "message": "Test Message Body",
-   "server": "blue-ranger-2"
+  "id": "0f85aa1c-711e-4873-95b6-e441c291537d",
+  "action": "create",
+  "title": "Test Message Title",
+  "message": "Test Message Body",
+  "server": "blue-ranger-2"
 }
 ```
 
 ### Header Manipulation
 
-Some users may require special HTTP headers to be present when they post their data to PagerTree.  This can be accomplished by just sticking a plus symbol (**+**) in front of any parameter you specify on your URL string. This is useful when making use of the [PagerTree Token feature](https://pagertree.com/docs/integration-guides/webhook#integration-options).
+Some users may require special HTTP headers to be present when they post their data to PagerTree. This can be accomplished by just sticking a plus symbol (**+**) in front of any parameter you specify on your URL string. This is useful when making use of the [PagerTree Token feature](https://pagertree.com/docs/integration-guides/webhook#integration-options).
 
 ```bash
 # Below would set the header:

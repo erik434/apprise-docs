@@ -6,19 +6,20 @@ description: "Developing using the Apprise Library"
 # Table of Contents
 
 <!--ts-->
-* [Development API](#development-api)
-  * [The Apprise Object](#the-apprise-object)
-    * [`add()`](#add-register-notification-services)
-    * [`notify()`](#notify-send-notifications)
-    * [`async_notify()`](#async_notify-awaitable-notifications)
-    * [`len()`](#len-count-services)
-    * [`clear()`](#clear-reset-service-list)
-    * [`details()`](#details-inspect-configuration--schemas)
-  * [The AppriseAsset Object](#the-appriseasset-object)
-  * [The Apprise Notification Object](#the-apprise-notification-object)
-* **Features**
-  * [Pickle/Serialization Support](#pickleserialization-support)
-<!--te-->
+
+- [Development API](#development-api)
+  - [The Apprise Object](#the-apprise-object)
+    - [`add()`](#add-register-notification-services)
+    - [`notify()`](#notify-send-notifications)
+    - [`async_notify()`](#async_notify-awaitable-notifications)
+    - [`len()`](#len-count-services)
+    - [`clear()`](#clear-reset-service-list)
+    - [`details()`](#details-inspect-configuration--schemas)
+  - [The AppriseAsset Object](#the-appriseasset-object)
+  - [The Apprise Notification Object](#the-apprise-notification-object)
+- **Features**
+  - [Pickle/Serialization Support](#pickleserialization-support)
+  <!--te-->
 
 ## The Apprise Object
 
@@ -47,7 +48,7 @@ ok = apobj.add([
 ])
 ```
 
-* **Returns**: `True` if all URLs parsed and added; `False` otherwise.
+- **Returns**: `True` if all URLs parsed and added; `False` otherwise.
 
 ---
 
@@ -144,12 +145,12 @@ Apprise tagging allows you to group and filter notifications. Two main design pa
 
 General filter expressions follow:
 
-| Filter                        | Selected services                             |
-|-------------------------------|-----------------------------------------------|
-| `'TagA'`                      | Has **TagA**                                  |
-| `['TagA', 'TagB']`            | **OR** between tags                           |
-| `[('TagA','TagC'), 'TagB']`   | (**AND** within tuple) **OR** others          |
-| `[('TagB','TagC')]`           | **AND** between tags                          |
+| Filter                      | Selected services                    |
+| --------------------------- | ------------------------------------ |
+| `'TagA'`                    | Has **TagA**                         |
+| `['TagA', 'TagB']`          | **OR** between tags                  |
+| `[('TagA','TagC'), 'TagB']` | (**AND** within tuple) **OR** others |
+| `[('TagB','TagC')]`         | **AND** between tags                 |
 
 ---
 
@@ -157,12 +158,12 @@ General filter expressions follow:
 
 By default, all notifications use `NotifyType.INFO` with the `default` theme. Available types:
 
-| Notification Type         | Text Representation | Image |
-|---------------------------|---------------------|-------|
-| `NotifyType.INFO`         | `info`              | ![info](https://raw.githubusercontent.com/caronc/apprise/master/apprise/assets/themes/default/apprise-info-72x72.png) |
-| `NotifyType.SUCCESS`      | `success`           | ![success](https://raw.githubusercontent.com/caronc/apprise/master/apprise/assets/themes/default/apprise-success-72x72.png) |
-| `NotifyType.WARNING`      | `warning`           | ![warning](https://raw.githubusercontent.com/caronc/apprise/master/apprise/assets/themes/default/apprise-warning-72x72.png) |
-| `NotifyType.FAILURE`      | `failure`           | ![failure](https://raw.githubusercontent.com/caronc/apprise/master/apprise/assets/themes/default/apprise-failure-72x72.png) |
+| Notification Type    | Text Representation | Image                                                                                                                       |
+| -------------------- | ------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `NotifyType.INFO`    | `info`              | ![info](https://raw.githubusercontent.com/caronc/apprise/master/apprise/assets/themes/default/apprise-info-72x72.png)       |
+| `NotifyType.SUCCESS` | `success`           | ![success](https://raw.githubusercontent.com/caronc/apprise/master/apprise/assets/themes/default/apprise-success-72x72.png) |
+| `NotifyType.WARNING` | `warning`           | ![warning](https://raw.githubusercontent.com/caronc/apprise/master/apprise/assets/themes/default/apprise-warning-72x72.png) |
+| `NotifyType.FAILURE` | `failure`           | ![failure](https://raw.githubusercontent.com/caronc/apprise/master/apprise/assets/themes/default/apprise-failure-72x72.png) |
 
 Use a different type:
 
@@ -221,10 +222,10 @@ info = apobj.details()
 
 Returns a `dict` containing:
 
-* **version** — Apprise version  
-* **asset** — current `AppriseAsset` settings  
-* **schemas** — supported services and URLs  
-* **details** — templates, tokens, args, kwargs  
+- **version** — Apprise version
+- **asset** — current `AppriseAsset` settings
+- **schemas** — supported services and URLs
+- **details** — templates, tokens, args, kwargs
 
 <details>
 <summary>Example JSON</summary>
@@ -232,9 +233,15 @@ Returns a `dict` containing:
 ```json
 {
   "version": "1.0.0",
-  "asset": { /* ... */ },
-  "schemas": [ /* ... */ ],
-  "details": { /* ... */ }
+  "asset": {
+    /* ... */
+  },
+  "schemas": [
+    /* ... */
+  ],
+  "details": {
+    /* ... */
+  }
 }
 ```
 
@@ -246,11 +253,11 @@ Returns a `dict` containing:
 
 `AppriseAsset` is the central configuration object that controls the look, feel, and behaviour of your notifications. Even when you simply instantiate `Apprise()`, it creates a default `AppriseAsset()` under the hood (using the “default” theme in `apprise/assets/themes/default`). By customizing `AppriseAsset`, you can:
 
-* Override the application identifier, description, and URL  
-* Point to your own local or hosted images (logos and type-specific icons)  
-* Enable or disable asynchronous delivery, logging filters, and escape-sequence interpretation  
-* Configure persistent storage (caching) for repeated notifications  
-* Add your own plugin directories or files  
+- Override the application identifier, description, and URL
+- Point to your own local or hosted images (logos and type-specific icons)
+- Enable or disable asynchronous delivery, logging filters, and escape-sequence interpretation
+- Configure persistent storage (caching) for repeated notifications
+- Add your own plugin directories or files
 
 ---
 
@@ -295,24 +302,24 @@ asset = apprise.AppriseAsset(
 
 ### Key Attributes
 
-| Name                  | Type                   | Default                                                                                                                    | Description                                                                                          |
-|-----------------------|------------------------|----------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
-| **theme**             | `str`                  | `"default"`                                                                                                                | Which theme directory to use (maps into `{THEME}`).                                                 |
-| **app_id**            | `str`                  | `"Apprise"`                                                                                                                | A short identifier/name for your application.                                                       |
-| **app_desc**          | `str`                  | `"Apprise Notifications"`                                                                                                  | A brief description of your notification system.                                                     |
-| **app_url**           | `str`                  | `"https://github.com/caronc/apprise"`                                                                                     | A URL where users can learn more about your app.                                                    |
-| **default_extension** | `str`                  | `".png"`                                                                                                                   | Default image file extension (e.g. `".png"`, `".jpeg"`).                                             |
-| **image_path_mask**   | `str`                  | Local path mask using `{THEME}`, `{TYPE}`, `{XY}`, `{EXTENSION}`.                                                          | Where on disk to find your images/icons.                                                            |
-| **image_url_mask**    | `str`                  | Remote URL mask using `{THEME}`, `{TYPE}`, `{XY}`, `{EXTENSION}`.                                                          | Where to fetch hosted images/icons.                                                                 |
-| **image_url_logo**    | `Optional[str]`        | `None`                                                                                                                     | A single logo URL for your app (uses `{THEME}` if provided).                                        |
-| **html_notify_map**   | `Dict[NotifyType,str]` | Maps each `NotifyType` (INFO/SUCCESS/WARNING/FAILURE) → a hex colour code.| Used by some services that support colourised HTML. An example of this can be found below |
-| **async_mode**        | `bool`                 | `True`                                                                                                                     | Send notifications concurrently (if the service/client supports it).                                 |
-| **interpret_escapes** | `bool`                 | `False`                                                                                                                    | Convert `\r` and `\n` etc., in your title/body before sending.                                        |
-| **encoding**          | `str`                  | `"utf-8"`                                                                                                                  | Character encoding for your content.                                                                |
-| **secure_logging**    | `bool`                 | `True`                                                                                                                     | Filter out secrets (passwords, tokens) from debug logs.                                             |
-| **plugin_paths**      | `List[str]`            | `[]`                                                                                                                       | One-level scan of directories or explicit `.py` files for custom notification plugins.              |
-| **storage_mode**      | `Optional[str]`        | `None`                                                                                                                     | Enable persistent storage: `"auto"` (on-demand) or `"flush"` (per notification).                     |
-| **storage_path**      | `Optional[str]`        | `None`                                                                                                                     | Custom file path to use for persistent storage (overrides default).                                 |
+| Name                  | Type                   | Default                                                                    | Description                                                                               |
+| --------------------- | ---------------------- | -------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| **theme**             | `str`                  | `"default"`                                                                | Which theme directory to use (maps into `{THEME}`).                                       |
+| **app_id**            | `str`                  | `"Apprise"`                                                                | A short identifier/name for your application.                                             |
+| **app_desc**          | `str`                  | `"Apprise Notifications"`                                                  | A brief description of your notification system.                                          |
+| **app_url**           | `str`                  | `"https://github.com/caronc/apprise"`                                      | A URL where users can learn more about your app.                                          |
+| **default_extension** | `str`                  | `".png"`                                                                   | Default image file extension (e.g. `".png"`, `".jpeg"`).                                  |
+| **image_path_mask**   | `str`                  | Local path mask using `{THEME}`, `{TYPE}`, `{XY}`, `{EXTENSION}`.          | Where on disk to find your images/icons.                                                  |
+| **image_url_mask**    | `str`                  | Remote URL mask using `{THEME}`, `{TYPE}`, `{XY}`, `{EXTENSION}`.          | Where to fetch hosted images/icons.                                                       |
+| **image_url_logo**    | `Optional[str]`        | `None`                                                                     | A single logo URL for your app (uses `{THEME}` if provided).                              |
+| **html_notify_map**   | `Dict[NotifyType,str]` | Maps each `NotifyType` (INFO/SUCCESS/WARNING/FAILURE) → a hex colour code. | Used by some services that support colourised HTML. An example of this can be found below |
+| **async_mode**        | `bool`                 | `True`                                                                     | Send notifications concurrently (if the service/client supports it).                      |
+| **interpret_escapes** | `bool`                 | `False`                                                                    | Convert `\r` and `\n` etc., in your title/body before sending.                            |
+| **encoding**          | `str`                  | `"utf-8"`                                                                  | Character encoding for your content.                                                      |
+| **secure_logging**    | `bool`                 | `True`                                                                     | Filter out secrets (passwords, tokens) from debug logs.                                   |
+| **plugin_paths**      | `List[str]`            | `[]`                                                                       | One-level scan of directories or explicit `.py` files for custom notification plugins.    |
+| **storage_mode**      | `Optional[str]`        | `None`                                                                     | Enable persistent storage: `"auto"` (on-demand) or `"flush"` (per notification).          |
+| **storage_path**      | `Optional[str]`        | `None`                                                                     | Custom file path to use for persistent storage (overrides default).                       |
 
 Here is an example of what the `html_notify_map` may look like (below is the default settings):
 
@@ -331,12 +338,12 @@ html_notify_map = {
 
 When resolving `image_path_mask` or `image_url_mask`, the following tokens are replaced:
 
-| Placeholder    | Runtime Value             | Example                   | Description                                                                                     |
-|----------------|---------------------------|---------------------------|-------------------------------------------------------------------------------------------------|
-| **`{THEME}`**  | `asset.theme`             | `"default"`               | The theme folder name to reference.                                                            |
-| **`{TYPE}`**   | lower-cased `NotifyType`  | `"warning"`               | Type of notification (`info`, `success`, `warning`, `failure`, etc.).                          |
-| **`{XY}`**     | resolution string         | `"72x72"`                 | Pixel dimensions of the icon. Apprise ships `32x32`, `72x72`, `128x128`, `256x256` by default.  |
-| **`{EXTENSION}`** | `asset.default_extension` | `".png"`               | File extension for your images.                                                                 |
+| Placeholder       | Runtime Value             | Example     | Description                                                                                    |
+| ----------------- | ------------------------- | ----------- | ---------------------------------------------------------------------------------------------- |
+| **`{THEME}`**     | `asset.theme`             | `"default"` | The theme folder name to reference.                                                            |
+| **`{TYPE}`**      | lower-cased `NotifyType`  | `"warning"` | Type of notification (`info`, `success`, `warning`, `failure`, etc.).                          |
+| **`{XY}`**        | resolution string         | `"72x72"`   | Pixel dimensions of the icon. Apprise ships `32x32`, `72x72`, `128x128`, `256x256` by default. |
+| **`{EXTENSION}`** | `asset.default_extension` | `".png"`    | File extension for your images.                                                                |
 
 ---
 
@@ -387,7 +394,7 @@ apobj.notify(
 
 ## The Apprise Notification Object
 
-The **[[The Apprise Object|Development_API#the-apprise-object]]** actually already does a really good managing these for you.  But if you want to manage the notifications yourself here is how you can do it:
+The **[[The Apprise Object|Development_API#the-apprise-object]]** actually already does a really good managing these for you. But if you want to manage the notifications yourself here is how you can do it:
 
 ```python
 # Import this library

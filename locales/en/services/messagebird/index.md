@@ -5,10 +5,10 @@ description: "Send messagebird notifications."
 
 ## MessageBird
 
-* **Source**: <https://messagebird.com>
-* **Icon Support**: No
-* **Message Format**: Text
-* **Message Limit**: 160 Characters per message
+- **Source**: <https://messagebird.com>
+- **Icon Support**: No
+- **Message Format**: Text
+- **Message Limit**: 160 Characters per message
 
 ### Account Setup
 
@@ -18,17 +18,17 @@ To use MessageBird, you will need to acquire your _API Key_. This is accessible 
 
 Valid syntaxes are as follows:
 
-* **msgbird**://**{ApiKey}**/**{FromPhoneNo}**
-* **msgbird**://**{ApiKey}**/**{FromPhoneNo}**/**{ToPhoneNo}**
-* **msgbird**://**{ApiKey}**/**{FromPhoneNo}**/**{ToPhoneNo1}**/**{ToPhoneNo2}**/**{ToPhoneNoN}**
+- **msgbird**://**{ApiKey}**/**{FromPhoneNo}**
+- **msgbird**://**{ApiKey}**/**{FromPhoneNo}**/**{ToPhoneNo}**
+- **msgbird**://**{ApiKey}**/**{FromPhoneNo}**/**{ToPhoneNo1}**/**{ToPhoneNo2}**/**{ToPhoneNoN}**
 
 ### Parameter Breakdown
 
-| Variable        | Required | Description
-| --------------- | -------- | -----------
-| ApiKey         | Yes      | The _API Key_ associated with your MessageBird account.  This is available to you via the [MessageBird Dashboard](https://dashboard.messagebird.com/en/user/index).
-| FromPhoneNo     | Yes      | A from phone number MUST include the country codes dialling prefix as well when placed.  This field is also very friendly and supports brackets, spaces and hyphens in the event you want to format the number in an easy to read fashion. This MUST be the the number you registered with your _MessageBird_ account.
-| ToPhoneNo     | No      | A to phone number MUST include the country codes dialling prefix as well when placed.  This field is also very friendly and supports brackets, spaces and hyphens in the event you want to format the number in an easy to read fashion. If no _ToPhoneNo_ is specified, then the _FromPhoneNo_ is notified instead.
+| Variable    | Required | Description                                                                                                                                                                                                                                                                                                           |
+| ----------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ApiKey      | Yes      | The _API Key_ associated with your MessageBird account. This is available to you via the [MessageBird Dashboard](https://dashboard.messagebird.com/en/user/index).                                                                                                                                                    |
+| FromPhoneNo | Yes      | A from phone number MUST include the country codes dialling prefix as well when placed. This field is also very friendly and supports brackets, spaces and hyphens in the event you want to format the number in an easy to read fashion. This MUST be the the number you registered with your _MessageBird_ account. |
+| ToPhoneNo   | No       | A to phone number MUST include the country codes dialling prefix as well when placed. This field is also very friendly and supports brackets, spaces and hyphens in the event you want to format the number in an easy to read fashion. If no _ToPhoneNo_ is specified, then the _FromPhoneNo_ is notified instead.   |
 
 #### Example
 

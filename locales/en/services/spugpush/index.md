@@ -5,10 +5,10 @@ description: "Send spugpush notifications."
 
 ## SpugPush Notifications
 
-* **Source**: <https://push.spug.dev/>
-* **Icon Support**: No
-* **Message Format**: Plain Text
-* **Message Limit**: ~10,000 Characters
+- **Source**: <https://push.spug.dev/>
+- **Icon Support**: No
+- **Message Format**: Plain Text
+- **Message Limit**: ~10,000 Characters
 
 SpugPush is a simple webhook service provided by the Spug monitoring platform. It allows applications to send alert messages using a secure access token.
 
@@ -32,13 +32,13 @@ Apprise supports both the full native webhook and a simplified URL form.
 
 Valid syntax is as follows:
 
-* `https://push.spug.dev/send/{token}`
-* `spugpush://{token}`
+- `https://push.spug.dev/send/{token}`
+- `spugpush://{token}`
 
 ### Parameter Breakdown
 
-| Variable | Required | Description |
-|----------|----------|-------------|
+| Variable | Required | Description                                                          |
+| -------- | -------- | -------------------------------------------------------------------- |
 | token    | Yes      | The 32–64 character SpugPush token used to authenticate the request. |
 
 You may also use the query format: `spugpush://?token=YOUR_TOKEN`.

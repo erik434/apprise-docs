@@ -27,9 +27,9 @@ urls:
   # is the tag entry.  This gets extended to the global tag (if defined)
   # above
   - windows://:
-   # 'tag' is a special keyword that allows you to associate tags with your
-   # services:
-    - tag: desktop
+      # 'tag' is a special keyword that allows you to associate tags with your
+      # services:
+      - tag: desktop
 ```
 
 To expand on **tags**, you can also identify a _global entry_ that will be applied _to ALL of the subsequent URL entries defined in the YAML file_. Example
@@ -99,15 +99,15 @@ urls:
   # A colon grants you customization; the below associates another tag
   # with our URL. This means it will have admin, devops and customer:
   - xml://localhost:
-    - tag: customer
+      - tag: customer
 
- # Replication Example # 
+  # Replication Example #
   # The more elements you specify under a URL the more times the URL will
   # get replicated and used. Hence this entry actually could be considered
   # 2 URLs being called with just the destination email address changed:
   - mailto://george:password@gmail.com:
-     - to: jason@hotmail.com
-     - to: fred@live.com
+      - to: jason@hotmail.com
+      - to: fred@live.com
 
   # Again... to re-iterate, the above mailto:// would actually fire two (2)
   # separate emails each with a different destination address specified.
@@ -117,23 +117,23 @@ urls:
 
   # Defining more then 1 element to a multi-set is easy, it looks like this:
   - mailto://jackson:abc123@hotmail.com:
-     - to: jeff@gmail.com
-       tag: jeff, customer
+      - to: jeff@gmail.com
+        tag: jeff, customer
 
-     - to: chris@yahoo.com
-       tag: chris, customer
+      - to: chris@yahoo.com
+        tag: chris, customer
 ```
 
 ### Tag Grouping
 
-New in v1.6.0 is Tag Grouping!  This allows you to assign a group to previous tags defined.
+New in v1.6.0 is Tag Grouping! This allows you to assign a group to previous tags defined.
 
 ```yaml
 # Group Example #1
 
 # Define your Groups
 groups:
-   - friends: user1, user2
+  - friends: user1, user2
 
 # Define your URLs
 urls:
@@ -144,7 +144,7 @@ urls:
       - tag: user2
 ```
 
-With respect to `Group Example #1` above, you could now send a notification to the tag `friends` and that would in turn trigger a notification to all of the URLs that were included indirectly to that tag.  In this case, `user1` and `user2` would be notified.
+With respect to `Group Example #1` above, you could now send a notification to the tag `friends` and that would in turn trigger a notification to all of the URLs that were included indirectly to that tag. In this case, `user1` and `user2` would be notified.
 
 Another great thing about groups is you can assign groups to groups to recursively include everything they're apart of:
 
@@ -153,13 +153,13 @@ Another great thing about groups is you can assign groups to groups to recursive
 
 # Define your Groups
 groups:
-   - finance: user1, user2
-   - devteam: user3, user4
+  - finance: user1, user2
+  - devteam: user3, user4
 
-   # Here we create another group and assign it groups
-   # We also can mix and max tags in line with group assignments too
-   # like so:
-   - company: finance, devteam, boss
+  # Here we create another group and assign it groups
+  # We also can mix and max tags in line with group assignments too
+  # like so:
+  - company: finance, devteam, boss
 
 # Define your URLs
 urls:
@@ -185,10 +185,10 @@ You can also assign tags to multiple groups:
 
 # Define your Groups
 groups:
-   # Multiple Group Assignments; reuse of a tag causes existing assignment
-   # to stack on the previous value.
-   - TeamA, Friends: user1, user3
-   - TeamB, Friends: user2, user4
+  # Multiple Group Assignments; reuse of a tag causes existing assignment
+  # to stack on the previous value.
+  - TeamA, Friends: user1, user3
+  - TeamB, Friends: user2, user4
 
 # Define your URLs
 urls:
@@ -203,7 +203,7 @@ urls:
       - tag: user4
 ```
 
-With respect to `Group Example #3` above, we have 3 group tags created (TeamA, TeamB, and Friends).  TeamA includes user1 and user3, and Team B contains user2 and user4.  The Friends tag actually includes user1, user2, user3, and user4 (all entries stacked).
+With respect to `Group Example #3` above, we have 3 group tags created (TeamA, TeamB, and Friends). TeamA includes user1 and user3, and Team B contains user2 and user4. The Friends tag actually includes user1, user2, user3, and user4 (all entries stacked).
 
 Finally with YAML Files, you can define your groups as lists
 
@@ -212,21 +212,21 @@ Finally with YAML Files, you can define your groups as lists
 
 # Define your Groups
 groups:
-    # Another way you can define your groups
-    # This defines a group called 'friends' and allows you to place comments
-    # That you can place to make your configuration file easier to read:
-    - friends:
-       - user1: Place an optional comment here; this is ignored and only tagX is retrieved
-       - user2: Another spot to place an optional comment
-       - user3: Another spot to place an optional comment
-       - user4: Another spot to place an optional comment
+  # Another way you can define your groups
+  # This defines a group called 'friends' and allows you to place comments
+  # That you can place to make your configuration file easier to read:
+  - friends:
+      - user1: Place an optional comment here; this is ignored and only tagX is retrieved
+      - user2: Another spot to place an optional comment
+      - user3: Another spot to place an optional comment
+      - user4: Another spot to place an optional comment
 
-    # You can define it the same way as above as a list too):
-    - buddies:
-       - user1
-       - user2
-       - user3
-       - user4
+  # You can define it the same way as above as a list too):
+  - buddies:
+      - user1
+      - user2
+      - user3
+      - user4
 
 # Define your URLs
 urls:
@@ -294,10 +294,10 @@ urls:
   # is especially important if you're going to start storing your
   # configuration elsewhere too!
   - slack://tokenA/tokenB/TokenC:
-    - tag: devops
+      - tag: devops
 ```
 
-All loaded configuration files can also contain the `include` keyword as well.  But by default they `include` recursion only happens at 1 level.  If you want to allow more files to be included, you need to specify `--recursion-depth` (`-R`) and set it to the number of recursive levels you will allow the include to occur for.  By default this is set to 1 with the `apprise` tool.
+All loaded configuration files can also contain the `include` keyword as well. But by default they `include` recursion only happens at 1 level. If you want to allow more files to be included, you need to specify `--recursion-depth` (`-R`) and set it to the number of recursive levels you will allow the include to occur for. By default this is set to 1 with the `apprise` tool.
 
 **Note:** For security reasons, an `http://` configuration source can NOT `include` a `file://` source.
 

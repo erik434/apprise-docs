@@ -5,14 +5,14 @@ description: "Send mattermost notifications."
 
 ## Mattermost Notifications
 
-* **Source**: <https://mattermost.com/>
-* **Icon Support**: Yes
-* **Message Format**: Text
-* **Message Limit**: 4000 Characters per message
+- **Source**: <https://mattermost.com/>
+- **Icon Support**: Yes
+- **Message Format**: Text
+- **Message Limit**: 4000 Characters per message
 
 To use this plugin, you need to first set yourself up with <http://mattermost.com>. Download their software and set it up.
 
-From here you'll need an **Incoming Webhook*.  This can be done as follows:
+From here you'll need an \*_Incoming Webhook_. This can be done as follows:
 
 1. Click on the **Integrations** option under the channel dropdown and select **Incoming Webhook**:<br/>
    <img alt="Incoming Webhook" src="https://user-images.githubusercontent.com/850374/107084396-ff55dc00-67c4-11eb-899c-a65b2f639158.png" height="300">
@@ -41,37 +41,37 @@ mmost://localhost:8065/yokkutpah3r3urc5h6i969yima
 
 Valid syntaxes are as follows:
 
-* `mmost://{hostname}/{token}`
-* `mmost://{hostname}:{port}/{token}`
-* `mmost://{botname}@{hostname}/{token}`
-* `mmost://{botname}@{hostname}:{port}/{token}`
-* `mmost://{hostname}/{path}/{token}`
-* `mmost://{hostname}:{port}/{path}/{token}`
-* `mmost://{botname}@{hostname}/{path}/{token}`
-* `mmost://{botname}@{hostname}:{port}/{{path}/token}`
+- `mmost://{hostname}/{token}`
+- `mmost://{hostname}:{port}/{token}`
+- `mmost://{botname}@{hostname}/{token}`
+- `mmost://{botname}@{hostname}:{port}/{token}`
+- `mmost://{hostname}/{path}/{token}`
+- `mmost://{hostname}:{port}/{path}/{token}`
+- `mmost://{botname}@{hostname}/{path}/{token}`
+- `mmost://{botname}@{hostname}:{port}/{{path}/token}`
 
 Secure connections (via https) should be referenced using **mmosts://** where as insecure connections (via http) should be referenced via **mmost://**; they follow the same structure:
 
-* `mmosts://{hostname}/{token}`
-* `mmosts://{hostname}:{port}/{token}`
-* `mmosts://{botname}@{hostname}/{token}`
-* `mmosts://{botname}@{hostname}:{port}/{token}`
-* `mmosts://{hostname}/{path}/{token}`
-* `mmosts://{hostname}:{port}/{path}/{token}`
-* `mmosts://{botname}@{hostname}/{path}/{token}`
-* `mmosts://{botname}@{hostname}:{port}/{{path}/token}`
+- `mmosts://{hostname}/{token}`
+- `mmosts://{hostname}:{port}/{token}`
+- `mmosts://{botname}@{hostname}/{token}`
+- `mmosts://{botname}@{hostname}:{port}/{token}`
+- `mmosts://{hostname}/{path}/{token}`
+- `mmosts://{hostname}:{port}/{path}/{token}`
+- `mmosts://{botname}@{hostname}/{path}/{token}`
+- `mmosts://{botname}@{hostname}:{port}/{{path}/token}`
 
 ### Parameter Breakdown
 
-| Variable    | Required | Description
-| ----------- | -------- | -----------
-| hostname    | Yes      | The server Mattermost is listening on.
-| token       | Yes      | The Webhook Token you would have received after setting up the Mattermost **Incoming Webhook**
-| port        | No       | The server port Mattermost is listening on. By default the port is **8065**.
-| path        | No       | You can identify a sub-path if you wish. The last element of the path must be the **token**.
-| botname     | No       | An optional botname you can associate with your post
-| image       | No       | Identify whether or not you want the Apprise image (showing status color) to display with every message or not. By default this is set to **yes**.
-| channels    | No       | You can optionally specify as many channels as you want in a comma separated value (as a keyword argument).  See example below for how to use this.  You must also not restrict your **Incoming Webhook** to only focus on a specific channel or providing alternatives here will not work.
+| Variable | Required | Description                                                                                                                                                                                                                                                                               |
+| -------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| hostname | Yes      | The server Mattermost is listening on.                                                                                                                                                                                                                                                    |
+| token    | Yes      | The Webhook Token you would have received after setting up the Mattermost **Incoming Webhook**                                                                                                                                                                                            |
+| port     | No       | The server port Mattermost is listening on. By default the port is **8065**.                                                                                                                                                                                                              |
+| path     | No       | You can identify a sub-path if you wish. The last element of the path must be the **token**.                                                                                                                                                                                              |
+| botname  | No       | An optional botname you can associate with your post                                                                                                                                                                                                                                      |
+| image    | No       | Identify whether or not you want the Apprise image (showing status color) to display with every message or not. By default this is set to **yes**.                                                                                                                                        |
+| channels | No       | You can optionally specify as many channels as you want in a comma separated value (as a keyword argument). See example below for how to use this. You must also not restrict your **Incoming Webhook** to only focus on a specific channel or providing alternatives here will not work. |
 
 #### Example
 

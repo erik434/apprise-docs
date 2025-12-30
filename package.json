@@ -4,8 +4,12 @@
   "version": "0.1.0",
   "packageManager": "pnpm@9.15.0",
   "scripts": {
-    "lint": "pnpm lint:md && pnpm lint:docs",
-    "lint:fix": "pnpm lint:md:fix",
+    "format": "pnpm format:md",
+    "format:fix": "pnpm format:md:fix",
+    "format:md": "prettier --check \"**/*.md\" \"!**/node_modules/**\" \"!**/.git/**\"",
+    "format:md:fix": "prettier --write \"**/*.md\" \"!**/node_modules/**\" \"!**/.git/**\"",
+    "lint": "pnpm format && pnpm lint:md && pnpm lint:docs",
+    "lint:fix": "pnpm format:fix && pnpm lint:md:fix",
     "lint:md": "markdownlint-cli2 \"**/*.md\" \"!**/node_modules/**\" \"!**/.git/**\"",
     "lint:md:fix": "markdownlint-cli2 --fix \"**/*.md\" \"!**/node_modules/**\" \"!**/.git/**\"",
     "lint:docs": "node ./scripts/lint-docs.mjs",
@@ -13,6 +17,7 @@
   },
   "devDependencies": {
     "markdownlint-cli2": "^0.15.0",
+    "prettier": "^3.7.4",
     "yaml": "^2.6.0"
   }
 }

@@ -1,40 +1,53 @@
 ---
-title: "gotify Notifications"
-description: "Send gotify notifications."
+title: "Gotify Notifications"
+description: "Send Gotify notifications."
+sidebar:
+  label: "Gotify"
+
+source: https://github.com/gotify/server
+
+schemas:
+  - gotify: insecure
+  - gotifys
+
+has_selfhosted: true
+
+sample_urls:
+  - gotify://{hostname}/{token}
+  - gotifys://{hostname}:{port}/{token}
+  - gotifys://{hostname}:{port}/{path}/{token}
+  - gotifys://{hostname}/{token}/?priority=high
 ---
 
-## Gotify Notifications
+<!-- SERVICE:DETAILS -->
 
-* **Source**: <https://github.com/gotify/server>
-* **Icon Support**: No
-* **Message Format**: Text
-* **Message Limit**: 32768 Characters per Message
-
-### Syntax
+## Syntax
 
 Valid syntaxes are as follows:
 
-* `gotify://{hostname}/{token}`
-* `gotifys://{hostname}/{token}`
-* `gotifys://{hostname}:{port}/{token}`
-* `gotifys://{hostname}/{path}/{token}`
-* `gotifys://{hostname}:{port}/{path}/{token}`
-* `gotifys://{hostname}/{token}/?priority=high`
+- `gotify://{hostname}/{token}`
+- `gotifys://{hostname}/{token}`
+- `gotifys://{hostname}:{port}/{token}`
+- `gotifys://{hostname}/{path}/{token}`
+- `gotifys://{hostname}:{port}/{path}/{token}`
+- `gotifys://{hostname}/{token}/?priority=high`
 
 Secure connections (via https) should be referenced using **gotifys://** where as insecure connections (via http) should be referenced via **gotify://**.
 
-### Parameter Breakdown
+## Parameter Breakdown
 
-| Variable    | Required | Description
-| ----------- | -------- | -----------
-| hostname    | Yes      | The Gotify server you're sending your notification to.
-| token       | Yes      | The Application Token you generated on your Gotify Server
-| port        | No       | The port the Gotify server is listening on. By default the port is **80** for **gotify://** and **443** for all **gotifys://** references.
-| path        | No       | For those that host their Gotify server on a hostname that requires you to specify an additional path prefix may just include this as part of their URL string (the default is '**/**'). What is important here is the final entry of your URL must still be the _token_.
-| priority    | No       | The priority level to pass the message along as. Possible values are **low**, **moderate**, **normal**, and **high**.  If no priority is specified then **normal** is used.
-| format    | No       | The message format to announce to Gotify.  By default all information is identified as `text`. But you can alternatively set this value to `markdown` as well.
+| Variable | Required | Description                                                                                                                                                                                                                                                               |
+| -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| hostname | Yes      | The Gotify server you're sending your notification to.                                                                                                                                                                                                                    |
+| token    | Yes      | The Application Token you generated on your Gotify Server                                                                                                                                                                                                                 |
+| port     | No       | The port the Gotify server is listening on. By default the port is **80** for **gotify://** and **443** for all **gotifys://** references.                                                                                                                                |
+| path     | No       | For those that host their Gotify server on a hostname that requires you to specify an additional path prefix may just include this as part of their URL string (the default is '**/**'). What is important here is the final entry of your URL must still be the _token_. |
+| priority | No       | The priority level to pass the message along as. Possible values are **low**, **moderate**, **normal**, and **high**. If no priority is specified then **normal** is used.                                                                                                |
+| format   | No       | The message format to announce to Gotify. By default all information is identified as `text`. But you can alternatively set this value to `markdown` as well.                                                                                                             |
 
-#### Example
+<!-- GLOBAL:SERVICE:PARAMS -->
+
+## Examples
 
 Send a Gotify message:
 
@@ -62,20 +75,4 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" \
    "gotify://gotify.server.local/abcdefghijklmn?format=markdown"
 #                                                ^      ^
 #                                                |      |
-```
-
-## Setup
-
-Here is how I set up a quick Gotify server to test against.  This may or may not be useful to other people.
-
-### Docker
-
-Based on [this source](https://hub.docker.com/_/gotify/server/):
-
-```bash
-# Docker (assuming a connection to docker.io)
-sudo docker pull gotify/server
-
-sudo docker run -p 80:80 -v /var/gotify/data:$(pwd)/data gotify/server
-# Then visit http://localhost
 ```

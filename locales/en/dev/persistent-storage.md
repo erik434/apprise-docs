@@ -19,50 +19,50 @@ Aditional Notes:
 
 ## Developer Usage
 
-When developing your plugin, you can access the persistent storage via `self.store`.  There are 2 main features:
+When developing your plugin, you can access the persistent storage via `self.store`. There are 2 main features:
 
-- **Key/Value Entries**: This is the easiest as the store behaves very much like a dictionary.  But under the hood it is handling the data based on the operational mode.  For the most part you can set most types (int, float, etc).  Content is flushed to disk using the `json.dumps` call.
+- **Key/Value Entries**: This is the easiest as the store behaves very much like a dictionary. But under the hood it is handling the data based on the operational mode. For the most part you can set most types (int, float, etc). Content is flushed to disk using the `json.dumps` call.
 
-   ```python
-   # Set a key:
-   self.store['keyname'] = 'value'
+  ```python
+  # Set a key:
+  self.store['keyname'] = 'value'
 
-   # You can also use store.set() which is useful to set additional parameters (such as an
-   # expiry time)
+  # You can also use store.set() which is useful to set additional parameters (such as an
+  # expiry time)
 
-   # The 30 is the number of seconds the data is valid for. You can use int/float to set a 
-   # time from now.  The default is to not expire.
+  # The 30 is the number of seconds the data is valid for. You can use int/float to set a
+  # time from now.  The default is to not expire.
 
-   # You can also pass in a datetime() object as well if you want to explicitly set a time
-   self.store.set('another-key', 'value', 30)
+  # You can also pass in a datetime() object as well if you want to explicitly set a time
+  self.store.set('another-key', 'value', 30)
 
-   # Verify if your key is set:
-   if 'keyname' in self.store:
-       print('Yup, I found it').
-   ```
+  # Verify if your key is set:
+  if 'keyname' in self.store:
+      print('Yup, I found it').
+  ```
 
 - **Data Files**: You may find yourself wanting to write content straight to disk (all files have a `psdata` extension).
 
-   ```python
-   # write data (no key specified, so the value `default` is used)
-   # You can pass in a string or bytes object.  Note that when you read the content back it will be bytes
-   self.store.write(b'my content I wish to write directly to disk')
+  ```python
+  # write data (no key specified, so the value `default` is used)
+  # You can pass in a string or bytes object.  Note that when you read the content back it will be bytes
+  self.store.write(b'my content I wish to write directly to disk')
 
-   # The below would open up `default.psdata` (which is compressed) and would return what was written above
-   content = self.store.read()
+  # The below would open up `default.psdata` (which is compressed) and would return what was written above
+  content = self.store.read()
 
-   # to store custom keys and have the content not be compressed:
-   self.store.write('my-content', key='custom-key', compress=False)
+  # to store custom keys and have the content not be compressed:
+  self.store.write('my-content', key='custom-key', compress=False)
 
-   # The above wrote the content to `custom-key.psdata` in an uncompressed file.
-   # This is useful for people who want to place files in advance for the persistent storage
-   # to reference.
+  # The above wrote the content to `custom-key.psdata` in an uncompressed file.
+  # This is useful for people who want to place files in advance for the persistent storage
+  # to reference.
 
-   # Make sure to read the file back with the same parameters:
-   content = self.store.read('custom-key', compress=False)
-   ```
+  # Make sure to read the file back with the same parameters:
+  content = self.store.read('custom-key', compress=False)
+  ```
 
-   **Note:** Read/write functions work similar to how `read/write` would otherwise work.  If Persistent Storage is disable then `write()` will always return `None`. `read()` however will return content if it's present
+  **Note:** Read/write functions work similar to how `read/write` would otherwise work. If Persistent Storage is disable then `write()` will always return `None`. `read()` however will return content if it's present
 
 Here are more examples
 
@@ -90,8 +90,8 @@ class MyNotification(NotifyBase):
        # By default persistent will always be set to True, but perhaps you don't want the content to
        # persist and only exist for the life of the application instead.
        self.store.set('key', 'value', persistent=False)
-       
-       # Flushes elements to disk if they are configured to persist there; this 
+
+       # Flushes elements to disk if they are configured to persist there; this
        # never needs to be called directly as the PersistentStore object looks
        # after this automatically.  Those set to `auto` (default) mode can
        # leverage this to force an early write/sync to disk

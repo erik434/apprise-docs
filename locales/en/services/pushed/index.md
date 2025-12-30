@@ -5,10 +5,10 @@ description: "Send pushed notifications."
 
 ## Pushed Notifications
 
-* **Source**: <https://pushed.co/>
-* **Icon Support**: _From within the pushed.co website you can set up an icon._
-* **Message Format**: Text
-* **Message Limit**: 160 Characters per Message
+- **Source**: <https://pushed.co/>
+- **Icon Support**: _From within the pushed.co website you can set up an icon._
+- **Message Format**: Text
+- **Message Limit**: 160 Characters per Message
 
 ### Account Setup
 
@@ -20,8 +20,8 @@ Once this is done you will have access to the [apps](https://account.pushed.co/a
 
 Once this is done, you'll get access to an:
 
-* Application Key: **{app_key}**
-* Application Secret: **{app_secret}**
+- Application Key: **{app_key}**
+- Application Secret: **{app_secret}**
 
 You'll also need something to notify; so once you've created an account and an app, you'll also need to retrieve their mobile app (for either [Android](https://play.google.com/store/apps/details?id=co.pushed.GetPushed) or [iOS](https://itunes.apple.com/us/app/get-pushed/id804777699?mt=8&uo=6&at=&ct=)) and log in.
 
@@ -31,26 +31,26 @@ Subscribe to this App; there is a _Subscription Link_ you can follow right from 
 
 Valid syntax is as follows:
 
-* **pushed**://**{app_key}**/**{app_secret}**
-* **pushed**://**{app_key}**/**{app_secret}**/**@{user_pushed_id}**
-* **pushed**://**{app_key}**/**{app_secret}**/**@{user_pushed_id1}**/**@{user_pushed_id2}**/**@{user_pushed_idN}**
-* **pushed**://**{app_key}**/**{app_secret}**/**#{channel_alias}**
-* **pushed**://**{app_key}**/**{app_secret}**/**#{channel_alias1}**/**#{channel_alias2}**/**#{channel_aliasN}**
+- **pushed**://**{app_key}**/**{app_secret}**
+- **pushed**://**{app_key}**/**{app_secret}**/**@{user_pushed_id}**
+- **pushed**://**{app_key}**/**{app_secret}**/**@{user_pushed_id1}**/**@{user_pushed_id2}**/**@{user_pushed_idN}**
+- **pushed**://**{app_key}**/**{app_secret}**/**#{channel_alias}**
+- **pushed**://**{app_key}**/**{app_secret}**/**#{channel_alias1}**/**#{channel_alias2}**/**#{channel_aliasN}**
 
 You can also form any combination of the above and perform updates from one url:
 
-* **pushed**://**{app_key}**/**{app_secret}**/**@{user_pushed_id}**/**#{channel_alias}**/
+- **pushed**://**{app_key}**/**{app_secret}**/**@{user_pushed_id}**/**#{channel_alias}**/
 
 If neither a **@{user_pushed_id}** or **#{channel}** is specified, then the default configuration is to send to just the _App_ you provided keys for.
 
 ### Parameter Breakdown
 
-| Variable    | Required | Description
-| ----------- | -------- | -----------
-| app_key | Yes      | The Application Key can be generated on the Settings page of your Pushed's account.  You must have an application key for this Notification service to work.
-| app_secret | Yes      | The Application Secret can be generated on the Settings page of your Pushed's account.  You must have an application secret for this Notification service to work.
-| user_pushed_id   | No       | Users must be prefixed with an _at_ (@) character or they will be ignored. You can identify users here by their Pushed ID.
-| channel_alias     | No       | Channels must be prefixed with a _hash tag_ (#) or they will be ignored. Channels must be registered with your Pushed account to work. This must be the channel alias itself; not the channel.  The alias can be retrieved from the channel settings from within your pushed.io account.
+| Variable       | Required | Description                                                                                                                                                                                                                                                                             |
+| -------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| app_key        | Yes      | The Application Key can be generated on the Settings page of your Pushed's account. You must have an application key for this Notification service to work.                                                                                                                             |
+| app_secret     | Yes      | The Application Secret can be generated on the Settings page of your Pushed's account. You must have an application secret for this Notification service to work.                                                                                                                       |
+| user_pushed_id | No       | Users must be prefixed with an _at_ (@) character or they will be ignored. You can identify users here by their Pushed ID.                                                                                                                                                              |
+| channel_alias  | No       | Channels must be prefixed with a _hash tag_ (#) or they will be ignored. Channels must be registered with your Pushed account to work. This must be the channel alias itself; not the channel. The alias can be retrieved from the channel settings from within your pushed.io account. |
 
 #### Example
 

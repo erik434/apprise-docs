@@ -7,7 +7,7 @@ sidebar:
 
 ## Text Based Apprise Configuration
 
-The TEXT Based configuration files are pretty straight forward and very easy to work with.  You just provide a list of your notification URLs like so.
+The TEXT Based configuration files are pretty straight forward and very easy to work with. You just provide a list of your notification URLs like so.
 
 ```apache
 # Use pound/hashtag (#) characters to comment lines
@@ -40,7 +40,7 @@ tv,basement=kodi://myuser:mypass@basement.hostame
 
 ### Tag Grouping
 
-New in v1.6.0 is Tag Grouping!  This allows you to assign a group to previous tags defined.
+New in v1.6.0 is Tag Grouping! This allows you to assign a group to previous tags defined.
 
 ```bash
 # Group Example #1
@@ -53,7 +53,7 @@ user2=mailto://credentials
 friends = user1, user2
 ```
 
-With respect to `Group Example #1` above, you could now send a notification to the tag `friends` and that would in turn trigger a notification to all of the URLs that were included indirectly to that tag.  In this case, `user1` and `user2` would be notified.
+With respect to `Group Example #1` above, you could now send a notification to the tag `friends` and that would in turn trigger a notification to all of the URLs that were included indirectly to that tag. In this case, `user1` and `user2` would be notified.
 
 Another great thing about groups is you can assign groups to groups to recursively include everything they're apart of:
 
@@ -98,7 +98,7 @@ TeamB, Friends = user2, user4
 
 ```
 
-With respect to `Group Example #3` above, we have 3 group tags created (TeamA, TeamB, and Friends).  TeamA includes user1 and user3, and Team B contains user2 and user4.  The Friends tag actually includes user1, user2, user3, and user4 (all entries stacked).
+With respect to `Group Example #3` above, we have 3 group tags created (TeamA, TeamB, and Friends). TeamA includes user1 and user3, and Team B contains user2 and user4. The Friends tag actually includes user1, user2, user3, and user4 (all entries stacked).
 
 **Some Notes:**
 
@@ -151,7 +151,7 @@ mailto://someone:theirpassword@gmail.com
 devops=slack://tokenA/tokenB/TokenC
 ```
 
-All loaded configuration files can also contain the `include` keyword as well.  But by default they `include` recursion only happens at 1 level.  If you want to allow more files to be included, you need to specify `--recursion-depth` (`-R`) and set it to the number of recursive levels you will allow the include to occur for.  By default this is set to 1 with the `apprise` tool.
+All loaded configuration files can also contain the `include` keyword as well. But by default they `include` recursion only happens at 1 level. If you want to allow more files to be included, you need to specify `--recursion-depth` (`-R`) and set it to the number of recursive levels you will allow the include to occur for. By default this is set to 1 with the `apprise` tool.
 
 **Note:** For security reasons, an `http://` configuration source can NOT `include` a `file://` source.
 

@@ -69,7 +69,7 @@ automatically.
 
 A minimal example:
 
-```md
+````md
 ---
 title: "Example Notifications"
 description: "Send notifications using Example"
@@ -90,6 +90,7 @@ sample_urls:
 <!-- SERVICE:DETAILS -->
 
 ## Account Setup
+
 How to get set up with Example
 
 ## Syntax
@@ -101,10 +102,10 @@ Valid syntax is as follows:
 
 ## Parameter Breakdown
 
-| Variable    | Required | Description
-| ----------- | -------- | -----------
-| token       |  yes     | Token to access the example server
-| target      |  no      | The target you wish to notify. If no target is specified, we send a notification to ourselves.
+| Variable | Required | Description                                                                                    |
+| -------- | -------- | ---------------------------------------------------------------------------------------------- |
+| token    | yes      | Token to access the example server                                                             |
+| target   | no       | The target you wish to notify. If no target is specified, we send a notification to ourselves. |
 
 <!-- GLOBAL:SERVICE:PARAMS -->
 
@@ -116,6 +117,7 @@ Send a Example notification:
 apprise -vv -t "My Title" -b "Message Body" \
    "example://my-token/target"
 ```
+````
 
 Markers such as `<!-- SERVICE:DETAILS -->` must be left in place. They are
 replaced automatically when documentation is rendered.

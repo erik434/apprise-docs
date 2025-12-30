@@ -5,10 +5,10 @@ description: "Send OneSignal notifications."
 
 ## OneSignal Notifications
 
-* **Source**: <https://onesignal.com>
-* **Icon Support**: Yes
-* **Message Format**: Text
-* **Message Limit**: 32768 Characters per Message
+- **Source**: <https://onesignal.com>
+- **Icon Support**: Yes
+- **Message Format**: Text
+- **Message Limit**: 32768 Characters per Message
 
 ### Account Setup
 
@@ -19,45 +19,45 @@ description: "Send OneSignal notifications."
 
 The syntax is as follows:
 
-* `onesignal://{app_id}@{apikey}/#{include_segment}`
-* `onesignal://{app_id}@{apikey}/#{include_segment1}/#{include_segment2}/#{include_segmentN}`
-* `onesignal://{app_id}@{apikey}/{player_id}/`
-* `onesignal://{app_id}@{apikey}/{player_id1}/{player_id2}/{player_idN}`
-* `onesignal://{app_id}@{apikey}/@{user_id}/`
-* `onesignal://{app_id}@{apikey}/@{user_id1}/@{user_id2}/@{user_idN}`
-* `onesignal://{app_id}@{apikey}/{email}/`
-* `onesignal://{app_id}@{apikey}/{email1}/{email2}/{emailN}`
+- `onesignal://{app_id}@{apikey}/#{include_segment}`
+- `onesignal://{app_id}@{apikey}/#{include_segment1}/#{include_segment2}/#{include_segmentN}`
+- `onesignal://{app_id}@{apikey}/{player_id}/`
+- `onesignal://{app_id}@{apikey}/{player_id1}/{player_id2}/{player_idN}`
+- `onesignal://{app_id}@{apikey}/@{user_id}/`
+- `onesignal://{app_id}@{apikey}/@{user_id1}/@{user_id2}/@{user_idN}`
+- `onesignal://{app_id}@{apikey}/{email}/`
+- `onesignal://{app_id}@{apikey}/{email1}/{email2}/{emailN}`
 
 You can also mix/match the targets:
 
-* `onesignal://{app_id}@{apikey}/{email}/@{user_id}/#{include_segment}/{player_id}`
+- `onesignal://{app_id}@{apikey}/{email}/@{user_id}/#{include_segment}/{player_id}`
 
 If you defined a template with OneSignal, you can use it as well:
 
-* `onesignal://{template_id}:{app_id}@{apikey}/#{include_segment}`
-* `onesignal://{template_id}:{app_id}@{apikey}/#{include_segment1}/#{include_segment2}/#{include_segmentN}`
-* `onesignal://{template_id}:{app_id}@{apikey}/{player_id}/`
-* `onesignal://{template_id}:{app_id}@{apikey}/{player_id1}/{player_id2}/{player_idN}`
-* `onesignal://{template_id}:{app_id}@{apikey}/@{user_id}/`
-* `onesignal://{template_id}:{app_id}@{apikey}/@{user_id1}/@{user_id2}/@{user_idN}`
-* `onesignal://{template_id}:{app_id}@{apikey}/{email}/`
-* `onesignal://{template_id}:{app_id}@{apikey}/{email1}/{email2}/{emailN}`
+- `onesignal://{template_id}:{app_id}@{apikey}/#{include_segment}`
+- `onesignal://{template_id}:{app_id}@{apikey}/#{include_segment1}/#{include_segment2}/#{include_segmentN}`
+- `onesignal://{template_id}:{app_id}@{apikey}/{player_id}/`
+- `onesignal://{template_id}:{app_id}@{apikey}/{player_id1}/{player_id2}/{player_idN}`
+- `onesignal://{template_id}:{app_id}@{apikey}/@{user_id}/`
+- `onesignal://{template_id}:{app_id}@{apikey}/@{user_id1}/@{user_id2}/@{user_idN}`
+- `onesignal://{template_id}:{app_id}@{apikey}/{email}/`
+- `onesignal://{template_id}:{app_id}@{apikey}/{email1}/{email2}/{emailN}`
 
 ### Parameter Breakdown
 
-| Variable    | Required | Description
-| ----------- | -------- | -----------
-| app_id      | Yes      | This is the Application ID associated with your OneSignal account.
-| apikey      | Yes      | This is the API Key associated with your OneSignal account.
-| template_id | No       | The UUID Template ID you wish to use
-| player_id   | No       | A Player ID to notify
-| user_id     | No       | A User ID to notify. <br/>**Note**: these must be prefixed with an `@` symbol or it will be interpreted as a Player ID
-| include_segment  | No  | An include segment. <br/>**Note**: these must be prefixed with an `#` symbol or it will be interpreted as a Player ID
-| email       | No       | An email to notify.
-| subtitle    | No       | The subtitle of your push. Only appears on iOS devices.
-| language    | No       | The 2 character language code to push your message as.  By default this is set to `en` if not specified.
-| image       | No       | to include the icon/image associated with the message.  By default this is set to `yes`.
-| batch       | No       | Set it to **Yes** if you want all identified targets to be notified notified in batches (instead of individually). By default this is set to **No**.
+| Variable        | Required | Description                                                                                                                                          |
+| --------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| app_id          | Yes      | This is the Application ID associated with your OneSignal account.                                                                                   |
+| apikey          | Yes      | This is the API Key associated with your OneSignal account.                                                                                          |
+| template_id     | No       | The UUID Template ID you wish to use                                                                                                                 |
+| player_id       | No       | A Player ID to notify                                                                                                                                |
+| user_id         | No       | A User ID to notify. <br/>**Note**: these must be prefixed with an `@` symbol or it will be interpreted as a Player ID                               |
+| include_segment | No       | An include segment. <br/>**Note**: these must be prefixed with an `#` symbol or it will be interpreted as a Player ID                                |
+| email           | No       | An email to notify.                                                                                                                                  |
+| subtitle        | No       | The subtitle of your push. Only appears on iOS devices.                                                                                              |
+| language        | No       | The 2 character language code to push your message as. By default this is set to `en` if not specified.                                              |
+| image           | No       | to include the icon/image associated with the message. By default this is set to `yes`.                                                              |
+| batch           | No       | Set it to **Yes** if you want all identified targets to be notified notified in batches (instead of individually). By default this is set to **No**. |
 
 #### Example
 
@@ -87,7 +87,7 @@ apprise -vv -b "Test Message Body" \
    "onesignal://credentials/?:key1=value1"
 ```
 
-The above would additional these assignments into the payload  as `custom_data':
+The above would additional these assignments into the payload as `custom_data':
 
 ```json
 {
@@ -106,7 +106,7 @@ apprise -vv -b "Test Message Body" \
    "onesignal://credentials/?+key1=value1"
 ```
 
-The above would additional these assignments into the payload  as `data':
+The above would additional these assignments into the payload as `data':
 
 ```json
 {

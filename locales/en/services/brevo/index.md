@@ -37,36 +37,36 @@ Brevo is a transactional email platform that exposes a JSON HTTP API for sending
 
 Valid syntax is as follows:
 
-* Single sender, default recipient (self-notification). Note that the 'From Email' must be a 'Verified Sender' already with Brevo for this syntax to work.
-  * `brevo://APIToken:FromEmail`
+- Single sender, default recipient (self-notification). Note that the 'From Email' must be a 'Verified Sender' already with Brevo for this syntax to work.
+  - `brevo://APIToken:FromEmail`
 
-* Explicit recipients:
-  * `brevo://APIToken:FromEmail/ToEmail`
-  * `brevo://APIToken:FromEmail/ToEmail1/ToEmail2/ToEmailN`
+- Explicit recipients:
+  - `brevo://APIToken:FromEmail/ToEmail`
+  - `brevo://APIToken:FromEmail/ToEmail1/ToEmail2/ToEmailN`
 
-* Additional parameters:
-  * `?to=extra1@example.com,extra2@example.com`
-  * `?cc=cc1@example.com,cc2@example.com`
-  * `?bcc=bcc1@example.com,bcc2@example.com`
-  * `?reply=Reply Name <reply@example.com>`
+- Additional parameters:
+  - `?to=extra1@example.com,extra2@example.com`
+  - `?cc=cc1@example.com,cc2@example.com`
+  - `?bcc=bcc1@example.com,bcc2@example.com`
+  - `?reply=Reply Name <reply@example.com>`
 
 The plugin URL template is:
 
-* `{schema}://{apikey}:{from_email}`
-* `{schema}://{apikey}:{from_email}/{targets}`
+- `{schema}://{apikey}:{from_email}`
+- `{schema}://{apikey}:{from_email}/{targets}`
 
 ## Parameter Breakdown
 
-| Variable    | Required | Description                                                                 |
-|------------|----------|-----------------------------------------------------------------------------|
-| `APIToken` | Yes      | Your Brevo transactional API key (`api-key` header value).                 |
-| `FromEmail`| Yes      | Verified sender email address in Brevo (`sender.email`).                   |
-| `ToEmail`  | No       | One or more recipient email addresses in the URL path.                     |
-| `to`       | No       | Additional recipients as a comma-separated list in the query string.       |
-| `cc`       | No       | Carbon-copy recipients, comma-separated.                                   |
-| `bcc`      | No       | Blind carbon-copy recipients, comma-separated.                             |
-| `reply`    | No       | Reply-To header, optionally including a display name.                      |
-| `format`   | No       | Overrides default format (`html` or `text`), consistent with Apprise core.|
+| Variable    | Required | Description                                                                |
+| ----------- | -------- | -------------------------------------------------------------------------- |
+| `APIToken`  | Yes      | Your Brevo transactional API key (`api-key` header value).                 |
+| `FromEmail` | Yes      | Verified sender email address in Brevo (`sender.email`).                   |
+| `ToEmail`   | No       | One or more recipient email addresses in the URL path.                     |
+| `to`        | No       | Additional recipients as a comma-separated list in the query string.       |
+| `cc`        | No       | Carbon-copy recipients, comma-separated.                                   |
+| `bcc`       | No       | Blind carbon-copy recipients, comma-separated.                             |
+| `reply`     | No       | Reply-To header, optionally including a display name.                      |
+| `format`    | No       | Overrides default format (`html` or `text`), consistent with Apprise core. |
 
 <!-- GLOBAL:SERVICE:PARAMS -->
 
@@ -90,7 +90,7 @@ Send to multiple recipients with CC, BCC and a Reply-To header:
 
 ```bash
 apprise -vv -t "Incident Report" -b "See attached logs for details." \
- 
+
  "brevo://APIToken:alerts@example.com/oncall@example.comto=dev1@example.com,dev2@example.com&cc=teamlead@example.com&bcc=manager@example.com&reply=Support%20Desk%20<support@example.com>"
 ```
 

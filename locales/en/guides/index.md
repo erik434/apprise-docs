@@ -24,7 +24,7 @@ If you don't specify a **--body** (**-b**) then Apprise reads from **stdin** ins
 uptime | apprise mailto://user:password@hotmail.com
 ```
 
-By default Apprise is very silent;  If you want to have a better understanding of what is going on, just add a `-v` switch to improve the verbosity.  The more `v`'s you add, the more detailed output you'll get back.
+By default Apprise is very silent; If you want to have a better understanding of what is going on, just add a `-v` switch to improve the verbosity. The more `v`'s you add, the more detailed output you'll get back.
 
 There is no limit to the number of services you want to notify, just keep adding/chaining them one after another:
 
@@ -146,12 +146,12 @@ apprise -v --body="Notify more than one service" \
 
 If you stick your configuration in the right locations, you don't even need to reference the **--config** as it will be included automatically; the default filename paths are as follows:
 
-* **Linux/Mac users**:
-  * `~/.apprise`
-  * `~/.config/apprise`
-* **Microsoft Windows users**:
-  * `%APPDATA%/Apprise/apprise`
-  * `%LOCALAPPDATA%/Apprise/apprise`
+- **Linux/Mac users**:
+  - `~/.apprise`
+  - `~/.config/apprise`
+- **Microsoft Windows users**:
+  - `%APPDATA%/Apprise/apprise`
+  - `%LOCALAPPDATA%/Apprise/apprise`
 
 With default configuration file(s) in place, reference to the Apprise CLI gets even easier:
 
@@ -178,7 +178,7 @@ apprise -v --title="Several great photo's of the gang" --body="see attached" \
 
 **Note**: When using attachments, if one of them can't be found/retrieved for delivery then the message isn't sent.
 
-The great thing with attachments is that Apprise is able to make a remote web-request  for them (prior to attaching them).  This is easily done by just using the `http://` or `https://` protocol. This works great for things like security camera images, or just content you want to pass along hosted online:
+The great thing with attachments is that Apprise is able to make a remote web-request for them (prior to attaching them). This is easily done by just using the `http://` or `https://` protocol. This works great for things like security camera images, or just content you want to pass along hosted online:
 
 ```bash
 # A web-based attachment:
@@ -190,11 +190,11 @@ apprise -v --title="A Great Github Cheatsheet" --body="see attached" \
 
 Consider the case where you've defined all of your Apprise URLs in one file, but you don't want to notify all of them each and every time.
 
-* 📥 Maybe you have special notifications that only fire when a download completed.
-* 🚨 Maybe you have home monitoring that requires you to notify several different locations
-* 👷 Perhaps you work as an Administrative, Developer, and/or Devops role and you want to just notify certain people at certain times (such as when a software build completes, or a unit test fails, etc).
+- 📥 Maybe you have special notifications that only fire when a download completed.
+- 🚨 Maybe you have home monitoring that requires you to notify several different locations
+- 👷 Perhaps you work as an Administrative, Developer, and/or Devops role and you want to just notify certain people at certain times (such as when a software build completes, or a unit test fails, etc).
 
-Apprise makes this easy by simply allowing you to tag your URLs.  There is no limit to the number of tags associate with a URL.  Let's make a simple apprise configuration file; this can be done with any text editor of your choice:
+Apprise makes this easy by simply allowing you to tag your URLs. There is no limit to the number of tags associate with a URL. Let's make a simple apprise configuration file; this can be done with any text editor of your choice:
 
 ```apache
 # Tags in a Text configuration sit in front of the URL
@@ -225,7 +225,7 @@ devops=slack://token_a/token_b/token_c/#devops
 # Here we assign all of our colleagues the tags: team, and email
 team,email=mailto://user:password@yahoo.com/john@mycompany.com/jack@mycompany.com/jason@mycompany.com
 
-# Maybe we have home automation at home, and we want to notify our 
+# Maybe we have home automation at home, and we want to notify our
 # kodi box when stuff becomes available to it
 mytv=kodi://example.com
 
@@ -269,7 +269,7 @@ apprise -v --title="Meeting this Friday" \
    --tag=team,email
 ```
 
-There is a special reserved tag called `all`.  `all` will match ALL of your entries regardless of what tag name you gave it.  Use this with caution.
+There is a special reserved tag called `all`. `all` will match ALL of your entries regardless of what tag name you gave it. Use this with caution.
 
 Here is another way of looking at it:
 
@@ -285,7 +285,7 @@ apprise -b "has (TagA AND TagB) OR TagC" --tag="TagA, TagB" --tag=TagC
 
 ### Testing Configuration and Tags
 
-Once you've built your elaborate configuration file and assigned all your tags.  You certainly won't want to notify everyone over and over again while you test it out.  Don't worry, that's what **--dry-run** (**-d**) is for.  You can use this to test your _tag logic_ out and not actually perform the notification.
+Once you've built your elaborate configuration file and assigned all your tags. You certainly won't want to notify everyone over and over again while you test it out. Don't worry, that's what **--dry-run** (**-d**) is for. You can use this to test your _tag logic_ out and not actually perform the notification.
 
 ```bash
 # Test which services would have been notified if the tags team and email
@@ -296,7 +296,7 @@ apprise --title="Meeting this Friday" \
    --dry-run
 ```
 
-If you use the **--dry-run** (**-d**) switch, then some rules don't apply. For one, the **--body** (**-b**) is not even a required option.  The above could have been re-written like so:
+If you use the **--dry-run** (**-d**) switch, then some rules don't apply. For one, the **--body** (**-b**) is not even a required option. The above could have been re-written like so:
 
 ```bash
 # Test which services would have been notified if the tags team and email
@@ -306,7 +306,7 @@ apprise --tag=team,email --dry-run
 
 ## ✅ Compatibility and Notification Details
 
-Apprise offers a lot of services at your fingertips, but some of them may or may not be available to you depending on your Operating system and/or what packages you have installed.  You can see a list of what is available by doing the following:
+Apprise offers a lot of services at your fingertips, but some of them may or may not be available to you depending on your Operating system and/or what packages you have installed. You can see a list of what is available by doing the following:
 
 ```bash
 # List all of the supported services available to you
@@ -319,7 +319,7 @@ Here is an example of the output (as it is now) on the CLI:
 
 ## 💼 Message Body Source
 
-The Apprise CLI doesn't know what you are feeding it when sending a message to a Notification provider. It just assumes that whatever you message you feed it, it should just pass it along _as is_ to the upstream provider _as text_.  In most cases, this is perfect and this is the default behaviour. However, if you are passing along HTML content or markdown content, you should just let Apprise know by specifying the `--input-format` (`-i`) switch. For example:
+The Apprise CLI doesn't know what you are feeding it when sending a message to a Notification provider. It just assumes that whatever you message you feed it, it should just pass it along _as is_ to the upstream provider _as text_. In most cases, this is perfect and this is the default behaviour. However, if you are passing along HTML content or markdown content, you should just let Apprise know by specifying the `--input-format` (`-i`) switch. For example:
 
 ```bash
 # An HTML Example:
@@ -342,7 +342,7 @@ Apprise now offers you the ability to pass in entries like `🙂` to have it aut
 
 There are 2 ways to orchestrate the emoji engine and begin your translations:
 
-* **Globally** (impact all Apprise endpoints added):
+- **Globally** (impact all Apprise endpoints added):
 
   ```bash
   # By default assume ?emojis=yes on all URLs
@@ -354,7 +354,7 @@ There are 2 ways to orchestrate the emoji engine and begin your translations:
    "myschema://credentials"
   ```
 
-* **Per-Instance Basis**:
+- **Per-Instance Basis**:
 
   ```bash
   # No use of the --interpret-emojis (-j) flag, however explicit
@@ -362,12 +362,12 @@ There are 2 ways to orchestrate the emoji engine and begin your translations:
   apprise --title=":+1: Great work everyone!" \
    --body="So proud of you all! :rocket." \
    "myschema://credentials?emojis=yes"
-   ```
+  ```
 
 Emojis offer a more rich use of Apprise. The above example would have passed the following to all upstream services:
 
-* **title**: 👍 Great work everyone!
-* **body**: So proud of you all! 🚀.
+- **title**: 👍 Great work everyone!
+- **body**: So proud of you all! 🚀.
 
 ## ⭐ Tricks and Additional Notes
 

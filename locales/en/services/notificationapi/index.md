@@ -5,59 +5,59 @@ description: "Send notificationapi notifications."
 
 ## NotificationAPI Notifications
 
-* **Source**: <https://www.notificationapi.com>
-* **Icon Support**: Yes
-* **Message Format**: Plain Text and HTML
-* **Message Limit**: Varies by channel
+- **Source**: <https://www.notificationapi.com>
+- **Icon Support**: Yes
+- **Message Format**: Plain Text and HTML
+- **Message Limit**: Varies by channel
 
 NotificationAPI lets you trigger email, SMS, calls, push, and in‑app notifications using a single API. The Apprise plugin supports the US, CA, and EU regional hosts. Configure the content once in NotificationAPI, then trigger it from Apprise by sending the notification **type** and **recipient** information, with optional merge‑tag parameters.
 
 ### Setup Instructions
 
 1. Create a NotificationAPI account and sign in.
-2. In the dashboard, locate your **clientId** and **clientSecret** under *Environments*.
+2. In the dashboard, locate your **clientId** and **clientSecret** under _Environments_.
 3. Create or identify the **notification type** you want to trigger (for example, `order_tracking`).
 4. Make sure your recipients have the correct identifiers:
-   * **Email** notifications require an email address on the `to` object.
-   * **SMS** notifications require a phone number in **E.164** format, for example `+15005550006`.
-   * You can also address users by a NotificationAPI **user id**.
+   - **Email** notifications require an email address on the `to` object.
+   - **SMS** notifications require a phone number in **E.164** format, for example `+15005550006`.
+   - You can also address users by a NotificationAPI **user id**.
 5. If you are hosted outside the US, note your region’s API host (US default, CA, or EU).
 
 #### Syntax
 
 Valid URL forms:
 
-* `napi://{ClientID}/{ClientSecret}/{Target}`  
-* `napi://{Type}@{ClientID}/{ClientSecret}/{Target}`  
-* `notificationapi://{...}` (alias of `napi://`)
+- `napi://{ClientID}/{ClientSecret}/{Target}`
+- `napi://{Type}@{ClientID}/{ClientSecret}/{Target}`
+- `notificationapi://{...}` (alias of `napi://`)
 
-**Targets** can be combined in a single path and are grouped by a leading **id**. Each `{Target}` segment may be:  
+**Targets** can be combined in a single path and are grouped by a leading **id**. Each `{Target}` segment may be:
 
-* a user id (`userid` or `@userid`)  
-* an email (`name@example.com`)  
-* an E.164 phone number (`+15551234567`)
+- a user id (`userid` or `@userid`)
+- an email (`name@example.com`)
+- an E.164 phone number (`+15551234567`)
 
 Examples of grouped targets:
 
-* `userid/test@example.com` → id + email  
-* `userid/+15551234567` → id + SMS  
-* `userid/+15551234567/test@example.com` → id + SMS + email
+- `userid/test@example.com` → id + email
+- `userid/+15551234567` → id + SMS
+- `userid/+15551234567/test@example.com` → id + SMS + email
 
 ### Parameter Breakdown
 
-| Variable       | Required | Description                                                                 |
-|----------------|----------|-----------------------------------------------------------------------------|
-| `type`         | No       | Notification type id from your NotificationAPI dashboard. Defaults to `apprise`. |
-| `mode`         | No       | Notification mode; can be either `message` or `template`.  Defaults to `message`. |
-| `id`           | Yes\*    | Client id. Required unless supplied in the path.                            |
-| `secret`       | Yes\*    | Client secret. Required unless supplied in the path.                        |
-| `to`           | No       | Comma‑separated target; each subset of targets must have and `id` associated with them|
-| `region`       | No       | `us` (default), `ca`, or `eu` to select the API host.                        |
-| `channels`      | No       | Channels are detected based on first target detected. The following channels can be proivded:  `email`, `sms` , `inapp`, `web_push`, `mobile_push` and/or `slack`.
-| `from`         | No       | Display name for the email *From* identity.                                 |
-| `cc`           | No       | Comma‑separated list of CC addresses.                                       |
-| `bcc`          | No       | Comma‑separated list of BCC addresses.                                      |
-| `:{key}`       | No       | Dynamic template parameter tokens passed to `parameters` (e.g., `:orderId=123`). It's important to prefix each one of these with a colon (`:`) for it to be correctly interpreted. This is only used if `mode` is set to `template`|
+| Variable   | Required | Description                                                                                                                                                                                                                         |
+| ---------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `type`     | No       | Notification type id from your NotificationAPI dashboard. Defaults to `apprise`.                                                                                                                                                    |
+| `mode`     | No       | Notification mode; can be either `message` or `template`. Defaults to `message`.                                                                                                                                                    |
+| `id`       | Yes\*    | Client id. Required unless supplied in the path.                                                                                                                                                                                    |
+| `secret`   | Yes\*    | Client secret. Required unless supplied in the path.                                                                                                                                                                                |
+| `to`       | No       | Comma‑separated target; each subset of targets must have and `id` associated with them                                                                                                                                              |
+| `region`   | No       | `us` (default), `ca`, or `eu` to select the API host.                                                                                                                                                                               |
+| `channels` | No       | Channels are detected based on first target detected. The following channels can be proivded: `email`, `sms` , `inapp`, `web_push`, `mobile_push` and/or `slack`.                                                                   |
+| `from`     | No       | Display name for the email _From_ identity.                                                                                                                                                                                         |
+| `cc`       | No       | Comma‑separated list of CC addresses.                                                                                                                                                                                               |
+| `bcc`      | No       | Comma‑separated list of BCC addresses.                                                                                                                                                                                              |
+| `:{key}`   | No       | Dynamic template parameter tokens passed to `parameters` (e.g., `:orderId=123`). It's important to prefix each one of these with a colon (`:`) for it to be correctly interpreted. This is only used if `mode` is set to `template` |
 
 \* Required when not already set in the URL path component.
 
@@ -65,16 +65,16 @@ Examples of grouped targets:
 
 Each NotificationAPI request sent through Apprise includes the following default parameters:
 
-| Parameter        | Description |
-|------------------|-------------|
-| `appBody`        | The main message body payload of the notification. |
-| `appTitle`       | The message title or subject line. |
-| `appType`        | The Apprise notification type (e.g., `info`, `success`, `warning`, `failure`). |
-| `appId`          | The Apprise application identifier, usually `apprise`. |
-| `appDescription` | The description text configured for the Apprise service. |
+| Parameter        | Description                                                                                     |
+| ---------------- | ----------------------------------------------------------------------------------------------- |
+| `appBody`        | The main message body payload of the notification.                                              |
+| `appTitle`       | The message title or subject line.                                                              |
+| `appType`        | The Apprise notification type (e.g., `info`, `success`, `warning`, `failure`).                  |
+| `appId`          | The Apprise application identifier, usually `apprise`.                                          |
+| `appDescription` | The description text configured for the Apprise service.                                        |
 | `appColor`       | A colour code associated with the notification type (used by some channels for visual context). |
-| `appImageUrl`    | A URL pointing to an icon image representing the notification type. |
-| `appUrl`         | A URL reference back to the source application (if configured). |
+| `appImageUrl`    | A URL pointing to an icon image representing the notification type.                             |
+| `appUrl`         | A URL reference back to the source application (if configured).                                 |
 
 These parameters are always included by Apprise in addition to any custom `:{key}={value}` tokens you provide in your URL.
 
@@ -101,7 +101,7 @@ Force the SMS channel and set the region to Canada:
 apprise -vv -t "Code" -b "Your verification code is 123456"   'napi://order_tracking@CLIENT_ID/CLIENT_SECRET/id/+16475550123?channel=sms&region=ca'
 ```
 
-Set *From*, CC and BCC for an email:
+Set _From_, CC and BCC for an email:
 
 ```bash
 apprise -vv -t "Release" -b "v2.0.1 is live."   'napi://release_note@CLIENT_ID/CLIENT_SECRET/id/dev@example.ca?from=Dev%20Team&cc=qa@example.ca&bcc=ops@example.ca'

@@ -5,11 +5,11 @@ description: "Send plivo notifications."
 
 ## Plivo Notifications
 
-* **Source**: <https://plivo.com>
-* **Icon Support**: No
-* **Attachment Support**: No
-* **Message Format**: Text
-* **Message Limit**: 140 Characters per message
+- **Source**: <https://plivo.com>
+- **Icon Support**: No
+- **Attachment Support**: No
+- **Message Format**: Text
+- **Message Limit**: 140 Characters per message
 
 ### Account Setup
 
@@ -19,9 +19,9 @@ Signup with Plivo [from here](https://plivo.com). From within your account you c
 
 Valid syntax is as follows:
 
-* `plivo://{auth_id}@{token}/{from_phone}/`
-* `plivo://{auth_id}@{token}/{from_phone}/{ToPhoneNo}`
-* `plivo://{auth_id}@{token}/{from_phone}/{ToPhoneNo1}/{ToPhoneNo2}/{ToPhoneNoN}`
+- `plivo://{auth_id}@{token}/{from_phone}/`
+- `plivo://{auth_id}@{token}/{from_phone}/{ToPhoneNo}`
+- `plivo://{auth_id}@{token}/{from_phone}/{ToPhoneNo1}/{ToPhoneNo2}/{ToPhoneNoN}`
 
 **Note**: If no target phone numbers are specified, then the `{source_phone}` is notified.
 
@@ -29,13 +29,13 @@ Valid syntax is as follows:
 
 ### Parameter Breakdown
 
-| Variable   | Required | Description
-| ---------- | -------- | -----------
-| auth_id    | Yes      | The **Auth ID** Associated with your Plivo account.
-| token      | Yes      | This is your generated Access Token associated with your Plivo account.
-| from       | Yes      | The phone number associated with your account you want the text message to originate from.
-| to         | No       | The phone numbers you wish to notify.
-| batch      |  No      | Send multiple specified notifications in a single batch (1 upstream post to the end server).  By default this is set to `no`.
+| Variable | Required | Description                                                                                                                  |
+| -------- | -------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| auth_id  | Yes      | The **Auth ID** Associated with your Plivo account.                                                                          |
+| token    | Yes      | This is your generated Access Token associated with your Plivo account.                                                      |
+| from     | Yes      | The phone number associated with your account you want the text message to originate from.                                   |
+| to       | No       | The phone numbers you wish to notify.                                                                                        |
+| batch    | No       | Send multiple specified notifications in a single batch (1 upstream post to the end server). By default this is set to `no`. |
 
 #### Example
 

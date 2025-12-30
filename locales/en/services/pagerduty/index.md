@@ -5,11 +5,11 @@ description: "Send pagerduty notifications."
 
 ## PagerDuty Notifications
 
-* **Source**: <https://www.pagerduty.com>
-* **Icon Support**: No
-* **Attachment Support**: Yes
-* **Message Format**: Text
-* **Message Limit**: 32768 Characters per message
+- **Source**: <https://www.pagerduty.com>
+- **Icon Support**: No
+- **Attachment Support**: Yes
+- **Message Format**: Text
+- **Message Limit**: 32768 Characters per message
 
 You need to have an account with [PagerDuty](https://www.pagerduty.com) and generate/access your API key.
 
@@ -19,24 +19,24 @@ From there you can define an API V2 Integration.
 
 Valid syntax is as follows:
 
-* `pagerduty://{integration_key}@{api_key}`
-* `pagerduty://{integration_key}@{api_key}/{source}`
-* `pagerduty://{integration_key}@{api_key}/{source}/{component}`
+- `pagerduty://{integration_key}@{api_key}`
+- `pagerduty://{integration_key}@{api_key}/{source}`
+- `pagerduty://{integration_key}@{api_key}/{source}/{component}`
 
 ### Parameter Breakdown
 
-| Variable    | Required | Description
-| ----------- | -------- | -----------
-| integration_key    | Yes      | This  is provided to you on the Events API V2 integration's detail page. This can also be referred to as a Routing Key.
-| api_key        | Yes       | The API Key associated with your setup
-| group    | No       | Provide a group (string) as part of the payload
-| class    | No       | Provide a class (string) as part of the payload
-| region    | No       | By default this takes on the value of **us**.  But you can optionally set it to **eu** as well.
-| source    | No       | Provide a source (string) as part of the payload; the default is **Apprise** if one isn't specified.
-| component    | No       | Provide a component (string) as part of the payload; the default is **Notification** if one isn't specified.
-| click    | No       | Provide a clickable URL to associate with the notice.
-| image    | No       | Associate the notification status via a represented icon.  You can set this value to `no` if you do not want this to occur.
-| severity | No       | The notification severity is otherwise detected on it's own, however if you wish to force a specific mode always, you can do so by providing this as part of the URL.  Possible values are: `info`, `warning`, `critical`, and `error`.
+| Variable        | Required | Description                                                                                                                                                                                                                            |
+| --------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| integration_key | Yes      | This is provided to you on the Events API V2 integration's detail page. This can also be referred to as a Routing Key.                                                                                                                 |
+| api_key         | Yes      | The API Key associated with your setup                                                                                                                                                                                                 |
+| group           | No       | Provide a group (string) as part of the payload                                                                                                                                                                                        |
+| class           | No       | Provide a class (string) as part of the payload                                                                                                                                                                                        |
+| region          | No       | By default this takes on the value of **us**. But you can optionally set it to **eu** as well.                                                                                                                                         |
+| source          | No       | Provide a source (string) as part of the payload; the default is **Apprise** if one isn't specified.                                                                                                                                   |
+| component       | No       | Provide a component (string) as part of the payload; the default is **Notification** if one isn't specified.                                                                                                                           |
+| click           | No       | Provide a clickable URL to associate with the notice.                                                                                                                                                                                  |
+| image           | No       | Associate the notification status via a represented icon. You can set this value to `no` if you do not want this to occur.                                                                                                             |
+| severity        | No       | The notification severity is otherwise detected on it's own, however if you wish to force a specific mode always, you can do so by providing this as part of the URL. Possible values are: `info`, `warning`, `critical`, and `error`. |
 
 #### Example
 

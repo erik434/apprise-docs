@@ -5,7 +5,7 @@ description: "Write your own plugin easily using the built in Apprise Decorator"
 
 # Custom Notifications
 
-This functionality is only available starting at Apprise v1+. The idea is to no longer be limited to just the Notification Services already built into Apprise.  Instead you can now very easily write your own and assign it to your own `schema://`
+This functionality is only available starting at Apprise v1+. The idea is to no longer be limited to just the Notification Services already built into Apprise. Instead you can now very easily write your own and assign it to your own `schema://`
 
 To explain this further, first consider that Apprise is completely built around the Apprise URL's you feed it.
 
@@ -26,7 +26,7 @@ The advantage of having your own custom hook is that you can now extend Apprise 
 
 ## Declaration: The Notification Decorator
 
-The `@notify` decorator is the key to linking everything together.  Below is a very simple example of what your `hook.py` might look like:
+The `@notify` decorator is the key to linking everything together. Below is a very simple example of what your `hook.py` might look like:
 
 ```python
 # include the decorator
@@ -42,22 +42,22 @@ def my_wrapper(body, title, notify_type, *args, **kwargs):
 
 ### Wrapper Return Values
 
-Your function can optionally return `True` if it was successful or `False` if it wasn't.  This information will get passed back up through the Apprise library.  If you choose to not return anything at all (or return `None`) then this is interpreted as being successful.
+Your function can optionally return `True` if it was successful or `False` if it wasn't. This information will get passed back up through the Apprise library. If you choose to not return anything at all (or return `None`) then this is interpreted as being successful.
 
 ### Wrapper Parameter Breakdown
 
 When you define your wrapper function that `@notify` will control, you will need to consider the following function parameters you can provide it:
 
-| Variable    | Required | Description
-| ----------- | -------- | -----------
-| body        | Yes     | The message body the calling user passed along
-| title       | No      | The message title which is an optional switch for Apprise so it wont' always be populated.
-| notify_type | No      | The message type will be `info`, `success`, `warning` or `failure`
-| meta        | No      | The **combined** (declaration + initialization) URL configuration passed into your my_wrapper.  The declaration comes from the `@notify(on=schema)`. The initialization is how the calling user/application initializes your wrapper via their configuratin (a `schema://` call that aligns with your declaration). [See here](#the-meta-variable) for more details on the `meta` variable.
-| attach     | No      | If the call to trigger your wrapper includes one or more attachment, you can find it here as `list()` of `AppriseAttachment()` objects.  If there is no attachment specified, then this will be set to None.
-| body_format     | No      | The message body format as identified by the calling user.  For the CLI this defaults to `text`, but for developers, they can optionally set this or not.  Possible values would be `None`, `"text"`, `"html"` or `"markdown"`.
+| Variable    | Required | Description                                                                                                                                                                                                                                                                                                                                                                                |
+| ----------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| body        | Yes      | The message body the calling user passed along                                                                                                                                                                                                                                                                                                                                             |
+| title       | No       | The message title which is an optional switch for Apprise so it wont' always be populated.                                                                                                                                                                                                                                                                                                 |
+| notify_type | No       | The message type will be `info`, `success`, `warning` or `failure`                                                                                                                                                                                                                                                                                                                         |
+| meta        | No       | The **combined** (declaration + initialization) URL configuration passed into your my_wrapper. The declaration comes from the `@notify(on=schema)`. The initialization is how the calling user/application initializes your wrapper via their configuratin (a `schema://` call that aligns with your declaration). [See here](#the-meta-variable) for more details on the `meta` variable. |
+| attach      | No       | If the call to trigger your wrapper includes one or more attachment, you can find it here as `list()` of `AppriseAttachment()` objects. If there is no attachment specified, then this will be set to None.                                                                                                                                                                                |
+| body_format | No       | The message body format as identified by the calling user. For the CLI this defaults to `text`, but for developers, they can optionally set this or not. Possible values would be `None`, `"text"`, `"html"` or `"markdown"`.                                                                                                                                                              |
 
-**ALWAYS** end your wrapper declaration with `*args, **kwargs`.  This is VERY important to be forwards compatible with future versions of Apprise while at the same time being able to park entries on the wrapper you're not interested (flagged with `No` in the **Required** section above).  Hence your wrapper could be as simple as this if you wanted it to be:
+**ALWAYS** end your wrapper declaration with `*args, **kwargs`. This is VERY important to be forwards compatible with future versions of Apprise while at the same time being able to park entries on the wrapper you're not interested (flagged with `No` in the **Required** section above). Hence your wrapper could be as simple as this if you wanted it to be:
 
 ```python
 # include the decorator
@@ -154,11 +154,11 @@ The wrapper already contains a `meta` variable that looks like this now:
   "url": "foobar://hostname:234?notify_on_complete=0",
   "host": "hostname",
   "port": 234,
-  "qsd": {"notify_on_complete": "0"}
+  "qsd": { "notify_on_complete": "0" }
 }
 ```
 
-The advantage of this is now when someone attempts to trigger your wrapper script, they can choose to over-ride the defaults (during initialization) you provided (or not).  For example:
+The advantage of this is now when someone attempts to trigger your wrapper script, they can choose to over-ride the defaults (during initialization) you provided (or not). For example:
 
 ```bash
 # The below actually triggers your wrapper with `meta` set to exactly
@@ -181,23 +181,23 @@ The above would apply their initialization values on top of the declaration alre
   "url": "foobar://example.com:234?notify_on_complete=1&just=checking",
   "host": "example.com",
   "port": 234,
-  "qsd": {"notify_on_complete": "1", "just": "checking"}
+  "qsd": { "notify_on_complete": "1", "just": "checking" }
 }
 ```
 
-You can see that fields that were not changed keep the value passed from the declaration (ie.: the port).  This allows you to prepare all of your configuration for your wrapper during it's declaration while still allowing the calling user to adjust values if required.
+You can see that fields that were not changed keep the value passed from the declaration (ie.: the port). This allows you to prepare all of your configuration for your wrapper during it's declaration while still allowing the calling user to adjust values if required.
 
 ## Plugin Loading
 
-Apprise will only load functions wrapped with `@notify()` decorator.  These functions must exist in Python files (denoted with a `.py` extension).  The loading process works as follows:
+Apprise will only load functions wrapped with `@notify()` decorator. These functions must exist in Python files (denoted with a `.py` extension). The loading process works as follows:
 
-1. If you provide an absolute path to a `.py` file,  then it is simply loaded (hidden file or not).
+1. If you provide an absolute path to a `.py` file, then it is simply loaded (hidden file or not).
 1. If you provide an absolute path to a directory, then one of 2 things can happen:
    1. if an `__init__.py` file is found in this specified directory, then it is loaded and further processing stops.
    1. if no `__init__.py` file is found in the specified directory, then all `.py` files located within this directory are loaded.
-       - if a directory is found, then a check is made to see if `directory/__init__.py` exists.
-          - If yes: then just that specific file is loaded. There is no further recursive loading/scanning from within this sub-directories.
-          - If no: then the directory is skipped.
+      - if a directory is found, then a check is made to see if `directory/__init__.py` exists.
+        - If yes: then just that specific file is loaded. There is no further recursive loading/scanning from within this sub-directories.
+        - If no: then the directory is skipped.
 
       All hidden files/directories (prefixed with a period (`.`)) are ignored during any directory scanning.
 
@@ -214,7 +214,7 @@ By default, the Apprise CLI tool will search the following directories for custo
 - `%APPDATA%/Apprise/plugins`
 - `%LOCALAPPDATA%/Apprise/plugins`
 
-You can over-ride these paths by including a `--plugin-dir` (or `-P`) on the CLI to include your own location.  If you provide an override the defaults are not referenced.
+You can over-ride these paths by including a `--plugin-dir` (or `-P`) on the CLI to include your own location. If you provide an override the defaults are not referenced.
 
 ```bash
 # Assuming we've defined a Python file with our @notify(on="foobar") and placed

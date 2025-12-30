@@ -5,31 +5,31 @@ description: "Send notifiarr notifications."
 
 ## Notifiarr Notifications
 
-* **Source**: <https://notifiarr.com>
-* **Icon Support**: No
-* **Attachment Support**: No
-* **Message Format**: Text
-* **Message Limit**: 32768 Characters per message
+- **Source**: <https://notifiarr.com>
+- **Icon Support**: No
+- **Attachment Support**: No
+- **Message Format**: Text
+- **Message Limit**: 32768 Characters per message
 
 ### Account Setup
 
-You need to first set up an account with [Notifiarr](https://notifiarr.com) if you don't have one already.  From there you can generate yourself your `{api_key}`. You will need to use your “global” API key, the integration-specific Notifiarr API keys do not work with Apprise.
+You need to first set up an account with [Notifiarr](https://notifiarr.com) if you don't have one already. From there you can generate yourself your `{api_key}`. You will need to use your “global” API key, the integration-specific Notifiarr API keys do not work with Apprise.
 
 ### Discord Channel IDs
 
-To use Notifiarr, you need your Discord ChannelID.  **It must be the numeric version of it**.  [Here is some great instructions on how to get it](https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID-).
+To use Notifiarr, you need your Discord ChannelID. **It must be the numeric version of it**. [Here is some great instructions on how to get it](https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID-).
 
 In short:
 
-* **Enable Developer Mode** by visiting your _Discord Settings_ and going to **Appearance**.
+- **Enable Developer Mode** by visiting your _Discord Settings_ and going to **Appearance**.
 
 ### Pinging Roles, Tags, and Users
 
 The notifiarr message body can contain content such as the following to trigger the appropriate pings
 
-* **user**: `<@123>`
-* **role**: `<@&456>`
-* **tag**: `@everyone`
+- **user**: `<@123>`
+- **role**: `<@&456>`
+- **tag**: `@everyone`
 
 **Note**: that as of this time (2024 Jul 28th), the upstream webhook to Notifiarr only supports 1 user/role in the payload. If you provide more then one, only the first will be passed upstream.
 
@@ -37,16 +37,16 @@ The notifiarr message body can contain content such as the following to trigger 
 
 Valid syntax is as follows:
 
-* `notifiarr://{api_key}/{channel_id}`
-* `notifiarr://{api_key}/{channel1_id}/{channel2_id}/{channelN_id}`
+- `notifiarr://{api_key}/{channel_id}`
+- `notifiarr://{api_key}/{channel1_id}/{channel2_id}/{channelN_id}`
 
 ### Parameter Breakdown
 
-| Variable     | Required | Description                                                                                                                             |
-| ------------ | -------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| api_key      | Yes      | Your global (not integration-specific) Notifiarr API Key                                                                                |
-| source       | No       | Optionally provide the source of the notification as a descriptive string (you can also use `from` as an alias to this same variable)   |
-| event        | No       | Optionally specify the Notifiarr Event ID you want your notification update. If none is specified, then a new notification is generated |
+| Variable | Required | Description                                                                                                                             |
+| -------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| api_key  | Yes      | Your global (not integration-specific) Notifiarr API Key                                                                                |
+| source   | No       | Optionally provide the source of the notification as a descriptive string (you can also use `from` as an alias to this same variable)   |
+| event    | No       | Optionally specify the Notifiarr Event ID you want your notification update. If none is specified, then a new notification is generated |
 
 #### Example
 
