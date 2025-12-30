@@ -1,6 +1,7 @@
 {
   "site": {
-    "title": "Apprise Documentation"
+    "title": "Documentation",
+    "logo": "Apprise"
   },
   "nav": {
     "categories": {
@@ -46,9 +47,9 @@
   },
   "service": {
 	 "group": {
-	  "general": "General Notifications",
+	   "general": "General Notifications",
 	   "custom": "Custom Notifications",
-	   "social": "Social Media Based Notifications"
+	   "desktop": "Desktop Based Notifications"
 	 },
     "feature": {
       "attachments": "Attachment Support",

@@ -5,7 +5,6 @@ sidebar:
   label: "X (Formerly Twitter)"
 
 source: https://x.com/
-group: "social"
 schemas:
    - x
    - twitter

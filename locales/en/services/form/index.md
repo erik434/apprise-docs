@@ -1,6 +1,6 @@
 ---
 title: "Custom FORM Notifications"
-description: "Send HTML/FORM based notifications."
+description: "Send HTML/Form based notifications."
 sidebar:
   label: "HTTP/Form"
 group: "custom"
@@ -10,9 +10,19 @@ schemas:
 has_selfhosted: true
 has_attachments: true
 has_image: true
+
+sample_urls:
+  - form://{hostname}
+  - forms://{hostname}:{port}
+  - forms://{user}:@{hostname}
+  - form://{user}:@{hostname}:{port}
+  - forms://{user}:{password}@{hostname}
+  - form://{user}:{password}@{hostname}:{port}
 ---
 
 <!-- SERVICE:DETAILS -->
+
+## Introduction
 
 This is just a custom Notification that allows you to have this tool post to a web server as a simple FORM (`application/x-www-form-urlencoded`). This is useful for those who want to be notified via their own custom methods.
 
@@ -47,20 +57,20 @@ The secure versions:
 
 ## Parameter Breakdown
 
-| Variable    | Required | Description
-| ----------- | -------- | -----------
-| hostname    | Yes      | The Web Server's hostname
-| port        | No       | The port our Web server is listening on. By default the port is **80** for **form://** and **443** for all **forms://** references.
-| user        | No       | If you're system is set up to use HTTP-AUTH, you can provide *username* for authentication to it.
-| password    | No       | If you're system is set up to use HTTP-AUTH, you can provide *password* for authentication to it.
-| method      | No       | Optionally specify the server http method; possible options are `post`, `put`, `get`, `delete`, `patch`, and `head`.  By default if no method is specified then `post` is used.
-| attach-as      | No       | Optionally override the meta filename set when there are attachments.  Each attachment by default gets posted as `file01`, `file02`, etc.   There have been use-cases where someone's end point expects the meta name (where the file is found on the HTTP request) to be named something specific such as `document`.  Utilize this over-ride to accomplish such a feat. Also use the `*` character to allow the numbering.  Hence `?attach-as=meta*` would cause Apprise to store the files as `meta01`, `meta02`, etc.
+| Variable    | Required | Description |
+| ----------- | -------- | ----------- |
+| hostname    | Yes      | The Web Server's hostname |
+| port        | No       | The port our Web server is listening on. By default the port is **80** for **form://** and **443** for all **forms://** references. |
+| user        | No       | If you're system is set up to use HTTP-AUTH, you can provide *username* for authentication to it. |
+| password    | No       | If you're system is set up to use HTTP-AUTH, you can provide *password* for authentication to it. |
+| method      | No       | Optionally specify the server http method; possible options are `post`, `put`, `get`, `delete`, `patch`, and `head`.  By default if no method is specified then `post` is used. |
+| attach-as   | No       | Optionally override the meta filename set when there are attachments.  Each attachment by default gets posted as `file01`, `file02`, etc.   There have been use-cases where someone's end point expects the meta name (where the file is found on the HTTP request) to be named something specific such as `document`.  Utilize this over-ride to accomplish such a feat. Also use the `*` character to allow the numbering.  Hence `?attach-as=meta*` would cause Apprise to store the files as `meta01`, `meta02`, etc. |
 
 **Note:**: If you include file attachments; each one is concatenated into the same single post to the upstream server. The `Content-Type` header request also changes from `application/x-www-form-urlencoded` to `multipart/form-data` in this case.
 
 <!-- GLOBAL:SERVICE:PARAMS -->
 
-## Example
+## Examples
 
 Send a FORM Based web request to our web server listening on port 80:
 
@@ -69,7 +79,7 @@ Send a FORM Based web request to our web server listening on port 80:
 apprise form://my.server.local
 ```
 
-## Header Manipulation
+### Header Manipulation
 
 Some users may require special HTTP headers to be present when they post their data to their server.  This can be accomplished by just sticking a plus symbol (**+**) in front of any parameter you specify on your URL string.
 
@@ -93,21 +103,7 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" \
    "form://localhost:8080/path/?+X-Token=abcdefg&+X-Apprise=is%20great"
 ```
 
-## Payload Manipulation
-
-The payload can have entries added to it in addition to the default `body`, `title`, and `type` values.  This can be accomplished by just sticking a colon symbol (**:**) in front of any parameter you specify on your URL string.
-
-```bash
-# Add to the payload delivered to the remote server as if it was part
-# the prepared message Apprise would have otherwise put together
-#
-# Assuming our {hostname} is localhost
-# Assuming we want to include app=mysystem as part of the payload:
-apprise -vv -t "Test Message Title" -b "Test Message Body" \
-   "form://localhost/?:app=payload"
-```
-
-## GET Parameter Manipulation
+### GET Parameter Manipulation
 
 Some users may require GET parameters to be part of their POST. Any parameters you pass onto the Apprise command line are interpreted by Apprise itself as options/actions you wish to perform (such as changing `method=update`, or `cto=3`). To have Apprise ignore what was specified and past the content `as-is` upstream, you just need to prefix your entries with a minus (`-`) symbol.
 
@@ -127,7 +123,7 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" \
    "forms://example.ca/my/path?-key1=value1&-key2=value2"
 ```
 
-## Attach-As Over-Ride Options
+### Attach-As Over-Ride Options
 
 This section expands further on the `?attach-as=` override option.
 

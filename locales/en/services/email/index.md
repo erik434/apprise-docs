@@ -1,15 +1,25 @@
 ---
 title: "Email Notifications"
 description: "Send notifications using SMTP and built-in email providers."
+sidebar:
+  label: "Email"
+
+schemas:
+  - mailto: insecure
+  - mailtos
+
+has_attachments: true
+
+sample_urls:
+  - mailto://userid:pass@domain.com
+  - mailtos://domain.com?user=userid&pass=password
+  - mailtos://domain.com:465?user=userid&pass=password
+  - mailtos://user@hotmail.com&pass=password
+  - mailto://mySendingUsername:mySendingPassword@example.com?to=receivingAddress@example.com
+  - mailto://userid:password@example.com?smtp=mail.example.com&from=noreply@example.com&name=no%20reply
 ---
 
-## E-Mail Notifications
-
-* **Source**: n/a
-* **Icon Support**: no
-* **Attachment Support**: yes
-* **Message Format**: Text
-* **Message Limit**: 32768 Characters per message
+<!-- SERVICE:DETAILS -->
 
 ## Using Built-In Email Services
 
@@ -68,7 +78,7 @@ Some mail servers will require your {user} to be your full email address. In the
 
 * **mailto**://**{password}**@**{domain}**:**{port}**?user=**{user}**
 
-#### Custom Syntax Examples
+## Custom Syntax Examples
 
 If your SMTP server is identified by a different hostname/domain than what is identified by the suffix of your email, then you'll need to specify it as an argument; for example:
 If you want to adjust the email's ReplyTo address, then you can do the following:
@@ -101,28 +111,30 @@ There is no limit to the number of addresses you either separate by comma (**,**
 
 The Carbon Copy (**cc=**) and Blind Carbon Copy (**bcc=**) however are applied to each email sent.  Hence if you send an email to 3 target users, the entire _cc_ and _bcc_ lists will be part of all 3 emails.
 
-### Parameter Breakdown
+## Parameter Breakdown
 
-| Variable    | Required | Description
-| ----------- | -------- | -----------
-| user      | Yes      | The account login to your SMTP server; if this is an email you must specify this near the end of the URL as an argument. You can over-ride this by specifying `?user=` on the URL string.<br/>**Note:** Both the `user` and `pass` are not required if you're using an anonymous login.
-| pass    | Yes      | The password required to send an email via your SMTP Server. You can over-ride this by specifying `?pass=` on the URL string.<br/>**Note:** Both the `user` and `pass` are not required if you're using an anonymous login.
-| domain      | Yes      | If your email address was **<test@example.com>** then _example.com_ is your domain. You must provide this as part of the URL string!
-| port     | No       | The port your SMTP server is listening on. By default the port is **25** for **mailto://** and **587** for all **mailtos://** references.
-| smtp   | No       | If the SMTP server differs from your specified domain, then you'll want to specify it as an argument in your URL.
-| from   | No       | Identify the address the email address associated with the email account being used.  This is automatically otherwise detected from the Apprise URL an is not required. You can express this as a regular `user@email.com` or you can also set it as `A User<user@email.com>`.
-| to   | No       | This will enforce (or set the address the email is sent To). This is only required in special circumstances.  The notification script is usually clever enough to figure this out for you.
-| name   | No       | With respect to {from_email}, this allows you to provide a name with your _Reply-To_ address. <br/>**Note:** This field has become redundant and become synonymous to `from=`. It still behaves as it did in previous versions, but you can also follow the `A User<user@email.com>` syntax as well. To eliminate ambiguity; the values parsed from the `from=` will always trump the `name=`.
-| cc   | No         | Carbon Copy email address(es).  More than one can be separated with a space and/or comma.
-| bcc   | No     | Blind Carbon Copy email address(es).  More than one can be separated with a space and/or comma.
-| reply   | No     |  Provide a Reply-To email (or set of). More than one can be separated with a space and/or comma.
-| mode   | No       | This is only referenced if using **mailtos://** (a secure url).  The Mode allows you to change the connection method.  Some sites only support SSL (mode=**ssl**) while others only support STARTTLS (mode=**starttls**). The default value is **starttls**. If you define a `mode` with a `mailto://` declaration, it is upgraded to be a `mailtos://` when the URL is processed.
+| Variable    | Required | Description |
+| ----------- | -------- | ----------- |
+| user      | Yes      | The account login to your SMTP server; if this is an email you must specify this near the end of the URL as an argument. You can over-ride this by specifying `?user=` on the URL string.<br/>**Note:** Both the `user` and `pass` are not required if you're using an anonymous login. |
+| pass    | Yes      | The password required to send an email via your SMTP Server. You can over-ride this by specifying `?pass=` on the URL string.<br/>**Note:** Both the `user` and `pass` are not required if you're using an anonymous login. |
+| domain      | Yes      | If your email address was **<test@example.com>** then _example.com_ is your domain. You must provide this as part of the URL string! |
+| port     | No       | The port your SMTP server is listening on. By default the port is **25** for **mailto://** and **587** for all **mailtos://** references. |
+| smtp   | No       | If the SMTP server differs from your specified domain, then you'll want to specify it as an argument in your URL. |
+| from   | No       | Identify the address the email address associated with the email account being used.  This is automatically otherwise detected from the Apprise URL an is not required. You can express this as a regular `user@email.com` or you can also set it as `A User<user@email.com>`. |
+| to   | No       | This will enforce (or set the address the email is sent To). This is only required in special circumstances.  The notification script is usually clever enough to figure this out for you. |
+| name   | No       | With respect to {from_email}, this allows you to provide a name with your _Reply-To_ address. <br/>**Note:** This field has become redundant and become synonymous to `from=`. It still behaves as it did in previous versions, but you can also follow the `A User<user@email.com>` syntax as well. To eliminate ambiguity; the values parsed from the `from=` will always trump the `name=`. |
+| cc   | No         | Carbon Copy email address(es).  More than one can be separated with a space and/or comma. |
+| bcc   | No     | Blind Carbon Copy email address(es).  More than one can be separated with a space and/or comma. |
+| reply   | No     |  Provide a Reply-To email (or set of). More than one can be separated with a space and/or comma. |
+| mode   | No       | This is only referenced if using **mailtos://** (a secure url).  The Mode allows you to change the connection method.  Some sites only support SSL (mode=**ssl**) while others only support STARTTLS (mode=**starttls**). The default value is **starttls**. If you define a `mode` with a `mailto://` declaration, it is upgraded to be a `mailtos://` when the URL is processed. |
 
 To eliminate any confusion, any url parameter (key=value) specified will over-ride what was detected in the url; hence:
 
 * `mailto://usera:pass123@domain.com?user=foobar`: the user of `foobar` would over-ride the user `usera` specified.  However since the password was not over-ridden, the password of `pass123` would be used still.
 
-#### Example
+<!-- GLOBAL:SERVICE:PARAMS -->
+
+## Examples
 
 Send a email notification to our hotmail account:
 

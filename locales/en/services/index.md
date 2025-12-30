@@ -16,12 +16,12 @@ Apprise supports the following <!-- SERVICES:GENERAL:COUNT --> general services 
 <!-- SERVICES:GENERAL:END -->
 </div>
 
-## Social Media
+## Desktop
 
-Apprise supports the following <!-- SERVICES:SOCIAL:COUNT --> Social Media based services.
+Apprise supports the following <!-- SERVICES:DESKTOP:COUNT --> desktop services which only work locally on the same PC they're ran on.
 <div class="services-table">
-<!-- SERVICES:SOCIAL:BEGIN -->
-<!-- SERVICES:SOCIAL:END -->
+<!-- SERVICES:DESKTOP:BEGIN -->
+<!-- SERVICES:DESKTOP:END -->
 </div>
 
 ## Custom

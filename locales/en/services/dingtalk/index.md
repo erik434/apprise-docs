@@ -1,20 +1,33 @@
 ---
-title: "dingtalk Notifications"
-description: "Send dingtalk notifications."
+title: "DingTalk Notifications"
+description: "Send DingTalk notifications."
+sidebar:
+  label: "DingTalk"
+
+source: https://www.dingtalk.com/
+
+schemas:
+  - dingtalk
+
+has_sms: true
+
+sample_urls:
+  - dingtalk://{ApiKey}/{ToPhoneNo}
+  - dingtalk://{ApiKey}/{ToPhoneNo1}/{ToPhoneNo2}/{ToPhoneNoN}
+  - dingtalk://{Secret}@{ApiKey}/{ToPhoneNo}
+  - dingtalk://{Secret}@{ApiKey}/{ToPhoneNo1}/{ToPhoneNo2}/{ToPhoneNoN}
+
+limits:
+  max_chars: 160
 ---
 
-## DingTalk
+<!-- SERVICE:DETAILS -->
 
-* **Source**: <https://www.dingtalk.com/>
-* **Icon Support**: No
-* **Message Format**: Text
-* **Message Limit**: 160 Characters per message
-
-### Account Setup
+## Account Setup
 
 To use DingTalk, you will need to acquire your _API Key_.
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -23,17 +36,19 @@ Valid syntax is as follows:
 * `dingtalk://{Secret}@{ApiKey}/{ToPhoneNo}`
 * `dingtalk://{Secret}@{ApiKey}/{ToPhoneNo1}/{ToPhoneNo2}/{ToPhoneNoN}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
-| Variable        | Required | Description
-| --------------- | -------- | -----------
-| ApiKey         | Yes      | The _API Key_ associated with your DingTalk account.  This is available to you via the DingTalk Dashboard.
-| ToPhoneNo      | No       | A phone number to send your notification to
-| Secret         | No       | The optional secret key to associate with the message signing
+| Variable        | Required | Description |
+| --------------- | -------- | ----------- |
+| ApiKey         | Yes      | The _API Key_ associated with your DingTalk account.  This is available to you via the DingTalk Dashboard. |
+| ToPhoneNo      | No       | A phone number to send your notification to |
+| Secret         | No       | The optional secret key to associate with the message signing |
 
-#### Example
+## Example<!-- GLOBAL:SERVICE:PARAMS -->
 
-Send a DingTalk Notification as an SMS:
+## Example
+
+Send an SMS message via DingTalk:
 
 ```bash
 # Assuming our {APIKey} is gank339l7jk3cjaE

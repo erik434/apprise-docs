@@ -1,0 +1,19 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+---
+
+<StarlightPage frontmatter={{
+  title: '502',
+  template: 'splash',
+  hero: {
+    title: '502 Bad Gateway',
+    tagline: 'We received an invalid response from the upstream server.',
+    image: {
+      html: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--sl-color-accent);"><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8" rx="2"/><path d="M12 14v8"/><path d="M12 6V2"/><path d="M12 6l4-4"/><path d="M12 6L8 2"/></svg>`
+    },
+    actions: [
+      { text: 'Try Again', link: 'javascript:window.location.reload()', icon: 'external', variant: 'primary' }
+    ]
+  }
+}}>
+</StarlightPage>

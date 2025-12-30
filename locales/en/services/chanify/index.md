@@ -1,28 +1,39 @@
 ---
-title: "chanify Notifications"
-description: "Send chanify notifications."
+title: "Chanify Notifications"
+description: "Send Chanify notifications."
+sidebar:
+  label: "Chanify"
+
+source: https://chanify.net/
+
+schemas:
+  - chanify
+
+sample_urls:
+  -  chanify://{token}
 ---
 
-## Chanify Notifications
+<!-- SERVICE:DETAILS -->
 
-* **Source**: <https://chanify.net/>
-* **Icon Support**: No
-* **Message Format**: Text
-* **Message Limit**: 32768 Characters per message
+## Account Setup
 
-### Syntax
+Sign up for Chanify [from here](https://chanify.net/). You will be provided to create a user and password to associate with your account.  From here you can generate a token; this is all you need to use this through Apprise.
+
+## Syntax
 
 Valid syntax is as follows:
 
 * `chanify://{token}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
-| Variable        | Required | Description
-| --------------- | -------- | -----------
-| token         | **Yes**   | The token you generated as part of your Chanify account
+| Variable        | Required | Description|
+| --------------- | -------- | -----------|
+| token         | **Yes**   | The token you generated as part of your Chanify account|
 
-#### Example
+<!-- GLOBAL:SERVICE:PARAMS -->
+
+## Example
 
 Send a notification to your Chanify account:
 

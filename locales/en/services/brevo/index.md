@@ -1,29 +1,26 @@
 ---
-title: "brevo Notifications"
-description: "Send brevo notifications."
+title: "Brevo Notifications"
+description: "Send Brevo notifications."
+sidebar:
+  label: "Brevo"
+
+source: https://www.brevo.com
+
+schemas:
+  - brevo
+
+has_attachments: true
+
+sample_urls:
+  - brevo://APIToken:FromEmail/ToEmail
+  - brevo://APIToken:FromEmail/ToEmail1/ToEmail2/ToEmailN
 ---
 
-## Brevo Notifications
+<!-- SERVICE:DETAILS -->
 
-* **Source**: <https://www.brevo.com>  
-* **Icon Support**: no
-* **Attachment Support**: yes
-* **Message Format**: Text
-* **Message Limit**: 32768 Characters per message
+## Account Setup
 
 Brevo is a transactional email platform that exposes a JSON HTTP API for sending mail. The new `NotifyBrevo` plugin integrates this API with Apprise, using a URL schema consistent with other email providers such as SendGrid and Resend. The plugin:
-
-* Authenticates using a Brevo API key provided in the URL.
-* Requires a verified “From” address as part of the URL.
-* Accepts recipients from both the URL path and an optional `to=` query parameter.
-* Supports CC, BCC, and Reply-To addresses.
-* Sends HTML by default, with an automatic text conversion for `textContent`.
-* Supports file attachments via Brevo’s `attachments` payload field, using AppriseAttachment and base64 encoding.
-* Implements per-target sending with partial success handling and HTTP error mapping.
-
-The README email table has also been updated to include Brevo alongside other email services, with example syntax consistent with the URL parser.
-
-### 🛠️ Setup Instructions
 
 1. Visit [https://www.brevo.com/](https://www.brevo.com/) and sign in to your Brevo account.
 2. Navigate to **SMTP & API** in your account, then create a **Transactional email API key** with permission to send email.
@@ -36,9 +33,7 @@ The README email table has also been updated to include Brevo alongside other em
 
 ---
 
-### Apprise Support
-
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -60,9 +55,7 @@ The plugin URL template is:
 * `{schema}://{apikey}:{from_email}`
 * `{schema}://{apikey}:{from_email}/{targets}`
 
----
-
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable    | Required | Description                                                                 |
 |------------|----------|-----------------------------------------------------------------------------|
@@ -75,9 +68,9 @@ The plugin URL template is:
 | `reply`    | No       | Reply-To header, optionally including a display name.                      |
 | `format`   | No       | Overrides default format (`html` or `text`), consistent with Apprise core.|
 
----
+<!-- GLOBAL:SERVICE:PARAMS -->
 
-### Examples
+## Examples
 
 Send a basic Brevo notification to yourself (from and to are the same):
 

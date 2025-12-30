@@ -1,0 +1,19 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+---
+
+<StarlightPage frontmatter={{
+  title: '429',
+  template: 'splash',
+  hero: {
+    title: '429 Too Many Requests',
+    tagline: 'You have sent too many requests in a short period. Please wait a moment and try again.',
+    image: {
+      html: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--sl-color-accent);"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>`
+    },
+    actions: [
+      { text: 'Return Home', link: '/', icon: 'right-arrow', variant: 'primary' }
+    ]
+  }
+}}>
+</StarlightPage>

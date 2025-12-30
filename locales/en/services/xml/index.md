@@ -1,15 +1,28 @@
 ---
 title: "Custom XML Notifications"
-description: "Send XML based notifications."
+description: "Send HTML/XML based notifications."
+sidebar:
+  label: "HTTP/XML"
+group: "custom"
+schemas:
+   - xml: insecure
+   - xmls
+has_selfhosted: true
+has_attachments: true
+has_image: true
+
+sample_urls:
+  - xmls://{hostname}
+  - xml://{hostname}:{port}
+  - xml://{user}:@{hostname}
+  - xmls://{user}:@{hostname}:{port}
+  - xml://{user}:{password}@{hostname}
+  - xmls://{user}:{password}@{hostname}:{port}
 ---
 
-## XML HTTP POST Notifications
+<!-- SERVICE:DETAILS -->
 
-* **Source**: n/a
-* **Icon Support**: No
-* **Message Format**: XML
-* **Attachment Support**: yes
-* **Message Limit**: 32768 Characters per message
+## Introduction
 
 This is just a custom Notification that allows you to have this tool post to a web server as a simple XML string. This is useful for those who want to be notified via their own custom methods.
 
@@ -39,7 +52,7 @@ The *MessageType* will be one of the following:
 * **failure**: A failure report
 * **warning**: A warning report
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -57,15 +70,17 @@ The secure versions:
 
 ### Parameter Breakdown
 
-| Variable    | Required | Description
-| ----------- | -------- | -----------
-| hostname    | Yes      | The Web Server's hostname
-| port        | No       | The port our Web server is listening on. By default the port is **80** for **xml://** and **443** for all **xmls://** references.
-| user        | No       | If you're system is set up to use HTTP-AUTH, you can provide *username* for authentication to it.
-| password    | No       | If you're system is set up to use HTTP-AUTH, you can provide *password* for authentication to it.
-| method      | No       | Optionally specify the server http method; possible options are `post`, `put`, `get`, `delete`, `patch`, and `head`.  By default if no method is specified then `post` is used.
+| Variable    | Required | Description |
+| ----------- | -------- | ----------- |
+| hostname    | Yes      | The Web Server's hostname |
+| port        | No       | The port our Web server is listening on. By default the port is **80** for **xml://** and **443** for all **xmls://** references. |
+| user        | No       | If you're system is set up to use HTTP-AUTH, you can provide *username* for authentication to it. |
+| password    | No       | If you're system is set up to use HTTP-AUTH, you can provide *password* for authentication to it. |
+| method      | No       | Optionally specify the server http method; possible options are `post`, `put`, `get`, `delete`, `patch`, and `head`.  By default if no method is specified then `post` is used. |
 
-#### Example
+<!-- GLOBAL:SERVICE:PARAMS -->
+
+## Examples
 
 Send a XML notification to our web server listening on port 80:
 

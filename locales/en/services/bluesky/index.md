@@ -5,7 +5,6 @@ sidebar:
   label: "Bluesky"
 
 source: https://bsky.app/
-group: social
 schemas:
   - bluesky
 
