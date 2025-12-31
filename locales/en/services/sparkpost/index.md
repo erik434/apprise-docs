@@ -19,7 +19,7 @@ For each domain you set up with them, you'll be able access them all from your d
 
 ### Syntax
 
-Valid syntaxes are as follows:
+Valid syntax is as follows:
 
 - `sparkpost://{user}@{domain}/{apikey}/`
 - `sparkpost://{user}@{domain}/{apikey}/{email}/`

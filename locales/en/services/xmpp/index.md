@@ -18,7 +18,7 @@ pip install sleekxmpp
 
 ### Syntax
 
-Valid syntaxes are as follows:
+Valid syntax is as follows:
 
 - `xmpp://{user}/{password}@{hostname}`
 - `xmpps://{user}/{password}@{hostname}`

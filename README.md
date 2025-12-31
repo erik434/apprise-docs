@@ -159,13 +159,15 @@ Examples include:
 - Screenshots without language-specific text
 
 In Markdown, global assets should be referenced using absolute paths:
-````md
+
+```md
 ![Apprise Logo](/assets/apprise-logo.png)
-````
+```
 
 ### Service-Specific Assets
 
 Service-specific assets belong alongside the service documentation:
+
 ```
 services/<service>/
 ├── index.md
@@ -174,9 +176,10 @@ services/<service>/
 ```
 
 These assets should be referenced using relative paths:
-````md
+
+```md
 ![Service Logo](images/logo.svg)
-````
+```
 
 Only include assets that are directly relevant to the service.
 

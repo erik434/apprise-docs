@@ -27,7 +27,7 @@ From here you have two options, you can directly pass the Notica URL into appris
 
 ### Syntax
 
-Valid syntaxes are as follows:
+Valid syntax is as follows:
 
 - `https://notica.us/?{token}`
 - `notica://{token}`

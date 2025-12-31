@@ -18,7 +18,7 @@ The official [Notifications app](https://github.com/nextcloud/notifications) wil
 
 Secure connections (via https) should be referenced using **nclouds://** where as insecure connections (via http) should be referenced via **ncloud://**.
 
-Valid syntaxes are as follows:
+Valid syntax is as follows:
 
 - `ncloud://{hostname}/{targets}`
 - `ncloud://{hostname}:{port}/{targets}`

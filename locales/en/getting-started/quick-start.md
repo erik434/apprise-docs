@@ -19,13 +19,13 @@ pip install apprise
 
 - RedHat/Rocky/Oracle:
 
-```
-## Enable EPEL Repositories:
-sudo dnf install epel-release
+  ```bash
+  ## Enable EPEL Repositories:
+  sudo dnf install epel-release
 
-# Now Install Apprise:
-sud dnf install apprise
-```
+  # Now Install Apprise:
+  sud dnf install apprise
+  ```
 
 ### Docker
 

@@ -18,7 +18,7 @@ The official [Nextcloud Talk app](https://github.com/nextcloud/spreed) will need
 
 Secure connections (via https) should be referenced using **nctalks://** where as insecure connections (via http) should be referenced via **nctalk://**.
 
-Valid syntaxes are as follows:
+Valid syntax is as follows:
 
 - `nctalk://{user}:{password}@{hostname}/{room_id}`
 - `nctalk://{user}:{password}@{hostname}:{port}/{room_id}`

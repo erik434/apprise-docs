@@ -16,7 +16,7 @@ Get yourself an API Key from [their website](https://popcornnotify.com/) and you
 
 ### Syntax
 
-Valid syntaxes are as follows:
+Valid syntax is as follows:
 
 - `popcorn://{ApiKey}/{PhoneNo}/`
 - `popcorn://{ApiKey}/{PhoneNo1}/{PhoneNo2}/{PhoneNoN}/`

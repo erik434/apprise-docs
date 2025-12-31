@@ -21,7 +21,7 @@ The last thing you need is to generate an **API Key** with at least the **Mail S
 
 ### Syntax
 
-Valid syntaxes are as follows:
+Valid syntax is as follows:
 
 - `{schema}://{apikey}:{from_email}`
 - `{schema}://{apikey}:{from_email}/{to_email}`

@@ -39,7 +39,7 @@ mmost://localhost:8065/yokkutpah3r3urc5h6i969yima
 
 ### Syntax
 
-Valid syntaxes are as follows:
+Valid syntax is as follows:
 
 - `mmost://{hostname}/{token}`
 - `mmost://{hostname}:{port}/{token}`

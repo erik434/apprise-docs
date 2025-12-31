@@ -23,7 +23,7 @@ sample_urls:
 
 ## Syntax
 
-Valid syntaxes are as follows:
+Valid syntax is as follows:
 
 - `gotify://{hostname}/{token}`
 - `gotifys://{hostname}/{token}`

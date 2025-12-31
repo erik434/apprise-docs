@@ -17,7 +17,7 @@ Once you have an account and access to [your dashboard](https://app.sendpulse.co
 
 ### Syntax
 
-Valid syntaxes are as follows:
+Valid syntax is as follows:
 
 - `{schema}://{user}@{host}/{client_id}/{client_secret}`
 - `{schema}://{user}@{host}/{client_id}/{client_secret}/{to_email}`

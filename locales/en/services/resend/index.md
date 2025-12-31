@@ -21,7 +21,7 @@ The last thing you need is to generate an **API Key** with at least the **Sendin
 
 ### Syntax
 
-Valid syntaxes are as follows:
+Valid syntax is as follows:
 
 - `resend://{apikey}:{from_email}`
 - `resend://{apikey}:{from_email}/{to_email}`

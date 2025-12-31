@@ -14,7 +14,7 @@ Prowl requires users to pre-register themselves at [prowlapp.com](https://www.pr
 
 ### Syntax
 
-Valid syntaxes are as follows:
+Valid syntax is as follows:
 
 - `prowl://{apikey}`
 - `prowl://{apikey}/{providerkey}`

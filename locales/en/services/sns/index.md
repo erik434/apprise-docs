@@ -29,7 +29,7 @@ If you want to take advantage of sending your notifications to _topics_: from th
 
 ### Syntax
 
-Valid syntaxes are as follows:
+Valid syntax is as follows:
 
 - **sns**://**{AccessKeyID}**/**{AccessKeySecret}**/**{Region}**/+**{PhoneNo}**
 - **sns**://**{AccessKeyID}**/**{AccessKeySecret}**/**{Region}**/+**{PhoneNo1}**/+**{PhoneNo2}**/+**{PhoneNoN}**

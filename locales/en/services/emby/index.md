@@ -23,7 +23,7 @@ sample_urls:
 
 ## Syntax
 
-Valid syntaxes are as follows:
+Valid syntax is as follows:
 
 - `emby://{hostname}`
 - `emby://{hostname}:{port}`

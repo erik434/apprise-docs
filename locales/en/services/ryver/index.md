@@ -39,7 +39,7 @@ The last part of the URL you're given is the token we're most interested in. Wit
 
 ### Syntax
 
-Valid syntaxes are as follows:
+Valid syntax is as follows:
 
 - `https://{organization}.ryver.com/application/webhook/{token}`
 - `ryver://{organization}/{token}/`

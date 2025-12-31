@@ -34,7 +34,7 @@ In the above example the **WebhookID** is `b1lUk7b9LpGakJARKBwRIZ`. You will nee
 
 ## Syntax
 
-Valid syntaxes are as follows:
+Valid syntax is as follows:
 
 - `https://maker.ifttt.com/use/{WebhookID}`
 - `ifttt://{WebhookID}@{Event}/`

@@ -26,7 +26,7 @@ Upon creating a bot successfully, you'll now be able to access it's API Token.
 
 ### Syntax
 
-Valid syntaxes are as follows:
+Valid syntax is as follows:
 
 - **zulip**://**{botname}**@**{organization}**/**{token}**/
 - **zulip**://**{botname}**@**{organization}**/**{token}**/**{stream}**

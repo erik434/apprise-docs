@@ -60,7 +60,7 @@ Both OAuth tokens you are provided have the ability to post text to channels and
 
 ### Syntax
 
-Valid syntaxes are as follows:
+Valid syntax is as follows:
 
 - `slack://{tokenA}/{tokenB}/{tokenC}`
 - `https://hooks.slack.com/services/{tokenA}/{tokenB}/{tokenC}`
@@ -74,14 +74,14 @@ Now if you're using the legacy webhook method (and not going through the App), y
 - `slack://{OAuthToken}/#{channel}`
 - `slack://{botname}@{OAuthToken}/#{channel1}/#{channel2}/#{channelN}`
 
-If you know the _Encoded-ID_ of the channel you wish to access, you can use the plus (+) symbol to identify these separately from channels in the url. Valid syntaxes are as follows:
+If you know the _Encoded-ID_ of the channel you wish to access, you can use the plus (+) symbol to identify these separately from channels in the url. Valid syntax is as follows:
 
 - `slack://{botname}@{tokenA}/{tokenB}/{tokenC}/+{encoded_id}`
 - `slack://{botname}@{tokenA}/{tokenB}/{tokenC}/+{encoded_id1}/+{encoded_id2}/+{encoded_id3}`
 - `slack://{botname}@{OAuthToken}/+{encoded_id}`
 - `slack://{botname}@{OAuthToken}/+{encoded_id1}/+{encoded_id2}/+{encoded_id3}`
 
-If you know the user_id you wish to transmit your slack notification to (instead of a channel), you can use the at symbol (@) to do this with. Valid syntaxes are as follows:
+If you know the user_id you wish to transmit your slack notification to (instead of a channel), you can use the at symbol (@) to do this with. Valid syntax is as follows:
 
 - `slack://{botname}@{tokenA}/{tokenB}/{tokenC}/@{user_id}`
 - `slack://{botname}@{tokenA}/{tokenB}/{tokenC}/@{user_id1}/@{user_id2}/@{user_id3}`

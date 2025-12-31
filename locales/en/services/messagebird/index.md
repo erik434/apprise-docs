@@ -16,7 +16,7 @@ To use MessageBird, you will need to acquire your _API Key_. This is accessible 
 
 ### Syntax
 
-Valid syntaxes are as follows:
+Valid syntax is as follows:
 
 - **msgbird**://**{ApiKey}**/**{FromPhoneNo}**
 - **msgbird**://**{ApiKey}**/**{FromPhoneNo}**/**{ToPhoneNo}**

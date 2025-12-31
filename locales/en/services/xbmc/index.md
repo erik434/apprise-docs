@@ -14,7 +14,7 @@ description: "Send xbmc notifications."
 
 ### Syntax
 
-Valid syntaxes are as follows:
+Valid syntax is as follows:
 
 - **xbmc**://**{hostname}**
 - **xbmc**://**{hostname}**:**{port}**

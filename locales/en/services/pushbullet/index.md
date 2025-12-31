@@ -17,7 +17,7 @@ Pushbullet accounts are free; the Pro extension is optional and grants you a lar
 
 ### Syntax
 
-Valid syntaxes are as follows:
+Valid syntax is as follows:
 
 - **pbul**://**{accesstoken}**
 - **pbul**://**{accesstoken}**/**{device_id}**

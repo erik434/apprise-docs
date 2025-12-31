@@ -1,31 +1,45 @@
 ---
-title: "kodi Notifications"
-description: "Send kodi notifications."
+title: "Kodi Notifications"
+description: "Send Kodi notifications."
+sidebar:
+  label: "Kodi"
+
+source: http://kodi.tv/
+
+schemas:
+  - kodi: insecure
+  - kodis
+
+sample_urls:
+  - kodis://{hostname}
+  - kodi://{hostname}:{port}
+  - kodi://{userid}:{password}@{hostname}
+  - kodis://{userid}:{password}@{hostname}:{port}
+
+
+limits:
+  max_chars: 250
+
 ---
 
-## KODI Notifications
+<!-- SERVICE:DETAILS -->
 
-- **Source**: <http://kodi.tv/>
-- **Icon Support**: No
-- **Message Format**: Text
-- **Message Limit**: 250 Characters per message
+## Syntax
 
-### Syntax
+Valid syntax is as follows:
 
-Valid syntaxes are as follows:
-
-- **kodi**://**{hostname}**
-- **kodi**://**{hostname}**:**{port}**
-- **kodi**://**{userid}**:**{password}**@**{hostname}**
-- **kodi**://**{userid}**:**{password}**@**{hostname}**:**{port}**
-- **kodis**://**{hostname}**
-- **kodis**://**{hostname}**:**{port}**
-- **kodis**://**{userid}**:**{password}**@**{hostname}**
-- **kodis**://**{userid}**:**{password}**@**{hostname}**:**{port}**
+- `kodi://{hostname}`
+- `kodi://{hostname}:{port}`
+- `kodi://{userid}:{password}@{hostname}`
+- `kodi://{userid}:{password}@{hostname}:{port}`
+- `kodis://{hostname}`
+- `kodis://{hostname}:{port}`
+- `kodis://{userid}:{password}@{hostname}`
+- `kodis://{userid}:{password}@{hostname}:{port}`
 
 Secure connections (via https) should be referenced using **kodis://** where as insecure connections (via http) should be referenced via **kodi://**.
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable | Required | Description                                                                                                               |
 | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------- |
@@ -34,7 +48,10 @@ Secure connections (via https) should be referenced using **kodis://** where as 
 | userid   | No       | The account login to your KODI server.                                                                                    |
 | password | No       | The password associated with your KODI Server.                                                                            |
 
-#### Example
+
+<!-- GLOBAL:SERVICE:PARAMS -->
+
+## Example
 
 Send a Kodi notification to our server listening on port 80:
 

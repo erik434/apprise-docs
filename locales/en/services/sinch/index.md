@@ -18,7 +18,7 @@ You'll need to have a number defined as an Active Number ([from your dashboard h
 
 ### Syntax
 
-Valid syntaxes are as follows:
+Valid syntax is as follows:
 
 - `sinch://{ServicePlanID}:{ApiToken}@{FromPhoneNo}/{PhoneNo}`
 - `sinch://{ServicePlanID}:{ApiToken}@{FromPhoneNo}/{PhoneNo1}/{PhoneNo2}/{PhoneNoN}`
