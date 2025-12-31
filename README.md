@@ -137,7 +137,48 @@ Service logos are optional, but encouraged when an official logo is available.
 
 If present, logos are automatically rendered on the service page.
 
----
+## Assets
+
+This repository supports two types of assets:
+
+### Global Assets
+
+Global assets live under:
+
+```text
+locales/<locale>/assets/
+```
+
+These assets are shared across documentation pages within the same locale
+and are automatically published to the documentation site during sync.
+
+Examples include:
+
+- Shared diagrams
+- Project logos
+- Screenshots without language-specific text
+
+In Markdown, global assets should be referenced using absolute paths:
+````md
+![Apprise Logo](/assets/apprise-logo.png)
+````
+
+### Service-Specific Assets
+
+Service-specific assets belong alongside the service documentation:
+```
+services/<service>/
+├── index.md
+└── images/
+    └── logo.svg
+```
+
+These assets should be referenced using relative paths:
+````md
+![Service Logo](images/logo.svg)
+````
+
+Only include assets that are directly relevant to the service.
 
 ## Service Page Template
 
