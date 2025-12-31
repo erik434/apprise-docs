@@ -48,7 +48,7 @@ Secure connections (via https) should be referenced using **embys://** where as 
 
 <!-- GLOBAL:SERVICE:PARAMS -->
 
-## Example
+## Examples
 
 Send a Emby notification to our server listening on port 8096:
 

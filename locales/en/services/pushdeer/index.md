@@ -32,7 +32,7 @@ Valid syntax is as follows:
 | hostname | No       | Custom Service Host                                   |
 | port     | No       | Custom Service Port                                   |
 
-#### Example
+## Examples
 
 Send a PushDeer notification
 

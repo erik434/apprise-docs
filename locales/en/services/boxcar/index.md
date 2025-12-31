@@ -38,7 +38,7 @@ Each _project_ you create with them will grant you access to your own unique **A
 
 ## Syntax
 
-Valid authentication syntaxes are as follows:
+Valid syntax is as follows:
 
 - `boxcar://{access_key}/{secret_key}`
 
@@ -67,7 +67,7 @@ You can also form any combination of the above and perform updates from one url:
 
 <!-- GLOBAL:SERVICE:PARAMS -->
 
-## Example
+## Examples
 
 Send a Boxcar notification to all devices associated with a project:
 

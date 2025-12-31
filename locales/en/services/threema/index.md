@@ -24,7 +24,7 @@ You need to set up a [Threema Gateway](https://gateway.threema.ch/) account firs
   - OR acquire them after logging into your Gateway account.
 - [Request](https://gateway.threema.ch/en/id-request?type=simple) your Simple Gateway ID. After a short review, Threema will then create your ID, and you will find the corresponding ID secret on the ID overview page. This usually takes no more than one or two business days.
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -39,7 +39,7 @@ You can also freely mix/match the variables:
 
 - `threema://{gateway_id}@{secret}/{phone1}/{user1}/{email1}/...`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable   | Required | Description                                                                                                                                                                 |
 | ---------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -47,7 +47,7 @@ You can also freely mix/match the variables:
 | secret     | Yes      | The ID secret associated with your Gateway ID. You may use `?secret=` as an alias to this variable.                                                                         |
 | target     | No       | Specfiy the recipient Threema ID, e-mail address, or phone no. There is no limit to the number of targets you may specify. You may use `?to=` as an alias to this variable. |
 
-#### Example
+## Examples
 
 Send a Threema (Gateway) Simple Notification
 

@@ -11,11 +11,11 @@ description: "Send sendpulse notifications."
 - **Message Format**: Text
 - **Message Limit**: 32768 Characters per message
 
-### Account Setup
+## Account Setup
 
 Once you have an account and access to [your dashboard](https://app.sendpulse.com/). You will need to ensure you acquire your Client ID and Client Secret in order to construct the Apprise URLs
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -31,7 +31,7 @@ If you want to take advantage of the `dynamic_template_data` variables, just cre
 
 - `sendpulse://{user}@{host}/{client_id}/{client_secret}/{to_email}?template={template_int}&+{sub1}=value&+{sub2}=value2`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable      | Required | Description                                                                                                                                       |
 | ------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -54,7 +54,7 @@ Consider the following template: `1234`
 An Apprise URL might look like:<br/>
 `sendpulse://user@example.com?template=1234&+what=templates&+app=Apprise`
 
-#### Example
+## Examples
 
 Send a SendPulse notification:
 

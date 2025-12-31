@@ -118,7 +118,7 @@ A Public post can be referenced like so:
 
 <!-- GLOBAL:SERVICE:PARAMS -->
 
-## Example
+## Examples
 
 Send a X DM to @testaccount:
 

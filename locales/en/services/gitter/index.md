@@ -44,7 +44,7 @@ Valid syntax is as follows:
 - `gitter://{token}/{room1}/{room2}/{roomN}/`
 - `gitter://{token}/{room}/?image=Yes`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable | Required | Description                                                                                                                                                        |
 | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -55,7 +55,7 @@ Valid syntax is as follows:
 
 <!-- GLOBAL:SERVICE:PARAMS -->
 
-## Example
+## Examples
 
 Send a Gitter notification to the channel _apprise/community_:
 

@@ -1,27 +1,41 @@
 ---
-title: "matrix Notifications"
-description: "Send matrix notifications."
+title: "Matrix Notifications"
+description: "Send Matrix notifications."
+sidebar:
+  label: "Matrix"
+
+source: https://matrix.org/
+
+schemas:
+  - matrix: insecure
+  - matrixs
+
+has_image: true
+has_attachments: true
+
+sample_urls:
+  - matrix://{user}:{password}@{hostname}/#{room_alias}
+  - matrixs://{user}:{password}@{hostname}/!{room_id}
+
+limits:
+  max_chars: 65000
 ---
 
-## Matrix Notifications
+<!-- SERVICE:DETAILS -->
 
-- **Source**: <https://matrix.org/>
-- **Icon Support**: Yes
-- **Attachment Support**: Yes
-- **Message Format**: Text
-- **Message Limit**: 65000 Characters per message
+## Account Setup
 
 By default the Apprise Integration of Matrix occurs using it's built in API.
 
 However, [the webhook service](https://matrix.org/docs/projects/bot/matrix-webhook.html) also works for those wishing to use it too. At the time, this is still identified as being in it's _late beta_ state.
 This can be done by specifying **?mode=matrix** or **?mode=slack**. Presuming you've [set it up](https://github.com/turt2live/matrix-appservice-webhooks).
 
-### Syntax
+## Syntax
 
-Valid syntax's are as follows:
+Valid syntax is as follows:
 
-- `matrix://{user}:{password}@{matrixhost}/#{room_alias}`
-- `matrixs://{user}:{password}@{matrixhost}/!{room_id}`
+- `matrix://{user}:{password}@{hostname}/#{room_alias}`
+- `matrixs://{user}:{password}@{hostname}/!{room_id}`
 
 You can mix and match as many rooms as you wish:
 
@@ -52,7 +66,7 @@ You can also just use the t2bot URL as they share it with you from their website
 
 - `https://webhooks.t2bot.io/api/v1/matrix/hook/{t2bot_webhook_token}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable            | Required | Description                                                                                                                                                                                                                                                                                                   |
 | ------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -70,7 +84,9 @@ You can also just use the t2bot URL as they share it with you from their website
 
 **Note**: If neither a **{room_alias}** or a **{room_id}** is specified on the URL then upon connecting to the matrix server, a list of currently joined channels will be polled. Each and every channel the account is currently part of will automatically be notified.
 
-#### Example
+<!-- GLOBAL:SERVICE:PARAMS -->
+
+## Examples
 
 Send a secure Matrix.org notification to our server
 

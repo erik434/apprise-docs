@@ -53,7 +53,7 @@ Valid syntax is as follows:
 
 <!-- GLOBAL:SERVICE:PARAMS -->
 
-## Example
+## Examples
 
 Send a simple message:
 

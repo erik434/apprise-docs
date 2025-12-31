@@ -11,13 +11,13 @@ description: "Send sparkpost notifications."
 - **Message Format**: Text
 - **Message Limit**: 32768 Characters per message
 
-### Account Setup
+## Account Setup
 
 You can create an account for free [on their website](https://sparkpost.com/) but it comes with restrictions.
 
 For each domain you set up with them, you'll be able access them all from your dashboard once you're signed in. You'll need to generate an API key and grant it `transmission` access.
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -40,7 +40,7 @@ If you wish to utilize extensions, you'll need to escape the addition/plus (+) c
 
 The Carbon Copy (**cc=**) and Blind Carbon Copy (**bcc=**) however are applied to each email sent. Hence if you send an email to 3 target users, the entire _cc_ and _bcc_ lists will be part of all 3 emails.
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable | Required | Description                                                                                                                                                                                                                                          |
 | -------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -55,7 +55,7 @@ The Carbon Copy (**cc=**) and Blind Carbon Copy (**bcc=**) however are applied t
 | cc       | No       | Carbon Copy email address(es). More than one can be separated with a space and/or comma.                                                                                                                                                             |
 | bcc      | No       | Blind Carbon Copy email address(es). More than one can be separated with a space and/or comma.                                                                                                                                                       |
 
-#### Example
+## Examples
 
 Send a sparkpost notification to the email address `bill.gates@microsoft.com`
 

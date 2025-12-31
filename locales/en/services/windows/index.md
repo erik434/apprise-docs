@@ -19,19 +19,21 @@ You may have to install a dependency on your windows system to get this to work.
 pip install pywin32
 ```
 
-### Syntax
+## Syntax
 
-There are currently no options you can specify for this kind of notification, so it's really easy to reference:
+There are currently no options you can specify for this kind of notification, so it's really easy to reference.
+
+Valid syntax is as follows:
 
 - **windows**://
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable | Required | Description                                                                                       |
 | -------- | -------- | ------------------------------------------------------------------------------------------------- |
 | duration | No       | Optionally set the duration of the popup message in seconds. By default this value is set to `12` |
 
-#### Example
+## Examples
 
 Assuming we're on a Windows computer, we can send a Windows Notification to ourselves:
 

@@ -28,14 +28,14 @@ The token portion at the end is the only value Apprise requires.
 
 Apprise supports both the full native webhook and a simplified URL form.
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
 - `https://push.spug.dev/send/{token}`
 - `spugpush://{token}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable | Required | Description                                                          |
 | -------- | -------- | -------------------------------------------------------------------- |
@@ -43,7 +43,7 @@ Valid syntax is as follows:
 
 You may also use the query format: `spugpush://?token=YOUR_TOKEN`.
 
-### Examples
+## Examples
 
 #### 1. Using the simplified Apprise URL
 

@@ -13,13 +13,13 @@ description: "Send pushy notifications."
 
 You need to have an account with [Pushy](https://pushy.me/) and create an App.
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
 - `pushy://{apikey}/{targets}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable | Required | Description                                                                                                                                                          |
 | -------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -28,7 +28,7 @@ Valid syntax is as follows:
 | sound    | No       | Optionally specify a sound you defined such as `alarm.aiff`.                                                                                                         |
 | badge    | No       | Provide a numerical value of 0 (zero) or greater to associate a badge with the bark icon on the iOS device.                                                          |
 
-#### Example
+## Examples
 
 Send a Pushy notification:
 

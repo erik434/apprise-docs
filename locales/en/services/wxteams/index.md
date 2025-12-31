@@ -10,7 +10,7 @@ description: "Send wxteams notifications."
 - **Message Format**: Markdown
 - **Message Limit**: 1000 Characters per message
 
-### Account Setup
+## Account Setup
 
 To use this plugin, you need to first access <https://teams.webex.com> and make yourself an account if you don't already have one. You'll want to create at least one 'space' before getting the 'incoming webhook'.
 
@@ -39,7 +39,7 @@ So as you can see, we have is 3 separate tokens. These are what you need to buil
 
 **Note:** Apprise supports this URL _as-is_ (_as of v0.7.7_); you no longer need to parse the URL any further. However there is slightly less overhead (internally) if you do.
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -48,13 +48,13 @@ Valid syntax is as follows:
 - `wxteams://{token}/`
 - `webex://{token}/`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable | Required | Description                                                    |
 | -------- | -------- | -------------------------------------------------------------- |
 | token    | Yes      | The tokens provided to you after creating a _incoming-webhook_ |
 
-#### Example
+## Examples
 
 Send a Webex Teams notification:
 

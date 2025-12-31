@@ -10,11 +10,11 @@ description: "Send popcornnotify notifications."
 - **Message Format**: Text
 - **Message Limit**: 32768 Characters per message
 
-### Account Setup
+## Account Setup
 
 Get yourself an API Key from [their website](https://popcornnotify.com/) and you're already to use the service.
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -27,7 +27,7 @@ You can mix and match the information too:
 
 - `popcorn://{ApiKey}/{PhoneNo1}/{Email1}/{EmailN}/{PhoneNoN}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable | Required | Description                                                                                                                                                                                                                                                                                                                         |
 | -------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -37,7 +37,7 @@ You can mix and match the information too:
 | to       | No       | This is an alias to the Phone/Email variable.                                                                                                                                                                                                                                                                                       |
 | batch    | No       | PopcornNotify allows a batch mode. If you identify more then one phone number and/or email, you can send all of these targets you identify on the URL in a single shot instead of the normal _Apprise_ approach (which sends them one by one). Enabling batch mode has both it's pro's and cons. By default batch mode is disabled. |
 
-#### Example
+## Examples
 
 Send a PopcornNotify notification as an SMS:
 

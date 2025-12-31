@@ -10,7 +10,7 @@ description: "Send techulus notifications."
 - **Message Format**: Text
 - **Message Limit**: 1000 Characters per message
 
-### Account Setup
+## Account Setup
 
 To use this plugin, you need to first download the mobile app and sign up through there:
 
@@ -22,19 +22,19 @@ You can also just get the **{apikey}** right out of the phone app that is instal
 
 - `b444a40f-3db9-4224-b489-9a514c41c009`
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
 - **push**://**{apikey}**/
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable | Required | Description                                            |
 | -------- | -------- | ------------------------------------------------------ |
 | apikey   | Yes      | The apikey associated with your Techulus Push account. |
 
-#### Example
+## Examples
 
 Send a Techulus Push notification:
 

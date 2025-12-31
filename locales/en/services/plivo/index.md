@@ -11,11 +11,11 @@ description: "Send plivo notifications."
 - **Message Format**: Text
 - **Message Limit**: 140 Characters per message
 
-### Account Setup
+## Account Setup
 
 Signup with Plivo [from here](https://plivo.com). From within your account you can genrate both our **Auth ID** and **Auth Token**
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -27,7 +27,7 @@ Valid syntax is as follows:
 
 **Note**: All Phone Numbers must be in E.164 format (e.g., `+14151234567`)
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable | Required | Description                                                                                                                  |
 | -------- | -------- | ---------------------------------------------------------------------------------------------------------------------------- |
@@ -37,7 +37,7 @@ Valid syntax is as follows:
 | to       | No       | The phone numbers you wish to notify.                                                                                        |
 | batch    | No       | Send multiple specified notifications in a single batch (1 upstream post to the end server). By default this is set to `no`. |
 
-#### Example
+## Examples
 
 Send a Plivo notification:
 

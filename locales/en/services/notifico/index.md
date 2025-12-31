@@ -40,7 +40,7 @@ The last part of the URL you're given make up the 2 arguments that are most impo
 1. **ProjectID** is `2144`
 2. **MessageHook** is `uJmKaBW9WFk42miB146ci3Kj`
 
-# Syntax
+## Syntax
 
 You can directly pass in the native URL as retrieved from the website if you like:
 
@@ -58,7 +58,7 @@ By default Apprise will send a prefix with each message it sends you can turn th
 
 - `notifico://{ProjectID}/{MessageHook}?prefix=off`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable    | Required | Description                                                                                                                                                                                                                                                               |
 | ----------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -67,7 +67,7 @@ By default Apprise will send a prefix with each message it sends you can turn th
 | color       | No       | Uses IRC Coloring to provide a richer experience. It also allows the parsing of IRC colors found in the notification passed in. You must ensure the **Color** Checkbox is selected when setting up your Message Hook for this to work. By default this is set to **Yes**. |
 | prefix      | No       | All messages sent to IRC by default have a Prefix that help identify the type of message (info, error, warning, or success) as well as the system performing the notification. By default this is set to **Yes**.                                                         |
 
-#### Example
+## Examples
 
 Send a Notifico notification
 

@@ -71,7 +71,7 @@ Use `lunaseas://` for a Secure (`https://`) connection and `lunasea://` for Inse
 
 `lsea://` and `lseas://` can also be used as an alias to `lunasee://` and `lunaseas://` (respectively) if you choose.
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable | Required | Description                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -81,7 +81,7 @@ Use `lunaseas://` for a Secure (`https://`) connection and `lunasea://` for Inse
 
 <!-- GLOBAL:SERVICE:PARAMS -->
 
-## Example
+## Examples
 
 Send a LunaSea notification:
 

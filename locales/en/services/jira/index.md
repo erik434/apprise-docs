@@ -29,7 +29,7 @@ limits:
 
 ## Syntax
 
-The syntax is as follows:
+Valid syntax is as follows:
 
 - `jira://{apikey}/`
 - `jira://{apikey}/@{user}`

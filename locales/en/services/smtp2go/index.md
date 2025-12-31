@@ -11,13 +11,13 @@ description: "Send smtp2go notifications."
 - **Message Format**: HTML
 - **Message Limit**: 32768 Characters per message
 
-### Account Setup
+## Account Setup
 
 You can create an account for free [on their website](https://www.smtp2go.com/).
 
 The next step is to simply generate an **API Key** associated with your account (on your Dashboard) [here](https://app.smtp2go.com/settings/apikeys/)/
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -29,7 +29,7 @@ You can adjust what the Name associated with the From email is set to as well:
 
 - `smtp2go://{user}@{domain}/{apikey}/?from=Luke%20Skywalker`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable | Required | Description                                                                                                                                           |
 | -------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -42,7 +42,7 @@ You can adjust what the Name associated with the From email is set to as well:
 | cc       | No       | Identify users you wish to send as a Carbon Copy                                                                                                      |
 | bcc      | No       | Identify users you wish to send as a Blind Carbon Copy                                                                                                |
 
-#### Example
+## Examples
 
 Send a SMTP2Go notification to the email address <bill.gates@microsoft.com>
 

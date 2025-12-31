@@ -3,7 +3,7 @@ title: "Apprise Details()"
 description: "A more indepth look at the Apprise.details() fuction"
 ---
 
-# Apprise details()
+## Introduction
 
 ```python
 {

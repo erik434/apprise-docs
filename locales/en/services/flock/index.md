@@ -41,7 +41,7 @@ Bots are a bit more difficult and presume that you followed their instructions o
 
 ## Syntax
 
-Valid syntax with an _incoming webhook_ are:
+Valid syntax with an _incoming webhook_ is as follows:
 
 - `https://api.flock.com/hooks/sendMessage/{token}`
 - `flock://{token}/`
@@ -70,7 +70,7 @@ Valid syntax with an _application / bot_ are:
 
 <!-- GLOBAL:SERVICE:PARAMS -->
 
-## Example
+## Examples
 
 Send a Flock notification to our channel #nuxref (which is identified as `g:abcd1234efgh`):
 

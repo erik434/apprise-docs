@@ -29,7 +29,7 @@ Make sure you register your Amateur Radio Call Sign and create an account with [
 
 ## Syntax
 
-Valid syntax's are as follows:
+Valid syntax is as follows:
 
 - `dapnet://{userid}:{password}@{callsign}`
 - `dapnet://{userid}:{password}@{callsign1}/{callsign2}/{callsignN}/`

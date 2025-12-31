@@ -28,7 +28,7 @@ https://qmsg.zendee.cn/send/abc123def456ghi789jkl012mno345pq
 
 You can use the full native webhook or a simplified Apprise URL.
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -36,13 +36,13 @@ Valid syntax is as follows:
 - `qq://{token}`
 - `qq://?token={token}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable | Required | Description                                     |
 | -------- | -------- | ----------------------------------------------- |
 | token    | Yes      | Your personal QQ Push token from qmsg.zendee.cn |
 
-### Examples
+## Examples
 
 #### 1. Using the simplified Apprise URL
 

@@ -43,7 +43,7 @@ Let's start from the beginning:
 
 ## Syntax
 
-The valid syntax is as follows:
+Valid syntax is as follows:
 
 - `stride://{auth_token}/{cloud_id}/{convo_id}`
 
@@ -57,7 +57,7 @@ The valid syntax is as follows:
 
 <!-- GLOBAL:SERVICE:PARAMS -->
 
-## Example
+## Examples
 
 Send a Stride notification:
 

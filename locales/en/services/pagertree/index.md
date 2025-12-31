@@ -18,7 +18,7 @@ description: "Send pagertree notifications."
 4. Use the Prefix ID for the apprise URL `./bin/apprise -t test -b message "pagertree://int_xxxxxxxxxx"`
    You need to have an account with [PagerTree](https://pagertree.com) and create a [webhook integration](https://pagertree.com/docs/integration-guides/webhook).
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -26,7 +26,7 @@ Valid syntax is as follows:
 - `pagertree://{integration}?action=resolve&thirdparty_id=abc123`
 - `pagertree://{integration}?+pagertree-token=123&:env=prod&-incident=true&-incident_severity=SEV-1&-incident-message=Please join the bridge&tags=prod,server,outage`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable    | Required | Description                                                                                                                                                                                                                  |
 | ----------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -36,7 +36,7 @@ Valid syntax is as follows:
 | urgency     | No       | Urgency of the alert to be generated. Possible values `silent`, `low`, `medium`, `high`, or `critical`. If not provided, PagerTree will use the integration's default.                                                       |
 | tags        | No       | Comma seperated list of tags. (ex: "prod,server,outage")                                                                                                                                                                     |
 
-#### Example
+## Examples
 
 Send a PagerTree create command.
 

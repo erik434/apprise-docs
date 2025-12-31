@@ -68,7 +68,7 @@ The secure versions:
 - `xmls://{user}:{password}@{hostname}`
 - `xmls://{user}:{password}@{hostname}:{port}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable | Required | Description                                                                                                                                                                    |
 | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |

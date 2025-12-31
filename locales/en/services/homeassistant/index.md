@@ -43,7 +43,7 @@ So by default Apprise will generate a unique ID (thus a separate message) on eve
 
 - `hassio://{host}/{long-lived-access-token}?nid=myid`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable     | Required | Description                                                                                                                                                                    |
 | ------------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |

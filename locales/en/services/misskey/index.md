@@ -1,17 +1,26 @@
 ---
-title: "misskey Notifications"
-description: "Send misskey notifications."
+title: "Misskey Notifications"
+description: "Send Misskey notifications."
+sidebar:
+  label: "Misskey"
+
+source: https://misskey-hub.net/
+
+schemas:
+  - misskey: insecure
+  - misskeys
+
+sample_urls:
+  - misskey://{token}@{host}
+  - misskeys://{token}@{host}
+
+limits:
+  max_chars: 500
 ---
 
-## Misskey Notifications
+<!-- SERVICE:DETAILS -->
 
-- **Source**: <https://misskey-hub.net/>
-- **Attachment Support**: No
-- **Icon Support**: No
-- **Message Format**: Text
-- **Message Limit**: 500
-
-### Account Setup
+## Account Setup
 
 Sign up for any Misskey based service. [Here are a few you can choose from today](https://misskey-hub.net/en/instances.html).
 
@@ -28,7 +37,7 @@ While generating the token:
 
 After you save your changes, you will be provided with the **Access Token** needed to work with Apprise.
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -37,14 +46,16 @@ Valid syntax is as follows:
 
 Simply use `misskey://` if accessing an insecure server and `misskeys://` if accessing a secure one (https). In most cases, you'll likely always be using `misskeys://`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable   | Required | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | ---------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | token      | Yes      | The Access Token associated with the Application you created (in Misskey's Account Settings). Your token MUST have at the bare minimum `write:statuses` access. Additionally provide `write:media` if you intend to provide attachments.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | visibility | No       | The Misskey visibility you want to operate in. Possible values are:<br/>🔴 `public`: your note will be visible to all users and will show up on all timelines (home, local, social, global).<br/>Note: If your account is _silenced_, you cannot set your note visibility to public.<br/>🔴 `home`: Your note will be visible to all users, but will not show up on the local, social or global timeline for non-followers.<br/>🔴 `followers`: Your note will only be visible to those that are following you. The note will show up on all timelines of your followers.<br/>🔴 `specified`: Your note will only be visible to individually specified users. The note will show up on all timelines of the specified users. If you enable this option, your note won't be federated to remote instances. |
 
-#### Example
+<!-- GLOBAL:SERVICE:PARAMS -->
+
+## Examples
 
 Create a Misskey note on the `misskey.sda1.net` server :
 
@@ -65,7 +76,7 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" \
    "misskeys://misskey.sda1.net/abcdefghijklmn?visibility=home"
 ```
 
-### Troubleshooting
+## Troubleshooting
 
 1. `WARNING - Failed to send Misskey notification: Method not allowed., error=405.`
    - If the website is hosted as `http` (insecure) you must use `misskey://` when assembling your Apprise URL where as if the website is `https` (secure hosting) you would use `misskeys://`

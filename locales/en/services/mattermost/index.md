@@ -1,14 +1,30 @@
 ---
-title: "mattermost Notifications"
-description: "Send mattermost notifications."
+title: "Mattermost Notifications"
+description: "Send Mattermost notifications."
+sidebar:
+  label: "Mattermost"
+
+source: https://mattermost.com/
+
+schemas:
+  - mmost: insecure
+  - mmosts
+
+has_image: true
+
+sample_urls:
+  - mmosts://{hostname}/{token}
+  - mmosts://{botname}@{hostname}/{token}
+  - mmost://{botname}@{hostname}:{port}/{token}
+  - mmosts://{botname}@{hostname}:{port}/{path}/{token}
+
+limits:
+  max_chars: 4000
 ---
 
-## Mattermost Notifications
+<!-- SERVICE:DETAILS -->
 
-- **Source**: <https://mattermost.com/>
-- **Icon Support**: Yes
-- **Message Format**: Text
-- **Message Limit**: 4000 Characters per message
+## Account Setup
 
 To use this plugin, you need to first set yourself up with <http://mattermost.com>. Download their software and set it up.
 
@@ -37,7 +53,7 @@ http://localhost:8065/hooks/yokkutpah3r3urc5h6i969yima
 mmost://localhost:8065/yokkutpah3r3urc5h6i969yima
 ```
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -48,7 +64,7 @@ Valid syntax is as follows:
 - `mmost://{hostname}/{path}/{token}`
 - `mmost://{hostname}:{port}/{path}/{token}`
 - `mmost://{botname}@{hostname}/{path}/{token}`
-- `mmost://{botname}@{hostname}:{port}/{{path}/token}`
+- `mmost://{botname}@{hostname}:{port}/{path}/{token}`
 
 Secure connections (via https) should be referenced using **mmosts://** where as insecure connections (via http) should be referenced via **mmost://**; they follow the same structure:
 
@@ -59,9 +75,9 @@ Secure connections (via https) should be referenced using **mmosts://** where as
 - `mmosts://{hostname}/{path}/{token}`
 - `mmosts://{hostname}:{port}/{path}/{token}`
 - `mmosts://{botname}@{hostname}/{path}/{token}`
-- `mmosts://{botname}@{hostname}:{port}/{{path}/token}`
+- `mmosts://{botname}@{hostname}:{port}/{path}/{token}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable | Required | Description                                                                                                                                                                                                                                                                               |
 | -------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -73,7 +89,9 @@ Secure connections (via https) should be referenced using **mmosts://** where as
 | image    | No       | Identify whether or not you want the Apprise image (showing status color) to display with every message or not. By default this is set to **yes**.                                                                                                                                        |
 | channels | No       | You can optionally specify as many channels as you want in a comma separated value (as a keyword argument). See example below for how to use this. You must also not restrict your **Incoming Webhook** to only focus on a specific channel or providing alternatives here will not work. |
 
-#### Example
+<!-- GLOBAL:SERVICE:PARAMS -->
+
+## Examples
 
 Send a secure Mattermost notification to our server
 

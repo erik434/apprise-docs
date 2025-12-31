@@ -11,24 +11,24 @@ description: "Send pushme notifications."
 - **Message Format**: Text
 - **Message Limit**: 32768 Characters per message
 
-### Account Setup
+## Account Setup
 
 You need to have an account with [PushMe](https://push.i-i.me/) and have downloaded the Phone App.
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
 - `pushme://{token}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable | Required | Description                                                                                                                                      |
 | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | token    | Yes      | This is the **push_key** associated with your PushMe Account                                                                                     |
 | status   | No       | Optionally include a small little ASCII string representing the notification status being sent (inline with it) by default this is set to `yes`. |
 
-#### Example
+## Examples
 
 Send a PushMe notification:
 

@@ -44,9 +44,9 @@ Valid syntax is as follows:
 | ToPhoneNo | No       | A phone number to send your notification to                                                               |
 | Secret    | No       | The optional secret key to associate with the message signing                                             |
 
-## Example<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- GLOBAL:SERVICE:PARAMS -->
 
-## Example
+## Examples
 
 Send an SMS message via DingTalk:
 

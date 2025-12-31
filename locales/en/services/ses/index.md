@@ -10,7 +10,7 @@ description: "Send ses notifications."
 - **Message Format**: Text
 - **Message Limit**: 32768 Characters per message
 
-### Account Setup
+## Account Setup
 
 You'll need to create an account with Amazon Web Service (AWS) first to use this. If you don't have one, you'll need your credit card (even though the first 12 months are free). Alternatively, if you already have one (or are using it through your company), you're good to go to the next step.
 
@@ -27,14 +27,14 @@ You now have all the tools you need to send SES (Email) messages.
 
 If you want to take advantage of sending your notifications to _topics_: from the [AWS Management Console](https://console.aws.amazon.com) search for **Simple Notification Service** under the _AWS services_ section and configure as many topics as you want. You'll be able to reference them as well using this notification service.
 
-### Syntax
+## Syntax
 
-The syntax is as follows:
+Valid syntax is as follows:
 
 - `ses://{from}/{aws_access_key}/{aws_secret_key}/{region}/`
 - `ses://{from}/{aws_access_key}/{aws_secret_key}/{region}/{ToEmail1}/{ToEmail2}/{ToEmailN}/`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable      | Required | Description                                                                                                                                                                               |
 | ------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -49,7 +49,7 @@ The syntax is as follows:
 | cc            | No       | Carbon Copy email address(es). More than one can be separated with a space and/or comma.                                                                                                  |
 | bcc           | No       | Blind Carbon Copy email address(es). More than one can be separated with a space and/or comma.                                                                                            |
 
-#### Example
+## Examples
 
 Send a AWS SES notification (Email):
 

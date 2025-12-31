@@ -1,16 +1,27 @@
 ---
-title: "msteams Notifications"
-description: "Send msteams notifications."
+title: "Microsoft Teams Notifications"
+description: "Send Microsoft Teams notifications."
+sidebar:
+  label: "Microsoft Teams"
+
+source: https://teams.microsoft.com
+
+schemas:
+  - msteams
+
+has_image: true
+
+sample_urls:
+  - https://team-name.office.com/webhook/{tokenA}/IncomingWebhook/{tokenB}/{tokenC}
+  - msteams://{team}/{tokenA}/{tokenB}/{tokenC}/
+
+limits:
+  max_chars: 1000
 ---
 
-## Microsoft Teams Notifications
+<!-- SERVICE:DETAILS -->
 
-- **Source**: <https://teams.microsoft.com>
-- **Icon Support**: Yes
-- **Message Format**: Markdown
-- **Message Limit**: 1000 Characters per message
-
-### Account Setup
+## Account Setup
 
 Create a free account at <https://teams.microsoft.com>.
 
@@ -20,7 +31,7 @@ Alternatively, go to the channel where you want to add the webhook and select â€
 
 When you've completed this, it will generate you a URL that looks like:
 
-```
+```text
 https://team-name.office.com/webhook/ \
        abcdefgf8-2f4b-4eca-8f61-225c83db1967@abcdefg2-5a99-4849-8efc-\
         c9e78d28e57d/IncomingWebhook/291289f63a8abd3593e834af4d79f9fe/\
@@ -33,7 +44,7 @@ Yes... The URL is that big... but at the end of the day this effectively equates
 Hence:
 The team name can be found in the generated webhook which looks like:
 
-```
+```text
 # https://TEAM-NAME.office.com/webhook/ABCD/IncomingWebhook/DEFG/HIJK
 #             ^                         ^                    ^    ^
 #             |                         |                    |    |
@@ -42,7 +53,7 @@ The team name can be found in the generated webhook which looks like:
 
 vs the legacy URL which looked like (always stating `outlook` as the team name):
 
-```
+```text
 # https://outlook.office.com/webhook/ABCD/IncomingWebhook/DEFG/HIJK
 #           ^                         ^                    ^    ^
 #           |                         |                    |    |
@@ -59,7 +70,7 @@ So as you can see, we have is 3 separate tokens. These are what you need to buil
 
 **Note:** Apprise supports this URL _as-is_ (_as of v0.7.7_); you no longer need to parse the URL any further. However there is slightly more overhead (internally) if you do use it this way.
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -70,7 +81,7 @@ The Legacy format is also still supported. The below URL would automatically set
 
 - `msteams://{tokenA}/{tokenB}/{tokenC}/`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable | Required | Description                                                                                                                                                                                                                               |
 | -------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -80,7 +91,9 @@ The Legacy format is also still supported. The below URL would automatically set
 | tokenC   | Yes      | The last part of 3 tokens provided to you after creating a _incoming-webhook_                                                                                                                                                             |
 | template | No       | Optionally point to your own custom JSON formatted Microsoft Teams **MessageCard**; [See here for details on their formatting](https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/connectors-using). |
 
-#### Example
+<!-- GLOBAL:SERVICE:PARAMS -->
+
+## Examples
 
 Send a Microsoft Teams notification:
 

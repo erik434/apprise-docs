@@ -34,10 +34,12 @@ You will need to have a valid Microsoft Personal Account AND you will require Ad
 
 ## Syntax
 
+Valid syntax is as follows:
+
 - `o365://{source}/{tenant_id}/{client_id}/{client_secret}/`
 - `o365://{source}/{tenant_id}/{client_id}/{client_secret}/{targets}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable      | Required | Description                                                                                                                                                            |
 | ------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -58,7 +60,7 @@ You will need to have a valid Microsoft Personal Account AND you will require Ad
     - `?` with `%3F`
     - `@` with `%40`
 
-#### Example
+## Examples
 
 Send a email notification to our your Office 365 account:
 

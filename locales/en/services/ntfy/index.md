@@ -13,7 +13,7 @@ description: "Send Ntfy (Notify) notifications."
 
 [Ntfy](https://ntfy.sh/) is a easy to use messaging service.
 
-### Syntax
+## Syntax
 
 Ntfy can send notifications through the following **modes**:
 
@@ -46,7 +46,7 @@ You can specify more then 1 topic such as:
 
 - **ntfy**://**{user}**:**{password}**/**{hostname}**/**{topic1}**/**{topic2}**
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable   | Required | Description                                                                                                                                                                                                                                     |
 | ---------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -69,7 +69,7 @@ You can specify more then 1 topic such as:
 | image      | No       | This defaults to 'Yes' and hauls in the image associated with the notification                                                                                                                                                                  |
 | avatar_url | No       | Optionally over-ride the Apprise Icon notifications and explicitly identify your own                                                                                                                                                            |
 
-#### Example
+## Examples
 
 Send a ntfy notification to our server
 

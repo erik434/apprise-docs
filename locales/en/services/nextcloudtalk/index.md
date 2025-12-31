@@ -1,20 +1,30 @@
 ---
-title: "nextcloudtalk Notifications"
-description: "Send nextcloudtalk notifications."
+title: "Nextcloud Talk Notifications"
+description: "Send Nextcloud Talk notifications."
+sidebar:
+  label: "Nextcloud Talk"
+
+source: https://nextcloud.com/talk
+
+schemas:
+  - nctalk: insecure
+  - nctalks
+
+sample_urls:
+  - nctalk://{user}:{password}@{hostname}/{room_id}
+  - nctalks://{user}:{password}@{hostname}:{port}/{room_id}
+
+limits:
+  max_chars: 32000
 ---
 
-## Nextcloud Talk Notifications
+<!-- SERVICE:DETAILS -->
 
-- **Source**: <https://nextcloud.com/talk>
-- **Icon Support**: No
-- **Message Format**: Text
-- **Message Limit**: 32000 Characters per message
-
-### Account Setup
+## Account Setup
 
 The official [Nextcloud Talk app](https://github.com/nextcloud/spreed) will need to be installed. An 'app password' (also referred to as 'device-specific' password/token) of one member of the chat will need to be created, see the [documentation](https://docs.nextcloud.com/server/stable/user_manual/session_management.html#managing-devices) for more information. Don't forget to disable file system access for this password.
 
-### Syntax
+## Syntax
 
 Secure connections (via https) should be referenced using **nctalks://** where as insecure connections (via http) should be referenced via **nctalk://**.
 
@@ -30,7 +40,7 @@ You can post in multiple chats by simply chaining them at the end of the URL.
 - `nctalk://{user}:{password}@{hostname}:{port}/{room_id1}/{room_id2}/{room_id3}`
 - `nctalks://{user}:{password}@{hostname}:{port}/{room_id1}/{room_id2}/{room_id3}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable | Required | Description                                                           |
 | -------- | -------- | --------------------------------------------------------------------- |
@@ -39,7 +49,9 @@ You can post in multiple chats by simply chaining them at the end of the URL.
 | password | Yes      | The password associated with the **user** for your Nextcloud account. |
 | room_id  | Yes      | The room_id of Nextcloud Talk.                                        |
 
-#### Example
+<!-- GLOBAL:SERVICE:PARAMS -->
+
+## Examples
 
 Send a secure nextcloud talk message to the room _93nfkdn3_:
 

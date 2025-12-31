@@ -10,7 +10,7 @@ description: "Send streamlabs notifications."
 - **Message Format**: Text
 - **Message Limit**: 32768 Characters per message
 
-### Account Setup
+## Account Setup
 
 The process to get signed up with Streamlabs is a bit lengthy.
 
@@ -47,19 +47,19 @@ Note that the access token does not expire
 1. Now copy and paste your access token to build the streamlabs url
    `strmlabs://<YOURACCESSTOKEN>/?call=DONATIONS`
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
 - `strmlabs://{access_token}/`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable     | Required | Description                                              |
 | ------------ | -------- | -------------------------------------------------------- |
 | access_token | Yes      | The access token generated from your Streamlabs account. |
 
-#### Example
+## Examples
 
 Send a streamlabs notification:
 

@@ -10,7 +10,7 @@ description: "Send wecombot notifications."
 - **Message Format**: Text
 - **Message Limit**: 32768 Characters per message
 
-### Account Setup
+## Account Setup
 
 Sign up for WeChat [from here](https://weixin.qq.com/). You will be provided to create a user and password to associate with your account. This is all you need to use this through Apprise.
 
@@ -33,20 +33,20 @@ Sign up for WeChat [from here](https://weixin.qq.com/). You will be provided to 
 1. You will be provided a Webhook URL that looks like:
    - `https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=abcd`
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
 - `wecombot://{botkey}`
 - `https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=abcd`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable | Required | Description                                                                                                                              |
 | -------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | key      | No       | Can optionally use the `?key` instead of passing the key in the `hostname` field. This has more value when defining configuration files. |
 
-#### Example
+## Examples
 
 Send a WeCom Bot Notification:
 

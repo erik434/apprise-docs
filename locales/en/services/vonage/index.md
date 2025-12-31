@@ -1,35 +1,48 @@
 ---
-title: "nexmo Notifications"
-description: "Send nexmo notifications."
+title: "Vonage (formerly Nexmo) Notifications"
+description: "Send Vonage (formerly Nexmo) notifications."
+sidebar:
+  label: "Vonage (formerly Nexmo)"
+
+source: https://nexmo.com/
+
+schemas:
+  - nexmo
+  - vonage
+
+has_sms: true
+
+sample_urls:
+  - vonage://{ApiKey}:{ApiSecret}@{FromPhoneNo}/{PhoneNo}
+  - vonage://{ApiKey}:{ApiSecret}@{FromPhoneNo}/{PhoneNo1}/{PhoneNo2}/{PhoneNoN}
+
+limits:
+  max_chars: 160
 ---
 
-## Vonage (formerly Nexmo)
+<!-- SERVICE:DETAILS -->
 
-- **Source**: <https://nexmo.com/>
-- **Icon Support**: No
-- **Message Format**: Text
-- **Message Limit**: 160 Characters per message
-
-### Account Setup
+## Account Setup
 
 To use Vonage, you will need to acquire your _API Key_ and _API Secret_. Both of these are accessible via the [Vonage Dashboard](https://dashboard.nexmo.com/getting-started-guide).
 
 The **{FromPhoneNo}** must be a number provided to you through Nexmo
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
-- **nexmo**://**{ApiKey}**:**{ApiSecret}**@**{FromPhoneNo}**/**{PhoneNo}**
-- **nexmo**://**{ApiKey}**:**{ApiSecret}**@**{FromPhoneNo}**/**{PhoneNo1}**/**{PhoneNo2}**/**{PhoneNoN}**
-- **vonage**://**{ApiKey}**:**{ApiSecret}**@**{FromPhoneNo}**/**{PhoneNo}**
-- **vonage**://**{ApiKey}**:**{ApiSecret}**@**{FromPhoneNo}**/**{PhoneNo1}**/**{PhoneNo2}**/**{PhoneNoN}**
+- `nexmo://{ApiKey}:{ApiSecret}@{FromPhoneNo}/{PhoneNo}`
+- `nexmo://{ApiKey}:{ApiSecret}@{FromPhoneNo}/{PhoneNo1}/{PhoneNo2}/{PhoneNoN}`
+- `vonage://{ApiKey}:{ApiSecret}@{FromPhoneNo}/{PhoneNo}`
+- `vonage://{ApiKey}:{ApiSecret}@{FromPhoneNo}/{PhoneNo1}/{PhoneNo2}/{PhoneNoN}`
 
 If no _ToPhoneNo_ is specified, then the _FromPhoneNo_ will be messaged instead; hence the following is a valid URL:
 
-- **nexmo**://**{ApiKey}**:**{ApiSecret}**@**{FromPhoneNo}**/
+- `nexmo://{ApiKey}:{ApiSecret}@{FromPhoneNo}/`
+- `vonage://{ApiKey}:{ApiSecret}@{FromPhoneNo}/`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable    | Required | Description                                                                                                                                                                                                                         |
 | ----------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -38,7 +51,9 @@ If no _ToPhoneNo_ is specified, then the _FromPhoneNo_ will be messaged instead;
 | FromPhoneNo | Yes      | This must be a _From Phone Number_ that has been provided to you from the Vonage website.                                                                                                                                           |
 | PhoneNo     | **\*No** | A phone number MUST include the country codes dialling prefix as well when placed. This field is also very friendly and supports brackets, spaces and hyphens in the event you want to format the number in an easy to read fashion |
 
-#### Example
+<!-- GLOBAL:SERVICE:PARAMS -->
+
+## Examples
 
 Send a Vonage Notification as an SMS:
 

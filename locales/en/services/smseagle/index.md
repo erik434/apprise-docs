@@ -11,11 +11,11 @@ description: "Send smseagle notifications."
 - **Message Format**: Text
 - **Message Limit**: 1200 Characters per message
 
-### Account Setup
+## Account Setup
 
 Get your SMSEagle Hardware SMS/MMS Gateway connection [from here](https://www.smseagle.eu). It is from the device you can access it's web interface and configure your access token.
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -42,7 +42,7 @@ For ambiguity, if you do not provide a valid phone number, and the information p
 
 `smseagle:///` uses port 80 (and is not encrypted) while `smseagles://` secures the connection and defaults to port 443.
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable | Required | Description                                                                                                                                     |
 | -------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -56,7 +56,7 @@ For ambiguity, if you do not provide a valid phone number, and the information p
 | priority | No       | Can be set to either `normal` or `high`. If not otherwise provided, this assumes to be `normal` by default.                                     |
 | status   | No       | Optionally include a small little ASCII string representing the notification status being sent (inline with it) by default this is set to `no`. |
 
-#### Example
+## Examples
 
 Send a SMSEagle notification:
 

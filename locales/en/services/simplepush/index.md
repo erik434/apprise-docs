@@ -27,14 +27,14 @@ What is important to identify is this weak encryption used by Apprise to access 
 
 Below is a screenshot from <https://simplepush.io/features> explaining the defined encryption setting from the upstream source:<br/>![Screenshot from 2024-10-03 21-52-46](https://github.com/user-attachments/assets/d6764e5f-6f90-46be-9994-4cffc881477a)
 
-### Syntax
+## Syntax
 
-Valid authentication syntaxes are as follows:
+Valid syntax is as follows:
 
 - `spush://{apikey}/`
 - `spush://{salt}:{password}@{apikey}/`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable | Required | Description                                                                                                                                                                                                                                                  |
 | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -43,7 +43,7 @@ Valid authentication syntaxes are as follows:
 | password | No       | SimplePush offers a method of further encrypting the message and title during transmission (on top of the secure channel it's already sent on). This is the Encryption password set. You must provide the `salt` value with the `password` in order to work. |
 | salt     | No       | The salt is provided to you by SimplePush and is the second part of the additional encryption you can use with this service. You must provide a `password` with the `salt` value in order to work.                                                           |
 
-#### Example
+## Examples
 
 Send a SimplePush notification:
 

@@ -16,7 +16,7 @@ XMPP Support requires **sleekxmpp** to work:
 pip install sleekxmpp
 ```
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -27,7 +27,7 @@ Valid syntax is as follows:
 
 Secure connections should be referenced using **xmpps://** where as insecure connections should be referenced via **xmpp://**.
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable | Required | Description                                                                                                                                                  |
 | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -39,7 +39,7 @@ Secure connections should be referenced using **xmpps://** where as insecure con
 | xep      | No       | The XEP specifications to include. By default **xep_0030** (Service Discovery) and **xep_0199** (XMPP Ping) if nothing is specified.                         |
 | to       | No       | The JID to notify                                                                                                                                            |
 
-#### Example
+## Examples
 
 Send a XMPP notification to our server listening on port 5223:
 

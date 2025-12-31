@@ -10,7 +10,7 @@ description: "Send workflows notifications."
 - **Message Format**: Markdown
 - **Message Limit**: 1000 Characters per message
 
-### Account Setup
+## Account Setup
 
 Depending on where you want your notification to appear, you must create a workflow through the options. e.g. an MS Teams workflow might look like this:<br/>
 ![image](https://github.com/user-attachments/assets/8d825e43-2c09-47ae-bd6e-fc941fac91e2)
@@ -34,14 +34,14 @@ Yes... The URL is that big... but at the end of the day this effectively equates
 
 **Note:** Apprise supports this URL _as-is_ too; you no longer need to parse the URL any further. However there is slightly more overhead (internally) if you do use it this way. Sometimes copy/paste is so much easier though! :+1:
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
 - `https://prod-site.logic.azure.com:443/workflows/{workflow}/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig={signature}`
 - `workflows://{host}:{port}/{workflow}/{signature}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable  | Required | Description                                                                                                                                                                                                                                                                                                 |
 | --------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -51,7 +51,7 @@ Valid syntax is as follows:
 | ver       | No       | The Power Automate API Version to use; the default value is `2016-06-01`. This is also parsed using the keyword `api-version` that can be found on the Azure Webhook Link.                                                                                                                                  |
 | template  | No       | provide a path to a template you would prefer to use instead of the Adaptive card chosen by Apprise. use double `{{token}}` curly braces to identify the tokens you wish to have swapped in the provided template prior to it's submission to the upstream service. (e.g `{{app_body}}` or `{{app_title}}`) |
 
-#### Example
+## Examples
 
 Send a Microsoft Teams notification:
 

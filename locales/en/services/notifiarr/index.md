@@ -11,7 +11,7 @@ description: "Send notifiarr notifications."
 - **Message Format**: Text
 - **Message Limit**: 32768 Characters per message
 
-### Account Setup
+## Account Setup
 
 You need to first set up an account with [Notifiarr](https://notifiarr.com) if you don't have one already. From there you can generate yourself your `{api_key}`. You will need to use your “global” API key, the integration-specific Notifiarr API keys do not work with Apprise.
 
@@ -33,14 +33,14 @@ The notifiarr message body can contain content such as the following to trigger 
 
 **Note**: that as of this time (2024 Jul 28th), the upstream webhook to Notifiarr only supports 1 user/role in the payload. If you provide more then one, only the first will be passed upstream.
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
 - `notifiarr://{api_key}/{channel_id}`
 - `notifiarr://{api_key}/{channel1_id}/{channel2_id}/{channelN_id}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable | Required | Description                                                                                                                             |
 | -------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------- |
@@ -48,7 +48,7 @@ Valid syntax is as follows:
 | source   | No       | Optionally provide the source of the notification as a descriptive string (you can also use `from` as an alias to this same variable)   |
 | event    | No       | Optionally specify the Notifiarr Event ID you want your notification update. If none is specified, then a new notification is generated |
 
-#### Example
+## Examples
 
 Send a discord notification:
 

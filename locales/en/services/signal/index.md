@@ -11,7 +11,7 @@ description: "Send signal notifications."
 - **Message Format**: Text
 - **Message Limit**: 32768 Characters per message
 
-### Account Setup
+## Account Setup
 
 First of all you need a Signal account. So it is presumed you've either got the Apple or Android version of the Signal software.
 
@@ -34,7 +34,7 @@ If all goes well, you should be able to point your browser to: `http://localhost
 
 The **{FromPhoneNo}** must be the number associated with your account.
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -48,7 +48,7 @@ You can post in multiple chats by simply chaining them at the end of the URL.
 - `signal://{user}:{password}@{hostname}:{port}/{from_phone}/{target1}/{target2}/{target3}`
 - `signals://{user}:{password}@{hostname}:{port}/{from_phone}/{target1}/{target2}/{target3}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable | Required | Description                                                                                                                                      |
 | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -97,7 +97,7 @@ The takeaway from the above is the group
 
 Example sending a notification to a group: `group.aabbccdd/eeffgghh=` identified by the `id`.
 
-### Example
+## Examples
 
 Send a Signal Notification (via Signal API):
 

@@ -40,7 +40,7 @@ Valid syntax is as follows:
 - `toasty://{user_id}@{device_id}`
 - `toasty://{user_id}@{device_id1}/{device_id2}/{device_idN}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable  | Required | Description                                                    |
 | --------- | -------- | -------------------------------------------------------------- |
@@ -49,7 +49,7 @@ Valid syntax is as follows:
 
 <!-- GLOBAL:SERVICE:PARAMS -->
 
-## Example
+## Examples
 
 Send a Super Toasty notification a configured device:
 

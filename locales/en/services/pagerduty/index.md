@@ -15,7 +15,7 @@ You need to have an account with [PagerDuty](https://www.pagerduty.com) and gene
 
 From there you can define an API V2 Integration.
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -23,7 +23,7 @@ Valid syntax is as follows:
 - `pagerduty://{integration_key}@{api_key}/{source}`
 - `pagerduty://{integration_key}@{api_key}/{source}/{component}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable        | Required | Description                                                                                                                                                                                                                            |
 | --------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -38,7 +38,7 @@ Valid syntax is as follows:
 | image           | No       | Associate the notification status via a represented icon. You can set this value to `no` if you do not want this to occur.                                                                                                             |
 | severity        | No       | The notification severity is otherwise detected on it's own, however if you wish to force a specific mode always, you can do so by providing this as part of the URL. Possible values are: `info`, `warning`, `critical`, and `error`. |
 
-#### Example
+## Examples
 
 Send a Pager Duty trigger to our **source** `node01.local` and the **component** `drive_sda`
 

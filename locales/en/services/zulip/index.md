@@ -10,7 +10,7 @@ description: "Send Zulip notifications."
 - **Message Format**: Text
 - **Message Limit**: 10000 Characters per message
 
-### Account Setup
+## Account Setup
 
 To use this Zulip, you must have a Zulip Chat bot defined; See [here for more details](https://zulipchat.com/help/add-a-bot-or-integration). At the time of writing this plugin the instructions were:
 
@@ -24,7 +24,7 @@ If you know your organization **{ID}** (as it's part of your zulipchat.com url),
 
 Upon creating a bot successfully, you'll now be able to access it's API Token.
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -40,7 +40,7 @@ You can also mix and match the entries above too:
 
 - **zulip**://**{botname}**@**{organization}**/**{token}**/**{stream1}**/**{email1}**/
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable     | Required | Description                                                                                                                                                                            |
 | ------------ | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -50,7 +50,7 @@ You can also mix and match the entries above too:
 | email        | No       | An email belonging to one of the users that have been added to your organization the private message.                                                                                  |
 | stream       | No       | A stream to notify.                                                                                                                                                                    |
 
-#### Example
+## Examples
 
 Send a Zulip notification to default #general (default) stream:
 

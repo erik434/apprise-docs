@@ -10,16 +10,16 @@ schemas:
   - kodi: insecure
   - kodis
 
+has_image: true
+
 sample_urls:
   - kodis://{hostname}
   - kodi://{hostname}:{port}
   - kodi://{userid}:{password}@{hostname}
   - kodis://{userid}:{password}@{hostname}:{port}
 
-
 limits:
   max_chars: 250
-
 ---
 
 <!-- SERVICE:DETAILS -->
@@ -48,10 +48,9 @@ Secure connections (via https) should be referenced using **kodis://** where as 
 | userid   | No       | The account login to your KODI server.                                                                                    |
 | password | No       | The password associated with your KODI Server.                                                                            |
 
-
 <!-- GLOBAL:SERVICE:PARAMS -->
 
-## Example
+## Examples
 
 Send a Kodi notification to our server listening on port 80:
 

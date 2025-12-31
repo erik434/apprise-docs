@@ -17,7 +17,7 @@ Sign up for Voip.ms [from here](https://voip.ms). From your dashboard, you will 
 You must edit your `DID` and enable `SMS/MMS ($0.0075/SMS, and $0.02/MMS)`:<br/>
 ![Screenshot from 2024-10-27 09-44-48](https://github.com/user-attachments/assets/e7a23518-c8ab-486b-ae56-357541514962)
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -25,7 +25,7 @@ Valid syntax is as follows:
 - `voipms://{password}:{email}/{fromPhoneNo}/{toPhoneNo}`
 - `voipms://{password}:{email}/{fromPhoneNo}/{toPhoneNo1}/{toPhoneNo2}/{toPhoneNoN}/`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable    | Required | Description                                                                                                                      |
 | ----------- | -------- | -------------------------------------------------------------------------------------------------------------------------------- |
@@ -34,7 +34,7 @@ Valid syntax is as follows:
 | fromPhoneNo | Yes      | Specify the phone number you registered with Voip.ms you wish the message to be identified as being sent from.                   |
 | toPhoneNo   | No       | A phone number and/or group you wish to send your notification to. You can use comma's to separate multiple entries if you wish. |
 
-#### Example
+## Examples
 
 Send a Voip.ms notification to ourselves:
 

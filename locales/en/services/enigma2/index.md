@@ -60,7 +60,7 @@ Valid syntax is as follows:
 - `enigma2s://{user}:{password}@{host}:{port}`
 - `enigma2s://{user}:{password}@{host}:{port}/{fullpath}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable | Required | Description                                                                                                                               |
 | -------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
@@ -73,7 +73,7 @@ Valid syntax is as follows:
 
 <!-- GLOBAL:SERVICE:PARAMS -->
 
-## Example
+## Examples
 
 Send an notification to our Enigma2 Device:
 

@@ -10,7 +10,7 @@ description: "Send synology_chat notifications."
 - **Message Format**: Text
 - **Message Limit**: not set
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -26,7 +26,7 @@ The secure versions (https):
 - `synologys://{user}:{password}@{hostname}/{token}`
 - `synologys://{user}:{password}@{hostname}:{port}/{token}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable | Required | Description                                                                                                                                                                     |
 | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -37,7 +37,7 @@ The secure versions (https):
 | password | No       | If you're system is set up to use HTTP-AUTH, you can provide _password_ for authentication to it.                                                                               |
 | file_url | No       | Synology allows you to directly link to a URL containing an attachment. If you set this on the Apprise URL, it will be passed down to the synology request made under the hood. |
 
-#### Example
+## Examples
 
 Send a Synology notification to all devices associated with a project:
 

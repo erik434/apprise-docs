@@ -9,7 +9,7 @@ description: "Send whatsapp notifications."
 - **Message Format**: Text
 - **Message Limit**: 1024 Characters per message
 
-### Account Setup
+## Account Setup
 
 To send WhatsApp messages via Apprise, you must first configure your Meta WhatsApp Cloud API account. Follow these steps:
 
@@ -34,14 +34,14 @@ To send WhatsApp messages via Apprise, you must first configure your Meta WhatsA
 
 Once everything is in place, you're ready to send WhatsApp messages through Apprise.
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
 - `whatsapp://{token}@{from_phone_id}/{targets}`
 - `whatsapp://{template}:{token}@{from_phone_id}/{targets}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable | Required | Description                                                                                                                                                                                                |
 | -------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -64,7 +64,7 @@ If you wish to assign the `body` or `type` from Apprise, these special keywords 
 1. The template header must be set to either '' (empty) or assigned content.
 2. Variables in the message body, if any, must use the number format, e.g. `{{1}}`, as opposed to the named variables format, e.g. `{{order_id}}`
 
-#### Example
+## Examples
 
 Send a WhatsApp Notification:
 

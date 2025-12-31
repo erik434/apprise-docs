@@ -10,14 +10,14 @@ description: "Send OneSignal notifications."
 - **Message Format**: Text
 - **Message Limit**: 32768 Characters per Message
 
-### Account Setup
+## Account Setup
 
 1. Visit <https://onesignal.com> to create your account.
 2. To acquire your `{appid}` and `{apikey}` Clic on the **Keys and IDs**.<br/>![OneSignalAppKeys](https://user-images.githubusercontent.com/850374/103224241-65616080-48f5-11eb-97c0-fa32a28524b4.png)
 
-### Syntax
+## Syntax
 
-The syntax is as follows:
+Valid syntax is as follows:
 
 - `onesignal://{app_id}@{apikey}/#{include_segment}`
 - `onesignal://{app_id}@{apikey}/#{include_segment1}/#{include_segment2}/#{include_segmentN}`
@@ -43,7 +43,7 @@ If you defined a template with OneSignal, you can use it as well:
 - `onesignal://{template_id}:{app_id}@{apikey}/{email}/`
 - `onesignal://{template_id}:{app_id}@{apikey}/{email1}/{email2}/{emailN}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable        | Required | Description                                                                                                                                          |
 | --------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -59,7 +59,7 @@ If you defined a template with OneSignal, you can use it as well:
 | image           | No       | to include the icon/image associated with the message. By default this is set to `yes`.                                                              |
 | batch           | No       | Set it to **Yes** if you want all identified targets to be notified notified in batches (instead of individually). By default this is set to **No**. |
 
-#### Example
+## Examples
 
 Send a OneSignal notification to all devices associated with a project:
 

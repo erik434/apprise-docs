@@ -1,16 +1,25 @@
 ---
-title: "notica Notifications"
-description: "Send notica notifications."
+title: "Notica Notifications"
+description: "Send Notica notifications."
+sidebar:
+  label: "Notica"
+
+source: https://notica.us/
+
+schemas:
+  - notica
+
+sample_urls:
+  - notica://{host}/{token}
+  - notica://{user}@{host}/{token}
+  - notica://{user}@{host}:{port}/{token}
+  - notica://{user}:{password}@{host}/{token}
+  - notica://{user}:{password}@{host}:{port}/{token}
 ---
 
-## Notica Notifications
+<!-- SERVICE:DETAILS -->
 
-- **Source**: <https://notica.us/>
-- **Icon Support**: No
-- **Message Format**: Text
-- **Message Limit**: 32768 Characters per message
-
-### Account Setup
+## Account Setup
 
 Notica doesn't require you to create an account at all. You just have to visit [their website](https://notica.us/) at least once to both:
 
@@ -25,7 +34,7 @@ Note: _disregard the question mark on the URL as it is not part of the token_.
 
 From here you have two options, you can directly pass the Notica URL into apprise exactly how it is shown to you from the website, or you can reconstruct the URL into an Apprised based one (which equates to _slightly_ faster load times) as: `notica://{token}`
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -41,7 +50,7 @@ For self hosted solutions, you can use the following:
 - `notica://{user}:{password}@{host}/{token}`
 - `notica://{user}:{password}@{host}:{port}/{token}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable | Required | Description                                                                                                                                                        |
 | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -56,7 +65,9 @@ A self hosted solution allows for a few more parameters:
 | user     | No       | If you're system is set up to use HTTP-AUTH, you can provide _username_ for authentication to it.                                 |
 | password | No       | If you're system is set up to use HTTP-AUTH, you can provide _password_ for authentication to it.                                 |
 
-#### Example
+<!-- GLOBAL:SERVICE:PARAMS -->
+
+## Examples
 
 Send a notica notification:
 

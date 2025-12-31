@@ -1,14 +1,24 @@
 ---
-title: "mqtt Notifications"
-description: "Send mqtt notifications."
+title: "MQTT Notifications"
+description: "Send MQTT notifications."
+sidebar:
+  label: "MQTT"
+
+source: https://mqtt.org/
+
+schemas:
+  - mqtt: insecure
+  - mqtts
+
+sample_urls:
+  - mqtts://{host}/{topic}
+  - mqtts://{host}:{port}/{topic}
+  - mqtts://{user}@{host}:{port}/{topic}
 ---
 
-## MQTT Notifications
+<!-- SERVICE:DETAILS -->
 
-- **Source**: <https://mqtt.org/>
-- **Icon Support**: No
-- **Message Format**: Text
-- **Message Limit**: 268435455 Characters per Message
+## Account Setup
 
 MQTT Support requires **paho-mqtt** (a version less then v2) to work:
 
@@ -16,7 +26,7 @@ MQTT Support requires **paho-mqtt** (a version less then v2) to work:
 pip install "paho-mqtt<2.0"
 ```
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -34,7 +44,7 @@ For a secure connection, just use `mqtts` instead.
 
 Secure connections should be referenced using **mqtts://** where as insecure connections should be referenced via **mqtt://**.
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable  | Required | Description                                                                                                                                                                                                                                                                                                                   |
 | --------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -48,7 +58,9 @@ Secure connections should be referenced using **mqtts://** where as insecure con
 | session   | No       | The MQTT session to maintain (associated with the client_id). If no client_id is specified, then this value is not considered. By default there is no session established and each connection made by apprise is unique. If you wish to enforce a session (associated with a provided client_id) then set this value to True. |
 | retain    | No       | The MQTT publisher retain flag. By default this is set to `no`, but you may optionally over-ride it and set it to `yes`                                                                                                                                                                                                       |
 
-### Example
+<!-- GLOBAL:SERVICE:PARAMS -->
+
+## Examples
 
 ```bash
 # Assuming we're just running an MQTT Server locally on your box

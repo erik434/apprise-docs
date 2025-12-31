@@ -36,7 +36,7 @@ Valid syntax is as follows:
 
 - `faast://{authorizationtoken}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable           | Required | Description                                                      |
 | ------------------ | -------- | ---------------------------------------------------------------- |
@@ -45,7 +45,7 @@ Valid syntax is as follows:
 
 <!-- GLOBAL:SERVICE:PARAMS -->
 
-## Example
+## Examples
 
 Send a Faast notification
 

@@ -10,7 +10,7 @@ description: "Send pushed notifications."
 - **Message Format**: Text
 - **Message Limit**: 160 Characters per Message
 
-### Account Setup
+## Account Setup
 
 You'll want to _Request Developer Access_ which is asked of you when you first log in to the site. Check your email because you'll need to verify your account with them.
 
@@ -27,7 +27,7 @@ You'll also need something to notify; so once you've created an account and an a
 
 Subscribe to this App; there is a _Subscription Link_ you can follow right from the settings page of the App you just created. You will need at least one subscription to use the notification service.
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -43,7 +43,7 @@ You can also form any combination of the above and perform updates from one url:
 
 If neither a **@{user_pushed_id}** or **#{channel}** is specified, then the default configuration is to send to just the _App_ you provided keys for.
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable       | Required | Description                                                                                                                                                                                                                                                                             |
 | -------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -52,7 +52,7 @@ If neither a **@{user_pushed_id}** or **#{channel}** is specified, then the defa
 | user_pushed_id | No       | Users must be prefixed with an _at_ (@) character or they will be ignored. You can identify users here by their Pushed ID.                                                                                                                                                              |
 | channel_alias  | No       | Channels must be prefixed with a _hash tag_ (#) or they will be ignored. Channels must be registered with your Pushed account to work. This must be the channel alias itself; not the channel. The alias can be retrieved from the channel settings from within your pushed.io account. |
 
-#### Example
+## Examples
 
 Send a Pushed notification:
 

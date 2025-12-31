@@ -1,26 +1,42 @@
 ---
-title: "xbmc Notifications"
-description: "Send xbmc notifications."
+title: "XBMC Notifications"
+description: "Send XBMC notifications."
+sidebar:
+  label: "XBMC"
+
+source: http://kodi.tv/
+
+schemas:
+  - xbmc: insecure
+
+has_image: true
+
+sample_urls:
+  - xbmc://{hostname}
+  - xbmc://{hostname}:{port}
+  - xbmc://{userid}:{password}@{hostname}
+  - xbmc://{userid}:{password}@{hostname}:{port}
+
+limits:
+  max_chars: 250
 ---
 
-## XBMC Notifications
+<!-- SERVICE:DETAILS -->
 
-- **Source**: <http://kodi.tv/>
-- **Icon Support**: Yes
-- **Message Format**: Text
-- **Message Limit**: 250 Characters per message
+:::note
+XMBC is a legacy product and has been replaced by [[KODI|Notify_kodi]]. However for systems that can't be updated (such as a Jail Broken Apple TV2) you can use this protocol.
+:::
 
-**Note:** XMBC is a legacy product and has been replaced by [[KODI|Notify_kodi]]. However for systems that can't be updated (such as a Jail Broken Apple TV2) you can use this protocol.
-
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
-- **xbmc**://**{hostname}**
-- **xbmc**://**{hostname}**:**{port}**
-- **xbmc**://**{userid}**:**{password}**@**{hostname}**:**{port}**
+- `xbmc://{hostname}`
+- `xbmc://{hostname}:{port}`
+- `xbmc://{userid}:{password}@{hostname}`
+- `xbmc://{userid}:{password}@{hostname}:{port}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable | Required | Description                                                     |
 | -------- | -------- | --------------------------------------------------------------- |
@@ -29,7 +45,9 @@ Valid syntax is as follows:
 | userid   | No       | The account login to your XBMC server.                          |
 | password | No       | The password associated with your XBMC Server.                  |
 
-#### Example
+<!-- GLOBAL:SERVICE:PARAMS -->
+
+## Examples
 
 Send a XBMC notification to our server listening on port 8080:
 

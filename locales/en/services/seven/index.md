@@ -11,17 +11,17 @@ description: "Send seven notifications."
 - **Message Format**: Text
 - **Message Limit**: 160 Characters per message
 
-### Account Setup
+## Account Setup
 
 Signup [from here](https://www.seven.io/). It is from the device you can access it's web interface and configure your access token.
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
 - `seven://{token}/{target}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable | Required | Description                                                             |
 | -------- | -------- | ----------------------------------------------------------------------- |
@@ -30,7 +30,7 @@ Valid syntax is as follows:
 | flash    | No       | Flash mode (default is `no` ); specify `yes` to enable                  |
 | label    | No       | Defines a label                                                         |
 
-#### Example
+## Examples
 
 Send a Seven notification:
 

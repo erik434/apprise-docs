@@ -10,7 +10,7 @@ description: "Send rocketchat notifications."
 - **Message Format**: Text
 - **Message Limit**: 1000 Characters per Message
 
-### Syntax
+## Syntax
 
 Rocket.Chat can send notifications through the following **modes**:
 
@@ -64,7 +64,7 @@ By default a webhook is set up to be associated with a channel. Thus the followi
 
 - `rocket://abcd%2F12345@{hostname}/` - Note the `%2F` (to swap out for `/` found in webhook)
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable | Required | Description                                                                                                                                                                                                                                                 |
 | -------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -79,7 +79,7 @@ By default a webhook is set up to be associated with a channel. Thus the followi
 | mode     | No       | The authentication mode is automatically detected based what it parses from the URL provided. You only need to set this if you feel it is being detected incorrectly. The possible modes are **basic**, **token**, and **webhook** and are explained above. |
 | avatar   | No       | Override the default avatar associated with the message to match that of the notification type (be that of a Warning, Error, Info, etc). By default this is set to **No** for **basic** mode and **Yes** for **webhook** mode.                              |
 
-#### Example
+## Examples
 
 Send a Rocket.Chat notification to the channel _#nuxref_:
 

@@ -28,7 +28,7 @@ Get yourself a self-hosted setup of the [Apprise-API](https://github.com/caronc/
 
 ## Syntax
 
-The syntax is as follows:
+Valid syntax is as follows:
 
 - `apprise://{host}/{token}`
 - `apprise://{host}:{port}/{token}`
@@ -54,7 +54,7 @@ For a secure connection, just use `apprises` instead.
 
 <!-- GLOBAL:SERVICE:PARAMS -->
 
-## Example
+## Examples
 
 Send a notification along to an Apprise API server listening on port 80:
 

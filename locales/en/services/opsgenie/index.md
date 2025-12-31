@@ -10,16 +10,16 @@ description: "Send opsgenie notifications."
 - **Message Format**: Text
 - **Message Limit**: 15000 Characters per Message
 
-### Account Setup
+## Account Setup
 
 1. Visit <https://www.opsgenie.com> to create your account.
 2. [Generate your Integration API Key](https://app.opsgenie.com/settings/integration/add/API/)
 
 **Note**: You must generate an Integration API Key; this is not to be confused with the Opsgenie Management API Key.
 
-### Syntax
+## Syntax
 
-The syntax is as follows:
+Valid syntax is as follows:
 
 - `opsgenie://{apikey}/`
 - `opsgenie://{apikey}/@{user}`
@@ -37,7 +37,7 @@ You can also mix/match the targets:
 
 - `opsgenie://{apikey}/@{user}/#{team}/*{schedule}/^{escalation}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable   | Required | Description                                                                                                                                                                                                         |
 | ---------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -53,7 +53,7 @@ You can also mix/match the targets:
 | alias      | No       | The alias to associate with the message.                                                                                                                                                                            |
 | entity     | No       | The entity to associate with the message.                                                                                                                                                                           |
 
-#### Example
+## Examples
 
 Send a Opsgenie notification to all devices associated with a project:
 

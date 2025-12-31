@@ -1,15 +1,25 @@
 ---
-title: "line Notifications"
-description: "Send line notifications."
+title: "Line Notifications"
+description: "Send Line notifications."
+sidebar:
+  label: "Line"
+
+source: https://line.me
+
+schemas:
+  - line
+
+has_image: true
+
+sample_urls:
+  - line://{token}/{user}
+  - line://{token}/{user1}/{user2}/{userN}
+
+limits:
+  max_chars: 5000
 ---
 
-## Line Notifications
-
-- **Source**: <https://line.me>
-- **Icon Support**: Yes
-- **Attachment Support**: No
-- **Message Format**: Text
-- **Message Limit**: 5000 Characters per message
+<!-- SERVICE:DETAILS -->
 
 ## Account Setup
 
@@ -35,7 +45,7 @@ Valid syntax is as follows:
 - `line://{token}/{user}`
 - `line://{token}/{user1}/{user2}/{userN}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable | Required | Description                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | -------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -43,7 +53,9 @@ Valid syntax is as follows:
 | user     | Yes      | The Line users (separated by forward slash `/`) that you wish to notify. This is NOT the `@userid` you can acquire from your mobile device. It is instead the Line User ID (which usually starts with the letter `U`). For example, you can acquire your Line BOT User ID from the [developer console](https://developers.line.biz/console/) within your channel settings under the **Basic settings** tab (at the bottom).                        |
 | image    | No       | Associate the notification status via a represented icon. You can set this value to `no` if you do not want this to occur.                                                                                                                                                                                                                                                                                                                         |
 
-#### Example
+<!-- GLOBAL:SERVICE:PARAMS -->
+
+## Examples
 
 Send a line notification:
 

@@ -28,7 +28,7 @@ description: "Send splunk notifications."
 1. Finally you will need to define a `routing_key` which can be done from **Settings** -> **Route Keys**<br/>![splunk-03](https://github.com/caronc/apprise/assets/850374/952f762a-dbfa-4f24-92c7-7b18fca5cd17)
 1. The `entity_id` is used to ensure your message can be triggered and acknowledged. It's effectively a key. If you don't provide one then Apprise will generate one for you (the same one every time).
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -39,7 +39,7 @@ Valid syntax is as follows:
 - `https://alert.victorops.com/integrations/generic/20131114/ alert/{apikey}/{routing_key}`
 - `https://alert.victorops.com/integrations/generic/20131114/ alert/{apikey}/{routing_key}/{entity_id}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable    | Required | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | ----------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

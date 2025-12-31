@@ -168,7 +168,7 @@ In Markdown, global assets should be referenced using absolute paths:
 
 Service-specific assets belong alongside the service documentation:
 
-```
+```text
 services/<service>/
 ├── index.md
 └── images/

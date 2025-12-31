@@ -11,7 +11,7 @@ description: "Send telegram notifications."
 - **Message Format**: Text
 - **Message Limit**: 4096 Characters per message
 
-### Account Setup
+## Account Setup
 
 Telegram is slightly more complicated then some of the other notification services, so here is quick breakdown of what you need to know and do in order to send Notifications through it using this tool.
 
@@ -58,9 +58,9 @@ When using the short form of the Telegram/Apprise URL and the bot owner (probabl
 - _Note:_ the keyword `bot` must sit in-front of the actual **{bot_token}** that you were given by the BotFather.
 - The result will contain the message you sent; in addition to this there is a section entitled `chat` with the `id` identified here. This is the **{chat_id}** you can use to directly message using Apprise.
 
-### Syntax
+## Syntax
 
-The following syntax is valid:
+Valid syntax is as follows:
 
 - `tgram://{bot_token}/`
   - **Note**: As already identified above: Apprise is clever enough to determine the chat*id of the bot owner (you) \_only if you've sent it at least 1 private message to it* first.
@@ -76,7 +76,7 @@ If you want to see the icon/image associated with the notification, you can have
 - `tgram://{bot_token}/{chat_id}/?image=Yes`
 - `tgram://{bot_token}/{chat_id1}/{chat_id2}/{chat_id3}/?image=Yes`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable  | Required | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | --------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -89,7 +89,7 @@ If you want to see the icon/image associated with the notification, you can have
 | mdv       | No       | Optionally set the `markdown` version to use; can be set to either `v1` or `v2` and defaults to `v2` if not set. This value is only referenced when `?format=markdown` has also been set.                                                                                                                                                                                                                                                                                                                                                                                                               |
 | topic     | No       | The Topic Thread ID you wish your message to be posted to. [Here is a StackOverflow post on acquiring the Topic Thread ID](https://stackoverflow.com/questions/74773675/how-to-get-topic-id-for-telegram-group-chat)                                                                                                                                                                                                                                                                                                                                                                                    |
 
-#### Example
+## Examples
 
 Send a telegram notification to lead2gold:
 

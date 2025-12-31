@@ -10,7 +10,7 @@ description: "Send sns notifications."
 - **Message Format**: Text
 - **Message Limit**: 160 Characters per message
 
-### Account Setup
+## Account Setup
 
 You'll need to create an account with Amazon Web Service (AWS) first to use this. If you don't have one, you'll need your credit card (even though the first 12 months are free). Alternatively, if you already have one (or are using it through your company), you're good to go to the next step.
 
@@ -27,7 +27,7 @@ You now have all the tools you need to send SMS messages.
 
 If you want to take advantage of sending your notifications to _topics_: from the [AWS Management Console](https://console.aws.amazon.com) search for **Simple Notification Service** under the _AWS services_ section and configure as many topics as you want. You'll be able to reference them as well using this notification service.
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -42,7 +42,7 @@ You can mix and match these entries as well:
 
 Enforcing a hashtag (#) for _topics_ and a plus sign (+) in-front of phone numbers helps eliminate cases where ambiguity could be an issue such as a _topic_ that is comprised of all numbers. These characters are purely optional.
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable        | Required | Description                                                                                                                                                                                                                                                                                                                                                                                                              |
 | --------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -54,7 +54,7 @@ Enforcing a hashtag (#) for _topics_ and a plus sign (+) in-front of phone numbe
 
 **Note:** This notification service does not use the title field; only the _body_ is passed along.
 
-#### Example
+## Examples
 
 Send a AWS SNS notification as an SMS:
 

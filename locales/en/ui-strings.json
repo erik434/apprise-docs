@@ -1,6 +1,7 @@
 {
   "site": {
-    "title": "Documentation",
+    "title": "Apprise Documentation",
+    "description": "Apprise documentation. Send notifications to 120+ services including email, chat platforms, and SMS providers.",
     "logo": "Apprise"
   },
   "nav": {

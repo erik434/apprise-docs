@@ -32,7 +32,7 @@ Valid syntax is as follows:
 - `bulkvs://{user}:{password}@{fromPhoneNo}`
 - `bulkvs://{user}:{password}@{fromPhoneNo}/{target}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable | Required | Description                                                                                                                                                     |
 | -------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -44,7 +44,7 @@ Valid syntax is as follows:
 
 <!-- GLOBAL:SERVICE:PARAMS -->
 
-## Example
+## Examples
 
 Send a BulkVS Message:
 

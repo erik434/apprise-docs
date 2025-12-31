@@ -51,7 +51,7 @@ Depending on the version of your Apple OS, you may wish to enable the legacy pro
 
 <!-- GLOBAL:SERVICE:PARAMS -->
 
-## Example
+## Examples
 
 Send a Growl notification to our server
 

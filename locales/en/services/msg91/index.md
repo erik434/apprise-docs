@@ -1,27 +1,38 @@
 ---
-title: "msg91 Notifications"
-description: "Send msg91 notifications."
+title: "MSG91 Notifications"
+description: "Send MSG91 notifications."
+sidebar:
+  label: "MSG91"
+
+source: https://msg91.com
+
+schemas:
+  - msg91
+
+has_sms: true
+
+sample_urls:
+  - msg91://{TemplateID}@{AuthKey}/{PhoneNo}
+  - msg91://{TemplateID}@{AuthKey}/{PhoneNo1}/{PhoneNo2}/{PhoneNoN}
+
+limits:
+  max_chars: 160
 ---
 
-## MSG91
+<!-- SERVICE:DETAILS -->
 
-- **Source**: <https://msg91.com>
-- **Icon Support**: No
-- **Message Format**: Text
-- **Message Limit**: 160 Characters per message
-
-### Account Setup
+## Account Setup
 
 To use MSG91, you will need to acquire your _Authentication Key_. This is accessible via the [MSG91 Dashboard](https://control.msg91.com). In addition to this, you will need to prepare a template and assign a `body`, `title`, and `type` variable to it so that Apprise can relay it's information through here.
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
 - `msg91://{TemplateID}@{AuthKey}/{PhoneNo}`
 - `msg91://{TemplateID}@{AuthKey}/{PhoneNo1}/{PhoneNo2}/{PhoneNoN}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable   | Required | Description                                                                                                                                                                                                                        |
 | ---------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -29,6 +40,8 @@ Valid syntax is as follows:
 | TemplateID | Yes      | The _Template ID_ associated with your MSG91 account. This is available to you via the [MSG91 Dashboard](https://control.msg91.com/).                                                                                              |
 | PhoneNo    | Yes      | A phone number MUST include the country codes dialing prefix as well when placed. This field is also very friendly and supports brackets, spaces and hyphens in the event you want to format the number in an easy to read fashion |
 | short_url  | No       | A boolean (defaults) to `No` whether the SMS messages should use the Short URL notation.                                                                                                                                           |
+
+<!-- GLOBAL:SERVICE:PARAMS --
 
 ### Template Variables
 
@@ -45,7 +58,7 @@ If you wish to remove the `type` from being passed, you simply define it in the 
 
 Finally if you wish to define your own arguments, just define them as such `?:key=value` would assign a `key` the contents of `value` when being passed into your template.
 
-### Example
+## Examples
 
 Send a MSG91 Notification as an SMS:
 

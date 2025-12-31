@@ -11,7 +11,7 @@ description: "Send slack notifications."
 - **Message Format**: Markdown
 - **Message Limit**: 30000 Characters per message
 
-### Account Setup
+## Account Setup
 
 Slack is slightly more complicated then some of the other notification services, so here is quick breakdown of what you need to know and do in order to send Notifications through it using this tool:
 
@@ -58,7 +58,7 @@ Your Apprise Slack URL (for accessing your Bot) might look something like:
 
 Both OAuth tokens you are provided have the ability to post text to channels and provide attachments. So it's up to you which of the two you choose to use.
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -93,7 +93,7 @@ You can freely mix and match all of the combinations in any order as well:
 - `slack://**{botname}@{tokenA}/{tokenB}/{tokenC}/@{user_id}/#{channel}/+{encoded_id}`
 - `slack://{botname}@{OAuthToken}/@{user_id}/#{channel}/+{encoded_id}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable   | Required | Description                                                                                                                                                                                                                                        |
 | ---------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -109,7 +109,7 @@ You can freely mix and match all of the combinations in any order as well:
 | image      | No       | Identify whether or not you want the Apprise image (showing status color) to display with every message or not. By default this is set to **yes**.                                                                                                 |
 | mode       | No       | Optionally enforce the mode the Slack plugin should operate in. This is detected by default, but possible options are `hook` (webhook mode) `gov-hook` (government webhook mode), and `bot` to have the service interact through the slack bot api |
 
-#### Example
+## Examples
 
 Send a Slack notification to the channel `#nuxref`:
 

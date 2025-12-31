@@ -10,11 +10,11 @@ description: "Send sms_manager notifications."
 - **Message Format**: Text
 - **Message Limit**: 160 Characters per message
 
-### Account Setup
+## Account Setup
 
 Sign up for SMS Manager [from here](https://smsmanager.cz). You can access your API Key from the management section from your account.
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -23,7 +23,7 @@ Valid syntax is as follows:
 
 `smsmanager://` can also be used as an alias to `smsmgr://` if you choose.
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable | Required | Description                                                                                                                                                                                                      |
 | -------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -33,7 +33,7 @@ Valid syntax is as follows:
 | batch    | No       | Send multiple specified notifications in a single batch (1 upstream post to the end server). By default this is set to `no`.                                                                                     |
 | gateway  | No       | SMS Manager supports the following gateway settings: `high`, `economy`, `low`, and `direct`. By default this is set to `high` if not otherwise specified.                                                        |
 
-#### Example
+## Examples
 
 Send a SMS Manager Message:
 

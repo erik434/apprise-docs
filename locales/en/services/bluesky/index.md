@@ -36,7 +36,7 @@ Valid syntax is as follows:
 - `bluesky://user.host@app_pw`
   - This is only required if the `host` is not `bsky.social`
 
-## Example
+## Examples
 
 Send a public message:
 

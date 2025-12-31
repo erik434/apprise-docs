@@ -12,7 +12,7 @@ description: "Send remote syslog messages."
 
 Remote Syslog is a way for network devices to send event messages to a logging server – usually known as a Syslog server. The Syslog protocol is supported by a wide range of devices and can be used to log different types of events.
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -25,7 +25,7 @@ One might change the facility on a remote syslog (rsyslog) server from it's defa
 
 - `syslog://localhost/local5`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable | Required | Description                                                                                                                                                                                                                                                               |
 | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -34,7 +34,7 @@ One might change the facility on a remote syslog (rsyslog) server from it's defa
 | facility | No       | The facility to use, by default it is `user`. Valid options are **kern**, **user**, **mail**, **daemon**, **auth**, **syslog**, **lpr**, **news**, **uucp**, **cron**, **local0**, **local1**, **local2**, **local3**, **local4**, **local5**, **local6**, and **local7** |
 | logpid   | Yes      | Include PID as part of the log output.                                                                                                                                                                                                                                    |
 
-### Example
+## Examples
 
 Send a Remote Syslog notification
 

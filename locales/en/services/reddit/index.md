@@ -10,7 +10,7 @@ description: "Send reddit notifications."
 - **Message Format**: Text
 - **Message Limit**: 6000 Characters per message
 
-### Account Setup
+## Account Setup
 
 1. Visit <https://old.reddit.com/prefs/apps> and scroll to the bottom
 1. Click on the button that reads '**are you a developer? create an app...**'
@@ -25,14 +25,14 @@ description: "Send reddit notifications."
 - The **App Secret** will look something like this: `YZGKc5YNjq3BsC-bf7oBKalBMeb1xA`
 - The App will also have a location where you can identify the users/developers who can also use this key. By default it's already configured to be yours. You will need to use the user/pass of one of the accounts identified here as well to use the posting capabilities.
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
 - `reddit://{user}:{pass}@{app_id}/{app_secret}/{subreddit}`
 - `reddit://{user}:{pass}@{app_id}/{app_secret}/{subreddit_1}/{subreddit_2}/{subreddit_N}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable   | Required | Description                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | ---------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -52,7 +52,7 @@ Valid syntax is as follows:
 
 **Note:** Reddit always requires a `title` to go with it's `body`. Reddit will deny your post (upstream) if you don't provide both.
 
-#### Example
+## Examples
 
 Send a Reddit Notification
 

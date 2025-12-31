@@ -1,16 +1,24 @@
 ---
-title: "kumulos Notifications"
-description: "Send kumulos notifications."
+title: "Kumulos Notifications"
+description: "Send Kumulos notifications."
+sidebar:
+  label: "Kumulos"
+
+source: https://kumulos.com/
+
+schemas:
+  - kumulos
+
+sample_urls:
+  - kumulos://{ApiKey}/{ServerKey}
+
+limits:
+  max_chars: 240
 ---
 
-## Kumulos
+<!-- SERVICE:DETAILS -->
 
-- **Source**: <https://kumulos.com/>
-- **Icon Support**: No
-- **Message Format**: Text
-- **Message Limit**: 240 Characters per message
-
-### Account Setup
+## Account Setup
 
 To use this plugin, you must have a Kumulos account set up. Add at least 1 client and link it with your phone using the phone app (using your _Companion App_ option in the profile menu area):
 
@@ -19,20 +27,22 @@ To use this plugin, you must have a Kumulos account set up. Add at least 1 clien
 
 To use Kumulos, you will need to acquire your _API Key_ and _Server Key_. Both of these are accessible via the Kumulos Dashboard.
 
-### Syntax
+## Syntax
 
-Valid syntax ia as follows:
+Valid syntax is as follows:
 
 - `kumulos://{ApiKey}/{ServerKey}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable  | Required | Description                                               |
 | --------- | -------- | --------------------------------------------------------- |
 | ApiKey    | Yes      | The _API Key_ associated with your Kumulos account.       |
 | ServerKey | Yes      | The _Server Secret_ associated with your Kumulos account. |
 
-#### Example
+<!-- GLOBAL:SERVICE:PARAMS -->
+
+## Examples
 
 Send a Kumulos Notification:
 

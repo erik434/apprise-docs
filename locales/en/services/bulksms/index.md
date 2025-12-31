@@ -60,7 +60,7 @@ For ambiguity, if you do not provide a valid phone number, and the information p
 
 <!-- GLOBAL:SERVICE:PARAMS -->
 
-## Example
+## Examples
 
 Send a BulkSMS Message:
 

@@ -30,7 +30,7 @@ https://www.pushplus.plus/send?token=abc123def456ghi789jkl012mno345pq
 
 Apprise supports both the full Pushplus native webhook URL and its simplified version.
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -39,7 +39,7 @@ Valid syntax is as follows:
 
 ---
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable | Required | Description                                             |
 | -------- | -------- | ------------------------------------------------------- |
@@ -47,7 +47,7 @@ Valid syntax is as follows:
 
 ---
 
-### Examples
+## Examples
 
 #### 1. Using the simplified Apprise URL
 

@@ -17,7 +17,7 @@ There isn't too much effort requires to use PushSafer notifications. The message
 
 Once you log into their official [website](https://www.pushsafer.com/), you can find the **{private_key}** on your [dashboard](https://www.pushsafer.com/dashboard/).
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -32,7 +32,7 @@ If no device is specified, the `a` reserved device is used by default. the `a` n
 
 Secure connections are always made when you use `psafers://` however `psafer://` also works if you wish to use an unencrypted connection.
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable    | Required | Description                                                                                                                                                                                                                                                                                                                                                                      |
 | ----------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -42,7 +42,7 @@ Secure connections are always made when you use `psafers://` however `psafer://`
 | sound       | No       | Can optionally identify one of the optional sound effects identified [here](https://www.pushsafer.com/en/pushapi#api-sound). By default this variable isn't set at all.                                                                                                                                                                                                          |
 | vibration   | No       | Android and iOS devices can be set to vibrate upon the reception of a notification. By setting this, you're effectively setting the strength of the vibration. You can set this to **1**, **2** or **3** where 3 is a maximum vibration setting and 1 causes a lighter vibration. By default this variable isn't set at all causing your device default settings to take effect. |
 
-#### Example
+## Examples
 
 Send a PushSafer notification to all of our configured devices:
 

@@ -19,7 +19,7 @@ Targets can be either a User (`UID_DATA`) or a Topic (`<integer>`). i.e:
 
 - `wxpusher://apptoken/123/343/UID_ABCD` would notify 2 topics (`123`, and `343`) plus one user `UID_DATA`)
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -32,7 +32,7 @@ You can also mix/match topic's and user ids:
 
 - `wxpusher://{app_token}@{topic1}/{userid1}/...`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable  | Required | Description                                                                                      |
 | --------- | -------- | ------------------------------------------------------------------------------------------------ |
@@ -40,7 +40,7 @@ You can also mix/match topic's and user ids:
 | userid    | \*No     | You must specify at least 1 (one) `userid` OR 1 (one) `topic`. A `userid` has a prefix of `UID_` |
 | topic     | \*No     | You must specify at least 1 (one) `userid` OR 1 (one) `topic`. A `topic` is an integer value     |
 
-#### Example
+## Examples
 
 Send a WxPusher notification using a topic a topic:
 

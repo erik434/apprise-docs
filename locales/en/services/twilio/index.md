@@ -10,13 +10,13 @@ description: "Send twilio notifications."
 - **Message Format**: Text
 - **Message Limit**: 140 Characters per message
 
-### Account Setup
+## Account Setup
 
 To use Twilio, you will need to acquire your _Account SID_ and _Auth Token_. Both of these are accessible via the [Twilio Dashboard](https://www.twilio.com/console).
 
 You'll need to have a number defined as an Active Number ([from your dashboard here](https://www.twilio.com/console/phone-numbers/incoming)). This will become your **{FromPhoneNo}** when identifying the details below.
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -32,7 +32,7 @@ If no _ToPhoneNo_ is specified, then the _FromPhoneNo_ will be messaged instead;
 - **twilio**://**{AccountSID}**:**{AuthToken}**@**{ShortCode}**/**{PhoneNo}**
 - **twilio**://**{AccountSID}**:**{AuthToken}**@**{ShortCode}**/**{PhoneNo1}**/**{PhoneNo2}**/**{PhoneNoN}**
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable    | Required | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | ----------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -44,7 +44,7 @@ If no _ToPhoneNo_ is specified, then the _FromPhoneNo_ will be messaged instead;
 
 **Note:** This notification service does not use the title field; only the _body_ is passed along.
 
-#### Examples
+## Examples
 
 Send a Twilio Notification as an SMS:
 

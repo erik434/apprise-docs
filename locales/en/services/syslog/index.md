@@ -12,7 +12,7 @@ description: "Send syslog notifications."
 
 Leverage the local syslog server if loaded.
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -23,7 +23,7 @@ One might change the facility from it's default like so:
 
 - `syslog://local5`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable | Required | Description |
 | -------- | -------- | ----------- |
@@ -33,7 +33,7 @@ is used by default.
 | logperror | No | Additionally send the log message to _stderr_. This method is ignored when preforming a remote query.
 | logpid | Yes | Include PID as part of the log output.
 
-### Example
+## Examples
 
 Send a Syslog notification
 

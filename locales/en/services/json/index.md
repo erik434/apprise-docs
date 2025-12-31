@@ -72,7 +72,7 @@ The secure versions:
 
 <!-- GLOBAL:SERVICE:PARAMS -->
 
-## Example
+## Examples
 
 Send a JSON notification to our web server listening on port 80:
 

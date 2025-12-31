@@ -11,7 +11,7 @@ description: "Send resend notifications."
 - **Message Format**: Text
 - **Message Limit**: 32768 Characters per message
 
-### Account Setup
+## Account Setup
 
 Creating an account with Resend is free of charge and can be done through their main page.
 
@@ -19,7 +19,7 @@ Once you have an account and access to [your dashboard](https://resend.com/). Yo
 
 The last thing you need is to generate an **API Key** with at least the **Sending** permission. This can also be done through your dashboard in the [API Keys](https://resend.com/api-keys) section of your dashboard.
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -27,7 +27,7 @@ Valid syntax is as follows:
 - `resend://{apikey}:{from_email}/{to_email}`
 - `resend://{apikey}:{from_email}/{to_email1}/{to_email2}/{to_email3}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable   | Required | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | ---------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -39,7 +39,7 @@ Valid syntax is as follows:
 | name       | No       | With respect to {from*email}, this allows you to provide a name with your \_Reply-To* address. <br/>**Note:** This field has become redundant and become synonymous to `from=`. It still behaves as it did in previous versions, but you can also follow the `A User<user@email.com>` syntax as well. To eliminate ambiguity; the values parsed from the `from=` will always trump the `name=`.                                                                                        |
 | reply      | No       | Provide a Reply-To email (or set of). More than one can be separated with a space and/or comma.                                                                                                                                                                                                                                                                                                                                                                                        |
 
-#### Example
+## Examples
 
 Send a Resend notification:
 

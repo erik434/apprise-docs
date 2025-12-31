@@ -70,7 +70,7 @@ You can freely mix and match these combinations as well:
 
 <!-- GLOBAL:SERVICE:PARAMS -->
 
-## Example
+## Examples
 
 Send a Join notification to all of our configured devices:
 

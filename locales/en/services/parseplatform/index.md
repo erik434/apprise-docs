@@ -10,14 +10,16 @@ description: "Send parseplatform notifications."
 - **Message Format**: Text
 - **Message Limit**: 32768 Characters per Message
 
-### Syntax
+## Syntax
 
 Channels are optional; if no channel is specified then you are just personally notified.
+
+Valid syntax is as follows:
 
 - `parsep://{app_id}:{master_key}@{hostname}`
 - `parseps://{app_id}:{master_key}@{hostname}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable   | Required | Description                                         |
 | ---------- | -------- | --------------------------------------------------- |
@@ -25,7 +27,7 @@ Channels are optional; if no channel is specified then you are just personally n
 | master_key | Yes      | This is the Master Key associated with your account |
 | hostname   | Yes      | The Hostname of your Parse Platform Server          |
 
-#### Example
+## Examples
 
 Send a Parse Platform notification
 

@@ -32,7 +32,7 @@ Valid syntax is as follows:
 - `httpsms://{apikey}@{fromPhoneNo}`
 - `httpsms://{apikey}@{fromPhoneNo}/{target}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable | Required | Description                                                                                                                                                     |
 | -------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -42,7 +42,7 @@ Valid syntax is as follows:
 
 <!-- GLOBAL:SERVICE:PARAMS -->
 
-## Example
+## Examples
 
 Send a httpSMS Message:
 

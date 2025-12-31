@@ -1,28 +1,39 @@
 ---
-title: "messagebird Notifications"
-description: "Send messagebird notifications."
+title: "MessageBird Notifications"
+description: "Send MessageBird notifications."
+sidebar:
+  label: "MessageBird"
+
+source: https://messagebird.com
+
+schemas:
+  - msgbird
+
+has_sms: true
+
+sample_urls:
+  - msgbird://{ApiKey}/{FromPhoneNo}
+  - msgbird://{ApiKey}/{FromPhoneNo}/{ToPhoneNo}
+  - msgbird://{ApiKey}/{FromPhoneNo}/{ToPhoneNo1}/{ToPhoneNo2}/{ToPhoneNoN}
+limits:
+  max_chars: 160
 ---
 
-## MessageBird
+<!-- SERVICE:DETAILS -->
 
-- **Source**: <https://messagebird.com>
-- **Icon Support**: No
-- **Message Format**: Text
-- **Message Limit**: 160 Characters per message
-
-### Account Setup
+## Account Setup
 
 To use MessageBird, you will need to acquire your _API Key_. This is accessible via the [MessageBird Dashboard](https://dashboard.messagebird.com/en/user/index).
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
-- **msgbird**://**{ApiKey}**/**{FromPhoneNo}**
-- **msgbird**://**{ApiKey}**/**{FromPhoneNo}**/**{ToPhoneNo}**
-- **msgbird**://**{ApiKey}**/**{FromPhoneNo}**/**{ToPhoneNo1}**/**{ToPhoneNo2}**/**{ToPhoneNoN}**
+- `msgbird://{ApiKey}/{FromPhoneNo}`
+- `msgbird://{ApiKey}/{FromPhoneNo}/{ToPhoneNo}`
+- `msgbird://{ApiKey}/{FromPhoneNo}/{ToPhoneNo1}/{ToPhoneNo2}/{ToPhoneNoN}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable    | Required | Description                                                                                                                                                                                                                                                                                                           |
 | ----------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -30,7 +41,9 @@ Valid syntax is as follows:
 | FromPhoneNo | Yes      | A from phone number MUST include the country codes dialling prefix as well when placed. This field is also very friendly and supports brackets, spaces and hyphens in the event you want to format the number in an easy to read fashion. This MUST be the the number you registered with your _MessageBird_ account. |
 | ToPhoneNo   | No       | A to phone number MUST include the country codes dialling prefix as well when placed. This field is also very friendly and supports brackets, spaces and hyphens in the event you want to format the number in an easy to read fashion. If no _ToPhoneNo_ is specified, then the _FromPhoneNo_ is notified instead.   |
 
-#### Example
+<!-- GLOBAL:SERVICE:PARAMS -->
+
+## Examples
 
 Send a MessageBird Notification as an SMS:
 

@@ -32,7 +32,9 @@ This plugin was based on lower level calls similar to how the _notify-send_ tool
 
 ## Syntax
 
-There are currently no options you can specify for this kind of notification, so it's really easy to reference:
+There are currently no options you can specify for this kind of notification, so it's really easy to reference.
+
+Valid syntax is as follows:
 
 - `dbus://`
   - This is the probably best use of this plugin as it will attempt to connect to a QT DBus (usually KDE based) if it can, otherwise it will secondly try to connect to a glib DBus (usually Gnome/Unity based).
@@ -47,7 +49,7 @@ There are currently no options you can specify for this kind of notification, so
 
 <!-- GLOBAL:SERVICE:PARAMS -->
 
-## Example
+## Examples
 
 Assuming we're on an OS that allows us to host the Gnome Desktop, we can send a notification to ourselves like so:
 

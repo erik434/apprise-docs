@@ -10,7 +10,7 @@ description: "Send ryver notifications."
 - **Message Format**: Markdown
 - **Message Limit**: 1000 Characters per message
 
-### Account Setup
+## Account Setup
 
 To use Ryver you'll need to have the forum(s) you intend to notify already pre-created. You'll need to do this before you follow the next set of instructions.
 
@@ -37,7 +37,7 @@ The last part of the URL you're given is the token we're most interested in. Wit
 - the **token** is `ckhrjW8w672m6HG`
 - the **organization** is `apprise`
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -46,7 +46,7 @@ Valid syntax is as follows:
 - `ryver://{botname}@{organization}/{token}/`
 - `ryver://{organization}/{token}/?webhook=slack`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable     | Required | Description                                                                                                                                                                  |
 | ------------ | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -55,7 +55,7 @@ Valid syntax is as follows:
 | botname      | No       | Set the display name the message should appear from.                                                                                                                         |
 | webhook      | No       | The type of webhook you created (Slack or Ryver). The only possible values are **slack** and **ryver**. The default value is **ryver** if the webhook value isn't specified. |
 
-#### Example
+## Examples
 
 Send a ryver notification:
 

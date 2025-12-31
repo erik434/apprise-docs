@@ -28,6 +28,8 @@ sample_urls:
 
 ## Syntax
 
+Valid syntax is as follows:
+
 - **Text API**  
   `dot://{token}@{device_id}/text/?signature={footer}&icon={base64_icon}`
 

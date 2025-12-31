@@ -10,13 +10,13 @@ description: "Send sinch notifications."
 - **Message Format**: Text
 - **Message Limit**: 160 Characters per message
 
-### Account Setup
+## Account Setup
 
 To use Sinch, you will need to acquire your _Service Plan ID_ and _API Token_. Both of these are accessible via the [Sinch Dashboard](https://dashboard.sinch.com/sms/overview) or through [the API section](https://dashboard.sinch.com/sms/api/rest).
 
 You'll need to have a number defined as an Active Number ([from your dashboard here](https://dashboard.sinch.com/numbers/your-numbers/number)). This will become your **{FromPhoneNo}** when identifying the details below.
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -32,7 +32,7 @@ Short Codes are also supported but require at least 1 Target PhoneNo
 - `sinch://{ServicePlanID}:{ApiToken}@{ShortCode}/{PhoneNo}`
 - `sinch://{ServicePlanID}:{ApiToken}@{ShortCode}/{PhoneNo1}/{PhoneNo2}/{PhoneNoN}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable      | Required | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | ------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -43,7 +43,7 @@ Short Codes are also supported but require at least 1 Target PhoneNo
 | PhoneNo       | **\*No** | A phone number MUST include the country codes dialling prefix as well when placed. This field is also very friendly and supports brackets, spaces and hyphens in the event you want to format the number in an easy to read fashion.<br/>**Note:** If you're using a _ShortCode_, then at least one _PhoneNo_ MUST be defined.                                                                                                                                                                                                              |
 | Region        | **No**   | Can be either `us` or `eu`. By default the region is set to `us`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 
-#### Example
+## Examples
 
 Send a Sinch Notification as an SMS:
 

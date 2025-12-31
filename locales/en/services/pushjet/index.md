@@ -12,9 +12,9 @@ description: "Send pushjet notifications."
 
 **Note:** The Pushjet online service appears to have gone dead. They did however leave behind all of our source code as open source [here on github](https://github.com/Pushjet). Thus the _apprise_ plugin _pjet://_ still works for the local hosting of a Pushjet server.
 
-### Syntax
+## Syntax
 
-If you want to use your own custom Pushjet server, then the following identify the syntax you may use:
+Valid syntax is as follows:
 
 - `pjet://{host}/{secret_key}`
 - `pjet://{host}:{port}/{secret_key}`
@@ -25,7 +25,7 @@ If you want to use your own custom Pushjet server, then the following identify t
 - `pjets://{user}:{password}@{host}/{secret_key}`
 - `pjets://{user}:{password}@{host}:{port}/{secret_key}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable   | Required | Description                                                                                                                                                                                                                       |
 | ---------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -35,7 +35,7 @@ If you want to use your own custom Pushjet server, then the following identify t
 | password   | No       | If you're system is set up to use HTTP-AUTH, you can provide _password_ for authentication to it.                                                                                                                                 |
 | port       | No       | The Pushjet port optional and only required if you're hosting your own notification server on a different port then the standard ones. By default the port is **80** for **pjet://** and **443** for all **pjets://** references. |
 
-#### Example
+## Examples
 
 Send a Pushjet notification:
 

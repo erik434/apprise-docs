@@ -1,17 +1,30 @@
 ---
-title: "mastodon Notifications"
-description: "Send mastodon notifications."
+title: "Mastodon Notifications"
+description: "Send Mastodon notifications."
+sidebar:
+  label: "Mastodon"
+
+source: https://joinmastodon.org
+
+schemas:
+  - mastodon: insecure
+  - toot: insecure
+  - mastodons
+  - toots
+
+has_attachments: true
+
+sample_urls:
+  - mastodons://{token}@{host}
+  - mastodon://{token}@{host}/{targets}
+
+limits:
+  max_chars: 500
 ---
 
-## Mastodon Notifications
+<!-- SERVICE:DETAILS -->
 
-- **Source**: <https://joinmastodon.org>
-- **Attachment Support**: Yes
-- **Icon Support**: No
-- **Message Format**: Text
-- **Message Limit**: 500
-
-### Account Setup
+## Account Setup
 
 Sign up for any Mastodon based service. [Here are a few you can choose from today](https://joinmastodon.org/servers).
 
@@ -27,7 +40,7 @@ At the bare minimum you need to grant the following scopes on your application:
 
 After you create your Application, revisit it's configuration as it will now provide you with a `key`, `secret`, and `access_token`. You ONLY need the **Access Token** to have Apprise work.
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -42,7 +55,7 @@ Valid syntax is as follows:
 
 Simply use `mastodon://` or `toot://` if access in an insecure server and `mastodons://` or `toots://` if accessing a secure one (https).
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable   | Required | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | ---------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -53,6 +66,8 @@ Simply use `mastodon://` or `toot://` if access in an insecure server and `masto
 | spoiler    | No       | Optionally provide _spoiler text_ that should be associated with the status message posted.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | language   | No       | Optionally provide a ISO 639 language code with your status post. E.g. `en`, `fr`, etc.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | key        | No       | Prevent duplicate submissions of the same status. Idempotency keys are stored for up to 1 hour, and can be any arbitrary string. Consider using a hash or UUID generated client-side.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ### Smart Processing
 
@@ -65,13 +80,13 @@ apprise -b "Hey guys, this message was sent from Apprise" \
 
 This will cause the message body to be created as
 
-```
+```text
 Hey guys, this message was sent from Apprise @caronc
 ```
 
 It's important to state that if you identify `/@users` entries on your Apprise URL, they will be appended into the message so they are notified. However, that said, if you prepare a URL for `direct` visibility and do not provide a user. Apprise will look up your own credentials automatically and send the message to yourself.
 
-```
+```bash
 # Here is an example where we're specifying a `direct` message
 # as our intentions are to create a DM.  This will cause Apprise to look
 # ourselves up and notify our own account.  You MUST have the
@@ -94,7 +109,7 @@ apprise -b "Hey @caronc, Thanks for showing me the Apprise plugin!" \
 
 In the above case, `@caronc` is identified as both a target to be delivered to AND also already exists in the status message being sent. As a result, no `@caronc` will be appended at the end and the message will be sent as is.
 
-```
+```text
 Hey @caronc, Thanks for showing me the Apprise plugin!
 ```
 
@@ -113,7 +128,7 @@ The following has 3 people set up as targets, but it has already identified 1 of
 Hey @caronc, Thanks for showing me the Apprise plugin! @joe @sam
 ```
 
-#### Example
+## Examples
 
 Send a Mastodon toot:
 

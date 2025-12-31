@@ -11,18 +11,18 @@ description: "Send Revolt notifications."
 - **Message Format**: Text
 - **Message Limit**: 2000 Characters per message
 
-### Account Setup
+## Account Setup
 
 Set up your account on [Revolt Chat](https://revolt.chat/) and generate a bot token
 
-### Syntax
+## Syntax
 
-The following syntax is valid:
+Valid syntax is as follows:
 
 - `revolt://{bot_token}/{channel_id}`
 - `revolt://{bot_token}/{channel_id1}/{channel_id2}/{channel_id3}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable   | Required | Description                                                                                                      |
 | ---------- | -------- | ---------------------------------------------------------------------------------------------------------------- |
@@ -31,7 +31,7 @@ The following syntax is valid:
 | url        | No       | Optionally specify an Embed URL with the API                                                                     |
 | icon_url   | No       | Optionally specify a URL to and Image to over-ride defaults                                                      |
 
-#### Example
+## Examples
 
 Send a telegram notification to lead2gold:
 

@@ -11,7 +11,7 @@ description: "Send sendgrid notifications."
 - **Message Format**: Text
 - **Message Limit**: 32768 Characters per message
 
-### Account Setup
+## Account Setup
 
 Creating an account with SendGrid is free of charge and can be done through their main page.
 
@@ -19,7 +19,7 @@ Once you have an account and access to [your dashboard](https://app.sendgrid.com
 
 The last thing you need is to generate an **API Key** with at least the **Mail Send** permission. This can also be done through your dashboard in the [API Keys](https://app.sendgrid.com/settings/api_keys) section of your dashboard. You can get here by clicking on **Settings** > **API Keys**
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -35,7 +35,7 @@ If you want to take advantage of the `dynamic_template_data` variables, just cre
 
 - `sendgrid://{apikey}:{from_email}/{to_email}?template={template_uuid}&+{sub1}=value&+{sub2}=value2`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable   | Required | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | ---------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -73,7 +73,7 @@ You can take a mapped variable on a SendGrid template
 and easily swap it with whatever you want using Apprise.
 ```
 
-#### Example
+## Examples
 
 Send a sendgrid notification:
 

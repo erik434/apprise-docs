@@ -21,7 +21,7 @@ Once you log into [the website](https://pushover.net/), your dashboard will pres
 
 On the dashboard after logging in, if you scroll down you'll have the ability to generate an application. Upon doing so, you will be provided an API Token to associate with this application you generated. This will become your **{token}**.
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -31,7 +31,7 @@ Valid syntax is as follows:
 - `pover://{user_key}@{token}?priority={priority}`
 - `pover://{user_key}@{token}?priority=emergency&expire={expire}&retry={retry}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable  | Required | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | --------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -56,7 +56,7 @@ Pushover integration constrains notification sounds to a predefined list. This c
 
 You should hear your custom sound on the notification. In cases where the custom sound name is not found, the default pushover notification sound will play.
 
-#### Example
+## Examples
 
 Send a Pushover notification to all of our configured devices:
 

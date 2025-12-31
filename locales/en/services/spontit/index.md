@@ -40,6 +40,8 @@ Unknown
 
 Channels are optional; if no channel is specified then you are just personally notified.
 
+Valid syntax is as follows:
+
 - `spontit://{user}@{apikey}`
 - `spontit://{user}@{apikey}/{channel_id}`
 - `spontit://{user}@{apikey}/{channel_id1}/{channel_id2}/{channel_idN}/`
@@ -55,7 +57,7 @@ Channels are optional; if no channel is specified then you are just personally n
 
 <!-- GLOBAL:SERVICE:PARAMS -->
 
-## Example
+## Examples
 
 Send a Spontit notification to all devices associated with a project:
 

@@ -25,7 +25,7 @@ Bark is an iOS App which allows you to push custom notifications to your iPhone.
 
 ## Syntax
 
-Valid authentication syntax is as follows:
+Valid syntax is as follows:
 
 - `bark://{host}/{device_key}`
 - `bark://{host}:{port}/{device_key}`
@@ -55,7 +55,7 @@ You can also notify more the one device at a time.
 
 <!-- GLOBAL:SERVICE:PARAMS -->
 
-## Example
+## Examples
 
 Send a Bark notification to all devices associated with a project:
 

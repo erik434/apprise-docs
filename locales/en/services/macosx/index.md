@@ -1,14 +1,21 @@
 ---
-title: "macosx Notifications"
-description: "Send macosx notifications."
+title: "MacOS X Desktop Notifications"
+description: "Send MacOS X Desktop notifications."
+
+group: desktop
+schemas:
+  - macosx: insecure
+
+sample_urls:
+  - macosx://
+
+limits:
+  max_chars: 250
 ---
 
-## MacOS X Desktop Notifications
+<!-- SERVICE:DETAILS -->
 
-- **Source**: n/a
-- **Icon Support**: Yes
-- **Message Format**: Text
-- **Message Limit**: 250 Characters per message
+## Account Setup
 
 Display notifications right on your Mac OS X desktop provided you're running version 10.8 or higher and have installed [terminal-notifier](https://github.com/julienXX/terminal-notifier). This only works if you're sending the notification to the same system you're currently accessing. Hence this notification can not be sent from one PC to another.
 
@@ -17,9 +24,11 @@ Display notifications right on your Mac OS X desktop provided you're running ver
 brew install terminal-notifier
 ```
 
-### Syntax
+## Syntax
 
-There are currently no options you can specify for this kind of notification, so it's really easy to reference:
+There are currently no options you can specify for this kind of notification, so it's really easy to reference.
+
+Valid syntax is as follows:
 
 - `macosx://`
 
@@ -29,14 +38,16 @@ You can also choose to set a sound to play (such as `default`):
 
 The `sound` can be set any of the sound names listed in _Sound Preferences_ of your Mac OS.
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable | Required | Description                                                                                 |
 | -------- | -------- | ------------------------------------------------------------------------------------------- |
 | sound    | No       | The `sound` can be set any of the sound names listed in _Sound Preferences_ of your Mac OS. |
 | image    | No       | Associate an image with the message. By default this is enabled.                            |
 
-#### Example
+<!-- GLOBAL:SERVICE:PARAMS -->
+
+## Examples
 
 We can send a notification to ourselves like so:
 

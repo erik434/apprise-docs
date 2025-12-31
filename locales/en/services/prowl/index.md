@@ -12,7 +12,7 @@ description: "Send prowl notifications."
 
 Prowl requires users to pre-register themselves at [prowlapp.com](https://www.prowlapp.com/) first.
 
-### Syntax
+## Syntax
 
 Valid syntax is as follows:
 
@@ -20,7 +20,7 @@ Valid syntax is as follows:
 - `prowl://{apikey}/{providerkey}`
 - `prowl://{apikey}/?priority={priority}`
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable    | Required | Description                                                                                                                    |
 | ----------- | -------- | ------------------------------------------------------------------------------------------------------------------------------ |
@@ -28,7 +28,7 @@ Valid syntax is as follows:
 | providerkey | No       | The Provider Key is only required if you have been whitelisted.                                                                |
 | priority    | No       | Can be **low**, **moderate**, **normal**, **high**, or **emergency**; the default is **normal** if a priority isn't specified. |
 
-#### Example
+## Examples
 
 Send a Prowl notification to our server
 

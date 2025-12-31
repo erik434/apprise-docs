@@ -24,9 +24,11 @@ limits:
 
 Display notifications right on your Gnome desktop. This only works if you're sending the notification to the same system you're currently accessing. Hence this notification can not be sent from one PC to another.
 
-### Syntax
+## Syntax
 
-There are currently no options you can specify for this kind of notification, so it's really easy to reference:
+There are currently no options you can specify for this kind of notification, so it's really easy to reference.
+
+Valid syntax is as follows:
 
 - `gnome://`
 
@@ -34,7 +36,7 @@ There are currently no options you can specify for this kind of notification, so
 
 <!-- GLOBAL:SERVICE:PARAMS -->
 
-## Example
+## Examples
 
 Assuming we're on an OS that allows us to host the Gnome Desktop, we can send a notification to ourselves like so:
 

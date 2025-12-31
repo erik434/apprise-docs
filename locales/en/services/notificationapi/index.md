@@ -23,9 +23,9 @@ NotificationAPI lets you trigger email, SMS, calls, push, and in‑app notificat
    - You can also address users by a NotificationAPI **user id**.
 5. If you are hosted outside the US, note your region’s API host (US default, CA, or EU).
 
-#### Syntax
+## Syntax
 
-Valid URL forms:
+Valid syntax is as follows:
 
 - `napi://{ClientID}/{ClientSecret}/{Target}`
 - `napi://{Type}@{ClientID}/{ClientSecret}/{Target}`
@@ -43,7 +43,7 @@ Examples of grouped targets:
 - `userid/+15551234567` → id + SMS
 - `userid/+15551234567/test@example.com` → id + SMS + email
 
-### Parameter Breakdown
+## Parameter Breakdown
 
 | Variable   | Required | Description                                                                                                                                                                                                                         |
 | ---------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -80,7 +80,7 @@ These parameters are always included by Apprise in addition to any custom `:{key
 
 These defaults are common across all Apprise plugins, in addition to the service‑specific parameters described above.
 
-### Examples
+## Examples
 
 Send to one email recipient by type and let NotificationAPI pick the channel:
 
