@@ -75,7 +75,7 @@ apprise -vv -t "My Title" -b "My Value" \
 
 Now I realize not everyone will want to use the default **{valueX}** entries defined. In fact, you may want to just use apprise to turn on a light switch and set some complete different value like **{switch}** to '_on_'. Here is how you could accomplish this:
 
-```
+```bash
 # Send {switch} a value of 'on'
 # Assuming our {WebhookID} is b1lUk7b9LpGakJARKBwRIZ
 # Assuming our {Event} is my_light

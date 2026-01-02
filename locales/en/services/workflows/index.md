@@ -19,7 +19,7 @@ Documentation for this can be found [here](https://learn.microsoft.com/en-us/pow
 
 When you've completed this, it will generate you a URL that looks like:
 
-```
+```text
 https://prod-NO.LOCATION.logic.azure.com:443/workflows/WFID/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=SIGNATURE
        |-------------------------------| |-|             |                                                                                                  |
                     |                     |          {workflow}                                                                                          {signature}

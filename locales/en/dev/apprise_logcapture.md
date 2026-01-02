@@ -3,7 +3,7 @@ title: "Apprise LogCapture()"
 description: "An indepth look at the LogCapture() tool to help capture output from calling services."
 ---
 
-# LogCapture
+## Introduction
 
 `apprise.LogCapture()` allows you to capture all of the logging information within your program. You may wish to relay the information to screen, or maybe you just want to have a look at it's contents when one or more notifications fail to be delivered.
 

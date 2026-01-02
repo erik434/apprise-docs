@@ -22,7 +22,7 @@ Once you create an account and subscribe to a channel, you will be issued a **to
 
 Your notification URL will look like this:
 
-```
+```text
 https://www.pushplus.plus/send?token=abc123def456ghi789jkl012mno345pq
 ```
 
@@ -49,21 +49,21 @@ Valid syntax is as follows:
 
 ## Examples
 
-#### 1. Using the simplified Apprise URL
+Using the simplified Apprise URL:
 
 ```bash
 apprise -vv -t "Title" -b "This is the body" \
     pushplus://abc123def456ghi789jkl012mno345pq
 ```
 
-#### 2. Using the token as a query parameter
+Using the token as a query parameter:
 
 ```bash
 apprise -vv -t "Title" -b "This is the body" \
     pushplus://?token=abc123def456ghi789jkl012mno345pq
 ```
 
-#### 3. Using the full native webhook URL
+Using the full native webhook URL:
 
 ```bash
 apprise -vv -t "Title" -b "This is the body" \

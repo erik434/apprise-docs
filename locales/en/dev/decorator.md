@@ -1,9 +1,9 @@
 ---
-title: "@notify Decorator"
+title: "Custom Notifications"
 description: "Write your own plugin easily using the built in Apprise Decorator"
 ---
 
-# Custom Notifications
+## Introduction
 
 This functionality is only available starting at Apprise v1+. The idea is to no longer be limited to just the Notification Services already built into Apprise. Instead you can now very easily write your own and assign it to your own `schema://`
 
@@ -73,7 +73,7 @@ def my_wrapper(body, *args, **kwargs):
 
 ```
 
-# The `meta` Variable
+## The `meta` Variable
 
 The `meta` variable passed into your wrapper function is always a dictionary. It contains the fully constructed URL based on your declaration (derived by the `@notify` decorator) in addition to the initialization Apprise URL specified by the user.
 
@@ -125,7 +125,7 @@ Only the variables that are required are provided in this dictionary. Hence if b
 }
 ```
 
-### Complex Declarations
+## Complex Declarations
 
 You can use the `@notify` declaration to define a more complex URL (instead of just the schema as explained up until now). For example:
 
@@ -204,15 +204,14 @@ Apprise will only load functions wrapped with `@notify()` decorator. These funct
 ## Command Line References
 
 By default, the Apprise CLI tool will search the following directories for custom hooks:
-**Linux/Mac**
 
-- `~/.apprise/plugins`
-- `~/.config/apprise/plugins`
+- **Linux/Mac**
+  - `~/.apprise/plugins`
+  - `~/.config/apprise/plugins`
 
-**Windows**
-
-- `%APPDATA%/Apprise/plugins`
-- `%LOCALAPPDATA%/Apprise/plugins`
+- **Windows**
+  - `%APPDATA%/Apprise/plugins`
+  - `%LOCALAPPDATA%/Apprise/plugins`
 
 You can over-ride these paths by including a `--plugin-dir` (or `-P`) on the CLI to include your own location. If you provide an override the defaults are not referenced.
 

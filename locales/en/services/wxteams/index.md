@@ -22,7 +22,7 @@ If you're logged in, you'll be able to click on the 'Connect' button. From there
 
 When you're complete, you will receive a URL that looks something like this:
 
-```
+```text
 https://api.ciscospark.com/v1/webhooks/incoming/\
        Y3lzY29zcGkyazovL3VzL1dFQkhPT0sajkkzYWU4fTMtMGE4Yy00
 ```

@@ -72,7 +72,7 @@ curl -X GET -H "Content-Type: application/json" localhost:9922/v1/groups/+155555
 
 Example output is as follows:
 
-```
+```json
 [
   {
     "name": "Test Group",

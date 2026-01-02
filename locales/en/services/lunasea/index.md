@@ -36,7 +36,7 @@ Taken from their website:
 
 Valid syntax is as follows:
 
-**Cloud Hosting**
+### Cloud Hosting
 
 - `lunasea://{toFireBaseUser}`
 - `lunasea://{toFireBaseUser1}/{toFireBaseUser2}/{toFireBaseUserN}`
@@ -47,7 +47,7 @@ You can mix and match as well:
 
 - `lunasea://{user}:{pass}@/+{toFireBaseUser1}/{toFireBaseDevice1}/`
 
-**Private Hosting**
+### Private Hosting
 
 This works the exact same way; you can just additionally specify your connection details to your local server:
 
@@ -66,6 +66,8 @@ You can mix and match as well:
 
 - `lunasea://{user}:{pass}@{hostname}/+{toFireBaseUser1}/{toFireBaseDevice1}/`
 - `lunasea://{user}:{pass}@{hostname}:{port}/+{toFireBaseUser1}/{toFireBaseDevice1}/`
+
+### Additional Notes
 
 Use `lunaseas://` for a Secure (`https://`) connection and `lunasea://` for Insecure (`http://`).
 

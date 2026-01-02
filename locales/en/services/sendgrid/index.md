@@ -46,13 +46,13 @@ If you want to take advantage of the `dynamic_template_data` variables, just cre
 | cc         | No       | The _Carbon Copy_ (CC:) portion of the email. This is entirely optional. It should be noted that SendGrid immediately rejects emails where the _cc_ contains an email address that exists in the _to_ or the _bcc_ list. To avoid having issues, Apprise automatically eliminates these duplicates silently if detected.                                                                                                                                                                 |
 | bcc        | No       | The _Blind Carbon Copy_ (BCC:) portion of the email. This is entirely optional. It should be noted that SendGrid immediately rejects emails where the _bcc_ contains an email address that exists in the _to_ or the _cc_ list. To avoid having issues, Apprise automatically eliminates these duplicates silently if detected. If an identical email is detected in both the CC and the BCC list, the BCC list will maintain the email and it will drop from the CC list automatically. |
 
-#### Dynamic Template Data
+### Dynamic Template Data
 
 Templates allow you to define {{variables}} within them that can be substituted on the fly once the email is sent. You can identify and set these variables using Apprise by simply sticking a plus (+) in front of any parameter you specify on your URL string.
 
 Consider the following template: `d-e624763c71314ea2a1fae38d7fa64a4a`
 
-```
+```text
 This is a test email about {{what}}.
 
 You can take a mapped variable on a SendGrid template
@@ -66,7 +66,7 @@ An Apprise URL might look like:<br/>
 
 The above URL would create the following:
 
-```
+```text
 This is a test email about templates.
 
 You can take a mapped variable on a SendGrid template

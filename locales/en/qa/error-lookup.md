@@ -9,9 +9,9 @@ Frequently identified error messages can be recorded in this section
 
 ### RuntimeError: asyncio.run() cannot be called from a running event loop
 
-If your calling program runs it's own event loop, then Apprise can cause some commotion when it tries to work with it's own. For these circumstances you have 2 options.
+If your calling program runs it's own event loop, then Apprise can cause some commotion when it tries to work with it's own. For these circumstances you have 2 options:
 
-1. Do not call `notify()`. Instead `await` the `async_notify()` call itself. [See here for more details](#async_notify--leveraging-await-to-send-notifications).
+1. Do not call `notify()`. Instead `await` the `async_notify()` call itself. [See here for more details](/qa/#async_notify--leveraging-await-to-send-notifications).
 1. Leverage a library that handles this exact case called [nest-asyncio](https://pypi.org/project/nest-asyncio/):
 
    ```bash

@@ -15,10 +15,10 @@ SpugPush is a simple webhook service provided by the Spug monitoring platform. I
 ### Setup Instructions
 
 1. Visit the [SpugPush service](https://push.spug.dev/).
-2. Sign in and generate your **token**.
-3. Copy the full webhook URL, which will look like:
+1. Sign in and generate your **token**.
+1. Copy the full webhook URL, which will look like:
 
-```
+```text
 https://push.spug.dev/send/abc123def456ghi789jkl012mno345pq
 ```
 
@@ -45,21 +45,21 @@ You may also use the query format: `spugpush://?token=YOUR_TOKEN`.
 
 ## Examples
 
-#### 1. Using the simplified Apprise URL
+Using the simplified Apprise URL:
 
 ```bash
 apprise -vv -t "SpugPush Title" -b "Notification content" \
    spugpush://abc123def456ghi789jkl012mno345pq
 ```
 
-#### 2. Using the token as a query parameter
+Using the token as a query parameter:
 
 ```bash
 apprise -vv -t "SpugPush Title" -b "Notification content" \
    spugpush://?token=abc123def456ghi789jkl012mno345pq
 ```
 
-#### 3. Using the full native webhook URL
+Using the full native webhook URL:
 
 ```bash
 apprise -vv -t "SpugPush Title" -b "Notification content" \

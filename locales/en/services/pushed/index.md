@@ -14,8 +14,6 @@ description: "Send pushed notifications."
 
 You'll want to _Request Developer Access_ which is asked of you when you first log in to the site. Check your email because you'll need to verify your account with them.
 
-#### First: Create an App
-
 Once this is done you will have access to the [apps](https://account.pushed.co/apps) where you can create a new one if you don't already have one.
 
 Once this is done, you'll get access to an:

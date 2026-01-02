@@ -124,7 +124,7 @@ apprise -b "Hey @caronc, Thanks for showing me the Apprise plugin!" \
 
 The following has 3 people set up as targets, but it has already identified 1 of them in the message. The other 2 are automatically appended to the end of your status message:
 
-```
+```text
 Hey @caronc, Thanks for showing me the Apprise plugin! @joe @sam
 ```
 

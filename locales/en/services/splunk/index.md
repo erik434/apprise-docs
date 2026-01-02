@@ -15,7 +15,7 @@ description: "Send splunk notifications."
 1. [Create an account with Splunk On-Call](https://www.splunk.com/en_us/sign-up.html?redirecturl=https://www.splunk.com/en_us/products/on-call.html) (previously VictorOps). Then set up your REST endoint <br/> ![splunk-01](https://github.com/caronc/apprise/assets/850374/031d341f-d661-42ec-980e-a1048ff730d8)
 1. Access your API Key from [this link](https://portal.victorops.com/dash/apprise#/advanced/rest).<br/> ![splunk-02](https://github.com/caronc/apprise/assets/850374/03fb915d-6da7-41b0-8e82-1a7d9e98b36b)<br/>It will look something like this:
 
-   ```
+   ```text
    https://alert.victorops.com/integrations/generic/20131114/alert/1234abcd-c11c-1ad1-a1a1-12345678abcd/$routing_key
                                                                    ^                                  ^ ^          ^
                                                                    |------------ apikey --------------| |          |

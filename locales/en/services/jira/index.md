@@ -25,7 +25,7 @@ limits:
 ## Account Setup
 
 1. Visit <https://atlassian.com/> to create your account.
-2. [Generate your Integration API Key](#)
+1. Generate your Integration API Key
 
 ## Syntax
 

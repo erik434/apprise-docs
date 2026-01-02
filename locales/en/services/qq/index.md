@@ -10,21 +10,19 @@ description: "Send qq notifications."
 - **Message Format**: Plain Text
 - **Message Limit**: ~10,000 Characters
 
+## Account Setup
+
 QQ Push is a third-party gateway for sending notifications to QQ users via services like [qmsg.zendee.cn](https://qmsg.zendee.cn/).
 
 To use it with Apprise, you'll need to register and obtain a personal **Token**.
-
-### Setup Instructions
 
 1. Visit [qmsg.zendee.cn](https://qmsg.zendee.cn/) and sign in using your QQ account.
 2. Once logged in, generate and copy your **token**.
 3. You’ll receive a webhook URL like this:
 
-```
+```text
 https://qmsg.zendee.cn/send/abc123def456ghi789jkl012mno345pq
 ```
-
-### Apprise Support
 
 You can use the full native webhook or a simplified Apprise URL.
 
@@ -44,21 +42,21 @@ Valid syntax is as follows:
 
 ## Examples
 
-#### 1. Using the simplified Apprise URL
+Using the simplified Apprise URL:
 
 ```bash
 apprise -vv -t "QQ Title" -b "Message content" \
     qq://abc123def456ghi789jkl012mno345pq
 ```
 
-#### 2. Using the query parameter form
+Using the query parameter form:
 
 ```bash
 apprise -vv -t "QQ Title" -b "Message content" \
     qq://?token=abc123def456ghi789jkl012mno345pq
 ```
 
-#### 3. Using the native webhook URL
+Using the native webhook URL:
 
 ```bash
 apprise -vv -t "QQ Title" -b "Message content" \

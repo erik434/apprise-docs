@@ -68,7 +68,7 @@ Secure connections should be referenced using **mqtts://** where as insecure con
 apprise -vvv -b "whatever-payload-want" "mqtt://localhost/my/topic"
 ```
 
-#### Sample Service Setup
+## Testing
 
 I did the following to test this service locally (using docker):
 

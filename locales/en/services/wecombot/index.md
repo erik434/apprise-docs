@@ -14,7 +14,7 @@ description: "Send wecombot notifications."
 
 Sign up for WeChat [from here](https://weixin.qq.com/). You will be provided to create a user and password to associate with your account. This is all you need to use this through Apprise.
 
-#### WeCom for PC
+### WeCom for PC
 
 1. On WeCom for PC, find the target WeCom group for receiving alarm notifications.
 1. Right-click the WeCom group. In the window that appears, click "Add Group Bot".
@@ -23,7 +23,7 @@ Sign up for WeChat [from here](https://weixin.qq.com/). You will be provided to 
 1. You will be provided a Webhook URL that looks like:
    - `https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=abcd`
 
-#### WeCom for Web
+### WeCom for Web
 
 1. On WebCom for Web, open the target WeCom group for receiving alarm notifications.
 1. Click the group settings icon in the upper-right corner.

@@ -3,13 +3,13 @@ title: "Service Example: Web Requests"
 description: "A templated example of how one might structure a Apprise service that makes web requests."
 ---
 
-# A Web Request Apprise Notification Example
+## A Web Request Apprise Notification Example
 
 This example shows a basic template of how one might build a Notification Service that is required to connect to an upstream web service and send a payload.
 
 It's very important that the filename `apprise/plugins/service.py` does not align with the class name inside of it. In this example, the class is `NotifyDemo`. So perhaps a good filename might be `apprise/plugins/demo.py`.
 
-## The Code
+### The Code
 
 ```python
 import requests
@@ -371,7 +371,7 @@ class NotifyDemo(NotifyBase):
         return results
 ```
 
-## Testing
+### Testing
 
 If you pasted the above file correctly into your Apprise library, you can test it with a tool such as netcat (`nc`).
 

@@ -3,7 +3,7 @@ title: "Persistent Storage"
 description: "Allows Apprise to avoid requesting the same data over and over again."
 ---
 
-# Persistent Storage
+## Introduction
 
 Persistent Storage greatly reduces the API transactions between you and the service(s) you may use. Developers need to enable this but the Apprise CLI has this enabled by default.
 

@@ -45,7 +45,7 @@ If you want to take advantage of the `dynamic_template_data` variables, just cre
 | cc            | No       | The _Carbon Copy_ (CC:) portion of the email. This is entirely optional.                                                                          |
 | bcc           | No       | The _Blind Carbon Copy_ (BCC:) portion of the email.                                                                                              |
 
-#### Dynamic Template Data
+### Dynamic Template Data
 
 Apprise has template support for SendPulse. Just define the `?template=` and the optional arguments you want to set. You can identify and set these variables using Apprise by simply sticking a plus (+) in front of any parameter you specify on your URL string.
 

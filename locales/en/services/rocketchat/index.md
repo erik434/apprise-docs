@@ -19,7 +19,7 @@ Rocket.Chat can send notifications through the following **modes**:
 
 Secure connections (via https) should be referenced using **rockets://** where as insecure connections (via http) should be referenced via **rocket://**.
 
-#### Basic Mode
+### Basic Mode
 
 Valid syntax is as follows:
 
@@ -40,7 +40,7 @@ You can also form any combination of the above and perform updates from one url:
 
 For the Basic Mode Only: if neither a **{room_id}** or **#{channel}** is specified then this notification will fail.
 
-#### Webhook Mode
+### Webhook Mode
 
 Valid syntax is as follows:
 

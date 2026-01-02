@@ -59,10 +59,12 @@ The templates you generate allow you to specify `{{1}}` and `{{2}}`, etc which a
 
 If you wish to assign the `body` or `type` from Apprise, these special keywords are specified instead with the `:` (colon) prefix providing the mapping/over-ride. For example: `?:body=1` would be accepted and would assign `{{1}}` the contents of the `body` passed into Apprise.
 
-**Additional Template Notes**
+:::note
 
 1. The template header must be set to either '' (empty) or assigned content.
-2. Variables in the message body, if any, must use the number format, e.g. `{{1}}`, as opposed to the named variables format, e.g. `{{order_id}}`
+1. Variables in the message body, if any, must use the number format, e.g. `{{1}}`, as opposed to the named variables format, e.g. `{{order_id}}`
+
+   :::
 
 ## Examples
 

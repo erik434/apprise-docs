@@ -3,24 +3,6 @@ title: "Apprise Core Library"
 description: "Developing using the Apprise Library"
 ---
 
-# Table of Contents
-
-<!--ts-->
-
-- [Development API](#development-api)
-  - [The Apprise Object](#the-apprise-object)
-    - [`add()`](#add-register-notification-services)
-    - [`notify()`](#notify-send-notifications)
-    - [`async_notify()`](#async_notify-awaitable-notifications)
-    - [`len()`](#len-count-services)
-    - [`clear()`](#clear-reset-service-list)
-    - [`details()`](#details-inspect-configuration--schemas)
-  - [The AppriseAsset Object](#the-appriseasset-object)
-  - [The Apprise Notification Object](#the-apprise-notification-object)
-- **Features**
-  - [Pickle/Serialization Support](#pickleserialization-support)
-  <!--te-->
-
 ## The Apprise Object
 
 ### Instantiation
@@ -425,9 +407,9 @@ obj.send(
 )
 ```
 
-# Features
+## Features
 
-## Pickle/Serialization Support
+### Pickle/Serialization Support
 
 You can Serialize your loaded notifications so they can be restored later on:
 

@@ -48,7 +48,7 @@ apprise --help
 
 The switches/options are as follows:
 
-```
+```text
 Usage:
    apprise [OPTIONS] [APPRISE_URL [APPRISE_URL2 [APPRISE_URL3]]]
    apprise storage [OPTIONS] [ACTION] [UID1 [UID2 [UID3]]]

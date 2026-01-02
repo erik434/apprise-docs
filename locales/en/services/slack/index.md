@@ -15,7 +15,7 @@ description: "Send slack notifications."
 
 Slack is slightly more complicated then some of the other notification services, so here is quick breakdown of what you need to know and do in order to send Notifications through it using this tool:
 
-#### Method 1: Incoming Webhook
+### Method 1: Incoming Webhook
 
 First off, Slack notifications require an _incoming-webhook_ it can connect to.
 
@@ -36,10 +36,10 @@ If you want to convert this to an Apprise URL, do the following:
 The last part of the URL you're given make up the 3 tokens you need to send notifications with It's very important to pay attention. In the above example the tokens are as follows:
 
 1. **TokenA** is `T1JJ3T3L2`
-2. **TokenB** is `A1BRTD4JD`
-3. **TokenC** is `TIiajkdnlazkcOXrIdevi7F8`
+1. **TokenB** is `A1BRTD4JD`
+1. **TokenC** is `TIiajkdnlazkcOXrIdevi7F8`
 
-#### Method 2: Create a Bot
+### Method 2: Create a Bot
 
 Bots offer you slightly more flexibility then Webhooks do. The main difference is _Slack Bots_ can support attachments allowing you to leverage this in Apprise!
 

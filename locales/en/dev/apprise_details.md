@@ -155,7 +155,7 @@ This section was the newest addition to what is provided. There are 4 core secti
 ...
 ```
 
-2. **tokens**: This provides the full mappings of each entry identified in the **templates** (identified above). It gives some data to easily build a web page and/or application from by allowing developers to dynamically generate the Apprise URLs.<br/> It also provides a **map_to** argument which maps the token directly to the Apprise Notification Class (should you want to manually initialize it this way instead of via a URL). Some tokens can be combined into one single token (as a list). The **map_to** argument additionally provides this connection as well. This is discussed more below.
+1. **tokens**: This provides the full mappings of each entry identified in the **templates** (identified above). It gives some data to easily build a web page and/or application from by allowing developers to dynamically generate the Apprise URLs.<br/> It also provides a **map_to** argument which maps the token directly to the Apprise Notification Class (should you want to manually initialize it this way instead of via a URL). Some tokens can be combined into one single token (as a list). The **map_to** argument additionally provides this connection as well. This is discussed more below.
 
 ```json
     {
@@ -202,7 +202,7 @@ This section was the newest addition to what is provided. There are 4 core secti
 ...
 ```
 
-3. **args**: This identifies any URL arguments you want to define. The arguments reside after the URL is defined, such as `http://path/?arg=val&arg2=val2`. URL arguments are never mandatory for a URL's construction with Apprise and merely provide extended options. A continued example (with respect to Discord) would look like this:
+1. **args**: This identifies any URL arguments you want to define. The arguments reside after the URL is defined, such as `http://path/?arg=val&arg2=val2`. URL arguments are never mandatory for a URL's construction with Apprise and merely provide extended options. A continued example (with respect to Discord) would look like this:
 
 ```json
 ...
@@ -276,7 +276,7 @@ This section was the newest addition to what is provided. There are 4 core secti
 ...
 ```
 
-4. **kwargs**: Simiar to args, these are never required, the subtle difference between **args** and \*_kwargs_ is with **args** the key names are already defined. with **kwargs** the user defines both the key and it's value when building the `?+key=value&-key2=value`. Custom **kwargs** in Apprise are _ALWAYS_ prefixed with a plus (**+**) or minus (**-**) symbol; for this reason there will ALWAYS be a **prefix** field that identities which symbol is applicable. There are very few notification services at this time that use this, but to support them, you'll find them here. JSON and XML URLs for example allow one to set the _HTTP Headers_ passed to the server they _POST_ to.
+1. **kwargs**: Simiar to args, these are never required, the subtle difference between **args** and \*_kwargs_ is with **args** the key names are already defined. with **kwargs** the user defines both the key and it's value when building the `?+key=value&-key2=value`. Custom **kwargs** in Apprise are _ALWAYS_ prefixed with a plus (**+**) or minus (**-**) symbol; for this reason there will ALWAYS be a **prefix** field that identities which symbol is applicable. There are very few notification services at this time that use this, but to support them, you'll find them here. JSON and XML URLs for example allow one to set the _HTTP Headers_ passed to the server they _POST_ to.
 
 ```json
 ...

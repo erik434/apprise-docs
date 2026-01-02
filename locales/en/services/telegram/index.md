@@ -19,26 +19,25 @@ At the very start (if you don't have an account already), you will need to conne
 
 Once you're set up, it can be a bit easier to just use their web interface [here](https://telegram.org/dl/webogram) with a PC (especially for development); but this part is up to you.
 
-#### Bot Setup
+### Bot Setup
 
 Telegram notifications require you to [create a bot](https://api.telegram.org). It's only after this is done that you will gain a vital piece of information Apprise needs called the **Token Identifier** (or **bot_token**).
 
 To do this you will have to open a communication (inside Telegram) to the **[BotFather](https://botsfortelegram.com/project/the-bot-father/)**. He is available to all users signed up to the platform. Once you've got a dialog box open to him:
 
 1. Type: `/newbot`
-2. Answer the questions it asks after doing this (which get the name of it, etc).
-3. When you've completed step 2, you will be provided a _bot_token_ that looks something like this: `123456789:alphanumeric_characters`.
-4. Type `/start` now in the same dialog box to enable and instantiate your brand new bot.
+1. Answer the questions it asks after doing this (which get the name of it, etc).
+1. When you've completed step 2, you will be provided a _bot_token_ that looks something like this: `123456789:alphanumeric_characters`.
+1. Type `/start` now in the same dialog box to enable and instantiate your brand new bot.
 
 The good news is this process only has to be done once. Once you get your **bot_token**, hold on to it and no longer worry about having to repeat this process again. It's through this bot that Apprise is able to send notifications onto Telegram to different users.
 
-#### Chat ID Conundrum
+:::warning
 
----
+### Chat ID Conundrum
 
 **2021.12.23 Update**: Recently the developers of Telegram have made it easier to acquire this ID using their own built in tool [explained here](https://www.alphr.com/find-chat-id-telegram/). Thank you `@mattpackwood` for this tip!
-
----
+:::
 
 Behind the scenes, Telegram notifies users by their **{chat_id}** and not their _easy-to-remember_ user name.
 Unfortunately (at this time) Telegram doesn't make it intuitive to get this **{chat_id}** without simple tricks and workarounds that can be found through Googling or just simply talking to their support team.

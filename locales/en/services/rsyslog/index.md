@@ -44,7 +44,7 @@ apprise -vv -t "Test Message Title" -b "Test Message Body" \
    rsyslog://localhost
 ```
 
-#### Internal RSyslog Test Server
+### Internal RSyslog Test Server
 
 ```bash
 # Setup a simple docker file that will run our our rsyslog server for us:
