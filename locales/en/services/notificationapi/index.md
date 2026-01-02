@@ -1,18 +1,30 @@
 ---
-title: "notificationapi Notifications"
-description: "Send notificationapi notifications."
+title: "NotificationAPI Notifications"
+description: "Send NotificationAPI notifications."
+sidebar:
+  label: "NotificationAPI"
+
+source: https://www.notificationapi.com
+
+schemas:
+  - napi
+  - notificationapi
+
+has_sms: true
+
+sample_urls:
+  - napi://{ClientID}/{ClientSecret}/{Target}
+  - napi://{Type}@{ClientID}/{ClientSecret}/{Target}
+
+limits:
+  max_chars: 160
 ---
 
-## NotificationAPI Notifications
+<!-- SERVICE:DETAILS -->
 
-- **Source**: <https://www.notificationapi.com>
-- **Icon Support**: Yes
-- **Message Format**: Plain Text and HTML
-- **Message Limit**: Varies by channel
+## Account Setup
 
 NotificationAPI lets you trigger email, SMS, calls, push, and in‑app notifications using a single API. The Apprise plugin supports the US, CA, and EU regional hosts. Configure the content once in NotificationAPI, then trigger it from Apprise by sending the notification **type** and **recipient** information, with optional merge‑tag parameters.
-
-### Setup Instructions
 
 1. Create a NotificationAPI account and sign in.
 2. In the dashboard, locate your **clientId** and **clientSecret** under _Environments_.
@@ -79,6 +91,8 @@ Each NotificationAPI request sent through Apprise includes the following default
 These parameters are always included by Apprise in addition to any custom `:{key}={value}` tokens you provide in your URL.
 
 These defaults are common across all Apprise plugins, in addition to the service‑specific parameters described above.
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 

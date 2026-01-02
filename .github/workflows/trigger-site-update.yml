@@ -1,4 +1,4 @@
-name: Trigger Website deploy
+name: Trigger Website Deploy
 
 on:
   push:
@@ -6,8 +6,6 @@ on:
     tags: ["v*"]
   workflow_dispatch:
 
-# This workflow only dispatches an event using an explicit token.
-# It does not need any repo permissions of its own.
 permissions: {}
 
 jobs:
@@ -25,19 +23,18 @@ jobs:
         run: |
           set -euo pipefail
 
-          # Determine whether this push was a branch or a tag
           ref_type="branch"
           if [[ "$REF" == refs/tags/* ]]; then
             ref_type="tag"
           fi
 
-          # Only allow master branch triggers from apprise-docs
+          # Only allow master branch triggers
           if [[ "$ref_type" == "branch" && "$REF_NAME" != "master" ]]; then
             echo "Ignoring non-master branch push: $REF_NAME"
             exit 0
           fi
 
-          # Only allow v* tags for prod
+          # Only allow v* tags
           if [[ "$ref_type" == "tag" && "$REF_NAME" != v* ]]; then
             echo "Ignoring non-v* tag: $REF_NAME"
             exit 0

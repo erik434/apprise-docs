@@ -1,15 +1,28 @@
 ---
 title: "Ntfy Notifications"
 description: "Send Ntfy (Notify) notifications."
+sidebar:
+  label: "Ntfy"
+
+source: https://ntfy.sh/
+
+schemas:
+  - ntfy: insecure
+  - ntfys
+
+has_attachments: true
+
+sample_urls:
+  - ntfy://{topic}
+  - ntfy://{host}/{topic}
+  - ntfy://{user}@{host}:{port}/{topics}
+  - ntfy://{user}:{password}@{host}/{topics}
+  - ntfy://{token}@{hostname}/{topics}
 ---
 
-## Ntfy Notifications
+<!-- SERVICE:DETAILS -->
 
-- **Source**: <https://ntfy.sh/>
-- **Icon Support**: No
-- **Attachment Support**: yes
-- **Message Format**: Text
-- **Message Limit**: 32768 Characters per message
+## Account Setup
 
 [Ntfy](https://ntfy.sh/) is a easy to use messaging service.
 
@@ -99,6 +112,8 @@ apprise -vv -t "Test Message Title" -b "# Markdown Support" \
 ```
 
 If your Ntfy server is behind an HTTPS (Secure) hosted setup, then you simply use `ntfys://`:
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ```bash
 # Assuming our SECURE {hostname} is localhost
