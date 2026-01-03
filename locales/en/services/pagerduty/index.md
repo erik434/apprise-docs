@@ -1,15 +1,25 @@
 ---
-title: "pagerduty Notifications"
-description: "Send pagerduty notifications."
+title: "PagerDuty Notifications"
+description: "Send PagerDuty notifications."
+sidebar:
+  label: "PagerDuty"
+
+source: https://www.pagerduty.com
+
+schemas:
+  - pagerduty
+
+has_attachments: true
+
+sample_urls:
+  - pagerduty://{integration_key}@{api_key}
+  - pagerduty://{integration_key}@{api_key}/{source}
+  - pagerduty://{integration_key}@{api_key}/{source}/{component}
 ---
 
-## PagerDuty Notifications
+<!-- SERVICE:DETAILS -->
 
-- **Source**: <https://www.pagerduty.com>
-- **Icon Support**: No
-- **Attachment Support**: Yes
-- **Message Format**: Text
-- **Message Limit**: 32768 Characters per message
+## Account Setup
 
 You need to have an account with [PagerDuty](https://www.pagerduty.com) and generate/access your API key.
 
@@ -37,6 +47,8 @@ Valid syntax is as follows:
 | click           | No       | Provide a clickable URL to associate with the notice.                                                                                                                                                                                  |
 | image           | No       | Associate the notification status via a represented icon. You can set this value to `no` if you do not want this to occur.                                                                                                             |
 | severity        | No       | The notification severity is otherwise detected on it's own, however if you wish to force a specific mode always, you can do so by providing this as part of the URL. Possible values are: `info`, `warning`, `critical`, and `error`. |
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 

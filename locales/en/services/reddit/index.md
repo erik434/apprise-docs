@@ -1,14 +1,23 @@
 ---
-title: "reddit Notifications"
-description: "Send reddit notifications."
+title: "Reddit Notifications"
+description: "Send Reddit notifications."
+sidebar:
+  label: "Reddit"
+
+source: https://reddit.com
+
+schemas:
+  - reddit
+
+sample_urls:
+  - reddit://{user}:{pass}@{app_id}/{app_secret}/{subreddit}
+  - reddit://{user}:{pass}@{app_id}/{app_secret}/{subreddit_1}/{subreddit_2}/{subreddit_N}
+
+limits:
+  max_chars: 6000
 ---
 
-## Reddit
-
-- **Source**: <https://reddit.com>
-- **Icon Support**: No
-- **Message Format**: Text
-- **Message Limit**: 6000 Characters per message
+<!-- SERVICE:DETAILS -->
 
 ## Account Setup
 
@@ -50,7 +59,11 @@ Valid syntax is as follows:
 | flair_id   | No       | Provide the `flair_id` you want to associate with your post. By default this is not passed upstream unless identified.                                                                                                                                                                                                                                                                                                                           |
 | flair_text | No       | Provide the `flair_text` you want to associate with your post. By default this is not passed upstream unless identified.                                                                                                                                                                                                                                                                                                                         |
 
-**Note:** Reddit always requires a `title` to go with it's `body`. Reddit will deny your post (upstream) if you don't provide both.
+:::note
+Reddit always requires a `title` to go with it's `body`. Reddit will deny your post (upstream) if you don't provide both.
+:::
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 

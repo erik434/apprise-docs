@@ -1,14 +1,22 @@
 ---
-title: "popcornnotify Notifications"
-description: "Send popcornnotify notifications."
+title: "PopcornNotify Notifications"
+description: "Send PopcornNotify notifications."
+sidebar:
+  label: "PopcornNotify"
+
+source: https://popcornnotify.com
+
+schemas:
+  - popcorn
+
+sample_urls:
+  - popcorn://{ApiKey}/{PhoneNo}/
+  - popcorn://{ApiKey}/{PhoneNo1}/{PhoneNo2}/{PhoneNoN}/
+  - popcorn://{ApiKey}/{Email}/
+  - popcorn://{ApiKey}/{Email1}/{Email2}/{EmailN}/
 ---
 
-## PopcornNotify Notifications
-
-- **Source**: <https://popcornnotify.com/>
-- **Icon Support**: No
-- **Message Format**: Text
-- **Message Limit**: 32768 Characters per message
+<!-- SERVICE:DETAILS -->
 
 ## Account Setup
 
@@ -36,6 +44,8 @@ You can mix and match the information too:
 | Email    | No       | The Email address you wish to notify                                                                                                                                                                                                                                                                                                |
 | to       | No       | This is an alias to the Phone/Email variable.                                                                                                                                                                                                                                                                                       |
 | batch    | No       | PopcornNotify allows a batch mode. If you identify more then one phone number and/or email, you can send all of these targets you identify on the URL in a single shot instead of the normal _Apprise_ approach (which sends them one by one). Enabling batch mode has both it's pro's and cons. By default batch mode is disabled. |
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 

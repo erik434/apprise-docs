@@ -1,14 +1,24 @@
 ---
-title: "parseplatform Notifications"
-description: "Send parseplatform notifications."
+title: "Parse Platform Notifications"
+description: "Send Parse Platform notifications."
+sidebar:
+  label: "Parse Platform"
+
+source: https://parseplatform.org/
+
+schemas:
+  - parsep: insecure
+  - parseps
+
+has_selfhosted: true
+
+sample_urls: -`parsep://{app_id}:{master_key}@{hostname}
+  - parseps://{app_id}:{master_key}@{hostname}
 ---
 
-## Parse Platform Notifications
+<!-- SERVICE:DETAILS -->
 
-- **Source**: <https://parseplatform.org/>
-- **Icon Support**: No
-- **Message Format**: Text
-- **Message Limit**: 32768 Characters per Message
+## Account Setup
 
 ## Syntax
 
@@ -26,6 +36,8 @@ Valid syntax is as follows:
 | app_id     | Yes      | The Application ID                                  |
 | master_key | Yes      | This is the Master Key associated with your account |
 | hostname   | Yes      | The Hostname of your Parse Platform Server          |
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 

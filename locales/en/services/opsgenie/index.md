@@ -1,14 +1,26 @@
 ---
-title: "opsgenie Notifications"
-description: "Send opsgenie notifications."
+title: "Opsgenie Notifications"
+description: "Send Opsgenie notifications."
+sidebar:
+  label: "Opsgenie"
+
+source: https://www.opsgenie.com
+
+schemas:
+  - opsgenie
+
+sample_urls:
+  - opsgenie://{apikey}/
+  - opsgenie://{apikey}/@{user}
+  - opsgenie://{apikey}/*{schedule}
+  - opsgenie://{apikey}/^{escalation}
+  - opsgenie://{apikey}/#{team}
+
+limits:
+  max_chars: 15000
 ---
 
-## Opsgenie Notifications
-
-- **Source**: <https://www.opsgenie.com>
-- **Icon Support**: No
-- **Message Format**: Text
-- **Message Limit**: 15000 Characters per Message
+<!-- SERVICE:DETAILS -->
 
 ## Account Setup
 
@@ -31,7 +43,9 @@ Valid syntax is as follows:
 - `opsgenie://{apikey}/#{team}`
 - `opsgenie://{apikey}/#{team1}/#{team2}/#{teamN}`
 
-**Note:** If no prefix character is specified, then the target is presumed to be a user (an `@` symbol is presumed to be in front of it).
+:::note
+If no prefix character is specified, then the target is presumed to be a user (an `@` symbol is presumed to be in front of it).
+:::
 
 You can also mix/match the targets:
 
@@ -52,6 +66,8 @@ You can also mix/match the targets:
 | priority   | No       | The priority to associate with the message. It is on a scale between 1 and 5. The default value is `3` if not specified.                                                                                            |
 | alias      | No       | The alias to associate with the message.                                                                                                                                                                            |
 | entity     | No       | The entity to associate with the message.                                                                                                                                                                           |
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 

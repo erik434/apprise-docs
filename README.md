@@ -3,7 +3,7 @@
 This repository contains the **community-maintained documentation** for  
 [Apprise](https://github.com/caronc/apprise) and [Apprise-API](https://github.com/caronc/apprise-api)
 
-> All content here is validated and synced into the [official site](https://appriseit.com/) automatically.
+All content here is validated and synced into the [official site](https://appriseit.com/) automatically.
 
 ## How This Content Is Used
 
@@ -11,8 +11,9 @@ Content from this repository is **synced into the official Apprise documentation
 
 👉 <https://appriseit.com/>
 
-You do not need to run the site locally or understand Astro or Starlight.  
-If your Markdown is valid and passes linting, it can be published.
+In addition to this, a **development hosting of the same site** (live copy of the `master` branch) allowing a staging preview of the next release.
+
+👉 <https://dev.appriseit.com/>
 
 This repository exists so that **anyone who can write Markdown** can help improve Apprise’s
 documentation, while providing a **single, authoritative source** for all
@@ -25,8 +26,7 @@ Apprise and Apprise-API documentation.
 - 🌍 The source of **all translations and locales**
 - 🤝 Open to **small and large contributions alike**
 
-If it can be written as Markdown and helps users understand [Apprise](https://github.com/caronc/apprise) and its companion [Apprise-API](https://github.com/caronc/apprise-api), then it belongs
-here.
+If it can be written as Markdown and helps users understand [Apprise](https://github.com/caronc/apprise) and its companion [Apprise-API](https://github.com/caronc/apprise-api), then it belongs here.
 
 ## Repository Layout
 

@@ -1,15 +1,24 @@
 ---
-title: "pushy Notifications"
-description: "Send pushy notifications."
+title: "Pushy Notifications"
+description: "Send Pushy notifications."
+sidebar:
+  label: "Pushy"
+
+source: https://pushy.me/
+
+schemas:
+  - bulksms
+
+sample_urls:
+  - pushy://{apikey}/{Device}
+  - pushy://{apikey}/#{topic}
+limits:
+  max_chars: 4096
 ---
 
-## Pushy Notifications
+<!-- SERVICE:DETAILS -->
 
-- **Source**: <https://pushy.me/>
-- **Icon Support**: No
-- **Attachment Support**: No
-- **Message Format**: Text
-- **Message Limit**: 4096 Characters per message
+## Account Setup
 
 You need to have an account with [Pushy](https://pushy.me/) and create an App.
 
@@ -27,6 +36,8 @@ Valid syntax is as follows:
 | targets  | Yes      | This must be either a **Topic** or a **Device**. Topics should be prefixed with a `#` and Devices a `@`. If no prefix is specified, then it is assumed to be a Topic |
 | sound    | No       | Optionally specify a sound you defined such as `alarm.aiff`.                                                                                                         |
 | badge    | No       | Provide a numerical value of 0 (zero) or greater to associate a badge with the bark icon on the iOS device.                                                          |
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 

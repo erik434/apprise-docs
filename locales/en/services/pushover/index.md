@@ -1,15 +1,28 @@
 ---
-title: "pushover Notifications"
-description: "Send pushover notifications."
+title: "Pushover Notifications"
+description: "Send Pushover notifications."
+sidebar:
+  label: "Pushover"
+
+source: https://pushover.net/
+
+schemas:
+  - pover
+
+has_attachments: true
+
+sample_urls:
+  - pover://{user_key}@{token}
+  - pover://{user_key}@{token}/{device_id}
+  - pover://{user_key}@{token}/{device_id1}/{device_id2}/{device_idN}
+
+limits:
+  max_chars: 512
 ---
 
-## Pushover Notifications
+<!-- SERVICE:DETAILS -->
 
-- **Source**: <https://pushover.net/>
-- **Icon Support**: No
-- **Attachment Support**: Yes
-- **Message Format**: Text
-- **Message Limit**: 512 Characters per message
+## Account Setup
 
 There isn't too much configuration for Pushover notifications. The message is basically just passed to your online Pushover account and then gets relayed to your device(s) you've setup from there.
 
@@ -44,6 +57,8 @@ Valid syntax is as follows:
 | sound     | No       | Can optionally identify one of the optional sound effects identified [here](https://pushover.net/api#sounds). The default sound is **pushover**.                                                                                                                                                                                                                                                                                                                                                                                              |
 | url       | No       | Can optionally provide a Supplementary URL to go with your message                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | url_title | No       | Can optionally provide a Supplementary URL Title to go with your message                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Custom Sounds
 

@@ -1,15 +1,26 @@
 ---
-title: "plivo Notifications"
-description: "Send plivo notifications."
+title: "Plivo Notifications"
+description: "Send Plivo notifications."
+sidebar:
+  label: "Plivo"
+
+source: https://plivo.com
+
+schemas:
+  - plivo
+
+has_sms: true
+
+sample_urls:
+  - plivo://{auth_id}@{token}/{from_phone}/
+  - plivo://{auth_id}@{token}/{from_phone}/{ToPhoneNo}
+  - plivo://{auth_id}@{token}/{from_phone}/{ToPhoneNo1}/{ToPhoneNo2}/{ToPhoneNoN}
+
+limits:
+  max_chars: 140
 ---
 
-## Plivo Notifications
-
-- **Source**: <https://plivo.com>
-- **Icon Support**: No
-- **Attachment Support**: No
-- **Message Format**: Text
-- **Message Limit**: 140 Characters per message
+<!-- SERVICE:DETAILS -->
 
 ## Account Setup
 
@@ -36,6 +47,8 @@ Valid syntax is as follows:
 | from     | Yes      | The phone number associated with your account you want the text message to originate from.                                   |
 | to       | No       | The phone numbers you wish to notify.                                                                                        |
 | batch    | No       | Send multiple specified notifications in a single batch (1 upstream post to the end server). By default this is set to `no`. |
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 

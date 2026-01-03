@@ -1,14 +1,25 @@
 ---
-title: "qq Notifications"
-description: "Send qq notifications."
+title: "QQ Push Notifications"
+description: "Send QQ Push notifications."
+sidebar:
+  label: "QQ Push"
+
+source: https://github.com/songquanpeng/message-pusher
+
+schemas:
+  - qq
+
+has_sms: true
+
+sample_urls:
+  - https://qmsg.zendee.cn/send/{token}
+  - qq://{token}
+
+limits:
+  max_chars: 10000
 ---
 
-## QQ Push Notifications
-
-- **Source**: <https://github.com/songquanpeng/message-pusher>
-- **Icon Support**: No
-- **Message Format**: Plain Text
-- **Message Limit**: ~10,000 Characters
+<!-- SERVICE:DETAILS -->
 
 ## Account Setup
 
@@ -40,6 +51,8 @@ Valid syntax is as follows:
 | -------- | -------- | ----------------------------------------------- |
 | token    | Yes      | Your personal QQ Push token from qmsg.zendee.cn |
 
+<!-- GLOBAL:SERVICE:PARAMS -->
+
 ## Examples
 
 Using the simplified Apprise URL:
@@ -62,5 +75,3 @@ Using the native webhook URL:
 apprise -vv -t "QQ Title" -b "Message content" \
     https://qmsg.zendee.cn/send/abc123def456ghi789jkl012mno345pq
 ```
-
-All formats above are accepted and deliver the same result.

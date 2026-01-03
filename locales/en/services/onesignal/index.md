@@ -1,14 +1,23 @@
 ---
 title: "OneSignal Notifications"
 description: "Send OneSignal notifications."
+sidebar:
+  label: "OneSignal"
+
+source: https://onesignal.com
+
+schemas:
+  - onesignal
+
+has_image: true
+sample_urls:
+  - onesignal://{app_id}@{apikey}/#{include_segment}
+  - onesignal://{app_id}@{apikey}/{player_id}/
+  - onesignal://{app_id}@{apikey}/@{user_id}/
+  - onesignal://{app_id}@{apikey}/{email}/
 ---
 
-## OneSignal Notifications
-
-- **Source**: <https://onesignal.com>
-- **Icon Support**: Yes
-- **Message Format**: Text
-- **Message Limit**: 32768 Characters per Message
+<!-- SERVICE:DETAILS -->
 
 ## Account Setup
 
@@ -58,6 +67,8 @@ If you defined a template with OneSignal, you can use it as well:
 | language        | No       | The 2 character language code to push your message as. By default this is set to `en` if not specified.                                              |
 | image           | No       | to include the icon/image associated with the message. By default this is set to `yes`.                                                              |
 | batch           | No       | Set it to **Yes** if you want all identified targets to be notified notified in batches (instead of individually). By default this is set to **No**. |
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 

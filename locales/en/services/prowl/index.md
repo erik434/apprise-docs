@@ -1,14 +1,26 @@
 ---
-title: "prowl Notifications"
-description: "Send prowl notifications."
+title: "Prowl Notifications"
+description: "Send Prowl notifications."
+sidebar:
+  label: "Prowl"
+
+source: https://www.prowlapp.com/
+
+schemas:
+  - prowl
+
+sample_urls:
+  - prowl://{apikey}
+  - prowl://{apikey}/{providerkey}
+  - prowl://{apikey}/?priority={priority}
+
+limits:
+  max_chars: 10000
 ---
 
-## Prowl Notifications
+<!-- SERVICE:DETAILS -->
 
-- **Source**: <https://www.prowlapp.com/>
-- **Icon Support**: No
-- **Message Format**: Text
-- **Message Limit**: 10000 Characters per message
+## Account Setup
 
 Prowl requires users to pre-register themselves at [prowlapp.com](https://www.prowlapp.com/) first.
 
@@ -27,6 +39,8 @@ Valid syntax is as follows:
 | apikey      | Yes      | The API Key provided to you after you create yourself a Prowl account.                                                         |
 | providerkey | No       | The Provider Key is only required if you have been whitelisted.                                                                |
 | priority    | No       | Can be **low**, **moderate**, **normal**, **high**, or **emergency**; the default is **normal** if a priority isn't specified. |
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 

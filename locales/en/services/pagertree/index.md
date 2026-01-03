@@ -1,15 +1,22 @@
 ---
-title: "pagertree Notifications"
-description: "Send pagertree notifications."
+title: "PagerTree Notifications"
+description: "Send PagerTree notifications."
+sidebar:
+  label: "PagerTree"
+
+source: https://pagertree.com
+
+schemas:
+  - pagertree
+
+sample_urls:
+  - pagertree://{integration}
+  - pagertree://{integration}?action=resolve&thirdparty_id=abc123
 ---
 
-## PagerTree Notifications
+<!-- SERVICE:DETAILS -->
 
-- **Source**: <https://pagertree.com>
-- **Icon Support**: No
-- **Attachment Support**: No
-- **Message Format**: Text
-- **Message Limit**: 32768 Characters per message
+## Account Setup
 
 1. For this to work, you'll need to signup for a [PagerTree](https://pagertree.com) account (free trial is fine). Make sure you follow the setup wizard (you'll want to be on-call for the team the integration is pointed to in Step 2)
 2. Create a [webhook integration](https://pagertree.com/docs/integration-guides/webhook) and point it to the team (default: "Devops Team")
@@ -35,6 +42,8 @@ Valid syntax is as follows:
 | thirdparty  | No       | An Id PagerTree uses to map thirdparty applications to alerts. You can specify your own, or if not, a random UUID will be generated for you.                                                                                 |
 | urgency     | No       | Urgency of the alert to be generated. Possible values `silent`, `low`, `medium`, `high`, or `critical`. If not provided, PagerTree will use the integration's default.                                                       |
 | tags        | No       | Comma seperated list of tags. (ex: "prod,server,outage")                                                                                                                                                                     |
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 

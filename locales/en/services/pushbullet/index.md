@@ -1,15 +1,24 @@
 ---
-title: "pushbullet Notifications"
-description: "Send pushbullet notifications."
+title: "Pushbullet Notifications"
+description: "Send Pushbullet notifications."
+sidebar:
+  label: "Pushbullet"
+
+source: https://www.pushbullet.com
+
+schemas:
+  - pbul
+
+has_attachments: true
+
+sample_urls:
+  - pbul://{accesstoken}
+  - pbul://{accesstoken}/{device_id}
+  - pbul://{accesstoken}/#{channel}
+  - pbul://{accesstoken}/{email}
 ---
 
-## Pushbullet Notifications
-
-- **Source**: <https://www.pushbullet.com/>
-- **Icon Support**: No
-- **Attachment Support**: Yes
-- **Message Format**: Text
-- **Message Limit**: 32768 Characters per Message
+<!-- SERVICE:DETAILS -->
 
 ## Account Setup
 
@@ -19,14 +28,14 @@ Pushbullet accounts are free; the Pro extension is optional and grants you a lar
 
 Valid syntax is as follows:
 
-- **pbul**://**{accesstoken}**
-- **pbul**://**{accesstoken}**/**{device_id}**
-- **pbul**://**{accesstoken}**/**#{channel}**
-- **pbul**://**{accesstoken}**/**{email}**
+- `pbul://{accesstoken}`
+- `pbul://{accesstoken}/{device_id}`
+- `pbul://{accesstoken}/#{channel}`
+- `pbul://{accesstoken}/{email}`
 
 You can also form any combination of the above and perform updates from one url:
 
-- **pbul**://**{accesstoken}**/**{device_id}**/**#{channel}**/**{email}**
+- `pbul://{accesstoken}/{device_id}/#{channel}/{email}`
 
 If neither a **{device_id}**, **#{channel}**, or **{email}** is specified, then the default configuration is to send to _all_ of your configured _devices_.
 
@@ -38,6 +47,8 @@ If neither a **{device_id}**, **#{channel}**, or **{email}** is specified, then 
 | device_id   | No       | Associated devices with your Pushbullet account can be found in your _Settings_                                                                           |
 | channel     | No       | Channels must be prefixed with a hash (#) or they will be interpreted as a device_id. Channels must be registered with your Pushbullet account to work.   |
 | email       | No       | Emails only work if you've registered them with your Pushbullet account.                                                                                  |
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 

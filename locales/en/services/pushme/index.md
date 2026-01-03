@@ -1,15 +1,19 @@
 ---
-title: "pushme Notifications"
-description: "Send pushme notifications."
+title: "PushMe Notifications"
+description: "Send PushMe notifications."
+sidebar:
+  label: "PushMe"
+
+source: https://push.i-i.me/
+
+schemas:
+  - pushme
+
+sample_urls:
+  - pushme://{token}
 ---
 
-## PushMe Notifications
-
-- **Source**: <https://push.i-i.me/>
-- **Icon Support**: No
-- **Attachment Support**: No
-- **Message Format**: Text
-- **Message Limit**: 32768 Characters per message
+<!-- SERVICE:DETAILS -->
 
 ## Account Setup
 
@@ -27,6 +31,8 @@ Valid syntax is as follows:
 | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | token    | Yes      | This is the **push_key** associated with your PushMe Account                                                                                     |
 | status   | No       | Optionally include a small little ASCII string representing the notification status being sent (inline with it) by default this is set to `yes`. |
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 

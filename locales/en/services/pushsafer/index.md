@@ -1,15 +1,26 @@
 ---
-title: "pushsafer Notifications"
-description: "Send pushsafer notifications."
+title: "Pushsafer Notifications"
+description: "Send Pushsafer notifications."
+sidebar:
+  label: "Pushsafer"
+
+source: https://www.pushsafer.com
+
+schemas:
+  - psafer: insecure
+  - psafers
+
+has_attachments: true
+
+sample_urls:
+  - psafers://{private_key}
+  - psafers://{private_key}/{device_id}
+  - psafers://{private_key}/{device_id1}/{device_id2}/{device_idN}
 ---
 
-## Pushsafer Notifications
+<!-- SERVICE:DETAILS -->
 
-- **Source**: <https://www.pushsafer.com/>
-- **Icon Support**: No
-- **Attachment Support**: Yes
-- **Message Format**: Text
-- **Message Limit**: 32768 Characters per message
+## Account Setup
 
 There isn't too much effort requires to use PushSafer notifications. The message is basically just passed to your online PushSafer account and then gets relayed to your device(s) you've setup from there.
 
@@ -41,6 +52,8 @@ Secure connections are always made when you use `psafers://` however `psafer://`
 | priority    | No       | Can be **low**, **moderate**, **normal**, **high**, or **emergency**; the default is to use whatever the default setting is for the device being notified.                                                                                                                                                                                                                       |
 | sound       | No       | Can optionally identify one of the optional sound effects identified [here](https://www.pushsafer.com/en/pushapi#api-sound). By default this variable isn't set at all.                                                                                                                                                                                                          |
 | vibration   | No       | Android and iOS devices can be set to vibrate upon the reception of a notification. By setting this, you're effectively setting the strength of the vibration. You can set this to **1**, **2** or **3** where 3 is a maximum vibration setting and 1 causes a lighter vibration. By default this variable isn't set at all causing your device default settings to take effect. |
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 
