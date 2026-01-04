@@ -1,15 +1,29 @@
 ---
-title: "smseagle Notifications"
-description: "Send smseagle notifications."
+title: "SMSEagle Notifications"
+description: "Send SMSEagle notifications."
+sidebar:
+  label: "SMSEagle"
+
+source: https://www.smseagle.eu/
+
+schemas:
+  - smseagle: insecure
+  - smseagles
+
+has_sms: true
+has_attachments: true
+has_selfhosted: true
+
+sample_urls:
+  - smseagle://{token}@{hostname}:{port}/{phoneNo}
+  - smseagles://{token}@{hostname}:{port}/@{contact}
+  - smseagle://{token}@{hostname}:{port}/#{group}
+
+limits:
+  max_chars: 1200
 ---
 
-## SMSEagle Notifications
-
-- **Source**: <https://www.smseagle.eu/>
-- **Icon Support**: No
-- **Attachment Support**: Yes
-- **Message Format**: Text
-- **Message Limit**: 1200 Characters per message
+<!-- SERVICE:DETAILS -->
 
 ## Account Setup
 
@@ -55,6 +69,8 @@ For ambiguity, if you do not provide a valid phone number, and the information p
 | flash    | No       | Send as SMS Flash message. By default (unless specified) this is set to `No`.                                                                   |
 | priority | No       | Can be set to either `normal` or `high`. If not otherwise provided, this assumes to be `normal` by default.                                     |
 | status   | No       | Optionally include a small little ASCII string representing the notification status being sent (inline with it) by default this is set to `no`. |
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 

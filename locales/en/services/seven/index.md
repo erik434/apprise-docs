@@ -1,15 +1,24 @@
 ---
-title: "seven Notifications"
-description: "Send seven notifications."
+title: "Seven Notifications"
+description: "Send Seven notifications."
+sidebar:
+  label: "Seven"
+
+source: https://www.seven.io/
+
+schemas:
+  - seven
+
+has_sms: true
+
+sample_urls:
+  - seven://{token}/{target}
+
+limits:
+  max_chars: 160
 ---
 
-## Seven Notifications
-
-- **Source**: <https://www.seven.io/>
-- **Icon Support**: No
-- **Attachment Support**: No
-- **Message Format**: Text
-- **Message Limit**: 160 Characters per message
+<!-- SERVICE:DETAILS -->
 
 ## Account Setup
 
@@ -29,6 +38,8 @@ Valid syntax is as follows:
 | target   | Yes      | One or more phone number(s) you wish to send your notification to.      |
 | flash    | No       | Flash mode (default is `no` ); specify `yes` to enable                  |
 | label    | No       | Defines a label                                                         |
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 

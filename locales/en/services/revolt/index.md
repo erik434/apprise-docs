@@ -1,15 +1,25 @@
 ---
 title: "Revolt Notifications"
 description: "Send Revolt notifications."
+sidebar:
+  label: "Revolt"
+
+source: https://revolt.chat
+
+schemas:
+  - revolt
+
+has_image: true
+
+sample_urls:
+  - revolt://{bot_token}/{channel_id}
+  - revolt://{bot_token}/{channel_id1}/{channel_id2}/{channel_id3}
+
+limits:
+  max_chars: 2000
 ---
 
-## Revolt Notifications
-
-- **Source**: <https://revolt.chat>
-- **Icon Support**: Yes
-- **Attachment Support**: No
-- **Message Format**: Text
-- **Message Limit**: 2000 Characters per message
+<!-- SERVICE:DETAILS -->
 
 ## Account Setup
 
@@ -31,9 +41,11 @@ Valid syntax is as follows:
 | url        | No       | Optionally specify an Embed URL with the API                                                                     |
 | icon_url   | No       | Optionally specify a URL to and Image to over-ride defaults                                                      |
 
+<!-- GLOBAL:SERVICE:PARAMS -->
+
 ## Examples
 
-Send a telegram notification to lead2gold:
+Send a Revolt notification to lead2gold:
 
 ```bash
 # Assuming our {bot_token} is 123456789:abcdefg_hijklmnop

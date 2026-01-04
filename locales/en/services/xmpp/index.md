@@ -1,14 +1,36 @@
 ---
-title: "xmpp Notifications"
-description: "Send xmpp notifications."
+title: "XMPP Notifications"
+description: "Send XMPP notifications."
+sidebar:
+  label: "XMPP"
+
+source: https://xmpp.org/
+
+schemas:
+  - xmpp: insecure
+  - xmpps
+
+sample_urls:
+  - xmpp://{user}/{password}@{hostname}
+  - xmpps://{user}/{password}@{hostname}/{jid}
+  - xmpps://{user}/{password}@{hostname}/{jid1}/{jid2}/{jidN}
+
+ended: 2022-07-03
 ---
 
-## XMPP Notifications
+:::info
 
-- **Source**: <https://xmpp.org/>
-- **Icon Support**: No
-- **Message Format**: Text
-- **Message Limit**: 32768 Characters per message
+## Service End Reason
+
+XMPP Support was removed due to incompatibility with the `sleekxmpp` dependency and Apprise.
+[A Pull Request to restore this functionality](https://github.com/caronc/apprise/pull/1468) is currently in development.
+
+💡The Service was removed from Apprise in [apprise/619]((<https://github.com/caronc/apprise/pull/619>)
+:::
+
+<!-- SERVICE:DETAILS -->
+
+## Account Setup
 
 XMPP Support requires **sleekxmpp** to work:
 
@@ -38,6 +60,8 @@ Secure connections should be referenced using **xmpps://** where as insecure con
 | jid      | No       | The JID account to associate/authenticate with the XMPP Server. This is automatically detected/built from the {userid} and {hostname} if it isn't specified. |
 | xep      | No       | The XEP specifications to include. By default **xep_0030** (Service Discovery) and **xep_0199** (XMPP Ping) if nothing is specified.                         |
 | to       | No       | The JID to notify                                                                                                                                            |
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 

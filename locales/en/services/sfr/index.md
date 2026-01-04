@@ -1,14 +1,25 @@
 ---
-title: "sfr Notifications"
-description: "Send sfr notifications."
+title: "Société Française du Radiotéléphone (SFR) Notifications"
+description: "Send Société Française du Radiotéléphone (SFR) notifications."
+sidebar:
+  label: "Société Française du Radiotéléphone (SFR)"
+
+source: https://www.sfr.fr/
+
+schemas:
+  - sfr
+
+has_sms: true
+
+sample_urls:
+  - sfr://{user}:{password}@{space_id}/{PhoneNo}
+  - sfr://{user}:{password}@{space_id}/{PhoneNo1}/{PhoneNo2}/{PhoneNoN}
+
+limits:
+  max_chars: 160
 ---
 
-## Société Française du Radiotéléphone (SFR)
-
-- **Source**: <https://www.sfr.fr/>
-- **Icon Support**: No
-- **Message Format**: Text
-- **Message Limit**: 160 Characters per message
+<!-- SERVICE:DETAILS -->
 
 ## Syntax
 
@@ -30,6 +41,8 @@ Valid syntax is as follows:
 | from     | no                     | This is the sender name that will be seen when people receive the sms. It _MUST_ be registered previously in the SFR Business DMC Account                |
 | timeout  | No                     | This is the time after which the SMS will be dropped by SFR. Default to `2880` minutes                                                                   |
 | voice    | No                     | This is the voice used when SMS is encoded as a vocal. Not applicable in apprise, but must be set for API compatibility reasons. Default to `claire08s`. |
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 

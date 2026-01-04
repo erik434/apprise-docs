@@ -12,7 +12,8 @@ schemas:
 
 has_selfhosted: true
 
-sample_urls: -`parsep://{app_id}:{master_key}@{hostname}
+sample_urls:
+  - parsep://{app_id}:{master_key}@{hostname}
   - parseps://{app_id}:{master_key}@{hostname}
 ---
 

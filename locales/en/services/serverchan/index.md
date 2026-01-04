@@ -1,14 +1,19 @@
 ---
-title: "serverchan Notifications"
-description: "Send serverchan notifications."
+title: "ServerChan Notifications"
+description: "Send ServerChan notifications."
+sidebar:
+  label: "ServerChan"
+
+source: https://sct.ftqq.com/
+
+schemas:
+  - schan
+
+sample_urls:
+  - schan://{sendkey}
 ---
 
-## ServerChan Notifications
-
-- **Source**: <https://sct.ftqq.com/>
-- **Icon Support**: No
-- **Message Format**: Text
-- **Message Limit**: 32768 Characters per Message
+<!-- SERVICE:DETAILS -->
 
 ## Account Setup
 
@@ -25,6 +30,8 @@ Valid syntax is as follows:
 | Variable | Required | Description                                                    |
 | -------- | -------- | -------------------------------------------------------------- |
 | sendkey  | Yes      | This is token provided to you through your SimpleChan account. |
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 

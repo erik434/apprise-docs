@@ -1,18 +1,27 @@
 ---
-title: "spugpush Notifications"
-description: "Send spugpush notifications."
+title: "SpugPush Notifications"
+description: "Send SpugPush notifications."
+sidebar:
+  label: "SpugPush"
+
+source: https://push.spug.dev/
+
+schemas:
+  - bulksms
+
+sample_urls:
+  - https://push.spug.dev/send/{token}
+  - spugpush://{token}
+
+limits:
+  max_chars: 10000
 ---
 
-## SpugPush Notifications
+<!-- SERVICE:DETAILS -->
 
-- **Source**: <https://push.spug.dev/>
-- **Icon Support**: No
-- **Message Format**: Plain Text
-- **Message Limit**: ~10,000 Characters
+## Account Setup
 
 SpugPush is a simple webhook service provided by the Spug monitoring platform. It allows applications to send alert messages using a secure access token.
-
-### Setup Instructions
 
 1. Visit the [SpugPush service](https://push.spug.dev/).
 1. Sign in and generate your **token**.
@@ -43,6 +52,8 @@ Valid syntax is as follows:
 
 You may also use the query format: `spugpush://?token=YOUR_TOKEN`.
 
+<!-- GLOBAL:SERVICE:PARAMS -->
+
 ## Examples
 
 Using the simplified Apprise URL:
@@ -65,5 +76,3 @@ Using the full native webhook URL:
 apprise -vv -t "SpugPush Title" -b "Notification content" \
    https://push.spug.dev/send/abc123def456ghi789jkl012mno345pq
 ```
-
-All forms are valid and supported equally by Apprise.

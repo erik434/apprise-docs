@@ -1,15 +1,21 @@
 ---
-title: "signl4 Notifications"
-description: "Send signl4 notifications."
+title: "SIGNL4 Notifications"
+description: "Send SIGNL4 notifications."
+sidebar:
+  label: "SIGNL4"
+
+source: https://www.signl4.com
+
+schemas:
+  - signl4
+
+sample_urls:
+  - signl4://{secret}
 ---
 
-## SIGNL4 Notifications
+<!-- SERVICE:DETAILS -->
 
-- **Source**: <https://www.signl4.com>
-- **Icon Support**: No
-- **Attachment Support**: No
-- **Message Format**: Text
-- **Message Limit**: 32768 Characters per message
+## Account Setup
 
 You need to have an account with [SIGNL4](https://www.signl4.com) and use your SIGNL4 team or integration secret.
 
@@ -29,6 +35,7 @@ Valid syntax is as follows:
 
 | Variable          | Required | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | ----------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| secret            | Yes      | The "secret" is your SIGNL4 team or integration secret.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | service           | No       | Assigns the alert to the service/system category with the specified name.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | location          | No       | Transmit location information (‘latitude, longitude’) with your event and display a map in the mobile app.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | alerting_scenario | No       | If this event triggers an alert, allows to control how SIGNL4 notifies the team. **single_ack**: Only one person needs to acknowledge this alert. **multi_ack**: The alert must be confirmed by the number of people who are on duty at the time this alert is created. **emergency**: All people in the team are notified regardless of their duty status and must acknowledge the alert, which is also assigned to the built-in emergency category.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
@@ -38,9 +45,11 @@ Valid syntax is as follows:
 
 You can find more information [here](https://docs.signl4.com/integrations/webhook/webhook.html).
 
+<!-- GLOBAL:SERVICE:PARAMS -->
+
 ## Examples
 
-Sends simple SIGNL4 alerts
+Sends a simple SIGNL4 alert:
 
 ```bash
 apprise -vv \
@@ -56,5 +65,3 @@ apprise -vv --title 'Alert from Apprise' \
   --body 'Hello world.' \
    'signl4://secret?service=IoT&location=52.3984235,13.0544149&external_id=a2&status=new'
 ```
-
-The "secret" is your SIGNL4 team or integration secret.

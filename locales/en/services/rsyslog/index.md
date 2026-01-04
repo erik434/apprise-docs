@@ -1,14 +1,24 @@
 ---
 title: "Remote Syslog Notifications"
-description: "Send remote syslog messages."
+description: "Send Remote Syslog messages."
+sidebar:
+  label: "Remote Syslog"
+
+source: https://tools.ietf.org/html/rfc5424
+
+schemas:
+  - rsyslog: insecure
+
+sample_urls:
+  - rsyslog://{host}
+  - rsyslog://{host}:{port}
+  - rsyslog://{host}/{facility}
+  - rsyslog://{host}:{port}/{facility}
 ---
 
-## Remote Syslog Notifications
+<!-- SERVICE:DETAILS -->
 
-- **Source**: <https://tools.ietf.org/html/rfc5424>
-- **Icon Support**: No
-- **Message Format**: Text
-- **Message Limit**: 32768 Characters per message
+## Account Setup
 
 Remote Syslog is a way for network devices to send event messages to a logging server – usually known as a Syslog server. The Syslog protocol is supported by a wide range of devices and can be used to log different types of events.
 
@@ -16,10 +26,10 @@ Remote Syslog is a way for network devices to send event messages to a logging s
 
 Valid syntax is as follows:
 
-- `syslog://{host}`
-- `syslog://{host}:{port}`
-- `syslog://{host}/{facility}`
-- `syslog://{host}:{port}/{facility}`
+- `rsyslog://{host}`
+- `rsyslog://{host}:{port}`
+- `rsyslog://{host}/{facility}`
+- `rsyslog://{host}:{port}/{facility}`
 
 One might change the facility on a remote syslog (rsyslog) server from it's default like so:
 
@@ -33,6 +43,8 @@ One might change the facility on a remote syslog (rsyslog) server from it's defa
 | port     | No       | The remote port associated with your rsyslog server provided. By default if this value isn't sent port **514** is used by default.                                                                                                                                        |
 | facility | No       | The facility to use, by default it is `user`. Valid options are **kern**, **user**, **mail**, **daemon**, **auth**, **syslog**, **lpr**, **news**, **uucp**, **cron**, **local0**, **local1**, **local2**, **local3**, **local4**, **local5**, **local6**, and **local7** |
 | logpid   | Yes      | Include PID as part of the log output.                                                                                                                                                                                                                                    |
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 

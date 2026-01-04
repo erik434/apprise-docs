@@ -1,15 +1,23 @@
 ---
-title: "sendgrid Notifications"
-description: "Send sendgrid notifications."
+title: "SendGrid Notifications"
+description: "Send SendGrid notifications."
+sidebar:
+  label: "SendGrid"
+
+source: https://sendgrid.com/
+
+schemas:
+  - sendgrid
+
+has_attachments: true
+
+sample_urls:
+  - sendgrid://{apikey}:{from_email}
+  - sendgrid://{apikey}:{from_email}/{to_email}
+  - sendgrid://{apikey}:{from_email}/{to_email1}/{to_email2}/{to_email3}
 ---
 
-## SendGrid Notifications
-
-- **Source**: <https://sendgrid.com/>
-- **Icon Support**: no
-- **Attachment Support**: Yes
-- **Message Format**: Text
-- **Message Limit**: 32768 Characters per message
+<!-- SERVICE:DETAILS -->
 
 ## Account Setup
 
@@ -46,6 +54,8 @@ If you want to take advantage of the `dynamic_template_data` variables, just cre
 | cc         | No       | The _Carbon Copy_ (CC:) portion of the email. This is entirely optional. It should be noted that SendGrid immediately rejects emails where the _cc_ contains an email address that exists in the _to_ or the _bcc_ list. To avoid having issues, Apprise automatically eliminates these duplicates silently if detected.                                                                                                                                                                 |
 | bcc        | No       | The _Blind Carbon Copy_ (BCC:) portion of the email. This is entirely optional. It should be noted that SendGrid immediately rejects emails where the _bcc_ contains an email address that exists in the _to_ or the _cc_ list. To avoid having issues, Apprise automatically eliminates these duplicates silently if detected. If an identical email is detected in both the CC and the BCC list, the BCC list will maintain the email and it will drop from the CC list automatically. |
 
+<!-- GLOBAL:SERVICE:PARAMS -->
+
 ### Dynamic Template Data
 
 Templates allow you to define {{variables}} within them that can be substituted on the fly once the email is sent. You can identify and set these variables using Apprise by simply sticking a plus (+) in front of any parameter you specify on your URL string.
@@ -75,7 +85,7 @@ and easily swap it with whatever you want using Apprise.
 
 ## Examples
 
-Send a sendgrid notification:
+Send a SendGrid notification:
 
 ```bash
 # Assuming our {apikey} is abcd123-xyz

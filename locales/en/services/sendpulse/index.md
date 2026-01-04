@@ -1,15 +1,23 @@
 ---
-title: "sendpulse Notifications"
-description: "Send sendpulse notifications."
+title: "SendPulse Notifications"
+description: "Send SendPulse notifications."
+sidebar:
+  label: "SendPulse"
+
+source: https://sendpulse.com/
+
+schemas:
+  - sendpulse
+
+has_attachments: true
+
+sample_urls:
+  - sendpulse://{user}@{host}/{client_id}/{client_secret}
+  - sendpulse://{user}@{host}/{client_id}/{client_secret}/{to_email}
+  - sendpulse://{user}@{host}/{client_id}/{client_secret}/{to_email1}/{to_email2}/{to_email3}
 ---
 
-## SendPulse Notifications
-
-- **Source**: <https://sendpulse.com/>
-- **Icon Support**: no
-- **Attachment Support**: yes
-- **Message Format**: Text
-- **Message Limit**: 32768 Characters per message
+<!-- SERVICE:DETAILS -->
 
 ## Account Setup
 
@@ -53,6 +61,8 @@ Consider the following template: `1234`
 
 An Apprise URL might look like:<br/>
 `sendpulse://user@example.com?template=1234&+what=templates&+app=Apprise`
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 

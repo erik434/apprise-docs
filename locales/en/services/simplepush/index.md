@@ -1,14 +1,25 @@
 ---
-title: "simplepush Notifications"
-description: "Send simplepush notifications."
+title: "SimplePush Notifications"
+description: "Send SimplePush notifications."
+sidebar:
+  label: "SimplePush"
+
+source: https://simplepush.io/
+
+schemas:
+  - simplepush
+
+sample_urls:
+  - spush://{apikey}/
+  - spush://{salt}:{password}@{apikey}/
+
+limits:
+  max_chars: 10000
 ---
 
-## SimplePush Notifications
+<!-- SERVICE:DETAILS -->
 
-- **Source**: <https://simplepush.io/>
-- **Icon Support**: No
-- **Message Format**: Text
-- **Message Limit**: 10000 Characters per Message
+## Account Setup
 
 SimplePush is a pretty straight forward messaging system you can get for your Android Device through their App [here](https://play.google.com/store/apps/details?id=io.tymm.simplepush).
 
@@ -42,6 +53,8 @@ Valid syntax is as follows:
 | event    | No       | Optionally specify an event on the URL.                                                                                                                                                                                                                      |
 | password | No       | SimplePush offers a method of further encrypting the message and title during transmission (on top of the secure channel it's already sent on). This is the Encryption password set. You must provide the `salt` value with the `password` in order to work. |
 | salt     | No       | The salt is provided to you by SimplePush and is the second part of the additional encryption you can use with this service. You must provide a `password` with the `salt` value in order to work.                                                           |
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 

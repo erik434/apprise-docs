@@ -1,15 +1,27 @@
 ---
-title: "signal Notifications"
-description: "Send signal notifications."
+title: "Signal API Notifications"
+description: "Send Signal API notifications."
+sidebar:
+  label: "Signal API"
+
+source: https://github.com/bbernhard/signal-cli-rest-api
+
+schemas:
+  - signal: insecure
+  - signals
+
+has_attachments: true
+has_selfhosted: true
+
+sample_urls:
+  - signal://{user}:{password}@{hostname}/{from_phone}
+  - signal://{user}:{password}@{hostname}:{port}/{from_phone}
+  - signal://{user}:{password}@{hostname}/{from_phone}/{target}
 ---
 
 ## Signal API
 
-- **Source**: <https://github.com/bbernhard/signal-cli-rest-api>
-- **Icon Support**: No
-- **Attachment Support**: Yes
-- **Message Format**: Text
-- **Message Limit**: 32768 Characters per message
+<!-- SERVICE:DETAILS -->
 
 ## Account Setup
 
@@ -60,6 +72,8 @@ You can post in multiple chats by simply chaining them at the end of the URL.
 | to       | **\*No** | A phone number or group id you wish to send your notification to. If one isn't specified, then the `from` is used instead.                       |
 | batch    | No       | Send multiple specified notifications in a single batch (1 upstream post to the end server). By default this is set to `no`.                     |
 | status   | No       | Optionally include a small little ASCII string representing the notification status being sent (inline with it) by default this is set to `yes`. |
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ### Acquiring A Group ID
 

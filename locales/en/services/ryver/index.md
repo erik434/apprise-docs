@@ -1,14 +1,27 @@
 ---
-title: "ryver Notifications"
-description: "Send ryver notifications."
+title: "Ryver Notifications"
+description: "Send Ryver notifications."
+sidebar:
+  label: "Ryver"
+
+source: https://ryver.com/
+
+schemas:
+  - ryver
+
+has_image: true
+
+sample_urls:
+  - https://{organization}.ryver.com/application/webhook/{token}
+  - ryver://{organization}/{token}/
+  - ryver://{botname}@{organization}/{token}/
+  - ryver://{organization}/{token}/?webhook=slack
+
+limits:
+  max_chars: 1000
 ---
 
-## Ryver Notifications
-
-- **Source**: <https://ryver.com/>
-- **Icon Support**: Yes
-- **Message Format**: Markdown
-- **Message Limit**: 1000 Characters per message
+<!-- SERVICE:DETAILS -->
 
 ## Account Setup
 
@@ -54,6 +67,8 @@ Valid syntax is as follows:
 | token        | Yes      | The token provided to you after creating a _incoming-webhook_                                                                                                                |
 | botname      | No       | Set the display name the message should appear from.                                                                                                                         |
 | webhook      | No       | The type of webhook you created (Slack or Ryver). The only possible values are **slack** and **ryver**. The default value is **ryver** if the webhook value isn't specified. |
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 

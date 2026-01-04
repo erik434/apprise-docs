@@ -1,14 +1,30 @@
 ---
-title: "rocketchat Notifications"
-description: "Send rocketchat notifications."
+title: "Rocket.Chat Notifications"
+description: "Send Rocket.Chat notifications."
+sidebar:
+  label: "Rocket.Chat"
+
+source: https://rocket.chat/
+
+schemas:
+  - rocket: insecure
+  - rockets
+
+has_image: true
+
+sample_urls:
+  - rockets://{user}:{password}@{hostname}/{@user}
+  - rocket://{user}:{password}@{hostname}/#{channel}
+  - rocket://{user}:{password}@{hostname}/{room_id}
+  - rocket://{webhook}@{hostname}/{@user}
+  - rockets://{webhook}@{hostname}/#{channel}
+  - rockets://{webhook}@{hostname}/{room_id}
+
+limits:
+  max_chars: 1000
 ---
 
-## Rocket.Chat Notifications
-
-- **Source**: <https://rocket.chat/>
-- **Icon Support**: Yes
-- **Message Format**: Text
-- **Message Limit**: 1000 Characters per Message
+<!-- SERVICE:DETAILS -->
 
 ## Syntax
 
@@ -78,6 +94,8 @@ By default a webhook is set up to be associated with a channel. Thus the followi
 | user_id  | No       | Another user you wish to notify. User IDs must be prefixed with an at symbol (@). Available for the **webhook** mode only.                                                                                                                                  |
 | mode     | No       | The authentication mode is automatically detected based what it parses from the URL provided. You only need to set this if you feel it is being detected incorrectly. The possible modes are **basic**, **token**, and **webhook** and are explained above. |
 | avatar   | No       | Override the default avatar associated with the message to match that of the notification type (be that of a Warning, Error, Info, etc). By default this is set to **No** for **basic** mode and **Yes** for **webhook** mode.                              |
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 

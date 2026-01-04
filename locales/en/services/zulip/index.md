@@ -1,14 +1,24 @@
 ---
 title: "Zulip Notifications"
 description: "Send Zulip notifications."
+sidebar:
+  label: "Zulip"
+
+source: https://zulipchat.com/
+
+schemas:
+  - zulip
+
+sample_urls:
+  - zulip://{botname}@{organization}/{token}/
+  - zulip://{botname}@{organization}/{token}/{stream}
+  - zulip://{botname}@{organization}/{token}/{email}
+
+limits:
+  max_chars: 10000
 ---
 
-## Zulip Notifications
-
-- **Source**: <https://zulipchat.com/>
-- **Icon Support**: No
-- **Message Format**: Text
-- **Message Limit**: 10000 Characters per message
+<!-- SERVICE:DETAILS -->
 
 ## Account Setup
 
@@ -28,17 +38,17 @@ Upon creating a bot successfully, you'll now be able to access it's API Token.
 
 Valid syntax is as follows:
 
-- **zulip**://**{botname}**@**{organization}**/**{token}**/
-- **zulip**://**{botname}**@**{organization}**/**{token}**/**{stream}**
-- **zulip**://**{botname}**@**{organization}**/**{token}**/**{stream1}**/**{stream2}**/**{streamN}**
-- **zulip**://**{botname}**@**{organization}**/**{token}**/**{email}**
-- **zulip**://**{botname}**@**{organization}**/**{token}**/**{email1}**/**{email2}**/**{emailN}**
+- `zulip://{botname}@{organization}/{token}/`
+- `zulip://{botname}@{organization}/{token}/{stream}`
+- `zulip://{botname}@{organization}/{token}/{stream1}/{stream2}/{streamN}`
+- `zulip://{botname}@{organization}/{token}/{email}`
+- `zulip://{botname}@{organization}/{token}/{email1}/{email2}/{emailN}`
 
 **Note**: If neither a **{stream}** or **{email}** is specified then by default the stream **general** is notified.
 
 You can also mix and match the entries above too:
 
-- **zulip**://**{botname}**@**{organization}**/**{token}**/**{stream1}**/**{email1}**/
+- `zulip://{botname}@{organization}/{token}/{stream1}/{email1}/`
 
 ## Parameter Breakdown
 
@@ -49,6 +59,8 @@ You can also mix and match the entries above too:
 | botname      | Yes      | The botname associated with the API Key. The `-bot` portion of the bot name is not required, however this is gracefully handled if specified.                                          |
 | email        | No       | An email belonging to one of the users that have been added to your organization the private message.                                                                                  |
 | stream       | No       | A stream to notify.                                                                                                                                                                    |
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 

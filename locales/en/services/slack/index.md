@@ -1,15 +1,27 @@
 ---
-title: "slack Notifications"
-description: "Send slack notifications."
+title: "Slack Notifications"
+description: "Send Slack notifications."
+sidebar:
+  label: "Slack"
+
+source: https://slack.com/
+
+schemas:
+  - slack
+
+has_attachments: true
+has_image: true
+
+sample_urls:
+  - https://hooks.slack.com/services/{tokenA}/{tokenB}/{tokenC}
+  - slack://{tokenA}/{tokenB}/{tokenC}
+  - slack://{OAuthToken}/
+
+limits:
+  max_chars: 30000
 ---
 
-## Slack Notifications
-
-- **Source**: <https://slack.com/>
-- **Icon Support**: Yes
-- **Attachment Support**: Yes
-- **Message Format**: Markdown
-- **Message Limit**: 30000 Characters per message
+<!-- SERVICE:DETAILS -->
 
 ## Account Setup
 
@@ -108,6 +120,8 @@ You can freely mix and match all of the combinations in any order as well:
 | footer     | No       | Identify whether or not you want the Apprise Footer icon to show with each message. By default this is set to **yes**.                                                                                                                             |
 | image      | No       | Identify whether or not you want the Apprise image (showing status color) to display with every message or not. By default this is set to **yes**.                                                                                                 |
 | mode       | No       | Optionally enforce the mode the Slack plugin should operate in. This is detected by default, but possible options are `hook` (webhook mode) `gov-hook` (government webhook mode), and `bot` to have the service interact through the slack bot api |
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 

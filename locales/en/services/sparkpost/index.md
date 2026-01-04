@@ -1,15 +1,23 @@
 ---
-title: "sparkpost Notifications"
-description: "Send sparkpost notifications."
+title: "SparkPost Notifications"
+description: "Send SparkPost notifications."
+sidebar:
+  label: "SparkPost"
+
+source: https://sparkpost.com/
+
+schemas:
+  - sparkpost
+
+has_attachments: true
+
+sample_urls:
+  - sparkpost://{user}@{domain}/{apikey}/
+  - sparkpost://{user}@{domain}/{apikey}/{email}/
+  - sparkpost://{user}@{domain}/{apikey}/{email1}/{email2}/{emailN}/
 ---
 
-## SparkPost Notifications
-
-- **Source**: <https://sparkpost.com/>
-- **Icon Support**: No
-- **Attachment Support**: yes
-- **Message Format**: Text
-- **Message Limit**: 32768 Characters per message
+<!-- SERVICE:DETAILS -->
 
 ## Account Setup
 
@@ -54,6 +62,8 @@ The Carbon Copy (**cc=**) and Blind Carbon Copy (**bcc=**) however are applied t
 | to       | No       | This is an alias to the email variable. You can chain as many (To) emails as you want here separating each with a comma and/or space.                                                                                                                |
 | cc       | No       | Carbon Copy email address(es). More than one can be separated with a space and/or comma.                                                                                                                                                             |
 | bcc      | No       | Blind Carbon Copy email address(es). More than one can be separated with a space and/or comma.                                                                                                                                                       |
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 

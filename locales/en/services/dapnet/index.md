@@ -9,8 +9,6 @@ source: https://hampager.de/
 schemas:
   - dapnet
 
-has_sms: true
-
 sample_urls:
   - dapnet://{userid}:{password}@{callsign}
   - dapnet://{userid}:{password}@{callsign1}/{callsign2}/{callsignN}

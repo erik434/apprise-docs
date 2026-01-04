@@ -1,14 +1,22 @@
 ---
-title: "ses Notifications"
-description: "Send ses notifications."
+title: "Amazon Web Service (AWS) - Simple Email Service (SES) Notifications"
+description: "Send Simple Email Service (SES) notifications."
+sidebar:
+  label: "Amazon Web Service (AWS) - Simple Email Service (SES)"
+
+source: https://aws.amazon.com/ses/
+
+schemas:
+  - ses
+
+has_attachments: true
+
+sample_urls:
+  - ses://{from}/{aws_access_key}/{aws_secret_key}/{region}/
+  - ses://{from}/{aws_access_key}/{aws_secret_key}/{region}/{ToEmail1}/{ToEmail2}/{ToEmailN}/
 ---
 
-## Amazon Web Service (AWS) - Simple Email Service (SES)
-
-- **Source**: <https://aws.amazon.com/ses/>
-- **Attachment Support**: yes
-- **Message Format**: Text
-- **Message Limit**: 32768 Characters per message
+<!-- SERVICE:DETAILS -->
 
 ## Account Setup
 
@@ -49,9 +57,11 @@ Valid syntax is as follows:
 | cc            | No       | Carbon Copy email address(es). More than one can be separated with a space and/or comma.                                                                                                  |
 | bcc           | No       | Blind Carbon Copy email address(es). More than one can be separated with a space and/or comma.                                                                                            |
 
+<!-- GLOBAL:SERVICE:PARAMS -->
+
 ## Examples
 
-Send a AWS SES notification (Email):
+Send a SES (Email):
 
 ```bash
 # Assuming our {AccessKeyID} is AHIAJGNT76XIMXDBIJYA
@@ -60,5 +70,4 @@ Send a AWS SES notification (Email):
 # Assuming our {Email} - test@test.com
 apprise -vv -t "Test Message Title" -b "Test Message Body" \
    ses://test@test.com/AHIAJGNT76XIMXDBIJYA/bu1dHSdO22pfaaVy/wmNsdljF4C07D3bndi9PQJ9/us-east-2/
-
 ```

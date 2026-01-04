@@ -1,14 +1,25 @@
 ---
-title: "sms_manager Notifications"
-description: "Send sms_manager notifications."
+title: "SMS Manager Notifications"
+description: "Send SMS Manager notifications."
+sidebar:
+  label: "SMS Manager"
+
+source: https://smsmanager.cz
+
+schemas:
+  - smsmgr
+
+has_sms: true
+
+sample_urls:
+  - smsmgr://{apikey}@/{toPhoneNo}
+  - smsmgr://{apikey}@/{toPhoneNo1}/{toPhoneNo2}/{toPhoneNoN}
+
+limits:
+  max_chars: 160
 ---
 
-## SMS Manager Notifications
-
-- **Source**: <https://smsmanager.cz>
-- **Icon Support**: No
-- **Message Format**: Text
-- **Message Limit**: 160 Characters per message
+<!-- SERVICE:DETAILS -->
 
 ## Account Setup
 
@@ -32,6 +43,8 @@ Valid syntax is as follows:
 | from     | **\*No** | This requires approval from the Administrator and provides a `sender` option in the payload. It can not exceed 11 characters according to the documentation. You may also use `?sender=` to set this same value. |
 | batch    | No       | Send multiple specified notifications in a single batch (1 upstream post to the end server). By default this is set to `no`.                                                                                     |
 | gateway  | No       | SMS Manager supports the following gateway settings: `high`, `economy`, `low`, and `direct`. By default this is set to `high` if not otherwise specified.                                                        |
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 

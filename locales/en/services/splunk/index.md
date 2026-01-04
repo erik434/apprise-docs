@@ -1,14 +1,23 @@
 ---
-title: "splunk Notifications"
-description: "Send splunk notifications."
+title: "Splunk/VictorOps Notifications"
+description: "Send Splunk/VictorOps notifications."
+sidebar:
+  label: "Splunk/VictorOps"
+
+source: https://www.splunk.com/en_us/products/on-call.html
+
+schemas:
+  - splunk
+  - victorops
+
+sample_urls:
+  - splunk://{routing_key}@{apikey}
+  - splunk://{routing_key}@{apikey}/{entity_id}
+  - victorops://{routing_key}@{apikey}
+  - victorops://{routing_key}@{apikey}/{entity_id}
 ---
 
-## Splunk/VictorOps On-Call Notifications
-
-- **Source**: <https://www.splunk.com/en_us/products/on-call.html>
-- **Icon Support**: No
-- **Message Format**: Text
-- **Message Limit**: 32768 Characters per message
+<!-- SERVICE:DETAILS -->
 
 ## Account Setup
 
@@ -47,6 +56,8 @@ Valid syntax is as follows:
 | routing_key | **Yes**  | One of the `routing_key` values you associated within your Splunk account                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | entity_id   | No       | A key you wish to generate your trigger from. Keys allow you to alert, ackowledge and/or resolve the same notification later on.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | action      | No       | The action you wish to perform with your Splunk/VictorOps Apprise notification. the following options are available to you:<br/>⚪ `map`: Use Apprise (or custom) action mappings based on the Notification Type. Hence a `warning` from Apprise triggers a `WARNING` on Splunk, while a `failure` triggers a `CRITICAL` Splunk message (triggering an incident). Finally a `success` triggers a `RECOVERY` Spunk message (clearing an incident). **`map` is the default action if nothing is specified.**<br />⚪ `warning`: Reguardless of the Apprise notification, ALWAYS trigger a Splunk `WARNING` message.<br/>⚪ `critical`: Reguardless of the Apprise notification, ALWAYS trigger a Splunk `CRITICAL` message.<br/>⚪ `acknowledgement`: Reguardless of the Apprise notification, ALWAYS trigger a Splunk `ACKNOWLEDGEMENT` message.<br/>⚪ `info`: Reguardless of the Apprise notification, ALWAYS trigger a Splunk `INFO` message.<br/>⚪ `recovery`: Reguardless of the Apprise notification, ALWAYS trigger a Splunk `RECOVERY` message. |
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Custom Splunk/On-Call Event Mapping
 

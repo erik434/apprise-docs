@@ -7,9 +7,7 @@ sidebar:
 source: https://www.pushplus.plus/
 
 schemas:
-  - bulksms
-
-has_sms: true
+  - pushplus
 
 sample_urls:
   - https://www.pushplus.plus/send?token={token}

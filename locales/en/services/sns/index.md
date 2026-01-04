@@ -1,14 +1,25 @@
 ---
-title: "sns Notifications"
-description: "Send sns notifications."
+title: "Amazon Web Service (AWS) - Simple Notification Service (SNS) Notifications"
+description: "Send Simple Notification Service (SNS) notifications."
+sidebar:
+  label: "Amazon Web Service (AWS) - Simple Notification Service (SNS)"
+
+source: https://aws.amazon.com/sns/
+
+schemas:
+  - sns
+
+has_sms: true
+
+sample_urls:
+  - sns://{AccessKeyID}/{AccessKeySecret}/{Region}/+{PhoneNo}
+  - sns://{AccessKeyID}/{AccessKeySecret}/{Region}/#{Topic}
+
+limits:
+  max_chars: 160
 ---
 
-## Amazon Web Service (AWS) - Simple Notification Service (SNS)
-
-- **Source**: <https://aws.amazon.com/sns/>
-- **Icon Support**: No
-- **Message Format**: Text
-- **Message Limit**: 160 Characters per message
+<!-- SERVICE:DETAILS -->
 
 ## Account Setup
 
@@ -31,14 +42,14 @@ If you want to take advantage of sending your notifications to _topics_: from th
 
 Valid syntax is as follows:
 
-- **sns**://**{AccessKeyID}**/**{AccessKeySecret}**/**{Region}**/+**{PhoneNo}**
-- **sns**://**{AccessKeyID}**/**{AccessKeySecret}**/**{Region}**/+**{PhoneNo1}**/+**{PhoneNo2}**/+**{PhoneNoN}**
-- **sns**://**{AccessKeyID}**/**{AccessKeySecret}**/**{Region}**/#**{Topic}**
-- **sns**://**{AccessKeyID}**/**{AccessKeySecret}**/**{Region}**/#**{Topic1}**/#**{Topic2}**/#**{TopicN}**
+- `sns://{AccessKeyID}/{AccessKeySecret}/{Region}/+{PhoneNo}`
+- `sns://{AccessKeyID}/{AccessKeySecret}/{Region}/+{PhoneNo1}/+{PhoneNo2}/+{PhoneNoN}`
+- `sns://{AccessKeyID}/{AccessKeySecret}/{Region}/#{Topic}`
+- `sns://{AccessKeyID}/{AccessKeySecret}/{Region}/#{Topic1}/#{Topic2}/#{TopicN}`
 
 You can mix and match these entries as well:
 
-- **sns**://**{AccessKeyID}**/**{AccessKeySecret}**/**{Region}**/+**{PhoneNo1}**/#**{Topic1}**
+- `sns://{AccessKeyID}/{AccessKeySecret}/{Region}/+{PhoneNo1}/#{Topic1}`
 
 Enforcing a hashtag (#) for _topics_ and a plus sign (+) in-front of phone numbers helps eliminate cases where ambiguity could be an issue such as a _topic_ that is comprised of all numbers. These characters are purely optional.
 
@@ -52,11 +63,15 @@ Enforcing a hashtag (#) for _topics_ and a plus sign (+) in-front of phone numbe
 | PhoneNo         | No       | The phone number MUST include the country codes dialling prefix as well when placed. You can optionally prefix the entire number with a plus symbol (+) to enforce that the value be interpreted as a phone number (in the event it can't be auto-detected otherwise). This field is also very friendly and supports brackets, spaces and hyphens in the event you want to format the number in an easy to read fashion. |
 | Topic           | No       | The topic you want to publish your message to.                                                                                                                                                                                                                                                                                                                                                                           |
 
-**Note:** This notification service does not use the title field; only the _body_ is passed along.
+:::note
+This notification service does not use the title field; only the _body_ is passed along.
+:::
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 
-Send a AWS SNS notification as an SMS:
+Send an SMS message:
 
 ```bash
 # Assuming our {AccessKeyID} is AHIAJGNT76XIMXDBIJYA

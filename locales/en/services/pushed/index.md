@@ -1,14 +1,26 @@
 ---
-title: "pushed Notifications"
-description: "Send pushed notifications."
+title: "Pushed Notifications"
+description: "Send Pushed notifications."
+sidebar:
+  label: "Pushed"
+
+source: https://pushed.co/
+
+schemas:
+  - pushed
+
+has_sms: true
+
+sample_urls:
+  - pushed://{app_key}/{app_secret}
+  - pushed://{app_key}/{app_secret}/@{user_pushed_id}
+  - pushed://{app_key}/{app_secret}/#{channel_alias}
+
+limits:
+  max_chars: 160
 ---
 
-## Pushed Notifications
-
-- **Source**: <https://pushed.co/>
-- **Icon Support**: _From within the pushed.co website you can set up an icon._
-- **Message Format**: Text
-- **Message Limit**: 160 Characters per Message
+<!-- SERVICE:DETAILS -->
 
 ## Account Setup
 
@@ -29,17 +41,17 @@ Subscribe to this App; there is a _Subscription Link_ you can follow right from 
 
 Valid syntax is as follows:
 
-- **pushed**://**{app_key}**/**{app_secret}**
-- **pushed**://**{app_key}**/**{app_secret}**/**@{user_pushed_id}**
-- **pushed**://**{app_key}**/**{app_secret}**/**@{user_pushed_id1}**/**@{user_pushed_id2}**/**@{user_pushed_idN}**
-- **pushed**://**{app_key}**/**{app_secret}**/**#{channel_alias}**
-- **pushed**://**{app_key}**/**{app_secret}**/**#{channel_alias1}**/**#{channel_alias2}**/**#{channel_aliasN}**
+- `pushed://{app_key}/{app_secret}`
+- `pushed://{app_key}/{app_secret}/@{user_pushed_id}`
+- `pushed://{app_key}/{app_secret}/@{user_pushed_id1}/@{user_pushed_id2}/@{user_pushed_idN}`
+- `pushed://{app_key}/{app_secret}/#{channel_alias}`
+- `pushed://{app_key}/{app_secret}/#{channel_alias1}/#{channel_alias2}/#{channel_aliasN}`
 
 You can also form any combination of the above and perform updates from one url:
 
-- **pushed**://**{app_key}**/**{app_secret}**/**@{user_pushed_id}**/**#{channel_alias}**/
+- `pushed://{app_key}/{app_secret}/@{user_pushed_id}/#{channel_alias}/`
 
-If neither a **@{user_pushed_id}** or **#{channel}** is specified, then the default configuration is to send to just the _App_ you provided keys for.
+neither a **@{user_pushed_id}** or **#{channel}** is specified, then the default configuration is to send to just the _App_ you provided keys for.
 
 ## Parameter Breakdown
 
@@ -49,6 +61,8 @@ If neither a **@{user_pushed_id}** or **#{channel}** is specified, then the defa
 | app_secret     | Yes      | The Application Secret can be generated on the Settings page of your Pushed's account. You must have an application secret for this Notification service to work.                                                                                                                       |
 | user_pushed_id | No       | Users must be prefixed with an _at_ (@) character or they will be ignored. You can identify users here by their Pushed ID.                                                                                                                                                              |
 | channel_alias  | No       | Channels must be prefixed with a _hash tag_ (#) or they will be ignored. Channels must be registered with your Pushed account to work. This must be the channel alias itself; not the channel. The alias can be retrieved from the channel settings from within your pushed.io account. |
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 

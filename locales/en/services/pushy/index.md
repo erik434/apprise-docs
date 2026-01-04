@@ -7,7 +7,7 @@ sidebar:
 source: https://pushy.me/
 
 schemas:
-  - bulksms
+  - pushy
 
 sample_urls:
   - pushy://{apikey}/{Device}
