@@ -25,7 +25,7 @@ ended: 2022-07-03
 XMPP Support was removed due to incompatibility with the `sleekxmpp` dependency and Apprise.
 [A Pull Request to restore this functionality](https://github.com/caronc/apprise/pull/1468) is currently in development.
 
-💡The Service was removed from Apprise in [apprise/619]((<https://github.com/caronc/apprise/pull/619>)
+💡The Service was removed from Apprise in [apprise/619](https://github.com/caronc/apprise/pull/619)
 :::
 
 <!-- SERVICE:DETAILS -->
