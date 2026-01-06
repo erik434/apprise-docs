@@ -1,14 +1,22 @@
 ---
-title: "wxpusher Notifications"
-description: "Send wxpusher notifications."
+title: "WxPusher Notifications"
+description: "Send WxPusher notifications."
+sidebar:
+  label: "WxPusher"
+
+source: https://wxpusher.zjiecode.com/
+
+schemas:
+  - wxpusher
+
+sample_urls:
+  - wxpusher://{app_token}@{userid}
+  - wxpusher://{app_token}@{userid1}/{userid2}/{useridN}
+  - wxpusher://{app_token}@{topic}
+  - wxpusher://{app_token}@{topic1}/{topic2}/{topicN}
 ---
 
-## WxPusher Notifications
-
-- **Source**: <https://wxpusher.zjiecode.com/>
-- **Icon Support**: No
-- **Message Format**: Text
-- **Message Limit**: 32768 Characters per message
+<!-- SERVICE:DETAILS -->
 
 ## Account Setup
 
@@ -39,6 +47,8 @@ You can also mix/match topic's and user ids:
 | app_token | **Yes**  | The App Token associated with your WxPusher account. It always starts with `AT_`                 |
 | userid    | \*No     | You must specify at least 1 (one) `userid` OR 1 (one) `topic`. A `userid` has a prefix of `UID_` |
 | topic     | \*No     | You must specify at least 1 (one) `userid` OR 1 (one) `topic`. A `topic` is an integer value     |
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 

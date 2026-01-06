@@ -1,15 +1,27 @@
 ---
-title: "telegram Notifications"
-description: "Send telegram notifications."
+title: "Telegram Notifications"
+description: "Send Telegram notifications."
+sidebar:
+  label: "Telegram"
+
+source: https://telegram.org/
+
+schemas:
+  - tgram
+
+has_attachments: true
+has_image: true
+
+sample_urls:
+  - tgram://{bot_token}/
+  - tgram://{bot_token}/{chat_id}/
+  - tgram://{bot_token}/{chat_id}:{topic}/
+
+limits:
+  max_chars: 4096
 ---
 
-## Telegram Notifications
-
-- **Source**: <https://telegram.org/>
-- **Icon Support**: Yes
-- **Attachment Support**: Yes
-- **Message Format**: Text
-- **Message Limit**: 4096 Characters per message
+<!-- SERVICE:DETAILS -->
 
 ## Account Setup
 
@@ -87,6 +99,8 @@ If you want to see the icon/image associated with the notification, you can have
 | preview   | No       | A `yes/no` flag allowing you to display webpage previews of your post. By default this is set to `no`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | mdv       | No       | Optionally set the `markdown` version to use; can be set to either `v1` or `v2` and defaults to `v2` if not set. This value is only referenced when `?format=markdown` has also been set.                                                                                                                                                                                                                                                                                                                                                                                                               |
 | topic     | No       | The Topic Thread ID you wish your message to be posted to. [Here is a StackOverflow post on acquiring the Topic Thread ID](https://stackoverflow.com/questions/74773675/how-to-get-topic-id-for-telegram-group-chat)                                                                                                                                                                                                                                                                                                                                                                                    |
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 

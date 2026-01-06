@@ -1,14 +1,26 @@
 ---
-title: "wxteams Notifications"
-description: "Send wxteams notifications."
+title: "Webex Teams Notifications"
+description: "Send Webex Teams notifications."
+sidebar:
+  label: "Webex Teams"
+
+source: https://teams.webex.com
+
+schemas:
+  - wxteams
+  - webex
+
+sample_urls:
+  - https://api.ciscospark.com/v1/webhooks/incoming/{token}
+  - https://webexapis.com/v1/webhooks/incoming/{token}
+  - wxteams://{token}/
+  - webex://{token}/
+
+limits:
+  max_chars: 1000
 ---
 
-## Webex Teams Notifications
-
-- **Source**: <https://teams.webex.com>
-- **Icon Support**: No
-- **Message Format**: Markdown
-- **Message Limit**: 1000 Characters per message
+<!-- SERVICE:DETAILS -->
 
 ## Account Setup
 
@@ -53,6 +65,8 @@ Valid syntax is as follows:
 | Variable | Required | Description                                                    |
 | -------- | -------- | -------------------------------------------------------------- |
 | token    | Yes      | The tokens provided to you after creating a _incoming-webhook_ |
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 

@@ -1,14 +1,22 @@
 ---
-title: "synology_chat Notifications"
-description: "Send synology_chat notifications."
+title: "Synology Notifications"
+description: "Send Synology notifications."
+sidebar:
+  label: "Synology"
+
+source: https://kb.synology.com/en-au/DSM/help/Chat/chat_integration?version=7
+
+schemas:
+  - synology: insecure
+  - synologys
+
+sample_urls:
+  - synologys://{hostname}/{token}
+  - synology://{hostname}:{port}/{token}
+  - synologys://{user}:{password}@{hostname}/{token}
 ---
 
-## Synology Notifications
-
-- **Source**: <https://kb.synology.com/en-au/DSM/help/Chat/chat_integration?version=7>
-- **Icon Support**: No
-- **Message Format**: Text
-- **Message Limit**: not set
+<!-- SERVICE:DETAILS -->
 
 ## Syntax
 
@@ -28,14 +36,17 @@ The secure versions (https):
 
 ## Parameter Breakdown
 
-| Variable | Required | Description                                                                                                                                                                     |
-| -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| hostname | Yes      | The Web Server's hostname                                                                                                                                                       |
-| token    | Yes      | The Synology Chat Incoming Token generated                                                                                                                                      |
-| port     | No       | The port our Web server is listening on. By default the port is **80** for **synology://** and **443** for all **synologys://** references.                                     |
-| user     | No       | If you're system is set up to use HTTP-AUTH, you can provide _username_ for authentication to it.                                                                               |
-| password | No       | If you're system is set up to use HTTP-AUTH, you can provide _password_ for authentication to it.                                                                               |
-| file_url | No       | Synology allows you to directly link to a URL containing an attachment. If you set this on the Apprise URL, it will be passed down to the synology request made under the hood. |
+| Variable | Required | Description                                                                                                                                 |
+| -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| hostname | Yes      | The Web Server's hostname                                                                                                                   |
+| token    | Yes      | The Synology Chat Incoming Token generated                                                                                                  |
+| port     | No       | The port our Web server is listening on. By default the port is **80** for **synology://** and **443** for all **synologys://** references. |
+| user     | No       | If you're system is set up to use HTTP-AUTH, you can provide _username_ for authentication to it.                                           |
+| password | No       | If you're system is set up to use HTTP-AUTH, you can provide _password_ for authentication to it.                                           |
+
+|
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 

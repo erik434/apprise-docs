@@ -1,14 +1,27 @@
 ---
-title: "twist Notifications"
-description: "Send twist notifications."
+title: "Twist Notifications"
+description: "Send Twist notifications."
+sidebar:
+  label: "Twist"
+
+source: https://twist.com
+
+schemas:
+  - twist
+
+sample_urls:
+  - twist://{password}:{email}
+  - twist://{email}/{password}
+  - twist://{password}:{email}/#{channel}
+  - twist://{email}/{password}/#{channel}
+
+limits:
+  max_chars: 1000
 ---
 
-## Twist Notifications
+<!-- SERVICE:DETAILS -->
 
-- **Source**: <https://twist.com>
-- **Icon Support**: No
-- **Message Format**: Text
-- **Message Limit**: 1000 Characters per Message
+## Account Setup
 
 [Sign in](https://twist.com/login) or [create an account](https://twist.com/signup) with the [Twist service](https://twist.com) if you don't already have one.
 
@@ -42,6 +55,8 @@ Twist always associates your account with a _default team_. Apprise determines t
 | email    | Yes      | This is the email address you associated with your Twist account when you signed up.                                                                                                                                                                                                                   |
 | password | Yes      | This is the password you set when you signed up with Twist                                                                                                                                                                                                                                             |
 | channel  | No       | This is the channel you wish to notify. If you don't specify one then the _#General_ channel will be used by default from within your default team. You can optionally use a colon (:) placed in front of the channel name to force the message to a specific team (if you are part of more then one). |
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 

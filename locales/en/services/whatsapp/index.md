@@ -1,13 +1,23 @@
 ---
-title: "whatsapp Notifications"
-description: "Send whatsapp notifications."
+title: "WhatsApp Notifications"
+description: "Send WhatsApp notifications."
+sidebar:
+  label: "WhatsApp"
+
+source: https://developers.facebook.com/docs/whatsapp/cloud-api/get-started
+
+schemas:
+  - whatsapp
+
+sample_urls:
+  - whatsapp://{token}@{from_phone_id}/{targets}
+  - whatsapp://{template}:{token}@{from_phone_id}/{targets}
+
+limits:
+  max_chars: 1024
 ---
 
-- **Source**: <https://developers.facebook.com/docs/whatsapp/cloud-api/get-started>
-- **Icon Support**: No
-- **Attachment Support**: No
-- **Message Format**: Text
-- **Message Limit**: 1024 Characters per message
+<!-- SERVICE:DETAILS -->
 
 ## Account Setup
 
@@ -50,6 +60,8 @@ Valid syntax is as follows:
 | targets  | Yes      | The target individuals on WhatsApp you wish to notify                                                                                                                                                      |
 | template | No       | You can optionally specify a `template_name` here (such as `hello_world` which is the default one created once you set yourself up your Meta App). This causes Apprise to pull from your template defined. |
 | lang     | No       | If you've defined a template to reference, you can optionally over-ride the default language of `en_US` to reference a different version of the template specified.                                        |
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Template Variables
 

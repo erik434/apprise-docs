@@ -1,14 +1,21 @@
 ---
-title: "streamlabs Notifications"
-description: "Send streamlabs notifications."
+title: "Streamlabs Notifications"
+description: "Send Streamlabs notifications."
+sidebar:
+  label: "Streamlabs"
+
+source: https://streamlabs.com/
+
+schemas:
+  - strmlabs
+
+has_image: true
+
+sample_urls:
+  - strmlabs://{access_token}/
 ---
 
-## Streamlabs Notifications
-
-- **Source**: <https://streamlabs.com/>
-- **Icon Support**: Yes
-- **Message Format**: Text
-- **Message Limit**: 32768 Characters per message
+<!-- SERVICE:DETAILS -->
 
 ## Account Setup
 
@@ -59,9 +66,11 @@ Valid syntax is as follows:
 | ------------ | -------- | -------------------------------------------------------- |
 | access_token | Yes      | The access token generated from your Streamlabs account. |
 
+<!-- GLOBAL:SERVICE:PARAMS -->
+
 ## Examples
 
-Send a streamlabs notification:
+Send a Streamlabs notification:
 
 ```bash
 # Assuming our {access_token} is abcdefghij1234567890

@@ -1,14 +1,20 @@
 ---
-title: "wecombot Notifications"
-description: "Send wecombot notifications."
+title: "WeCom Bot Notifications"
+description: "Send WeCom Bot notifications."
+sidebar:
+  label: "WeCom Bot"
+
+source: https://weixin.qq.com/
+
+schemas:
+  - wecombot
+
+sample_urls:
+  - wecombot://{botkey}
+  - https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=abcd
 ---
 
-## WeCom Bot
-
-- **Source**: <https://weixin.qq.com/>
-- **Icon Support**: No
-- **Message Format**: Text
-- **Message Limit**: 32768 Characters per message
+<!-- SERVICE:DETAILS -->
 
 ## Account Setup
 
@@ -45,6 +51,8 @@ Valid syntax is as follows:
 | Variable | Required | Description                                                                                                                              |
 | -------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | key      | No       | Can optionally use the `?key` instead of passing the key in the `hostname` field. This has more value when defining configuration files. |
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 

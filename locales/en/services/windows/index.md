@@ -1,14 +1,26 @@
 ---
-title: "windows Notifications"
-description: "Send windows notifications."
+title: "Microsoft Windows Notifications"
+description: "Send Microsoft Windows notifications."
+sidebar:
+  label: "Microsoft Windows Notifications"
+
+group: desktop
+
+schemas:
+  - windows: insecure
+
+has_image: true
+
+sample_urls:
+  - windows://
+
+limits:
+  max_chars: 250
 ---
 
-## Microsoft Windows Notifications
+<!-- SERVICE:DETAILS -->
 
-- **Source**: n/a
-- **Icon Support**: Yes
-- **Message Format**: Text
-- **Message Limit**: 250 Characters per message
+## Account Setup
 
 Display notifications right inside of your windows application. This only works if you're sending the notification to the same windows system you're currently accessing. Hence this notification can not be sent from one PC to another.
 
@@ -25,13 +37,15 @@ There are currently no options you can specify for this kind of notification, so
 
 Valid syntax is as follows:
 
-- **windows**://
+- `windows://`
 
 ## Parameter Breakdown
 
 | Variable | Required | Description                                                                                       |
 | -------- | -------- | ------------------------------------------------------------------------------------------------- |
 | duration | No       | Optionally set the duration of the popup message in seconds. By default this value is set to `12` |
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 

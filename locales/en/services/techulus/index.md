@@ -1,14 +1,22 @@
 ---
-title: "techulus Notifications"
-description: "Send techulus notifications."
+title: "Techulus Push Notifications"
+description: "Send Techulus Push notifications."
+sidebar:
+  label: "Techulus Push"
+
+source: https://push.techulus.com
+
+schemas:
+  - push
+
+sample_urls:
+  - push://{apikey}/
+
+limits:
+  max_chars: 1000
 ---
 
-## Techulus Push Notifications
-
-- **Source**: <https://push.techulus.com>
-- **Icon Support**: No
-- **Message Format**: Text
-- **Message Limit**: 1000 Characters per message
+<!-- SERVICE:DETAILS -->
 
 ## Account Setup
 
@@ -26,13 +34,15 @@ You can also just get the **{apikey}** right out of the phone app that is instal
 
 Valid syntax is as follows:
 
-- **push**://**{apikey}**/
+- `push://{apikey}/`
 
 ## Parameter Breakdown
 
 | Variable | Required | Description                                            |
 | -------- | -------- | ------------------------------------------------------ |
 | apikey   | Yes      | The apikey associated with your Techulus Push account. |
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 

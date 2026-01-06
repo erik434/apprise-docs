@@ -1,16 +1,28 @@
 ---
-title: "voipms Notifications"
-description: "Send voipms notifications."
+title: "Voip.ms Notifications"
+description: "Send Voip.ms notifications."
+sidebar:
+  label: "Voip.ms"
+
+source: https://voip.ms/
+
+schemas:
+  - voipms
+
+has_sms: true
+
+sample_urls:
+  - voipms://{password}:{email}/{fromPhoneNo}
+  - voipms://{password}:{email}/{fromPhoneNo}/{toPhoneNo}
+  - voipms://{password}:{email}/{fromPhoneNo}/{toPhoneNo1}/{toPhoneNo2}/{toPhoneNoN}/
+
+limits:
+  max_chars: 160
 ---
 
-## Voip.ms Notifications
+<!-- SERVICE:DETAILS -->
 
-- **Source**: <https://voip.ms/>
-- **Icon Support**: No
-- **Message Format**: Text
-- **Message Limit**: 160 Characters per Message
-
-### Setup
+## Account Setup
 
 Sign up for Voip.ms [from here](https://voip.ms). From your dashboard, you will have to enable API access and create a password at the following link: [here](https://voip.ms/m/api.php)
 
@@ -33,6 +45,8 @@ Valid syntax is as follows:
 | password    | Yes      | The password for API access, this is different from your Voip.ms account password                                                |
 | fromPhoneNo | Yes      | Specify the phone number you registered with Voip.ms you wish the message to be identified as being sent from.                   |
 | toPhoneNo   | No       | A phone number and/or group you wish to send your notification to. You can use comma's to separate multiple entries if you wish. |
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 

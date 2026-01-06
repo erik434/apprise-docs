@@ -1,22 +1,30 @@
 ---
-title: "threema Notifications"
-description: "Send threema notifications."
+title: "Threema Gateway Notifications"
+description: "Send Threema Gateway notifications."
+sidebar:
+  label: "Threema Gateway"
+
+source: https://gateway.threema.ch/
+
+schemas:
+  - threema
+
+sample_urls:
+  - threema://{gateway_id}@{secret}/{user}
+  - threema://{gateway_id}@{secret}/{email}
+  - threema://{gateway_id}@{secret}/{phone}
+
+limits:
+  max_chars: 3500
 ---
 
-## Threema Gateway Notifications
+<!-- SERVICE:DETAILS -->
 
-- **Source**: <https://gateway.threema.ch/>
-- **Icon Support**: No
-- **Message Format**: Text
-- **Message Limit**: 3500 Characters per message
-
-### Setup
+## Account Setup
 
 You need to set up a [Threema Gateway](https://gateway.threema.ch/) account first, which will allow you to request and access one or more 8-character Gateway IDs (each starting with an asterisk (`*`), e.g., `*THREEMA`).
 
 **Important**: Please make sure to request a "Basic" ID for now, as end-to-end encrypted Threema Gateway messages are not yet supported by Apprise. End-to-end Gateway IDs cannot be used for sending Simple Messages (encrypted on Threema Servers).
-
-## Account Setup
 
 - Create your Threema Gateway account at <https://gateway.threema.ch/>, and confirm your e-mail address
 - For credits:
@@ -46,6 +54,8 @@ You can also freely mix/match the variables:
 | gateway_id | Yes      | Your Gateway ID. It consists of 8 characters and usually starts with an asterisk (`*`), e.g., `*MYGWYID`. You may use `?from=` (or `gwid`) as an alias to this variable.    |
 | secret     | Yes      | The ID secret associated with your Gateway ID. You may use `?secret=` as an alias to this variable.                                                                         |
 | target     | No       | Specfiy the recipient Threema ID, e-mail address, or phone no. There is no limit to the number of targets you may specify. You may use `?to=` as an alias to this variable. |
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 

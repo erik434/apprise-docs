@@ -1,14 +1,25 @@
 ---
-title: "workflows Notifications"
-description: "Send workflows notifications."
+title: "Microsoft Power Automate / Workflows Notifications Notifications"
+description: "Send Microsoft Power Automate / Workflows Notifications notifications."
+sidebar:
+  label: "Microsoft Power Automate / Workflows Notifications"
+
+source: https://www.microsoft.com/power-platform/products/power-automate
+
+schemas:
+  - workflows
+
+has_image: true
+
+sample_urls:
+  - https://prod-site.logic.azure.com:443/workflows/{workflow}/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig={signature}
+  - workflows://{host}:{port}/{workflow}/{signature}
+
+limits:
+  max_chars: 1000
 ---
 
-## Microsoft Power Automation / Workflows Notifications
-
-- **Source**: <https://www.microsoft.com/power-platform/products/power-automate>
-- **Icon Support**: Yes
-- **Message Format**: Markdown
-- **Message Limit**: 1000 Characters per message
+<!-- SERVICE:DETAILS -->
 
 ## Account Setup
 
@@ -50,6 +61,8 @@ Valid syntax is as follows:
 | wrap      | No       | Wrap body text in response.                                                                                                                                                                                                                                                                                 |
 | ver       | No       | The Power Automate API Version to use; the default value is `2016-06-01`. This is also parsed using the keyword `api-version` that can be found on the Azure Webhook Link.                                                                                                                                  |
 | template  | No       | provide a path to a template you would prefer to use instead of the Adaptive card chosen by Apprise. use double `{{token}}` curly braces to identify the tokens you wish to have swapped in the provided template prior to it's submission to the upstream service. (e.g `{{app_body}}` or `{{app_title}}`) |
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 

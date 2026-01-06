@@ -1,14 +1,26 @@
 ---
-title: "twilio Notifications"
-description: "Send twilio notifications."
+title: "Twilio Notifications"
+description: "Send Twilio notifications."
+sidebar:
+  label: "Twilio"
+
+source: https://twilio.com
+
+schemas:
+  - twilio
+
+has_sms: true
+
+sample_urls:
+  - twilio://{AccountSID}:{AuthToken}@{FromPhoneNo}/{PhoneNo}
+  - twilio://{AccountSID}:{AuthToken}@{FromPhoneNo}/{PhoneNo1}/{PhoneNo2}/{PhoneNoN}
+  - twilio://{AccountSID}:{AuthToken}@{ShortCode}/{PhoneNo}
+
+limits:
+  max_chars: 140
 ---
 
-## Twilio
-
-- **Source**: <https://twilio.com>
-- **Icon Support**: No
-- **Message Format**: Text
-- **Message Limit**: 140 Characters per message
+<!-- SERVICE:DETAILS -->
 
 ## Account Setup
 
@@ -20,17 +32,17 @@ You'll need to have a number defined as an Active Number ([from your dashboard h
 
 Valid syntax is as follows:
 
-- **twilio**://**{AccountSID}**:**{AuthToken}**@**{FromPhoneNo}**/**{PhoneNo}**
-- **twilio**://**{AccountSID}**:**{AuthToken}**@**{FromPhoneNo}**/**{PhoneNo1}**/**{PhoneNo2}**/**{PhoneNoN}**
+- `twilio://{AccountSID}:{AuthToken}@{FromPhoneNo}/{PhoneNo}`
+- `twilio://{AccountSID}:{AuthToken}@{FromPhoneNo}/{PhoneNo1}/{PhoneNo2}/{PhoneNoN}`
 
 If no _ToPhoneNo_ is specified, then the _FromPhoneNo_ will be messaged instead; hence the following is a valid URL:
 
-- **twilio**://**{AccountSID}**:**{AuthToken}**@**{FromPhoneNo}**/
+- twilio://{AccountSID}:{AuthToken}@{FromPhoneNo}/`
 
 [Short Codes](https://www.twilio.com/docs/glossary/what-is-a-short-code) are also supported but require at least 1 Target PhoneNo
 
-- **twilio**://**{AccountSID}**:**{AuthToken}**@**{ShortCode}**/**{PhoneNo}**
-- **twilio**://**{AccountSID}**:**{AuthToken}**@**{ShortCode}**/**{PhoneNo1}**/**{PhoneNo2}**/**{PhoneNoN}**
+- `twilio://{AccountSID}:{AuthToken}@{ShortCode}/{PhoneNo}`
+- `twilio://{AccountSID}:{AuthToken}@{ShortCode}/{PhoneNo1}/{PhoneNo2}/{PhoneNoN}`
 
 ## Parameter Breakdown
 
@@ -42,7 +54,11 @@ If no _ToPhoneNo_ is specified, then the _FromPhoneNo_ will be messaged instead;
 | ShortCode   | **\*No** | The ShortCode associated with your Twilio account you wish the SMS message to come from. It must be a number registered with Twilio. As an alternative to the **ShortCode**, you may provide a **FromPhoneNo** instead.                                                                                                                                                                                                                                                                                                                                                                    |
 | PhoneNo     | **\*No** | A phone number MUST include the country codes dialling prefix as well when placed. This field is also very friendly and supports brackets, spaces and hyphens in the event you want to format the number in an easy to read fashion.<br/>**Note:** If you're using a _ShortCode_, then at least one _PhoneNo_ MUST be defined.                                                                                                                                                                                                                                                             |
 
-**Note:** This notification service does not use the title field; only the _body_ is passed along.
+::note
+This notification service does not use the title field; only the _body_ is passed along.
+:::
+
+<!-- GLOBAL:SERVICE:PARAMS -->
 
 ## Examples
 
