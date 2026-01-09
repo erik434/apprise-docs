@@ -10,6 +10,8 @@ schemas:
   - mqtt: insecure
   - mqtts
 
+has_selfhosted: true
+
 sample_urls:
   - mqtts://{host}/{topic}
   - mqtts://{host}:{port}/{topic}

@@ -5,7 +5,7 @@ sidebar:
   label: "Apprise API"
 
 source: https://github.com/caronc/apprise-api
-group: "custom"
+
 schemas:
   - apprise: insecure
   - apprises
