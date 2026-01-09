@@ -12,7 +12,6 @@ schemas:
 has_image: true
 
 sample_urls:
-  - https://prod-site.logic.azure.com:443/workflows/{workflow}/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig={signature}
   - workflows://{host}:{port}/{workflow}/{signature}
 
 limits:
