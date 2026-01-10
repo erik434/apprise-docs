@@ -22,7 +22,7 @@ sample_urls:
 ## Account Setup
 
 1. Visit <https://onesignal.com> to create your account.
-2. To acquire your `{appid}` and `{apikey}` Clic on the **Keys and IDs**.<br/>![OneSignalAppKeys](https://user-images.githubusercontent.com/850374/103224241-65616080-48f5-11eb-97c0-fa32a28524b4.png)
+2. To acquire your `{appid}` and `{apikey}` Clic on the **Keys and IDs**.<br/>![OneSignalAppKeys](./images/103224241-65616080-48f5-11eb-97c0-fa32a28524b4.png)
 
 ## Syntax
 

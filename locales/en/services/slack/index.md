@@ -58,7 +58,7 @@ Bots offer you slightly more flexibility then Webhooks do. The main difference i
 1. First create your [Slack App here](https://api.slack.com/apps?new_app=1).
 1. Pick an App Name (such as _Apprise_) and select your workspace; click on the **Create App**
 1. You'll be able to click on **Bots** menu selection from here where you can then choose to add a **Bot User**. Give it a name and then choose \*_Add Bot User_.
-1. You'll need to provide the proper OAuth permissions:<br/>![Slack Bot OAuth Min Permissions](https://github.com/caronc/apprise/assets/850374/ce558378-12e5-4f1f-a0ba-f0c4df07d810)
+1. You'll need to provide the proper OAuth permissions:<br/>![Slack Bot OAuth Min Permissions](./images/285847dfb5ef03ee.png)
 1. Now choose **Install App** to which you can choose **Install App to Workspace**.
 1. You will need to authorize the app which you get prompted to do; so this step is easy.
 1. Finally you'll get some very important information you will need for Apprise. From this point on you can either used the **OAuth Access Token** or the **Bot User OAuth Access Token** using the syntax `slack://{OAuth Access Token}`.

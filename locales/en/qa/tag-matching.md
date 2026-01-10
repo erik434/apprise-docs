@@ -34,3 +34,15 @@ apprise --dry-run --tag=devops \
 ```
 
 Once you have identified your tagging issue in your configuration to the point it lists correctly using the above commands above, you can send your notification by removing the `--dry-run` switch and add the `--body` (`-b`) at a minimum to send your notification(s).
+
+General filter expressions follow:
+
+| Filter                        | Selected services                          |
+| ----------------------------- | ------------------------------------------ |
+| `--tag TagA`                  | Has `TagA`                                 |
+| `--tag 'TagA' --tag 'TagB`    | Has `TagA` **OR** `TagB`                   |
+| `--tag 'TagA,TagC --tag TagB` | Has ( `TagA` **AND** `TagC`) **OR** `TagB` |
+
+:::note
+When you use a comma, you are applying a filter: you are telling Apprise to narrow down the list to only those specific services that possess every tag you listed. To widen the list to include multiple different groups, simply repeat the -g switch.
+:::

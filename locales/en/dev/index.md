@@ -140,12 +140,12 @@ General filter expressions follow:
 
 By default, all notifications use `NotifyType.INFO` with the `default` theme. Available types:
 
-| Notification Type    | Text Representation | Image                                                                                                                       |
-| -------------------- | ------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| `NotifyType.INFO`    | `info`              | ![info](https://raw.githubusercontent.com/caronc/apprise/master/apprise/assets/themes/default/apprise-info-72x72.png)       |
-| `NotifyType.SUCCESS` | `success`           | ![success](https://raw.githubusercontent.com/caronc/apprise/master/apprise/assets/themes/default/apprise-success-72x72.png) |
-| `NotifyType.WARNING` | `warning`           | ![warning](https://raw.githubusercontent.com/caronc/apprise/master/apprise/assets/themes/default/apprise-warning-72x72.png) |
-| `NotifyType.FAILURE` | `failure`           | ![failure](https://raw.githubusercontent.com/caronc/apprise/master/apprise/assets/themes/default/apprise-failure-72x72.png) |
+| Notification Type    | Text Representation | Image                                          |
+| -------------------- | ------------------- | ---------------------------------------------- |
+| `NotifyType.INFO`    | `info`              | ![info](./images/apprise-info-72x72.png)       |
+| `NotifyType.SUCCESS` | `success`           | ![success](./images/apprise-success-72x72.png) |
+| `NotifyType.WARNING` | `warning`           | ![warning](./images/apprise-warning-72x72.png) |
+| `NotifyType.FAILURE` | `failure`           | ![failure](./images/apprise-failure-72x72.png) |
 
 Use a different type:
 

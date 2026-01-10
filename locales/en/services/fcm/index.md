@@ -26,7 +26,7 @@ limits:
 You'll need to create an account with Google's Firebase Cloud Messaging Service (FCM) first to use this.
 
 From there you will access the FCM Management Console and choose which mode you wish to leverage when sending your notifications. The modes are **legacy** and **oauth2**. Both have their pros and con. Depending on which mode you choose, you will be required to construct your Apprise URL slightly diferent:<br/>
-![Firebase](https://user-images.githubusercontent.com/850374/106963460-9dd33600-670e-11eb-8aaa-8499121e3147.png)
+![Firebase](./images/106963460-9dd33600-670e-11eb-8aaa-8499121e3147.png)
 
 ## Syntax
 

@@ -125,6 +125,12 @@ System Administrators and DevOps who wish to send a notification now no longer n
    - Notify your team of outages
    - Notify your employees of an event
 
+| Filter                        | Selected services                          |
+| ----------------------------- | ------------------------------------------ |
+| `--tag TagA`                  | Has `TagA`                                 |
+| `--tag 'TagA' --tag 'TagB`    | Has `TagA` **OR** `TagB`                   |
+| `--tag 'TagA,TagC --tag TagB` | Has ( `TagA` **AND** `TagC`) **OR** `TagB` |
+
 ## Next Steps
 
 - Check out our [Quick Start Guide](/getting-started/quick-start/) to begin

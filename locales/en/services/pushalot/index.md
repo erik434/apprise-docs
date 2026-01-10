@@ -20,7 +20,7 @@ ended: 2016-11
 ## Service End Reason
 
 There isn't much to go on here; Here was their [last public tweet](https://twitter.com/pushalotapp/status/534758031431860224) made on November 18th, 2014:<br/>
-![pushalot-last-tweet](https://user-images.githubusercontent.com/850374/53437921-a07a6c00-39cc-11e9-95cc-a120476f292e.png)
+![pushalot-last-tweet](./images/53437921-a07a6c00-39cc-11e9-95cc-a120476f292e.png)
 
 There is also [this reddit post](https://www.reddit.com/r/pushalot/comments/5ctstq/pushalot_gone/) which also hints that the permanent shutdown occurred sometime in early November 2016.
 

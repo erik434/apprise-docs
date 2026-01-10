@@ -21,7 +21,7 @@ sample_urls:
 1. For this to work, you'll need to signup for a [PagerTree](https://pagertree.com) account (free trial is fine). Make sure you follow the setup wizard (you'll want to be on-call for the team the integration is pointed to in Step 2)
 2. Create a [webhook integration](https://pagertree.com/docs/integration-guides/webhook) and point it to the team (default: "Devops Team")
 3. From the integration page, copy the integration Prefix ID (used for the apprise url)
-   ![image](https://user-images.githubusercontent.com/9020194/217587441-cfbf0f43-f736-4b9d-85dc-18acc6cc418c.png)
+   ![image](./images/217587441-cfbf0f43-f736-4b9d-85dc-18acc6cc418c.png)
 4. Use the Prefix ID for the apprise URL `./bin/apprise -t test -b message "pagertree://int_xxxxxxxxxx"`
    You need to have an account with [PagerTree](https://pagertree.com) and create a [webhook integration](https://pagertree.com/docs/integration-guides/webhook).
 

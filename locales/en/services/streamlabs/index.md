@@ -27,14 +27,14 @@ At the moment, the only service that has an open API to work with is Streamlabs,
 
 1. Log into [Streamlabs](https://streamlabs.com/login?r=https://streamlabs.com/dashboard).
 1. Navigate to the API settings page to register an App:  
-   ![image](https://user-images.githubusercontent.com/28876473/127759145-710d53b6-3c19-4815-812a-9a6279d1b8bb.png)  
-   ![image](https://user-images.githubusercontent.com/28876473/127759182-da8a27cb-bb59-48fa-868e-c8892080ae98.png)  
-   ![image](https://user-images.githubusercontent.com/28876473/127759201-7c28e9f1-6286-42be-a38e-1c377a86976b.png)
+   ![image](./images/127759145-710d53b6-3c19-4815-812a-9a6279d1b8bb.png)  
+   ![image](./images/127759182-da8a27cb-bb59-48fa-868e-c8892080ae98.png)  
+   ![image](./images/127759201-7c28e9f1-6286-42be-a38e-1c377a86976b.png)
 1. Fill out the form with anything it will accept as valid. Most fields can be gibberish, as the application is not supposed to ever move past the "testing" stage and is for your personal use only.
    In the "Whitelist Users" field, input the username of a Twitch account you control. While this feature is _technically_ limited to Twitch, you can use the alerts overlay for donations on YouTube and Facebook as well.
    For now, simply set the "Redirect URI" to `http://localhost`, you will change this soon.
    Then, hit create:  
-   ![image](https://user-images.githubusercontent.com/28876473/127759264-ae91539a-5694-4096-a478-80eb02b7b594.png)
+   ![image](./images/127759264-ae91539a-5694-4096-a478-80eb02b7b594.png)
 1. Now we'll take the Client ID from the Streamlabs page and generate a code that will be used for apprise to communicate with Streamlabs
    Replace the placeholders in the link below with your Client ID
    `https://www.streamlabs.com/api/v1.0/authorize?client_id=<YOURCLIENTID>&redirect_uri=http://localhost&response_type=code&scope=donations.read+donations.create+alerts.create`

@@ -315,7 +315,7 @@ apprise --details
 ```
 
 Here is an example of the output (as it is now) on the CLI:
-![image](https://user-images.githubusercontent.com/850374/142778418-11e87c7f-1b07-4314-ab86-cbf8d268dabf.png)
+![image](./images/142778418-11e87c7f-1b07-4314-ab86-cbf8d268dabf.png)
 
 ## 💼 Message Body Source
 

@@ -21,8 +21,8 @@ sample_urls:
 
 ## Account Setup
 
-1. [Create an account with Splunk On-Call](https://www.splunk.com/en_us/sign-up.html?redirecturl=https://www.splunk.com/en_us/products/on-call.html) (previously VictorOps). Then set up your REST endoint <br/> ![splunk-01](https://github.com/caronc/apprise/assets/850374/031d341f-d661-42ec-980e-a1048ff730d8)
-1. Access your API Key from [this link](https://portal.victorops.com/dash/apprise#/advanced/rest).<br/> ![splunk-02](https://github.com/caronc/apprise/assets/850374/03fb915d-6da7-41b0-8e82-1a7d9e98b36b)<br/>It will look something like this:
+1. [Create an account with Splunk On-Call](https://www.splunk.com/en_us/sign-up.html?redirecturl=https://www.splunk.com/en_us/products/on-call.html) (previously VictorOps). Then set up your REST endoint <br/> ![splunk-01](./images/f691ec449bf87a06.png)
+1. Access your API Key from [this link](https://portal.victorops.com/dash/apprise#/advanced/rest).<br/> ![splunk-02](./images/fb3c3c430919015a.png)<br/>It will look something like this:
 
    ```text
    https://alert.victorops.com/integrations/generic/20131114/alert/1234abcd-c11c-1ad1-a1a1-12345678abcd/$routing_key
@@ -34,7 +34,7 @@ sample_urls:
                                                                                                       |-------------|
    ```
 
-1. Finally you will need to define a `routing_key` which can be done from **Settings** -> **Route Keys**<br/>![splunk-03](https://github.com/caronc/apprise/assets/850374/952f762a-dbfa-4f24-92c7-7b18fca5cd17)
+1. Finally you will need to define a `routing_key` which can be done from **Settings** -> **Route Keys**<br/>![splunk-03](./images/ffc0e172e7d2e730.png)
 1. The `entity_id` is used to ensure your message can be triggered and acknowledged. It's effectively a key. If you don't provide one then Apprise will generate one for you (the same one every time).
 
 ## Syntax

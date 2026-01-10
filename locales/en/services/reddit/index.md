@@ -26,9 +26,9 @@ limits:
 1. Set the mode to `script`,
 1. Provide a `name`, `description`, and `redirect uri` (it can be anything).
 1. Save your configuration:
-   ![Reddit-Setup01](https://user-images.githubusercontent.com/850374/109997361-20372180-7cde-11eb-868d-e5e46bb41873.png)
+   ![Reddit-Setup01](./images/109997361-20372180-7cde-11eb-868d-e5e46bb41873.png)
 1. Once the bot is saved, you'll be given a ID (next to the the bot name) and a Secret.
-   ![Reddit-Setup02](https://user-images.githubusercontent.com/850374/109997391-262d0280-7cde-11eb-8681-067c0e00d4ab.png)
+   ![Reddit-Setup02](./images/109997391-262d0280-7cde-11eb-8681-067c0e00d4ab.png)
 
 - The **App ID** will look something like this: `YWARPXajkk645m`
 - The **App Secret** will look something like this: `YZGKc5YNjq3BsC-bf7oBKalBMeb1xA`

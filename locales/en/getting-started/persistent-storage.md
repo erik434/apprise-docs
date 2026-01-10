@@ -34,7 +34,7 @@ apprise --dry-run --tag=all
 ```
 
 The output may look like this:<br/>
-![Screenshot from 2024-08-22 21-06-24](https://github.com/user-attachments/assets/4df2f5c5-2b89-41d7-95c9-33c059e514a1)
+![Screenshot from 2024-08-22 21-06-24](./images/01abafebf75ad38d.jpeg)
 
 Once you know the UID, you know the directory your persistent data can be found in. The takeaway from the screenshot above is:
 
@@ -49,7 +49,7 @@ apprise storage
 ```
 
 The output may look like this:<br/>
-![Screenshot from 2024-08-22 21-27-39](https://github.com/user-attachments/assets/2383d487-b873-4290-960e-c2e360565771)
+![Screenshot from 2024-08-22 21-27-39](./images/3993e3ece1157fec.jpeg)
 
 The takeaway from the screenshot above is this is another way of looking at the storage and how it's been assigned to the URLs.
 

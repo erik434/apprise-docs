@@ -23,7 +23,7 @@ limits:
 ## Account Setup
 
 Depending on where you want your notification to appear, you must create a workflow through the options. e.g. an MS Teams workflow might look like this:<br/>
-![image](https://github.com/user-attachments/assets/8d825e43-2c09-47ae-bd6e-fc941fac91e2)
+![image](./images/f6034b792cdb90d1.png)
 
 Documentation for this can be found [here](https://learn.microsoft.com/en-us/power-automate/teams/send-a-message-in-teams)
 
@@ -42,7 +42,9 @@ Yes... The URL is that big... but at the end of the day this effectively equates
 
 - `workflows://{host}:{port}/{workflow}/{signature}`
 
-**Note:** Apprise supports this URL _as-is_ too; you no longer need to parse the URL any further. However there is slightly more overhead (internally) if you do use it this way. Sometimes copy/paste is so much easier though! :+1:
+:::tip
+Apprise supports this URL _as-is_ too; you no longer need to parse the URL any further. However there is slightly more overhead (internally) if you do use it this way. Sometimes copy/paste is so much easier though!
+:::
 
 ## Syntax
 

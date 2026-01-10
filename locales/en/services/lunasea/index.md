@@ -26,7 +26,7 @@ ended: 2025-04-30
 ## Service End Reason
 
 Taken from their website:
-![Screenshot From 2025-07-06 13-20-14](https://github.com/user-attachments/assets/d36ab716-e87f-44ac-b95f-0f63b48cb043)
+![Screenshot From 2025-07-06 13-20-14](./images/11ef07079a9e2aa2.png)
 💡The Service was removed from Apprise in [apprise/1318](https://github.com/caronc/apprise/issues/1318)
 :::
 

@@ -25,7 +25,7 @@ limits:
 Sign up for any Misskey based service. [Here are a few you can choose from today](https://misskey-hub.net/en/instances.html).
 
 In Newer versions; the Access Token generation can be found in **Settings** -> **Service Integration** -> **Generate Access Token** (button).
-<img alt="Image" src="https://github.com/user-attachments/assets/a8aeedf6-3576-49c8-b498-a2f8b31341a5" />
+<img alt="Image" src="./images/7a2720cccf8d5ec4.png" />
 
 **Note**: Other variations may provide **Generate access token** from the **API** menu item (it may vary depending on what version of misskey your chosen service is using).
 
@@ -33,7 +33,7 @@ While generating the token:
 
 - Call it whatever you want
 - At the bare minimum you need to grant the: **Compose or delete notes**<br/>
-  <img width="408" height="462" alt="Image" src="https://github.com/user-attachments/assets/4cf98f35-4e38-495a-beb7-7f0e3212b635" />
+  <img width="408" height="462" alt="Image" src="./images/3731df2b3f8a5da9.png" />
 
 After you save your changes, you will be provided with the **Access Token** needed to work with Apprise.
 

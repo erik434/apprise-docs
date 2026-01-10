@@ -25,10 +25,10 @@ Notifico allows you to send a message to one or more IRC Channel(s)
 1. Visit <https://n.tkte.ch> and sign up for an account
 1. Create a project; either manually or sync with github
 1. from within the project, you can create a **Plain Text Message Hook**
-   ![notifico plain text hook](https://user-images.githubusercontent.com/850374/66708086-3f17cb00-ed19-11e9-8e37-bc7e6ba5a3cd.png)
+   ![notifico plain text hook](./images/66708086-3f17cb00-ed19-11e9-8e37-bc7e6ba5a3cd.png)
 
 Once your hook has been created successfully, from the main project page, you can retrieve the link needed to send your messages to. Apprise will need this:
-![notifico hook capture instructions](https://user-images.githubusercontent.com/850374/66708104-6c647900-ed19-11e9-895e-d5f755d05079.png)
+![notifico hook capture instructions](./images/66708104-6c647900-ed19-11e9-895e-d5f755d05079.png)
 
 The URL will look something like this:
 

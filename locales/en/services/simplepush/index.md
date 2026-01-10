@@ -36,7 +36,7 @@ If the level of encryption is not satisfactory to you, your options are:
 
 What is important to identify is this weak encryption used by Apprise to access SimplePush is in place for compliance only. This will never have any cascading effect or impact any other secure notification service also supported by Apprise.
 
-Below is a screenshot from <https://simplepush.io/features> explaining the defined encryption setting from the upstream source:<br/>![Screenshot from 2024-10-03 21-52-46](https://github.com/user-attachments/assets/d6764e5f-6f90-46be-9994-4cffc881477a)
+Below is a screenshot from <https://simplepush.io/features> explaining the defined encryption setting from the upstream source:<br/>![Screenshot from 2024-10-03 21-52-46](./images/624566e31f044891.png)
 
 ## Syntax
 

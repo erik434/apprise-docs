@@ -39,7 +39,7 @@ https://api.ciscospark.com/v1/webhooks/incoming/\
        Y3lzY29zcGkyazovL3VzL1dFQkhPT0sajkkzYWU4fTMtMGE4Yy00
 ```
 
-![image](https://user-images.githubusercontent.com/850374/218330896-ea8715df-0e7d-4584-a803-aa23add9bd15.png)
+![image](./images/218330896-ea8715df-0e7d-4584-a803-aa23add9bd15.png)
 
 The last part of the URL is all you need to be interested in. Think of this URL as:
 

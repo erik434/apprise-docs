@@ -21,7 +21,7 @@ limits:
 
 ## Account Setup
 
-![apprise](https://user-images.githubusercontent.com/76180229/147219640-6ce23b59-bc12-4a30-b5f2-f4d4d2d3fd3c.jpg)
+![apprise](./images/147219640-6ce23b59-bc12-4a30-b5f2-f4d4d2d3fd3c.jpg)
 
 Make sure you register your Amateur Radio Call Sign and create an account with [Hampager](https://hampager.de).
 

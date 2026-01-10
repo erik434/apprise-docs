@@ -27,7 +27,7 @@ limits:
 Sign up for Voip.ms [from here](https://voip.ms). From your dashboard, you will have to enable API access and create a password at the following link: [here](https://voip.ms/m/api.php)
 
 You must edit your `DID` and enable `SMS/MMS ($0.0075/SMS, and $0.02/MMS)`:<br/>
-![Screenshot from 2024-10-27 09-44-48](https://github.com/user-attachments/assets/e7a23518-c8ab-486b-ae56-357541514962)
+![Screenshot from 2024-10-27 09-44-48](./images/75e25ff77c2f4149.png)
 
 ## Syntax
 

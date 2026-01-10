@@ -21,7 +21,7 @@ sample_urls:
 ## Account Setup
 
 1. [Create an account with WxPusher](https://wxpusher.zjiecode.com/).
-1. Acquire your App Token from your profile<br/><img width="1428" alt="appToken" src="https://github.com/caronc/apprise/assets/850374/0ed3fe9c-965b-4543-b778-bb7355346455"><br/>_Note: The above image was taken from [WxPusher's Help Page](https://wxpusher.zjiecode.com/docs/#/?id=%e8%8e%b7%e5%8f%96apptoken)_
+1. Acquire your App Token from your profile<br/><img width="1428" alt="appToken" src="./images/1cfd1232081adc73.png"><br/>_Note: The above image was taken from [WxPusher's Help Page](https://wxpusher.zjiecode.com/docs/#/?id=%e8%8e%b7%e5%8f%96apptoken)_
 
 Targets can be either a User (`UID_DATA`) or a Topic (`<integer>`). i.e:
 

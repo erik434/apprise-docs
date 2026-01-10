@@ -22,7 +22,7 @@ You will need to have a valid Microsoft Personal Account AND you will require Ad
 
 1. From the [**Azure Portal**](https://portal.azure.com/) go to **App Registrations** ([alt link](https://portal.azure.com/#view/Microsoft_AAD_RegisteredApps/ApplicationsListBlade))
    - Use the search bar at the top of the Azure Portal and type `App Registrations`.
-   - If you still can't access anything, it's possible your organisation restricts you from doing so. You may need to reach out to to your administrator in order to proceed.<br/>![Office 365](https://github.com/user-attachments/assets/21d5a2fb-3a8b-4f27-bf62-0771fac60d63)
+   - If you still can't access anything, it's possible your organisation restricts you from doing so. You may need to reach out to to your administrator in order to proceed.<br/>![Office 365](./images/1acb45eda098a004.png)
 1. Click **Register an application**
    - _give any name (your choice) in Name field_
    - select _personal Microsoft accounts only_

@@ -22,7 +22,7 @@ ended: 2019-02-14
 ## Service End Reason
 
 The creators of Stride ([Atlassian](https://www.atlassian.com)) performed partnership with [Slack](https://slack.com) and therefore are discontinuing both _Stride_ and _Hipchat_ services. [See their official announcement here](https://www.atlassian.com/blog/announcements/new-atlassian-slack-partnership). This was what was displayed on their website when looking up info on these products:<br/>
-![Screenshot from 2019-09-07 14-28-34](https://user-images.githubusercontent.com/850374/64478836-58f34a80-d17c-11e9-8779-940f57303b10.png).
+![Screenshot from 2019-09-07 14-28-34](./images/64478836-58f34a80-d17c-11e9-8779-940f57303b10.png).
 💡The Service was removed from Apprise in [apprise/56](https://github.com/caronc/apprise/issues/56)
 :::
 

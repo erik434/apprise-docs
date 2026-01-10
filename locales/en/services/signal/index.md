@@ -158,4 +158,4 @@ apprise -vv -t -b "test" \
 ```
 
 Which produced:
-![image](https://user-images.githubusercontent.com/850374/168930313-05e2bfb2-48f3-4a0a-b0ef-e5c601c97703.png)
+![image](./images/168930313-05e2bfb2-48f3-4a0a-b0ef-e5c601c97703.png)

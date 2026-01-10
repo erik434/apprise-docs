@@ -46,7 +46,7 @@ A `target` can be either a phone number, a contact, or if prefixed with `#` it b
 - `smseagles://{token}@{hostname}:{port}/#{group1}/#{group2}/#{groupN}`
 
 **Note**: If you choose to leverage Groups, make sure your group as **Public** or it will not work from the API.
-![image](https://user-images.githubusercontent.com/850374/188493684-1d023e26-53f1-4813-87ec-e4a96e0e5a98.png)
+![image](./images/188493684-1d023e26-53f1-4813-87ec-e4a96e0e5a98.png)
 
 You can mix and match as well
 
