@@ -3,7 +3,7 @@ title: "Apprise CLI Usage"
 description: "Details on how to use the Apprise CLI."
 ---
 
-## 📣 Apprise CLI
+## Apprise CLI
 
 This small tool wraps the apprise python library to allow individuals such as Developers, DevOps, and Administrators to send notifications from the command line.
 
@@ -186,7 +186,7 @@ apprise -v --title="A Great Github Cheatsheet" --body="see attached" \
    --attach="https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf"
 ```
 
-### 🏷️ Leverage Tagging
+### Leverage Tagging
 
 Consider the case where you've defined all of your Apprise URLs in one file, but you don't want to notify all of them each and every time.
 
@@ -304,7 +304,7 @@ If you use the **--dry-run** (**-d**) switch, then some rules don't apply. For o
 apprise --tag=team,email --dry-run
 ```
 
-## ✅ Compatibility and Notification Details
+## Compatibility and Notification Details
 
 Apprise offers a lot of services at your fingertips, but some of them may or may not be available to you depending on your Operating system and/or what packages you have installed. You can see a list of what is available by doing the following:
 
@@ -317,7 +317,7 @@ apprise --details
 Here is an example of the output (as it is now) on the CLI:
 ![image](./images/142778418-11e87c7f-1b07-4314-ab86-cbf8d268dabf.png)
 
-## 💼 Message Body Source
+## Message Body Source
 
 The Apprise CLI doesn't know what you are feeding it when sending a message to a Notification provider. It just assumes that whatever you message you feed it, it should just pass it along _as is_ to the upstream provider _as text_. In most cases, this is perfect and this is the default behaviour. However, if you are passing along HTML content or markdown content, you should just let Apprise know by specifying the `--input-format` (`-i`) switch. For example:
 
@@ -336,7 +336,7 @@ There is more, but I want to keep my message short. :)
 _EOF
 ```
 
-## 👌 Emoji Support
+## Emoji Support
 
 Apprise now offers you the ability to pass in entries like `🙂` to have it automatically change this into a 🙂 unicode equivalent. Apprise is loaded with all of the emojis (and their mappings) as defined [here](https://github.com/ikatyang/emoji-cheat-sheet)
 
@@ -368,23 +368,3 @@ Emojis offer a more rich use of Apprise. The above example would have passed the
 
 - **title**: 👍 Great work everyone!
 - **body**: So proud of you all! 🚀.
-
-## ⭐ Tricks and Additional Notes
-
-### Tmux Alert Bell Integration
-
-Users of Tmux can link their `alert-bell` to use Apprise like so:
-
-```bash
-# set your tmux bell-action to type 'other':
-set-option -g bell-action other
-
-# now set tmux to trigger on `alert-bell` actions
-set-hook -g alert-bell 'run-shell "\
-  apprise \
-    --title \"tmux finished on #{host}\" \
-    --body \"in session #{session_name} window #{window_index}:#{window_name}\" \
-    discord://webhook_id/webhook_token \
-    slack://TokenA/TokenB/TokenC/Channel \
-    twilio://AccountSid:AuthToken@FromPhoneNo"
-```

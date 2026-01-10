@@ -45,3 +45,21 @@ apprise -vv -t "Multi-line Variable Example" -b "$MULTILINE_VAR" \
 #       variable in quotes (like example does above).
 
 ```
+
+## Tmux Alert Bell Integration
+
+Users of Tmux can link their `alert-bell` to use Apprise like so:
+
+```bash
+# set your tmux bell-action to type 'other':
+set-option -g bell-action other
+
+# now set tmux to trigger on `alert-bell` actions
+set-hook -g alert-bell 'run-shell "\
+  apprise \
+    --title \"tmux finished on #{host}\" \
+    --body \"in session #{session_name} window #{window_index}:#{window_name}\" \
+    discord://webhook_id/webhook_token \
+    slack://TokenA/TokenB/TokenC/Channel \
+    twilio://AccountSid:AuthToken@FromPhoneNo"
+```
