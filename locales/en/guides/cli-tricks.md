@@ -20,14 +20,19 @@ Line 1 of output
 Line 2 of output
 Line 3 of output
 _EOF
+```
 
-# Another way is to just redirect the contents of file straight back
-# into apprise:
+Another way is to just redirect the contents of file straight back into Apprise:
+
+```bash
 cat ~/notes.txt | apprise -vv -t "Multi-line cat STDIN Redirect Example 2" \
    "email://user:pass@hotmail.com"
 
-# You can also use pass content from a multi-line variable you
-# declared:
+```
+
+You can also use pass content from a multi-line variable you declared:
+
+```bash
 MULTILINE_VAR="
 This variable has been defined
 with multiple lines in it."

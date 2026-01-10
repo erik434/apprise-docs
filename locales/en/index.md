@@ -128,6 +128,7 @@ System Administrators and DevOps who wish to send a notification now no longer n
 | Filter                        | Selected services                          |
 | ----------------------------- | ------------------------------------------ |
 | `--tag TagA`                  | Has `TagA`                                 |
+| `--tag TagA,TagB`             | Has `TagA` **AND** `TagB`                  |
 | `--tag 'TagA' --tag 'TagB`    | Has `TagA` **OR** `TagB`                   |
 | `--tag 'TagA,TagC --tag TagB` | Has ( `TagA` **AND** `TagC`) **OR** `TagB` |
 
