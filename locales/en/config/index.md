@@ -5,7 +5,7 @@ sidebar:
   label: "Introduction"
 ---
 
-## 📣 Introduction
+## Introduction
 
 Configuration allows you to identify all of your notification services in one or more secure spots.
 
@@ -16,7 +16,7 @@ There are 2 supported formats:
 
 ## Configuration URLs
 
-Whether loading your Apprise configuration from the command line or the Python framework, they also work in the form of URLs too. This allows for URL location endpoints to extend further then what is currently already supported in the future.
+Whether loading your Apprise configuration from the command line or the Python framework, they also work in the form of URLs too. This allows for URL location endpoints to extend further than what is currently already supported in the future.
 
 Today, the following configuration URLs are supported:
 
@@ -111,7 +111,7 @@ apprise -vvv --config=https://myserver/my/apprise/config \
 
 ## Developers
 
-For developers, there is a new object called **AppriseConfig()** which works very similar to the **AppriseAsset()** object. It's just anothr object that can be easily consumed by the Apprise() instance.
+For developers, there is a new object called **AppriseConfig()** which works very similar to the **AppriseAsset()** object. It's just another object that can be easily consumed by the Apprise() instance.
 
 Up until now, you would add URLs to Apprise like so:
 
@@ -161,8 +161,7 @@ config.add('http://example.com/config')
 
 # ---
 # Our new config object can be simply added into our apprise
-# instance as though it were another notification service
-# it were a notification service:
+# instance as though it were another notification service:
 a.add(config)
 
 # Send off our all of our notifications
@@ -173,19 +172,33 @@ a.notify("A message!", title="An Optional Title")
 a.notify(tag="devops")
 ```
 
-## 🏷️ Tagging from the CLI
+## Tagging from the CLI
 
-Tagging (with the **--tag=** (or **-g**) allows you to only notify entries from the configuration you defined that you want to. You could define hundreds of entries and through tagging, just notify a few (or if any at all).
+Tagging (with the `--tag=` or `-g` switch) allows you to filter your configuration and only notify specific entries. You could define hundreds of entries and, through tagging, just notify a few of them.
 
 ```bash
 # assuming you got your configuration in place; tagging works like so:
+
+# Notify services with TagA
 apprise -b "has TagA" --tag=TagA
+
+# Notify services with TagA OR TagB (Union)
 apprise -b "has TagA OR TagB" --tag=TagA --tag=TagB
 
-# For each item you group with the same --tag value is AND'ed
+# Notify services with TagA AND TagB (Intersection/Strict)
 apprise -b "has TagA AND TagB" --tag="TagA, TagB"
+
+# Complex Logic: Notify services with (TagA AND TagB) OR TagC
 apprise -b "has (TagA AND TagB) OR TagC" --tag="TagA, TagB" --tag=TagC
 ```
+
+:::tip
+**Think of the comma (`,`) as a constraint**:
+
+- `--tag tag1,tag2`: Asks 'Is there a service that matches **BOTH** of these rules?' (Strict / Intersection)
+- `--tag tag1 --tag tag2`: Asks 'Please notify the `tag1` group, **and also** notify the `tag2` group.' (Inclusive / Union)
+
+  :::
 
 ### Reserved Tags
 

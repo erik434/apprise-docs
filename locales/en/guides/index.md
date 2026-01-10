@@ -9,7 +9,7 @@ This small tool wraps the apprise python library to allow individuals such as De
 
 ### Getting Started
 
-Apprise in it's most basic form requires that you provide it a message and an Apprise URL which contains enough information to send the notification with. A list of supported services and how to build your own URL can be found [here](https://github.com/caronc/apprise/wiki#notification-services). Here is a simple [email](https://github.com/caronc/apprise/wiki/Notify_email) example:
+Apprise in its most basic form requires that you provide it a message and an Apprise URL which contains enough information to send the notification with. A list of supported services and how to build your own URL can be found [here](https://github.com/caronc/apprise/wiki#notification-services). Here is a simple [email](https://github.com/caronc/apprise/wiki/Notify_email) example:
 
 ```bash
 # Set a notification to a hotmail (email) account:
@@ -20,11 +20,11 @@ If you don't specify a **--body** (**-b**) then Apprise reads from **stdin** ins
 
 ```bash
 # without a --body, you can use a pipe | to redirect output
-# into you're notification:
+# into your notification:
 uptime | apprise mailto://user:password@hotmail.com
 ```
 
-By default Apprise is very silent; If you want to have a better understanding of what is going on, just add a `-v` switch to improve the verbosity. The more `v`'s you add, the more detailed output you'll get back.
+By default Apprise is very silent; If you want to have a better understanding of what is going on, just add a `-v` switch to improve the verbosity. The more `v`s you add, the more detailed output you'll get back.
 
 There is no limit to the number of services you want to notify, just keep adding/chaining them one after another:
 
@@ -57,13 +57,13 @@ Send a notification to all of the specified servers identified by their URLs
 the content provided within the title, body and notification-type.
 
 For a list of all of the supported services and information on how to use
-them, check out at https://github.com/caronc/apprise
+them, check out at https://github.com/caronc/apprise.
 
 Options:
   -b, --body TEXT                 Specify the message body. If no body is
                                   specified then content is read from <stdin>.
   -t, --title TEXT                Specify the message title. This field is
-                                  complete optional.
+                                  completely optional.
   -P, --plugin-path PLUGIN_PATH   Specify one or more plugin paths to scan.
   -S, --storage-path STORAGE_PATH
                                   Specify the path to the persistent storage
@@ -77,7 +77,7 @@ Options:
   -SUL, --storage-uid-length INTEGER
                                   Define the number of unique characters to
                                   store persistentcache in. By default this
-                                  value is 6 (characters).
+                                  value is 8 (characters).
   -SM, --storage-mode MODE        Persistent disk storage write mode
                                   (default=auto). Possible values are "auto",
                                   "flush", and "memory".
@@ -92,9 +92,10 @@ Options:
   -T, --theme THEME               Specify the default theme.
   -g, --tag TAG                   Specify one or more tags to filter which
                                   services to notify. Use multiple --tag (-g)
-                                  entries to "OR" the tags together and comma
-                                  separated to "AND" them. If no tags are
-                                  specified then all services are notified.
+                                  entries to match ANY tag. Use comma
+                                  separators to require ALL tags (strict
+                                  match). Omit to notify untagged services
+                                  only, or use "all" to notify everything.
   -Da, --disable-async            Send all notifications sequentially
   -d, --dry-run                   Perform a trial run but only prints the
                                   notification services to-be triggered to
@@ -170,7 +171,7 @@ apprise --title="A photo of my family" --body="see attached" \
    --attach=/path/to/my/photo.jpeg
 
 # You can attach as many file attachments as you like:
-apprise -v --title="Several great photo's of the gang" --body="see attached" \
+apprise -v --title="Several great photos of the gang" --body="see attached" \
    --attach=/path/team1.jpeg \
    --attach=/path/teambuilding-event.jpg \
    --attach=/path/paintball-with-office.jpg
@@ -192,7 +193,7 @@ Consider the case where you've defined all of your Apprise URLs in one file, but
 
 - 📥 Maybe you have special notifications that only fire when a download completed.
 - 🚨 Maybe you have home monitoring that requires you to notify several different locations
-- 👷 Perhaps you work as an Administrative, Developer, and/or Devops role and you want to just notify certain people at certain times (such as when a software build completes, or a unit test fails, etc).
+- 👷 Perhaps you work as an Administrator, Developer, and/or Devops role and you want to just notify certain people at certain times (such as when a software build completes, or a unit test fails, etc).
 
 Apprise makes this easy by simply allowing you to tag your URLs. There is no limit to the number of tags associate with a URL. Let's make a simple apprise configuration file; this can be done with any text editor of your choice:
 
@@ -251,15 +252,15 @@ If you're building software, you can set up your continuous integration to notif
 
 ```bash
 # notify the services that have either a `devops` or `team` tag
-# If you check our our configuration; this matches 3 separate URLs
+# If you check out our configuration; this matches 3 separate URLs
 apprise -v --title="Apprise Build" \
    --body="Build was a success!" \
    --tag=devops --tag=team
 ```
 
-When you specify more than one **--tag** the contents are **OR**'ed together.
+When you specify more than one `--tag`, the contents are **OR**'ed together (Union).
 
-If you identify more than one element on the same **--tag** using a space and/or comma, then these get treated as an **AND**. Here is an example:
+If you identify more than one element on the same `--tag` using a space and/or comma, then these get treated as an **AND** (Intersection). Here is an example:
 
 ```bash
 # notify only the services that have both a team and email tag
@@ -269,19 +270,35 @@ apprise -v --title="Meeting this Friday" \
    --tag=team,email
 ```
 
-There is a special reserved tag called `all`. `all` will match ALL of your entries regardless of what tag name you gave it. Use this with caution.
-
-Here is another way of looking at it:
+Tagging (with the `--tag=` or `-g` switch) allows you to filter your configuration and only notify specific entries. You could define hundreds of entries and, through tagging, just notify a few of them.
 
 ```bash
 # assuming you got your configuration in place; tagging works like so:
+
+# Notify services with TagA
 apprise -b "has TagA" --tag=TagA
+
+# Notify services with TagA OR TagB (Union)
 apprise -b "has TagA OR TagB" --tag=TagA --tag=TagB
 
-# For each item you group with the same --tag value is AND'ed
+# Notify services with TagA AND TagB (Intersection/Strict)
 apprise -b "has TagA AND TagB" --tag="TagA, TagB"
+
+# Complex Logic: Notify services with (TagA AND TagB) OR TagC
 apprise -b "has (TagA AND TagB) OR TagC" --tag="TagA, TagB" --tag=TagC
 ```
+
+:::tip
+**Think of the comma (`,`) as a constraint**:
+
+- `--tag tag1,tag2`: Asks 'Is there a service that matches **BOTH** of these rules?' (Strict / Intersection)
+- `--tag tag1 --tag tag2`: Asks 'Please notify the `tag1` group, **and also** notify the `tag2` group.' (Inclusive / Union)
+
+:::
+
+:::note
+There is a special reserved tag called `all`. `all` will match ALL of your entries regardless of what tag name you gave it. Use this with caution.
+:::
 
 ### Testing Configuration and Tags
 
