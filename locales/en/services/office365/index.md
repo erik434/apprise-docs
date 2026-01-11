@@ -1,40 +1,46 @@
 ---
-title: "Office 365 Notifications"
-description: "Send Office 365 notifications."
+title: "Office 365 / Outlook / Hotmail"
+description: "Send notifications via Office 365, Outlook.com, and Hotmail."
 sidebar:
-  label: "Office 365"
+  label: "Office 365 / Outlook"
 
 schemas:
   - o365
+  - azure
 
 has_attachments: true
 
 sample_urls:
   - o365://{source}/{tenant_id}/{client_id}/{client_secret}/
   - o365://{source}/{tenant_id}/{client_id}/{client_secret}/{targets}
+  - azure://{source}/{tenant_id}/{client_id}/{client_secret}/
+  - azure://{source}/{tenant_id}/{client_id}/{client_secret}/{targets}
 ---
 
 <!-- SERVICE:DETAILS -->
 
 ## Account Setup
 
-You will need to have a valid Microsoft Personal Account AND you will require Administrative access unfortunately (to access the **Mail.Send** and **Mail.ReadWrite** Application Permission). More details can be [found here](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-protocols-oauth-client-creds) about registering your app with Azure.
+This plugin uses the Microsoft Graph API. It supports **Personal Accounts** (Outlook.com, Hotmail, Live) and **Business Accounts** (Office 365).
+
+Because Microsoft has disabled Basic Authentication (Username/Password), you must register an application in Azure to generate the credentials Apprise needs (Client ID, Secret, etc).
 
 1. From the [**Azure Portal**](https://portal.azure.com/) go to **App Registrations** ([alt link](https://portal.azure.com/#view/Microsoft_AAD_RegisteredApps/ApplicationsListBlade))
    - Use the search bar at the top of the Azure Portal and type `App Registrations`.
-   - If you still can't access anything, it's possible your organisation restricts you from doing so. You may need to reach out to to your administrator in order to proceed.<br/>![Office 365](./images/1acb45eda098a004.png)
+   - If you still can't access anything, it's possible your organization restricts you from doing so. You may need to reach out to your administrator in order to proceed.<br/>![Office 365](./images/1acb45eda098a004.png)
 1. Click **Register an application**
-   - _give any name (your choice) in Name field_
-   - select _personal Microsoft accounts only_
-   - Click **Register**
-1. From here (the **Overview** panel) you can acquire both the Directory (`tenant`) ID and the Application (`client_id') you will need.
-1. To create your `client_secret` , go to **Active Directory** -> **Certificate & Tokens** -> **New client secret**
-   - The `client_secret` is an auto-generated string which may have `@` and/or `?` character(s) in it. You will need to encode these characters to when pasting this into your Apprise URL. See the note section above for more details on how to do this.
-1. Now need to set permission **Active directory** -> **API permissions** -> **Add permission**.
-1. Click on **Microsoft Graph**
-1. Click on **Application Permissions** and search for **Mail.Send**; You will want to check this box too on the match found.
-1. Additionally grant access to the (**Application Permission**) **Mail.ReadWrite** scope to allow the sending of large attachments (> 3MB in size). **Mail.ReadWrite** allows Apprise to prepares a Draft message with the large attachment so that it can be sent thereafter.
-1. Additionally grant access to the (**Application Permission**) **User.Read.All** if you intend to pass in an ObjectID as the `source` and not an email. Apprise will use the ObjectID to acquire the email associated with the account; this is nessisary to be able to support the `From` portion of the email address.
+   - Give it any name (e.g., "Apprise Notifications").
+   - **Crucial:** Select **Accounts in any organizational directory and personal Microsoft accounts** (or "Personal Microsoft accounts only" if you are not in an org).
+   - Click **Register**.
+1. From here (the **Overview** panel) you can acquire both the Directory (`tenant`) ID and the Application (`client_id`) you will need.
+1. To create your `client_secret` , go to **Certificates & secrets** -> **New client secret**.
+   - The `client_secret` is an auto-generated string which may have `@` and/or `?` character(s) in it. You will need to encode these characters when pasting this into your Apprise URL. See the note section below for more details.
+1. Now set permissions: **API permissions** -> **Add a permission**.
+1. Click on **Microsoft Graph**.
+1. Click on **Application Permissions** and search for **Mail.Send**; check the box and click "Add permissions".
+   - **Important:** After adding, you must click **Grant admin consent** for the permissions to take effect.
+1. Additionally, grant access to **Mail.ReadWrite** if you intend to send large attachments (> 3MB).
+1. Additionally, grant access to **User.Read.All** if you want Apprise to automatically detect your "From" address name, or if you intend to use an Object ID as your `source`.
 1. Now you're good to go. 🙂
 
 ## Syntax
@@ -43,18 +49,19 @@ Valid syntax is as follows:
 
 - `o365://{source}/{tenant_id}/{client_id}/{client_secret}/`
 - `o365://{source}/{tenant_id}/{client_id}/{client_secret}/{targets}`
+- `azure://{source}/{tenant_id}/{client_id}/{client_secret}/`
+- `azure://{source}/{tenant_id}/{client_id}/{client_secret}/{targets}`
 
 ## Parameter Breakdown
 
-| Variable      | Required | Description                                                                                                                                                            |
-| ------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| source        | Yes      | The **Email** OR the \*\*ObjectID associated with your Azure Account you whish to send the email from.                                                                 |
-| tenant_id     | Yes      | The **Tenant ID** Associated with your Azure Application you created. This can also be referred to as your **Directory ID**.                                           |
-| account_email | Yes      | The **Email** Associated with your Azure account.                                                                                                                      |
-| client_id     | Yes      | The **Client ID** (also referred to as an Application ID) associated with your Azure Application you created. This can also be referred to as your **Application ID**. |
-| client_secret | Yes      | You will need to generate one of these; this can be done through the Azure portal (Also documented below).                                                             |
-| from          | No       | If you want the email address _ReplyTo_ address to be something other then your own email address, then you can specify it here.                                       |
-| to            | No       | This will enforce (or set the address) the email is sent To. By default the email is sent to the address identified by the `account_email`                             |
+| Variable      | Required | Description                                                                                                                                    |
+| ------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| source        | Yes      | The **Email Address** (or ObjectID) associated with the Azure Account you wish to send the email from.                                         |
+| tenant_id     | Yes      | The **Tenant ID** (Directory ID) associated with your App Registration.                                                                        |
+| client_id     | Yes      | The **Client ID** (Application ID) associated with your App Registration.                                                                      |
+| client_secret | Yes      | The **Client Secret** you generated in the "Certificates & secrets" section.                                                                   |
+| from          | No       | If you want the email _ReplyTo_ address to be something other than your own email address, you can specify it here.                            |
+| to            | No       | Override the target email. By default, the email is sent to the address identified by the `source` (or the targets specified in the URL path). |
 
 <!-- GLOBAL:SERVICE:PARAMS -->
 
