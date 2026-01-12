@@ -14,7 +14,7 @@ merge your contributions smoothly.
 ## Retrieve from GitHub
 
 ```bash
-# Acquire the core library from it's official resting spot on GitHub
+# Acquire the core library from its official resting spot on GitHub
 git clone git@github.com:caronc/apprise.git
 
 ```
@@ -151,7 +151,7 @@ With respect to the above example:
     1. `__init__(self, *args, **kwargs)`: Define what is required to initialize your object/notification. Just make sure to cross reference it in the `template*` stuff (explained above).
     1. `send(self, body, title='', *args, **kwargs)` at a bare minimum. See other Notify scripts as to how you can expand on this. But just take the `body` and `title` and construct your message and send it.
     1. `url()`. This function must be able to construct a URL that would re-generate a copy of the exact same object if passed into `parse_url()`
-    1. `parse_url(url)`: this is a **staticmethod** that parses the Apprise URL and breaks it into a dictionary of the components. The dictionary it creates must map up to what the `__init__()` takes as it's arguments
+    1. `parse_url(url)`: this is a **staticmethod** that parses the Apprise URL and breaks it into a dictionary of the components. The dictionary it creates must map up to what the `__init__()` takes as its arguments
 
   - **Putting it together**:
 
@@ -175,7 +175,7 @@ With respect to the above example:
     assert isinstance(a[0], NotifyFooBar)
 
     # So we know we can access the notification, then this would create a second notification service:
-    # The only thing add does is match the schema up with the class it should use and then call it's
+    # The only thing add does is match the schema up with the class it should use and then call its
     # NotifyFooBar.parse_url()
 
     # So parse_url() is in charge of preparing all of the arguments we can use to instantiate our object
@@ -211,7 +211,7 @@ With respect to the above example:
     obj = NotifyFooBar(**results)
 
     # If you build your NotifyFooBar correctly, then you should be able
-    # to build a copy of the object perfectly using it's url() call
+    # to build a copy of the object perfectly using its url() call
     # Now instantiate your object:
     clone_results = NotifyFooBar.parse_url(obj.url())
 
