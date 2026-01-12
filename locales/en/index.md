@@ -48,7 +48,7 @@ System Administrators and DevOps who wish to send a notification now no longer n
 ### Other Notes
 
 - Written in Python
-- 99.65% Test Coverage (oof... I'll get it back to 100% eventually again)
+- 100% Test Coverage!
 - Over 15,500+ stars on GitHub! ⭐
 - Over 5M downloads a month on PyPI ([source](https://pypistats.org/packages/apprise))
 - Over 94M downloads total on PyPI ([source](https://pepy.tech/projects/Apprise?timeRange=threeMonths&category=version&includeCIDownloads=true&granularity=daily&viewType=line))
