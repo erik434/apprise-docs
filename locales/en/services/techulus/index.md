@@ -42,7 +42,7 @@ Valid syntax is as follows:
 | -------- | -------- | ------------------------------------------------------ |
 | apikey   | Yes      | The apikey associated with your Techulus Push account. |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

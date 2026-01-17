@@ -43,7 +43,7 @@ Valid syntax is as follows:
 | authorizationtoken | Yes      | The authorization token associated with your Faast account.      |
 | image              | No       | Associate an image with the message. By default this is enabled. |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

@@ -1,0 +1,387 @@
+---
+title: Configuration
+description: Learn how to configure Apprise using YAML or TEXT formats.
+sidebar:
+  order: 4
+---
+
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+
+Configuration allows you to identify all of your notification services in one place, while supporting grouping, tagging, and keeping secrets out of your shell history.
+
+Apprise configuration is **portable**. The same configuration file can be used by the CLI, the API server, and the Python library without modification.
+
+Consider using configuration files when:
+
+- You want to reuse the same notification setup across scripts or systems
+- You want to keep credentials out of your shell history
+- You want to group services or simplify references to your Apprise URLs with tags
+- You want the same configuration to work with the CLI, API, and Python library
+
+If you only need a one-off notification, inline URLs are sufficient. For anything beyond that, configuration files are recommended.
+
+## Supported configuration formats
+
+Apprise supports two configuration formats. Both describe the same information, but YAML can express more structure.
+
+- **TEXT**: Simple, line-based, and easy to read. Best for small or manual setups.
+- **YAML**: Structured and standardised. Better suited for larger configurations and automation tools.
+
+<Tabs syncKey="config-format">
+<TabItem label="TEXT">
+
+## TEXT Configuration
+
+TEXT configuration is line-based.
+
+- Blank lines are ignored
+- Comments start with `#` or `;`
+- Each URL can optionally be prefixed with one or more tags
+- You can define tag groups
+- You can include other configuration sources
+
+TEXT configuration is ideal when:
+
+- You want the simplest possible setup
+- You are managing only a few services
+- You prefer minimal syntax
+
+### Basic TEXT Syntax
+
+```apache
+# Email notifications
+mailto://user:password@gmail.com
+
+# Discord notifications
+discord://webhook_id/webhook_token
+```
+
+## TEXT Tagging and Grouping
+
+Tags let you organize notification services into logical groups such as `personal`, `ops`, or `critical`. You can then target groups without changing your destination URLs.
+
+### TEXT Tagging Examples
+
+You can categorize services by placing tags before the URL, separated by an equals sign (`=`).
+
+```apache
+# Syntax: tag=url
+# Associates the 'desktop' tag with this notification
+desktop=gnome://
+
+# You can assign multiple tags using commas or spaces
+# This URL is part of 'tv' AND 'kitchen'
+tv,kitchen=kodi://user:pass@kitchen.host
+```
+
+### Grouping Tags with TEXT Configuration
+
+You can include other configuration files to keep your setup clean. This is excellent for separating secrets from general logic.
+
+```apache
+# 1. Define your base services
+user1=mailto://credentials
+user2=mailto://credentials
+
+# 2. Define a group
+# Notifying 'friends' will notify 'user1' and 'user2'
+friends = user1, user2
+```
+
+### TEXT Includes
+
+You can import other configuration files (local or remote) using the `include` keyword.
+
+```apache
+# Read from another Apprise configuation file on the local server
+include /etc/apprise/secrets.conf
+
+# Read from an Apprise API server
+include https://my-config-server.com/get/my-key/
+```
+
+:::note
+The Apprise API Server will not `include` files identified as being stored local to the server for security reasons.
+:::
+
+</TabItem>
+
+<TabItem label="YAML">
+
+## YAML Configuration
+
+YAML configuration is structured and is best for larger setups. But it also provides optional `asset` configuration (branding and defaults) which isn't available with TEXT configuration.
+
+### Basic YAML Syntax
+
+All services are listed under a `urls` list.
+
+```yaml
+urls:
+  - json://localhost
+  - slack://tokenA/tokenB/tokenC
+```
+
+## YAML Tagging and Grouping
+
+Tags let you organize notification services into logical groups such as `personal`, `ops`, or `critical`. You can then target groups without changing your destination URLs.
+
+### YAML Tagging Examples
+
+Assign one tag:
+
+```yaml
+version: 1
+urls:
+  - discord://webhook_id/webhook_token:
+      tag: ops
+```
+
+Assign multiple tags:
+
+```yaml
+version: 1
+urls:
+  - mailto://user:password@gmail.com:
+      tag:
+        - personal
+        - after-hours
+```
+
+### Grouping Tags with YAML Configuration
+
+You can apply tags to every URL in a file using `tag` (or `tags`) at the root:
+
+```yaml
+version: 1
+tag: org-default
+
+urls:
+  - discord://webhook_id/webhook_token
+  - mailto://user:password@gmail.com
+```
+
+You can also tag your individual Apprise URLs with the same identifier
+
+```yaml
+version: 1
+
+urls:
+  - discord://webhook_id/webhook_token:
+      tag: ops
+  - slack://token_a/token_b/token_c:
+      tag: ops
+  - mailto://user:password@gmail.com:
+      tag: ops
+```
+
+You can also leverage the `groups` directive to create new tag identifiers and identify which existing tags will be encompased in them.
+
+```yaml
+version: 1
+
+groups:
+  critical: ops, after-hours
+  family: personal
+
+urls:
+  - discord://webhook_id/webhook_token:
+      tag: ops
+
+  - mailto://user:password@gmail.com:
+      tag: after-hours
+```
+
+### Asset Configuration
+
+Asset configuration lets you tune defaults and branding. Effectively you can override the default Apprise branding (Icons, App ID) sent to the upstream service.
+
+:::note
+Branding is only available with YAML configuration only.
+:::
+
+Asset keys have a few rules:
+
+- Keys that start with `_` or end with `_` are ignored
+- Only asset keys that already exist and are string or boolean values can be set
+- Values must be strings or booleans, with strings converted to booleans when the underlying default is boolean
+
+A practical subset of commonly used keys is shown below; simply not over-riding an entry uses it's default value.
+
+```yaml
+version: 1
+
+asset:
+  #
+  # Branding
+  #
+
+  # A shortened identify to describe the application
+  app_id: Apprise
+  # A default description of the notification (used in some upstream services)
+  app_desc: Apprise Notifications
+  # Where can people go to get more information on your application?
+  app_url: https://github.com/caronc/apprise
+
+  #
+  # Behaviour defaults
+  #
+
+  # notifications are issued sequentially if this is set to false (default = true)
+  async_mode: true
+
+  # Convert \r or \n into their actual <CR> and <LF> characters when processing body string
+  # (default = false)
+  interpret_escapes: false
+
+  # credentials are protected when written to logging (default = true)
+  secure_logging: true
+
+  # Encoding used when reading configuration from disk
+  encoding: utf-8
+
+  #
+  # Themes
+  #
+
+  # The default theme used when resolving icons
+  theme: default
+
+  # Optionaly override icon URL paths (advanced)
+  # Defaults are pullled from:
+  #   http://github.com/caronc/apprise/tree/master/apprise/assets/themes/default
+  image_url_mask: https://example.local/assets/themes/{THEME}/apprise-{TYPE}-{XY}{EXTENSION}
+  image_url_logo: https://example.local/assets/themes/{THEME}/apprise-logo.png
+  image_path_mask: /apprise/installation/assets/themes/{THEME}/apprise-{TYPE}-{XY}{EXTENSION}
+
+  # Let Apprise know in advance what you will be feeding it;
+  # Values are:
+  #   - null: (default) pass content along as is
+  #   - "text": content being passed in is in a "text" format (default for CLI tool)
+  #   - "html": content being passed in is HTML
+  #   - "markdown": content being provided is in Markdown format.
+  body_format: null
+
+urls:
+  - discord://webhook_id/webhook_token:
+      tag: ops
+
+  - mailto://user:password@gmail.com:
+      tag: after-hours
+```
+
+Timezone can also be set under `asset` using `timezone` (or `tz`) to control the default timezone used by Apprise.
+
+### Grouping
+
+YAML allows for recursive group definitions (Groups containing Groups).
+
+```yaml
+groups:
+  - finance: user1, user2
+  - devteam: user3, user4
+  # Recursive group
+  - company: finance, devteam, boss
+
+urls:
+  - mailto://credentials:
+      - tag: user1
+```
+
+### YAML Includes
+
+You can import other configurations by leveraging the optional `include:` section
+
+```yaml
+include:
+  # Read from another Apprise configuation file on the local server
+  - /etc/apprise/secrets.yml
+  # Read from an Apprise API server
+  - https://my-config-server.com/get/my-key/
+```
+
+:::note
+You can not set up the Apprise API Server to include local file
+:::
+
+</TabItem>
+</Tabs>
+
+## Targeting Tags when Sending
+
+Tag filtering is consistent across tools. For example, with the CLI you can target a group by tag:
+
+General filter expressions follow:
+
+| Filter                        | Selected services                          |
+| ----------------------------- | ------------------------------------------ |
+| `--tag TagA`                  | Has `TagA`                                 |
+| `--tag TagA,TagB`             | Has `TagA` **AND** `TagB`                  |
+| `--tag 'TagA' --tag 'TagB`    | Has `TagA` **OR** `TagB`                   |
+| `--tag 'TagA,TagC --tag TagB` | Has ( `TagA` **AND** `TagC`) **OR** `TagB` |
+
+:::note
+When you use a comma, you are applying a filter: you are telling Apprise to narrow down the list to only those specific services that possess every tag you listed. To widen the list to include multiple different groups, simply repeat the `--tag` (`-g`) switch.
+:::
+
+Example:
+
+```bash
+apprise --tag="ops,critical" \
+   --body="Notify services that have the tag ops AND critical associated with it"
+
+apprise --tag="ops" --tag "critical" \
+   --body="Notify all services that have either 'ops' AND/OR 'critical' associated with it"
+```
+
+## Loading Configuration
+
+Whether you use TEXT or YAML, you load your configuration into the CLI or Library the same way.
+
+### CLI Usage
+
+You can load a file using the `--config` (or `-c`) flag. You can specify this flag multiple times to load multiple files.
+
+```bash
+# Load a local file
+apprise --config=/etc/apprise/config.yml --body="test"
+
+# Load from a URL
+apprise --config=https://myserver.com/config --body="test"
+```
+
+## File Locations
+
+If you do not specify a configuration file via the CLI (`--config`), Apprise automatically checks these default locations (in order):
+
+1. `~/.apprise`
+1. `~/.apprise.yaml`
+1. `~/.config/apprise`
+1. `~/.config/apprise.yaml`
+1. `/etc/apprise` (and `/etc/apprise.yaml`)
+
+:::tip[Did you know?]
+Apprise automatically determines the format (TEXT vs YAML) based on the file extension (`.yml` or `.yaml`). If your file has no extension, it defaults to TEXT unless valid YAML structure is detected.
+:::
+
+## Reserved Tags
+
+There are two special tags you can use to control notification behavior.
+
+| Tag      | Description                                                                                                                                                         |
+| :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `always` | If you assign the tag `always` to a URL in your config, it will **ALWAYS** trigger, even if you are filtering for a different tag via the CLI.                      |
+| `all`    | Used when _sending_ a notification (e.g. `apprise --tag=all`). This tells Apprise to ignore all filters and notify **every** service defined in your configuration. |
+
+## Private Web Hosted Configuration
+
+If you are hosting your configuration on a private web server, Apprise detects the format based on the **Content-Type** header returned by the server, or by an explicit URL parameter.
+
+| Format   | HTTP Content-Type                 | URL Force Override       |
+| :------- | :-------------------------------- | :----------------------- |
+| **YAML** | `text/yaml`, `application/x-yaml` | `http://...?format=yaml` |
+| **TEXT** | `text/plain`                      | `http://...?format=text` |
+
+:::note
+If you're using a hosting of the Apprise API, your `include` URLs look like: `http://apprise-host/get/<key>`
+:::

@@ -48,7 +48,7 @@ Valid syntax is as follows:
 | to       | No       | The phone numbers you wish to notify.                                                                                        |
 | batch    | No       | Send multiple specified notifications in a single batch (1 upstream post to the end server). By default this is set to `no`. |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

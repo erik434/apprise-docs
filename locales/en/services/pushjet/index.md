@@ -47,7 +47,7 @@ Valid syntax is as follows:
 | password   | No       | If you're system is set up to use HTTP-AUTH, you can provide _password_ for authentication to it.                                                                                                                                 |
 | port       | No       | The Pushjet port optional and only required if you're hosting your own notification server on a different port then the standard ones. By default the port is **80** for **pjet://** and **443** for all **pjets://** references. |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

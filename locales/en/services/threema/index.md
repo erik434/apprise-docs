@@ -55,7 +55,7 @@ You can also freely mix/match the variables:
 | secret     | Yes      | The ID secret associated with your Gateway ID. You may use `?secret=` as an alias to this variable.                                                                         |
 | target     | No       | Specfiy the recipient Threema ID, e-mail address, or phone no. There is no limit to the number of targets you may specify. You may use `?to=` as an alias to this variable. |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

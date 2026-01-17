@@ -45,7 +45,7 @@ Valid syntax is as follows:
 | userid   | No       | The account login to your XBMC server.                          |
 | password | No       | The password associated with your XBMC Server.                  |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

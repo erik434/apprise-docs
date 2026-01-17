@@ -44,7 +44,7 @@ Valid syntax is as follows:
 | ToPhoneNo | No       | A phone number to send your notification to                                                               |
 | Secret    | No       | The optional secret key to associate with the message signing                                             |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

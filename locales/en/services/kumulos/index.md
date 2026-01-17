@@ -40,7 +40,7 @@ Valid syntax is as follows:
 | ApiKey    | Yes      | The _API Key_ associated with your Kumulos account.       |
 | ServerKey | Yes      | The _Server Secret_ associated with your Kumulos account. |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

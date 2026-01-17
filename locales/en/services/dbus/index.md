@@ -47,7 +47,7 @@ Valid syntax is as follows:
 
 ## Parameter Breakdown
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

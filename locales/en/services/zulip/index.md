@@ -60,7 +60,7 @@ You can also mix and match the entries above too:
 | email        | No       | An email belonging to one of the users that have been added to your organization the private message.                                                                                  |
 | stream       | No       | A stream to notify.                                                                                                                                                                    |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

@@ -45,7 +45,7 @@ You can mix and match the information too:
 | to       | No       | This is an alias to the Phone/Email variable.                                                                                                                                                                                                                                                                                       |
 | batch    | No       | PopcornNotify allows a batch mode. If you identify more then one phone number and/or email, you can send all of these targets you identify on the URL in a single shot instead of the normal _Apprise_ approach (which sends them one by one). Enabling batch mode has both it's pro's and cons. By default batch mode is disabled. |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

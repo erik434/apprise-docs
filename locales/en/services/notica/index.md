@@ -65,7 +65,7 @@ A self hosted solution allows for a few more parameters:
 | user     | No       | If you're system is set up to use HTTP-AUTH, you can provide _username_ for authentication to it.                                 |
 | password | No       | If you're system is set up to use HTTP-AUTH, you can provide _password_ for authentication to it.                                 |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

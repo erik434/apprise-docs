@@ -92,7 +92,7 @@ These parameters are always included by Apprise in addition to any custom `:{key
 
 These defaults are common across all Apprise plugins, in addition to the service‑specific parameters described above.
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

@@ -70,7 +70,7 @@ For ambiguity, if you do not provide a valid phone number, and the information p
 | priority | No       | Can be set to either `normal` or `high`. If not otherwise provided, this assumes to be `normal` by default.                                     |
 | status   | No       | Optionally include a small little ASCII string representing the notification status being sent (inline with it) by default this is set to `no`. |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

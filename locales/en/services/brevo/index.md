@@ -68,7 +68,7 @@ The plugin URL template is:
 | `reply`     | No       | Reply-To header, optionally including a display name.                      |
 | `format`    | No       | Overrides default format (`html` or `text`), consistent with Apprise core. |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

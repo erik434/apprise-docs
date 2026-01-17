@@ -68,7 +68,7 @@ If you defined a template with OneSignal, you can use it as well:
 | image           | No       | to include the icon/image associated with the message. By default this is set to `yes`.                                                              |
 | batch           | No       | Set it to **Yes** if you want all identified targets to be notified notified in batches (instead of individually). By default this is set to **No**. |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

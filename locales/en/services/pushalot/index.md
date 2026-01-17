@@ -47,7 +47,7 @@ Valid syntax is as follows:
 | ------------------ | -------- | ------------------------------------------------------------------------------------------------------------------------ |
 | authorizationtoken | Yes      | The authorization token associated with your Pushalot account. This is an alpha-numeric string (32 characters in length) |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

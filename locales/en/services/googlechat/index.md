@@ -61,7 +61,7 @@ Valid syntax is as follows:
 | webhook_token | Yes      | The webhook token associated with your Google Chat account.                            |
 | thread        | No       | You can optionally specify a `ThreadKey` on the URL to focus it's notifications there. |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

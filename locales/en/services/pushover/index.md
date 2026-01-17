@@ -58,7 +58,7 @@ Valid syntax is as follows:
 | url       | No       | Can optionally provide a Supplementary URL to go with your message                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | url_title | No       | Can optionally provide a Supplementary URL Title to go with your message                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Custom Sounds
 

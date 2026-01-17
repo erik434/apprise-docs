@@ -1,0 +1,218 @@
+---
+title: Welcome to Apprise
+description: >
+  Apprise lets you send a notification to almost any popular notification
+  service using a single, consistent URL format.
+tableOfContents: false
+---
+
+import { Card, CardGrid, LinkButton } from "@astrojs/starlight/components";
+
+import PayPalIcon from "~/components/icons/PayPalIcon.astro";
+import ShowcaseIcon from "~/components/icons/ShowcaseIcon.astro";
+import TerminalIcon from "~/components/icons/TerminalIcon.astro";
+import ApiServerIcon from "~/components/icons/ApiServerIcon.astro";
+import SyntaxIcon from "~/components/icons/SyntaxIcon.astro";
+import CoreLibraryIcon from "~/components/icons/CoreLibraryIcon.astro";
+import DocsIcon from "~/components/icons/DocsIcon.astro";
+import "~/styles/landing.css";
+
+<div class="apprise-landing">
+  <div class="apprise-hero">
+    <img
+      src="/assets/apprise-logo.png"
+      alt="Apprise Documentation"
+      width="1080"
+      height="464"
+      class="apprise-hero-logo"
+    />
+
+    <div class="apprise-definition">
+      <div class="apprise-definition-head">
+        <strong>ap·prise</strong> <span class="apprise-definition-meta">/ verb</span>
+      </div>
+      <div class="apprise-definition-text">
+        To inform or tell (someone).
+        To make one aware of something.
+      </div>
+    </div>
+
+    <p class="apprise-tagline">
+      <em>Apprise</em> lets you send notifications to most popular services using one consistent URL
+      format, for your apps, automation, and infrastructure.
+    </p>
+
+    <div class="apprise-cta">
+      <LinkButton href="/getting-started/" variant="primary" icon="right-arrow">
+        Get Started
+      </LinkButton>
+      <LinkButton href="/services/" variant="secondary" icon="list-format">
+        Supported Services
+      </LinkButton>
+    </div>
+
+    <div class="apprise-badges" aria-label="Key capabilities">
+      <span class="apprise-badge">
+        <strong class="apprise-badge-count"><!-- SERVICES:COUNT --></strong>
+        <span>supported services</span>
+      </span>
+      <span class="apprise-badge">Python library and CLI</span>
+      <span class="apprise-badge">Self-hosted API gateway</span>
+      <span class="apprise-badge">Attachments & Rich Text</span>
+    </div>
+
+  </div>
+
+  <CardGrid>
+    <Card>
+      <div class="apprise-card-title">
+        <SyntaxIcon class="apprise-card-icon" />
+        <span>Universal Syntax</span>
+      </div>
+
+      <p class="apprise-card-body">
+      Stop learning dozens of different APIs.
+      Use one consistent URL format across services.
+      </p>
+
+      <code class="apprise-code-sample">service://credentials/direction/?parameter=value</code>
+
+      <div class="apprise-card-actions">
+        <LinkButton href="/getting-started/universal-syntax/" variant="minimal" icon="document">
+          URL Basics
+        </LinkButton>
+        <LinkButton href="/tools/url-builder/" variant="minimal" icon="document">
+          URL Builder
+        </LinkButton>
+      </div>
+    </Card>
+
+    <Card>
+      <div class="apprise-card-title">
+        <CoreLibraryIcon class="apprise-card-icon" />
+        <span>Core Library and CLI</span>
+      </div>
+
+      <p class="apprise-card-body">
+      Integrate Apprise in your applications, or use the CLI for administration and automation.
+      </p>
+
+      <div class="apprise-card-actions">
+        <LinkButton href="/library/" variant="minimal" icon="document">
+          Library Docs
+        </LinkButton>
+
+        <LinkButton href="/cli/" variant="minimal">
+          <span class="apprise-btn">
+            <span class="apprise-btn-text">CLI Docs</span>
+            <TerminalIcon class="apprise-btn-icon" />
+          </span>
+        </LinkButton>
+
+        <LinkButton href="https://github.com/caronc/apprise" variant="minimal" icon="github">
+          Repo
+        </LinkButton>
+      </div>
+    </Card>
+
+    <Card>
+      <div class="apprise-card-title">
+        <ApiServerIcon class="apprise-card-icon" />
+        <span>Apprise API Server</span>
+      </div>
+
+      <p class="apprise-card-body">
+        Self-host a stateless notification gateway
+        with a web interface, ideal as a sidecar service.
+      </p>
+
+      <div class="apprise-card-actions">
+        <LinkButton href="/api/" variant="minimal" icon="document">
+          API Docs
+        </LinkButton>
+        <LinkButton href="https://github.com/caronc/apprise-api" variant="minimal" icon="github">
+          Repo
+        </LinkButton>
+      </div>
+    </Card>
+
+    <Card>
+      <div class="apprise-card-title">
+        <DocsIcon class="apprise-card-icon" />
+        <span>Documentation and Contributions</span>
+      </div>
+
+      <p class="apprise-card-body">
+      Help improve these guides, fix issues, and add support for new services.
+      </p>
+
+      <div class="apprise-card-actions">
+        <LinkButton href="/contributing/" variant="minimal" icon="document">
+          Contributing
+        </LinkButton>
+
+        <LinkButton href="/contributing/showcase/" variant="minimal">
+          <span class="apprise-btn">
+            <span class="apprise-btn-text">Showcase</span>
+            <ShowcaseIcon class="apprise-btn-icon" />
+          </span>
+        </LinkButton>
+
+        <LinkButton href="https://github.com/caronc/apprise-docs" variant="minimal" icon="github">
+          Docs Repo
+        </LinkButton>
+      </div>
+    </Card>
+
+  </CardGrid>
+
+  <div class="apprise-why-wrapper">
+    <div class="apprise-why-visual" aria-hidden="true">
+      <img
+        src="/assets/apprise-notifications.png"
+        alt="Apprise Notifications"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+
+    <div class="apprise-why-content">
+      <h2>Why Apprise</h2>
+
+      <p>One notification library to rule them all.</p>
+
+      <ul>
+        <li><strong>Universal:</strong> A single, intuitive URL format for many notification providers.</li>
+        <li><strong>Rich Content:</strong> Attachments and images supported where the upstream service permits.</li>
+        <li><strong>Lightweight:</strong> Designed for automation workflows with minimal overhead.</li>
+        <li><strong>Responsive:</strong> Amazing response times because all messages sent asynchronously.</li>
+        <li><strong>Flexible:</strong> Works as a library, a CLI tool, or a self-hosted API service.</li>
+      </ul>
+    </div>
+
+  </div>
+
+<div class="apprise-support">
+  <h2>Support the Project</h2>
+
+    <p>
+      Apprise is maintained on evenings and weekends.
+      Your support helps cover the costs of hosting
+      and service testing.
+    </p>
+
+    <div class="apprise-support-actions">
+      <LinkButton href="https://github.com/sponsors/caronc" variant="secondary" icon="heart">
+        GitHub Sponsors
+      </LinkButton>
+
+      <LinkButton href="https://www.paypal.com/donate/?hosted_button_id=CR6YF7KLQWQ5E" variant="secondary">
+        <span class="apprise-btn">
+          <span class="apprise-btn-text">PayPal</span>
+          <PayPalIcon class="apprise-btn-icon" />
+        </span>
+      </LinkButton>
+    </div>
+
+  </div>
+</div>

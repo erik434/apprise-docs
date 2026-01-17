@@ -42,7 +42,7 @@ Valid syntax is as follows:
 | batch    | No       | Send multiple specified notifications in a single batch (1 upstream post to the end server). By default this is set to `no`.                                    |
 | mode     | No       | Allows you to send your SMS under different modes; options are `bulksms` (default), `premium`, or `sandbox`.                                                    |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

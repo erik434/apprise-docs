@@ -41,7 +41,7 @@ Valid syntax is as follows:
 | url        | No       | Optionally specify an Embed URL with the API                                                                     |
 | icon_url   | No       | Optionally specify a URL to and Image to over-ride defaults                                                      |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

@@ -46,7 +46,7 @@ Secure connections (via https) should be referenced using **embys://** where as 
 | password | No       | The password associated with your Emby Server.                                                                   |
 | modal    | No       | Defines if the notification should appear as a modal type box. By default this is set to No.                     |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

@@ -68,7 +68,7 @@ The secure versions:
 
 **Note:**: If you include file attachments; each one is concatenated into the same single post to the upstream server. The `Content-Type` header request also changes from `application/x-www-form-urlencoded` to `multipart/form-data` in this case.
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

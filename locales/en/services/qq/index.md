@@ -49,7 +49,7 @@ Valid syntax is as follows:
 | -------- | -------- | ----------------------------------------------- |
 | token    | Yes      | Your personal QQ Push token from qmsg.zendee.cn |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

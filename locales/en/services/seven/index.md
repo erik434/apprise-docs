@@ -39,7 +39,7 @@ Valid syntax is as follows:
 | flash    | No       | Flash mode (default is `no` ); specify `yes` to enable                  |
 | label    | No       | Defines a label                                                         |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

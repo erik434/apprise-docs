@@ -51,7 +51,7 @@ Valid syntax is as follows:
 - For messages, it is recommended to stick to the English alphabet as DAPNET cannot process extended character sets like the cyrillic alphabet. The DAPNET API will still process messages with this content but the user's pager may not display them in a proper format.
 - In order to gain access to the DAPNET API, you need to be a licensed ham radio operator.
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

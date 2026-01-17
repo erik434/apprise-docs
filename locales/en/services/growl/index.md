@@ -49,7 +49,7 @@ Depending on the version of your Apple OS, you may wish to enable the legacy pro
 | image    | No       | Whether or not to include an icon/image along with your message. By default this is set to **yes**.                            |
 | sticky   | No       | The Gotify sticky flag; by default this is set to **no**.                                                                      |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

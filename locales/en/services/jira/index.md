@@ -63,7 +63,7 @@ You can also mix/match the targets:
 | alias      | No       | The alias to associate with the message.                                                                                                                                                                            |
 | entity     | No       | The entity to associate with the message.                                                                                                                                                                           |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

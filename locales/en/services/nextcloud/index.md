@@ -65,7 +65,7 @@ You can mix/match `@group` and `user` values as well:
 | to          | No       | This is an alias to the notify_user variable.                                                                                                                                                                                     |
 | version     | No       | NextCloud changed their API around with v21. By default Apprise uses their latest API spec. If you're using an older version, you can sent this value accordingly and Apprise will accommodate (switching back to the older API). |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

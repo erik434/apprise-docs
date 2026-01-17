@@ -48,7 +48,7 @@ Secure connections (via https) should be referenced using **kodis://** where as 
 | userid   | No       | The account login to your KODI server.                                                                                    |
 | password | No       | The password associated with your KODI Server.                                                                            |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

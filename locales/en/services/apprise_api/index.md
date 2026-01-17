@@ -52,7 +52,7 @@ For a secure connection, just use `apprises` instead.
 | password | No       | If you're system is set up to use HTTP-AUTH, you can provide _password_ for authentication to it.                                         |
 | tags     | No       | You can optional set the tags you want to supply with your call to the Apprise API server                                                 |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

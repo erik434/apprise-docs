@@ -89,7 +89,7 @@ Secure connections (via https) should be referenced using **mmosts://** where as
 | image    | No       | Identify whether or not you want the Apprise image (showing status color) to display with every message or not. By default this is set to **yes**.                                                                                                                                        |
 | channels | No       | You can optionally specify as many channels as you want in a comma separated value (as a keyword argument). See example below for how to use this. You must also not restrict your **Incoming Webhook** to only focus on a specific channel or providing alternatives here will not work. |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

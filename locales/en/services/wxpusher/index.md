@@ -48,7 +48,7 @@ You can also mix/match topic's and user ids:
 | userid    | \*No     | You must specify at least 1 (one) `userid` OR 1 (one) `topic`. A `userid` has a prefix of `UID_` |
 | topic     | \*No     | You must specify at least 1 (one) `userid` OR 1 (one) `topic`. A `topic` is an integer value     |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

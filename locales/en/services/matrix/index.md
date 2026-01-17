@@ -84,7 +84,7 @@ You can also just use the t2bot URL as they share it with you from their website
 
 **Note**: If neither a **{room_alias}** or a **{room_id}** is specified on the URL then upon connecting to the matrix server, a list of currently joined channels will be polled. Each and every channel the account is currently part of will automatically be notified.
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

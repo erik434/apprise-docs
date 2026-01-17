@@ -51,7 +51,7 @@ Valid syntax is as follows:
 | to       | Yes      | Recipient phone number(s), E.164 recommended       |
 | from     | No       | Sender ID or E.164 number, if configured in 46elks |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

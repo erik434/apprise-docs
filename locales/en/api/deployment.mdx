@@ -1,0 +1,244 @@
+---
+title: Deployment
+description: How to deploy and operate the Apprise API using containers, Docker Compose, or Kubernetes.
+sidebar:
+  order: 2
+---
+
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+
+The **Apprise API** is designed to run as a containerized service.  
+This page explains **how to deploy and operate it**, not how to use the API endpoints.
+
+If you are looking to:
+
+- send notifications, see **API Usage**
+- integrate with the CLI or Python library, see **Integration**
+- understand keys, storage, or locking, see **Configuration**
+
+## Deployment Model
+
+Apprise API is a **stateless-first** service with **optional persistent state**.
+
+- Stateless usage sends notifications directly without saving configuration.
+- Stateful usage persists configuration under a `{KEY}` for reuse.
+- The built-in web interface is optional and provided for convenience only.
+
+The service is safe to run:
+
+- locally
+- behind a reverse proxy
+- in Docker or Docker Compose
+- in Kubernetes, including hardened and rootless environments
+
+## Quick Start
+
+Choose one deployment method below to get Apprise API running quickly.
+
+<Tabs>
+  <TabItem label="Docker">
+```bash
+docker run --name apprise \
+  -p 8000:8000 \
+  -v ./config:/config \
+  -v ./attach:/attach \
+  -e APPRISE_STATEFUL_MODE=simple \
+  -e APPRISE_WORKER_COUNT=1 \
+  -e APPRISE_ADMIN=y \
+  -d caronc/apprise:latest
+```
+</TabItem>
+<TabItem label="Docker Compose">
+
+```yaml
+services:
+  apprise:
+    image: caronc/apprise:latest
+    container_name: apprise
+    ports:
+      - "8000:8000"
+    environment:
+      APPRISE_STATEFUL_MODE: simple
+      APPRISE_WORKER_COUNT: 1
+      APPRISE_ADMIN: "y"
+    volumes:
+      - ./config:/config
+      - ./attach:/attach
+```
+
+</TabItem>
+<TabItem label="Kubernetes">
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apprise
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: apprise
+  template:
+    metadata:
+      labels:
+        app: apprise
+    spec:
+      containers:
+        - name: apprise
+          image: caronc/apprise:latest
+          ports:
+            - containerPort: 8000
+          env:
+            - name: APPRISE_STATEFUL_MODE
+              value: simple
+            - name: APPRISE_WORKER_COUNT
+              value: 1
+            - name: APPRISE_ADMIN
+              value: y
+```
+  </TabItem>
+</Tabs>
+
+Once deployed, the API and optional web interface are available at:
+
+```text
+http://localhost:8000/
+```
+
+## Persistent Storage
+
+Apprise API supports persistent storage for:
+
+- saved configurations
+- cached authentication metadata
+- uploaded attachments
+
+The container expects the following writable paths:
+
+| Path      | Purpose                                     |
+| --------- | ------------------------------------------- |
+| `/config` | Saved configurations and internal state     |
+| `/attach` | Uploaded attachments                        |
+| `/plugin` | Optional custom plugins                     |
+| `/tmp`    | Runtime files (sockets, buffers, temp data) |
+
+For most deployments, mounting **only `/config` and `/attach`** is sufficient.
+
+## Hardened Deployments
+
+For public or multi-tenant environments, Apprise API supports hardened execution.
+
+Example hardened container configuration:
+
+```yaml
+services:
+  apprise:
+    image: caronc/apprise:latest
+    container_name: apprise
+    user: "1000:1000"
+    read_only: true
+
+    cap_drop:
+      - ALL
+
+    security_opt:
+      - no-new-privileges:true
+
+    ports:
+      - "8000:8000"
+
+    environment:
+      APPRISE_STATEFUL_MODE: simple
+      APPRISE_WORKER_COUNT: 1
+      APPRISE_ADMIN: "y"
+
+    volumes:
+      - ./config:/config
+      - ./attach:/attach
+
+    tmpfs:
+      - /tmp
+```
+
+Important Notes:
+
+- `/tmp` must remain writable
+- No files are written under `/var/log`
+- All logs are written to stdout and stderr
+
+## Health checks
+
+Apprise API exposes a health endpoint:
+
+```text
+GET /status
+```
+
+- Returns HTTP `200` when healthy
+- Returns HTTP `417` if a blocking issue is detected
+
+Example:
+
+```bash
+curl http://localhost:8000/status
+```
+
+This endpoint is suitable for:
+
+- Docker health checks
+- Kubernetes liveness probes
+- external monitoring systems
+
+## Reverse Proxies and Base Paths
+
+If Apprise API is hosted behind a reverse proxy or served under a subpath, set `APPRISE_BASE_URL` to accommodate this.
+
+Example:
+
+```bash
+APPRISE_BASE_URL=/apprise
+```
+
+This ensures:
+
+- correct URL generation
+- correct web UI routing
+- correct OpenAPI links
+
+## Authentication and access control
+
+Apprise API does **not** implement authentication internally.
+
+This is by design.
+
+Recommended approaches:
+
+- place the API behind a reverse proxy
+- use HTTP basic authentication
+- restrict access at the network or ingress level
+
+Nginx override files may be injected into the container to enforce access control.
+
+## Logging and Observability
+
+- All logs are emitted to stdout and stderr
+- No log files are written to disk
+- Prometheus metrics are available at `/metrics`
+
+## Development Deployments
+
+For local development, the repository includes Docker Compose overrides that:
+
+- mount the local source tree
+- reload UI and template changes without rebuilding
+- expose the API on port `8000`
+
+This mode is intended for development only and is **not recommended for production**.
+
+## Next Steps
+
+Once deployed, you can:
+
+- save configuration keys using the web UI or API
+- send notifications using `/notify` or `/notify/{KEY}`
+- integrate external systems using HTTP or the Apprise CLI

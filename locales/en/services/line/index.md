@@ -53,7 +53,7 @@ Valid syntax is as follows:
 | user     | Yes      | The Line users (separated by forward slash `/`) that you wish to notify. This is NOT the `@userid` you can acquire from your mobile device. It is instead the Line User ID (which usually starts with the letter `U`). For example, you can acquire your Line BOT User ID from the [developer console](https://developers.line.biz/console/) within your channel settings under the **Basic settings** tab (at the bottom).                        |
 | image    | No       | Associate the notification status via a represented icon. You can set this value to `no` if you do not want this to occur.                                                                                                                                                                                                                                                                                                                         |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

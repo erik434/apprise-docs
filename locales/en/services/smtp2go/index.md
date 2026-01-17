@@ -50,7 +50,7 @@ You can adjust what the Name associated with the From email is set to as well:
 | cc       | No       | Identify users you wish to send as a Carbon Copy                                                                                                      |
 | bcc      | No       | Identify users you wish to send as a Blind Carbon Copy                                                                                                |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

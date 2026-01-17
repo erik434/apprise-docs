@@ -71,7 +71,7 @@ Valid syntax is as follows:
 | timeout  | No       | The number of seconds delivered notification stay on the screen for. The default value is 13.                                             |
 | fullpath | No       | Those hosting this internally may wish to specify the (prefix) path their service is listening on.                                        |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

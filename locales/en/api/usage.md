@@ -1,0 +1,116 @@
+---
+title: API Usage
+description: Learn how to send stateless and stateful notifications via the Apprise API.
+sidebar:
+  order: 3
+---
+
+This guide covers the core functionality of the Apprise API: sending notifications. You can send notifications in two ways:
+
+1. **Stateless:** You provide the configuration URLs in the request payload.
+2. **Stateful:** You reference a pre-saved configuration Key.
+
+## Response formats
+
+By default, endpoints return `text/plain`. If you prefer JSON, send `Accept: application/json`.
+
+For notification endpoints (`/notify` and `/notify/{KEY}`), you can also request a simple HTML log view by sending `Accept: text/html`. This is mainly useful for human testing in a browser.
+
+## Stateless Notifications
+
+Stateless notifications are ideal for "sidecar" usage where you don't want to manage persistent configuration on the server. You must provide the `urls` parameter in every request.
+
+### Basic JSON Request
+
+The most common method is sending a JSON payload to `/notify`.
+
+**Endpoint:** `POST /notify`
+
+```bash
+curl -X POST \
+  -H "Content-Type: application/json" \
+  -d '{
+    "urls": "mailto://user:pass@gmail.com",
+    "body": "Backup completed successfully.",
+    "title": "System Status"
+  }' \
+  http://localhost:8000/notify
+```
+
+### File Attachments
+
+To send attachments, use `multipart/form-data`. The API accepts standard file uploads or remote URLs. You can use `attach` (recommended) or `attachment` as the field name.
+
+```bash
+# Upload a local file
+curl -X POST \
+    -F "urls=discord://webhook_id/token" \
+    -F "body=See attached log." \
+    -F "attach=@/var/log/syslog" \
+    http://localhost:8000/notify
+
+# Reference a remote URL (Apprise will download and forward it)
+curl -X POST \
+    -F "urls=discord://webhook_id/token" \
+    -F "body=Security Camera Snapshot" \
+    -F "attach=http://camera-ip/snapshot.jpg" \
+    http://localhost:8000/notify
+```
+
+## Stateful Notifications
+
+Stateful notifications allow you to simplify your client code. You store the complex URLs on the server once, assigned to a **Key**, and your client simply references that Key.
+
+**Endpoint:** `POST /notify/{KEY}`
+
+### Sending to a Key
+
+If you have saved a configuration under the key `my-alerts`:
+
+```bash
+curl -X POST \
+  -H "Content-Type: application/json" \
+  -d '{
+    "body": "Database connection failed",
+    "type": "warning"
+  }' \
+  http://localhost:8000/notify/my-alerts
+```
+
+### Tagging
+
+Stateful configurations support tagging, allowing you to notify specific subgroups of your saved URLs.
+
+**Logic:**
+
+- **Space, +, or &:** AND (intersection)
+- **Comma or |:** OR (union)
+
+Examples below show the two most common patterns.
+
+```bash
+# Notify services tagged "devops" OR "admin"
+curl -X POST -d '{"tag": "devops,admin", "body": "..."}' ...
+
+# Notify services tagged "devops" AND "critical"
+curl -X POST -d '{"tag": "devops critical", "body": "..."}' ...
+```
+
+## Payload Mapping (Hooks)
+
+Sometimes you cannot change the payload format sent by a third-party tool (e.g., Grafana, Prometheus). Apprise API allows you to map incoming JSON keys to Apprise-compatible keys using URL parameters.
+
+**Syntax:** `?:incoming_field=apprise_field`
+
+:::note
+mapping keys are passed in the query string and must be URL encoded if they contain special characters.
+:::
+
+**Example:**
+Your tool sends `{"message": "Server Down", "severity": "high"}`, but Apprise expects `body` and `type`.
+
+```bash
+curl -X POST \
+  -d '{"message": "Server Down", "severity": "high"}' \
+  "http://localhost:8000/notify/my-alerts?:message=body&:severity=type"
+```

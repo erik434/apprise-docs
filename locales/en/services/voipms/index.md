@@ -46,7 +46,7 @@ Valid syntax is as follows:
 | fromPhoneNo | Yes      | Specify the phone number you registered with Voip.ms you wish the message to be identified as being sent from.                   |
 | toPhoneNo   | No       | A phone number and/or group you wish to send your notification to. You can use comma's to separate multiple entries if you wish. |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

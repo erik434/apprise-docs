@@ -78,7 +78,7 @@ The secure versions:
 | password | No       | If you're system is set up to use HTTP-AUTH, you can provide _password_ for authentication to it.                                                                              |
 | method   | No       | Optionally specify the server http method; possible options are `post`, `put`, `get`, `delete`, `patch`, and `head`. By default if no method is specified then `post` is used. |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

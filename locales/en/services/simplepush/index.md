@@ -54,7 +54,7 @@ Valid syntax is as follows:
 | password | No       | SimplePush offers a method of further encrypting the message and title during transmission (on top of the secure channel it's already sent on). This is the Encryption password set. You must provide the `salt` value with the `password` in order to work. |
 | salt     | No       | The salt is provided to you by SimplePush and is the second part of the additional encryption you can use with this service. You must provide a `password` with the `salt` value in order to work.                                                           |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

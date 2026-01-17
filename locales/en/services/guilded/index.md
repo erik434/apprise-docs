@@ -65,7 +65,7 @@ Guilded can also support a variety of website arguments, the below identifies th
 | avatar       | No       | Over-ride the default guilded avatar icon and replace it with one identify the notification type (by default is is set to **Yes**)                                                 |
 | avatar_url   | No       | Over-ride the default guilded avatar icon URL. By default this is not set and Apprise chooses the URL dynamically based on the type of message (info, success, warning, or error). |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

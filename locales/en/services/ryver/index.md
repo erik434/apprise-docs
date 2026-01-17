@@ -68,7 +68,7 @@ Valid syntax is as follows:
 | botname      | No       | Set the display name the message should appear from.                                                                                                                         |
 | webhook      | No       | The type of webhook you created (Slack or Ryver). The only possible values are **slack** and **ryver**. The default value is **ryver** if the webhook value isn't specified. |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

@@ -63,7 +63,7 @@ Valid syntax is as follows:
 | from          | No       | If you want the email _ReplyTo_ address to be something other than your own email address, you can specify it here.                            |
 | to            | No       | Override the target email. By default, the email is sent to the address identified by the `source` (or the targets specified in the URL path). |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 :::note
 

@@ -44,7 +44,7 @@ One might change the facility on a remote syslog (rsyslog) server from it's defa
 | facility | No       | The facility to use, by default it is `user`. Valid options are **kern**, **user**, **mail**, **daemon**, **auth**, **syslog**, **lpr**, **news**, **uucp**, **cron**, **local0**, **local1**, **local2**, **local3**, **local4**, **local5**, **local6**, and **local7** |
 | logpid   | Yes      | Include PID as part of the log output.                                                                                                                                                                                                                                    |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

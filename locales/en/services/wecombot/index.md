@@ -52,7 +52,7 @@ Valid syntax is as follows:
 | -------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | key      | No       | Can optionally use the `?key` instead of passing the key in the `hostname` field. This has more value when defining configuration files. |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

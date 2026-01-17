@@ -68,7 +68,7 @@ Valid syntax with an _application / bot_ are:
 | user     | No       | Users must be prefixed with an at symbol **@** or **u:**! They must represent the encoded id of the user name (not the human readable reference) You can specify as many users as you want by delimiting each of them by a forward slash (/) in the url.        |
 | image    | No       | Associate an image with the message. By default this is enabled.                                                                                                                                                                                                |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

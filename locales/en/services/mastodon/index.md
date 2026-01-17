@@ -67,7 +67,7 @@ Simply use `mastodon://` or `toot://` if access in an insecure server and `masto
 | language   | No       | Optionally provide a ISO 639 language code with your status post. E.g. `en`, `fr`, etc.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | key        | No       | Prevent duplicate submissions of the same status. Idempotency keys are stored for up to 1 hour, and can be any arbitrary string. Consider using a hash or UUID generated client-side.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ### Smart Processing
 

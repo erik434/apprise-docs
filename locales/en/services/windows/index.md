@@ -45,7 +45,7 @@ Valid syntax is as follows:
 | -------- | -------- | ------------------------------------------------------------------------------------------------- |
 | duration | No       | Optionally set the duration of the popup message in seconds. By default this value is set to `12` |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

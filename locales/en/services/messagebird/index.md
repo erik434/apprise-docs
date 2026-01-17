@@ -41,7 +41,7 @@ Valid syntax is as follows:
 | FromPhoneNo | Yes      | A from phone number MUST include the country codes dialling prefix as well when placed. This field is also very friendly and supports brackets, spaces and hyphens in the event you want to format the number in an easy to read fashion. This MUST be the the number you registered with your _MessageBird_ account. |
 | ToPhoneNo   | No       | A to phone number MUST include the country codes dialling prefix as well when placed. This field is also very friendly and supports brackets, spaces and hyphens in the event you want to format the number in an easy to read fashion. If no _ToPhoneNo_ is specified, then the _FromPhoneNo_ is notified instead.   |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

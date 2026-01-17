@@ -37,7 +37,7 @@ Valid syntax is as follows:
 | user     | Yes      | The user associated with your [Free-Mobile Account](https://mobile.free.fr/)     |
 | password | Yes      | The password associated with your [Free-Mobile Account](https://mobile.free.fr/) |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

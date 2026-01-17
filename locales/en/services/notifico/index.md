@@ -75,7 +75,7 @@ By default Apprise will send a prefix with each message it sends you can turn th
 | color       | No       | Uses IRC Coloring to provide a richer experience. It also allows the parsing of IRC colors found in the notification passed in. You must ensure the **Color** Checkbox is selected when setting up your Message Hook for this to work. By default this is set to **Yes**. |
 | prefix      | No       | All messages sent to IRC by default have a Prefix that help identify the type of message (info, error, warning, or success) as well as the system performing the notification. By default this is set to **Yes**.                                                         |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

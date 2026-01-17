@@ -121,7 +121,7 @@ You can freely mix and match all of the combinations in any order as well:
 | image      | No       | Identify whether or not you want the Apprise image (showing status color) to display with every message or not. By default this is set to **yes**.                                                                                                 |
 | mode       | No       | Optionally enforce the mode the Slack plugin should operate in. This is detected by default, but possible options are `hook` (webhook mode) `gov-hook` (government webhook mode), and `bot` to have the service interact through the slack bot api |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

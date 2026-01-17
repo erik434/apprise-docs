@@ -62,7 +62,7 @@ Consider the following template: `1234`
 An Apprise URL might look like:<br/>
 `sendpulse://user@example.com?template=1234&+what=templates&+app=Apprise`
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

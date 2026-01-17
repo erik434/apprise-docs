@@ -63,7 +63,7 @@ The Carbon Copy (**cc=**) and Blind Carbon Copy (**bcc=**) however are applied t
 | cc       | No       | Carbon Copy email address(es). More than one can be separated with a space and/or comma.                                                                                                                                                             |
 | bcc      | No       | Blind Carbon Copy email address(es). More than one can be separated with a space and/or comma.                                                                                                                                                       |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

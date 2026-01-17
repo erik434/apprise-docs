@@ -56,7 +56,7 @@ Twist always associates your account with a _default team_. Apprise determines t
 | password | Yes      | This is the password you set when you signed up with Twist                                                                                                                                                                                                                                             |
 | channel  | No       | This is the channel you wish to notify. If you don't specify one then the _#General_ channel will be used by default from within your default team. You can optionally use a colon (:) placed in front of the channel name to force the message to a specific team (if you are part of more then one). |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

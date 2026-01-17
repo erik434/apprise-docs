@@ -61,7 +61,7 @@ Secure connections should be referenced using **xmpps://** where as insecure con
 | xep      | No       | The XEP specifications to include. By default **xep_0030** (Service Discovery) and **xep_0199** (XMPP Ping) if nothing is specified.                         |
 | to       | No       | The JID to notify                                                                                                                                            |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

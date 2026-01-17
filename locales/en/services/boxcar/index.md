@@ -65,7 +65,7 @@ You can also form any combination of the above and perform updates from one url:
 | device_id  | No       | Associated devices with your Boxcar setup. All _device_ids_ are 64 characters in length.                                      |
 | tag_id     | No       | Tags must be prefixed with a @ symbol or they will be interpreted as a _device_id_ and/or _alias_.                            |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

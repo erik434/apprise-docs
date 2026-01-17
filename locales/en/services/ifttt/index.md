@@ -57,7 +57,7 @@ By default these are the the assign default template entries:
 | +Arg=Val  | No       | Add an additional **{Arg}** into the payload and assign it the value of **{Val}**. It's very important that your argument starts with a plus (**+**) symbol in order to use this option.                                                                                                                                                                                                                                       |
 | -Arg      | No       | This is useful if you want to eliminate one of the pre-defined arguments discussed below. You might want to include **?-value1&-value2** to just pass **value3** in the payload. It's very important that your argument starts with a hyphen/minus (**-**) symbol in order to use this option. As mentioned above, your payload will ALWAYS include **value1**, **value2**, and **value3** in it unless you specify otherwise. |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

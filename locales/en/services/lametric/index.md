@@ -95,7 +95,7 @@ The breakdown of parameters depend on whether you are using the Cloud Mode or De
 | app_ver          | No       | The version associated with your Indicator App. If this isn't specified, then the default value of `1` (One) is used.                                                                                                                                                                  |
 | mode             | No       | Define the Apprise/Lametric mode to use. This can be either set to `cloud` or `device`. It's worth pointing out that Apprise is smart enough to detect the mode you're using based on the URL you provide it. But for those who want to explicitly provide it's value, they can do so. |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

@@ -60,7 +60,7 @@ If you wish to utilize extensions, you'll need to escape the addition/plus (+) c
 | cc       | No       | Identify address(es) to notify as a Carbon Copy.                                                                                                                                                                                                     |
 | bcc      | No       | Identify address(es) to notify as a Blind Carbon Copy.                                                                                                                                                                                               |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

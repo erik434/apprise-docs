@@ -173,7 +173,7 @@ Valid syntax is as follows:
 | token    | yes      | Token to access the example server                                                             |
 | target   | no       | The target you wish to notify. If no target is specified, we send a notification to ourselves. |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Example
 

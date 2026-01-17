@@ -44,7 +44,7 @@ Valid syntax is as follows:
 | hostname | No       | Custom Service Host                                   |
 | port     | No       | Custom Service Port                                   |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

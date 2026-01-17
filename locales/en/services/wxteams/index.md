@@ -66,7 +66,7 @@ Valid syntax is as follows:
 | -------- | -------- | -------------------------------------------------------------- |
 | token    | Yes      | The tokens provided to you after creating a _incoming-webhook_ |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

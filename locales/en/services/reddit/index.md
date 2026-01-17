@@ -63,7 +63,7 @@ Valid syntax is as follows:
 Reddit always requires a `title` to go with it's `body`. Reddit will deny your post (upstream) if you don't provide both.
 :::
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

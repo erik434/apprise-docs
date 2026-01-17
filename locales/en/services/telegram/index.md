@@ -100,7 +100,7 @@ If you want to see the icon/image associated with the notification, you can have
 | mdv       | No       | Optionally set the `markdown` version to use; can be set to either `v1` or `v2` and defaults to `v2` if not set. This value is only referenced when `?format=markdown` has also been set.                                                                                                                                                                                                                                                                                                                                                                                                               |
 | topic     | No       | The Topic Thread ID you wish your message to be posted to. [Here is a StackOverflow post on acquiring the Topic Thread ID](https://stackoverflow.com/questions/74773675/how-to-get-topic-id-for-telegram-group-chat)                                                                                                                                                                                                                                                                                                                                                                                    |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

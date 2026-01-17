@@ -43,7 +43,7 @@ Valid syntax is as follows:
 | urgency     | No       | Urgency of the alert to be generated. Possible values `silent`, `low`, `medium`, `high`, or `critical`. If not provided, PagerTree will use the integration's default.                                                       |
 | tags        | No       | Comma seperated list of tags. (ex: "prod,server,outage")                                                                                                                                                                     |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

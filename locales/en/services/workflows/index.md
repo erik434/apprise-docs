@@ -63,7 +63,7 @@ Valid syntax is as follows:
 | ver       | No       | The Power Automate API Version to use; the default value is `2016-06-01`. This is also parsed using the keyword `api-version` that can be found on the Azure Webhook Link.                                                                                                                                  |
 | template  | No       | provide a path to a template you would prefer to use instead of the Adaptive card chosen by Apprise. use double `{{token}}` curly braces to identify the tokens you wish to have swapped in the provided template prior to it's submission to the upstream service. (e.g `{{app_body}}` or `{{app_title}}`) |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

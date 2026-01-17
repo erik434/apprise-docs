@@ -37,7 +37,7 @@ Valid syntax is as follows:
 | sound    | No       | Optionally specify a sound you defined such as `alarm.aiff`.                                                                                                         |
 | badge    | No       | Provide a numerical value of 0 (zero) or greater to associate a badge with the bark icon on the iOS device.                                                          |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

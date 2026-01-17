@@ -95,7 +95,7 @@ By default a webhook is set up to be associated with a channel. Thus the followi
 | mode     | No       | The authentication mode is automatically detected based what it parses from the URL provided. You only need to set this if you feel it is being detected incorrectly. The possible modes are **basic**, **token**, and **webhook** and are explained above. |
 | avatar   | No       | Override the default avatar associated with the message to match that of the notification type (be that of a Warning, Error, Info, etc). By default this is set to **No** for **basic** mode and **Yes** for **webhook** mode.                              |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

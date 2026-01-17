@@ -113,7 +113,7 @@ apprise -vv -t "Test Message Title" -b "# Markdown Support" \
 
 If your Ntfy server is behind an HTTPS (Secure) hosted setup, then you simply use `ntfys://`:
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ```bash
 # Assuming our SECURE {hostname} is localhost

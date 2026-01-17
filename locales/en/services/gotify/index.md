@@ -45,7 +45,7 @@ Secure connections (via https) should be referenced using **gotifys://** where a
 | priority | No       | The priority level to pass the message along as. Possible values are **low**, **moderate**, **normal**, and **high**. If no priority is specified then **normal** is used.                                                                                                |
 | format   | No       | The message format to announce to Gotify. By default all information is identified as `text`. But you can alternatively set this value to `markdown` as well.                                                                                                             |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

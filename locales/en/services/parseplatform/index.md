@@ -38,7 +38,7 @@ Valid syntax is as follows:
 | master_key | Yes      | This is the Master Key associated with your account |
 | hostname   | Yes      | The Hostname of your Parse Platform Server          |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

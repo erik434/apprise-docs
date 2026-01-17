@@ -7,13 +7,21 @@
   "nav": {
     "categories": {
       "getting-started": "Getting Started",
-      "guides": "Guides",
-      "services": "Services",
-      "config": "Configuration",
-      "qa": "Troubleshooting",
-      "dev": "Developers",
-      "contributing": "Contributing",
+      "guides": "Integrations & Guides",
+      "cli": "Apprise CLI",
+      "api": "Apprise API",
+      "library": "Python Library",
+      "services": "Supported Services",
+      "contributing": "Project & Community",
       "tools": "Tools"
+    },
+    "subcategories": {
+      "api": {
+        "reference": "Reference"
+		},
+      "library": {
+        "extending": "Extending"
+		}
     },
     "social": {
       "github": "GitHub",
@@ -47,18 +55,18 @@
     "ended": "Ended"
   },
   "service": {
-	 "group": {
-	   "general": "General Notifications",
-	   "custom": "Custom Notifications",
-	   "desktop": "Desktop Based Notifications"
-	 },
+    "group": {
+      "general": "General Notifications",
+      "custom": "Custom Notifications",
+      "desktop": "Desktop Based Notifications"
+    },
     "feature": {
       "attachments": "Attachment Support",
       "sms": "SMS/MMS Support",
       "selfhosted": "Upstream App can be Self Hosted",
       "image": "Image Support"
     },
-	 "secure": "Secure",
-	 "insecure": "Insecure"
+    "secure": "Secure",
+    "insecure": "Insecure"
   }
 }

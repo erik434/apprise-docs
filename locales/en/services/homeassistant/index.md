@@ -52,7 +52,7 @@ So by default Apprise will generate a unique ID (thus a separate message) on eve
 | port         | No       | The port our Web server is listening on. By default the port is **8123** for **hassio://** and **443** for all **hassios://** references.                                      |
 | nid          | No       | Allows you to specify the **Notification ID** used when sending the notifications to Home Assistant. By doing this, each message sent to Home Assistant will replace the last. |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

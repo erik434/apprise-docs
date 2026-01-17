@@ -42,7 +42,7 @@ is used by default.
 | logperror | No | Additionally send the log message to _stderr_. This method is ignored when preforming a remote query.
 | logpid | Yes | Include PID as part of the log output.
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

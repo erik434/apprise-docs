@@ -47,7 +47,7 @@ Valid syntax is as follows:
 | name       | No       | With respect to {from*email}, this allows you to provide a name with your \_Reply-To* address. <br/>**Note:** This field has become redundant and become synonymous to `from=`. It still behaves as it did in previous versions, but you can also follow the `A User<user@email.com>` syntax as well. To eliminate ambiguity; the values parsed from the `from=` will always trump the `name=`.                                                                                        |
 | reply      | No       | Provide a Reply-To email (or set of). More than one can be separated with a space and/or comma.                                                                                                                                                                                                                                                                                                                                                                                        |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

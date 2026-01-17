@@ -61,7 +61,7 @@ Valid syntax is as follows:
 | template | No       | You can optionally specify a `template_name` here (such as `hello_world` which is the default one created once you set yourself up your Meta App). This causes Apprise to pull from your template defined. |
 | lang     | No       | If you've defined a template to reference, you can optionally over-ride the default language of `en_US` to reference a different version of the template specified.                                        |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Template Variables
 

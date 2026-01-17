@@ -32,7 +32,7 @@ Valid syntax is as follows:
 | token    | Yes      | This is the **push_key** associated with your PushMe Account                                                                                     |
 | status   | No       | Optionally include a small little ASCII string representing the notification status being sent (inline with it) by default this is set to `yes`. |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

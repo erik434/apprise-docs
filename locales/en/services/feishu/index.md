@@ -34,7 +34,7 @@ Valid syntax is as follows:
 | -------- | -------- | ------------------------------------------------------------------------------------- |
 | token    | **Yes**  | The token you generated as part of your Fieshu Custom Bot Creation (via your account) |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

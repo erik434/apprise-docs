@@ -66,7 +66,7 @@ Valid syntax is as follows:
 | ------------ | -------- | -------------------------------------------------------- |
 | access_token | Yes      | The access token generated from your Streamlabs account. |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

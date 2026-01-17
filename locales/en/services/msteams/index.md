@@ -91,7 +91,7 @@ The Legacy format is also still supported. The below URL would automatically set
 | tokenC   | Yes      | The last part of 3 tokens provided to you after creating a _incoming-webhook_                                                                                                                                                             |
 | template | No       | Optionally point to your own custom JSON formatted Microsoft Teams **MessageCard**; [See here for details on their formatting](https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/connectors-using). |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

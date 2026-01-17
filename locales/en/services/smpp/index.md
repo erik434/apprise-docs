@@ -92,7 +92,7 @@ Example:
 | `from`       | No       | Query-string alias for `from_phone`.                                                          |
 | `to`         | No       | Query-string alias for additional targets as a comma-separated list.                          |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

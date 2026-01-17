@@ -50,7 +50,7 @@ Valid syntax is as follows:
 | -------- | -------- | ------------------------------------------------------- |
 | token    | Yes      | Your personal Pushplus Token from your account settings |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

@@ -42,7 +42,7 @@ Valid syntax is as follows:
 | -------- | -------- | ------------------------------------------------------------ |
 | apikey   | **Yes**  | The API Key you generated as part of your Clickatell account |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

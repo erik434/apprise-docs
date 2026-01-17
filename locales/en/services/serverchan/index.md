@@ -31,7 +31,7 @@ Valid syntax is as follows:
 | -------- | -------- | -------------------------------------------------------------- |
 | sendkey  | Yes      | This is token provided to you through your SimpleChan account. |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

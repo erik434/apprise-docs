@@ -3,9 +3,9 @@ title: "Notification Manager"
 description: "Guide and reference for the Apprise Notification Manager (N_MGR), including schema overrides and runtime control."
 ---
 
-## Start Here: Solving Common Problems
+## Introduction
 
-Most developers interact with the Notification Manager to solve a concrete problem. The most common ones are:
+Working with the Notification Manager allows you to:
 
 - Replacing a built-in notification service with a custom implementation.
 - Disabling one or more notification services at runtime.
@@ -24,8 +24,6 @@ N_MGR.add(MyCustomNotify, schemas="discord", force=True)
 Using `force=True` is the safest and most predictable way to replace an existing schema.
 It avoids import-order problems and does not unload previously imported modules.
 :::
-
----
 
 ## Overview
 

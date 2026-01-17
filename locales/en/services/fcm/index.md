@@ -75,7 +75,7 @@ You can mix and match these entries as well:
 
 **Note:** This notification service does not use the title field; only the _body_ is passed along.
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

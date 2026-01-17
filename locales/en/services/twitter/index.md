@@ -116,7 +116,7 @@ A Public post can be referenced like so:
 | Mode           | No       | The X mode you want to operate in. Possible values are `dm` (for Private Direct Messages) and `tweet` to make a public post. By default this is set to `dm` |
 | batch          | No       | By default images are batched together. However if you want your attachments to be posted 1 post per attachment, set this to False.                         |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

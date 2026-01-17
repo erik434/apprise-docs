@@ -31,7 +31,7 @@ Valid syntax is as follows:
 | -------- | -------- | ------------------------------------------------------- |
 | token    | **Yes**  | The token you generated as part of your Chanify account |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

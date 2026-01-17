@@ -49,7 +49,7 @@ You can post in multiple chats by simply chaining them at the end of the URL.
 | password | Yes      | The password associated with the **user** for your Nextcloud account. |
 | room_id  | Yes      | The room_id of Nextcloud Talk.                                        |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

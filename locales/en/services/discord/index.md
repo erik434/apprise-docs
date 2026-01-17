@@ -76,7 +76,7 @@ Discord can also support a variety of website arguments, the below identifies th
 | thread       | No       | Optionally set the `thread_id` you wish your message to be applied to.                                                                                                                                                                                                                                                                                     |
 | ping         | No       | Optionally identify a role, user, our parsed name (such as `everyone`) that should always be pinged when them message is sent. Follow the syntax [identified above](https://github.com/caronc/apprise/wiki/Notify_discord/#pinging-roles-tags-and-users) for the format.                                                                                   |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

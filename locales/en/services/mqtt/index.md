@@ -60,7 +60,7 @@ Secure connections should be referenced using **mqtts://** where as insecure con
 | session   | No       | The MQTT session to maintain (associated with the client_id). If no client_id is specified, then this value is not considered. By default there is no session established and each connection made by apprise is unique. If you wish to enforce a session (associated with a provided client_id) then set this value to True. |
 | retain    | No       | The MQTT publisher retain flag. By default this is set to `no`, but you may optionally over-ride it and set it to `yes`                                                                                                                                                                                                       |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

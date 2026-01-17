@@ -52,7 +52,7 @@ Valid syntax is as follows:
 
 You may also use the query format: `spugpush://?token=YOUR_TOKEN`.
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

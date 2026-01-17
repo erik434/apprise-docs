@@ -49,7 +49,7 @@ Valid syntax is as follows:
 | -------- | -------- | ---------------------------------------------------------------- |
 | token    | Yes      | The 32-character integration key at the end of your webhook URL. |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

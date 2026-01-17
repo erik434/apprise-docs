@@ -40,7 +40,7 @@ Valid syntax is as follows:
 | to       | **\*No** | A phone number and/or group you wish to send your notification to. You can use comma's to separate multiple entries if you wish. This is an alias to `targets`. |
 | from     | **\*No** | Specify the phone number you registered with httpSMS you wish the message to be identified as being sent from.                                                  |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

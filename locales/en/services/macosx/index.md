@@ -45,7 +45,7 @@ The `sound` can be set any of the sound names listed in _Sound Preferences_ of y
 | sound    | No       | The `sound` can be set any of the sound names listed in _Sound Preferences_ of your Mac OS. |
 | image    | No       | Associate an image with the message. By default this is enabled.                            |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

@@ -44,7 +44,7 @@ Valid syntax is as follows:
 | validity  | No       | Optionally define how long an unsent SMS message is valid for (and will be attempted to be resent). By default this is set to zero (0) for the maximum amount of validity. This value is defined in minutes. |
 | batch     | No       | Optionally send notifications in a batch (vs individually). By default this is set to `No`.                                                                                                                  |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

@@ -45,7 +45,7 @@ Valid syntax is as follows:
 
 You can find more information [here](https://docs.signl4.com/integrations/webhook/webhook.html).
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

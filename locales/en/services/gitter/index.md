@@ -53,7 +53,7 @@ Valid syntax is as follows:
 | image    | No       | Send an image representing the message type prior to sending the message body. This is disabled by default.                                                        |
 | to       | No       | This is an alias to the room variable.                                                                                                                             |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

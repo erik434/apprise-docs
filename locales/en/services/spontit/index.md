@@ -55,7 +55,7 @@ Valid syntax is as follows:
 | channel_id | No       | A Channel you wish to notify _that you created_.                                                                                                                 |
 | subtitle   | No       | The subtitle of your push. Only appears on iOS devices.                                                                                                          |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

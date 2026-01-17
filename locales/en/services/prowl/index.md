@@ -40,7 +40,7 @@ Valid syntax is as follows:
 | providerkey | No       | The Provider Key is only required if you have been whitelisted.                                                                |
 | priority    | No       | Can be **low**, **moderate**, **normal**, **high**, or **emergency**; the default is **normal** if a priority isn't specified. |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

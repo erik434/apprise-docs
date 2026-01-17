@@ -68,7 +68,7 @@ You can freely mix and match these combinations as well:
 | device_name | No       | The device name (PC, Nexus, etc)                                                   |
 | group_id    | No       | The group identifier to send your notification to.                                 |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

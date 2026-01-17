@@ -57,7 +57,7 @@ Valid syntax is as follows:
 | cc            | No       | Carbon Copy email address(es). More than one can be separated with a space and/or comma.                                                                                                  |
 | bcc           | No       | Blind Carbon Copy email address(es). More than one can be separated with a space and/or comma.                                                                                            |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

@@ -43,7 +43,7 @@ Valid syntax is as follows:
 | ToPhoneNo   | Yes      | Kavengar does not handle the `+` in front of the country codes. You need to substitute the correct amount of zero's in front of the outbound number in order for the call to be completed.               |
 | FromPhoneNo | No       | The number you wish to identify your call is coming from. This argument is optional.                                                                                                                     |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

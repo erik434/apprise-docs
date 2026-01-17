@@ -62,7 +62,7 @@ neither a **@{user_pushed_id}** or **#{channel}** is specified, then the default
 | user_pushed_id | No       | Users must be prefixed with an _at_ (@) character or they will be ignored. You can identify users here by their Pushed ID.                                                                                                                                                              |
 | channel_alias  | No       | Channels must be prefixed with a _hash tag_ (#) or they will be ignored. Channels must be registered with your Pushed account to work. This must be the channel alias itself; not the channel. The alias can be retrieved from the channel settings from within your pushed.io account. |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

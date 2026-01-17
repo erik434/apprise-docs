@@ -54,7 +54,7 @@ Short Codes are also supported but require at least 1 Target PhoneNo
 | PhoneNo       | **\*No** | A phone number MUST include the country codes dialling prefix as well when placed. This field is also very friendly and supports brackets, spaces and hyphens in the event you want to format the number in an easy to read fashion.<br/>**Note:** If you're using a _ShortCode_, then at least one _PhoneNo_ MUST be defined.                                                                                                                                                                                                              |
 | Region        | **No**   | Can be either `us` or `eu`. By default the region is set to `us`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

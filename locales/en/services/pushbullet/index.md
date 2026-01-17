@@ -48,7 +48,7 @@ If neither a **{device_id}**, **#{channel}**, or **{email}** is specified, then 
 | channel     | No       | Channels must be prefixed with a hash (#) or they will be interpreted as a device_id. Channels must be registered with your Pushbullet account to work.   |
 | email       | No       | Emails only work if you've registered them with your Pushbullet account.                                                                                  |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

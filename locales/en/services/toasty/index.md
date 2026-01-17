@@ -47,7 +47,7 @@ Valid syntax is as follows:
 | user_id   | Yes      | The user identifier associated with your Super Toasty account. |
 | device_id | No       | The device identifier to send your notification to.            |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

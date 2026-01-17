@@ -53,7 +53,7 @@ You can also notify more the one device at a time.
 | image      | No       | Set to `no` if you do not want the Apprise alert level being placed as the icon associated with the message.                                             |
 | call       | No       | Boolean-like input. Accepts `yes/no`, `true/false`, `1/0`, `+/-`. When enabled, payload includes `1`.                                                    |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

@@ -55,7 +55,7 @@ Valid syntax is as follows:
 | cloud_id   | Yes      | This is extracted from the URL that is created for you when you create your Custom App (the same one that is identified above).<br/>**Note**: This is the first part of the conversation URL:<br/>https\:\/\/api.atlassian.com/site/**{cloud_id}**/conversation/{convo_id}/message  |
 | convo_id   | Yes      | This is extracted from the URL that is created for you when you create your Custom App (the same one that is identified above).<br/>**Note**: This is the second part of the conversation URL:<br/>https\:\/\/api.atlassian.com/site/{cloud_id}/conversation/**{convo_id}**/message |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

@@ -54,7 +54,7 @@ If you want to take advantage of the `dynamic_template_data` variables, just cre
 | cc         | No       | The _Carbon Copy_ (CC:) portion of the email. This is entirely optional. It should be noted that SendGrid immediately rejects emails where the _cc_ contains an email address that exists in the _to_ or the _bcc_ list. To avoid having issues, Apprise automatically eliminates these duplicates silently if detected.                                                                                                                                                                 |
 | bcc        | No       | The _Blind Carbon Copy_ (BCC:) portion of the email. This is entirely optional. It should be noted that SendGrid immediately rejects emails where the _bcc_ contains an email address that exists in the _to_ or the _cc_ list. To avoid having issues, Apprise automatically eliminates these duplicates silently if detected. If an identical email is detected in both the CC and the BCC list, the BCC list will maintain the email and it will drop from the CC list automatically. |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ### Dynamic Template Data
 

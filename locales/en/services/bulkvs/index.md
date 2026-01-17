@@ -42,7 +42,7 @@ Valid syntax is as follows:
 | from     | **\*No** | Specify the phone number you registered with BulkVS you wish the message to be identified as being sent from.                                                   |
 | batch    | No       | Send multiple specified notifications in a single batch (1 upstream post to the end server). By default this is set to `no`.                                    |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

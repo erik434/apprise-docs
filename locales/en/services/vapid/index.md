@@ -56,7 +56,7 @@ You will see a lot of duplication (many modes pointing to the same location). Th
 | samsung | `https://fcm.googleapis.com/fcm/send`                |
 | generic | `https://fcm.googleapis.com/fcm/send`                |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## subscriptions.json Setup
 

@@ -42,7 +42,7 @@ Valid syntax is as follows:
 | timeout  | No                     | This is the time after which the SMS will be dropped by SFR. Default to `2880` minutes                                                                   |
 | voice    | No                     | This is the voice used when SMS is encoded as a vocal. Not applicable in apprise, but must be set for API compatibility reasons. Default to `claire08s`. |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 

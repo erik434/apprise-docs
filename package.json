@@ -6,12 +6,12 @@
   "scripts": {
     "format": "pnpm format:md",
     "format:fix": "pnpm format:md:fix",
-    "format:md": "prettier --check \"**/*.md\" \"!**/node_modules/**\" \"!**/.git/**\"",
-    "format:md:fix": "prettier --write \"**/*.md\" \"!**/node_modules/**\" \"!**/.git/**\"",
+    "format:md": "prettier --check \"**/*.md\" \"**/*.mdx\" \"!**/node_modules/**\" \"!**/.git/**\"",
+    "format:md:fix": "prettier --write \"**/*.md\" \"**/*.mdx\" \"!**/node_modules/**\" \"!**/.git/**\"",
     "lint": "pnpm format && pnpm lint:md && pnpm lint:docs",
     "lint:fix": "pnpm format:fix && pnpm lint:md:fix && pnpm lint:docs",
-    "lint:md": "markdownlint-cli2 \"**/*.md\" \"!**/node_modules/**\" \"!**/.git/**\"",
-    "lint:md:fix": "markdownlint-cli2 --fix \"**/*.md\" \"!**/node_modules/**\" \"!**/.git/**\"",
+    "lint:md": "markdownlint-cli2 \"**/*.md\" \"**/*.mdx\" \"!**/node_modules/**\" \"!**/.git/**\"",
+    "lint:md:fix": "markdownlint-cli2 --fix \"**/*.md\" \"**/*.mdx\" \"!**/node_modules/**\" \"!**/.git/**\"",
     "lint:docs": "node ./scripts/lint-docs.mjs",
     "clean:full": "rm -rf node_modules pnpm-lock.yaml"
   },

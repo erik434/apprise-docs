@@ -58,7 +58,7 @@ For ambiguity, if you do not provide a valid phone number, and the information p
 | route    | No       | Can be set to either `ECONOMY`, `STANDARD`, or `PREMIUM` (not case sensitive). If not otherwise provided, this assumes to be `STANDARD` by default.             |
 | unicode  | No       | Optionally tell Apprise to not mark your text message as having unicode characters in it. The message mode changes to `TEXT` if this is set to `No`             |
 
-<!-- GLOBAL:SERVICE:PARAMS -->
+<!-- TEMPLATE:SERVICE-PARAMS -->
 
 ## Examples
 
