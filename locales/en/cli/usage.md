@@ -113,7 +113,7 @@ You can specify the flag multiple times to send several files at once.
 
 ```bash
 apprise \
-  --body "Here are the build artefacts" \
+  --body "Here are the build artifacts" \
   --attach "release-notes.txt" \
   --attach "build.zip" \
   "slack://tokenA/tokenB/tokenC"

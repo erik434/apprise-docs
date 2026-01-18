@@ -1,6 +1,8 @@
 ---
 title: "Sponsors"
 description: "Those who have helped shape Apprise"
+sidebar:
+  order: 5
 ---
 
 ## ❤️ Sponsorship and Donations

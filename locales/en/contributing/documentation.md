@@ -1,6 +1,8 @@
 ---
 title: "Apprise Docs"
 description: "Contributing to the Apprise Documentation"
+sidebar:
+  order: 4
 ---
 
 ## Contributing to Apprise Documentation

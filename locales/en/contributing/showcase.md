@@ -1,6 +1,8 @@
 ---
 title: "Showcase"
 description: "A showcase of who uses Apprise and the kind souls that talk about it!"
+sidebar:
+  order: 6
 ---
 
 ## Integrations
