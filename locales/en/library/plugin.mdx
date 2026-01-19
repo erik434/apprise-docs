@@ -481,11 +481,13 @@ class NotifyMyService(NotifyBase):
 </TabItem>
 </Tabs>
 
-## Mental Model
+## Model Overview
 
-### What Apprise Parses For You
+### URL Parsing
 
-When you call `NotifyBase.parse_url(url)`, Apprise extracts common URL parts such as `schema`, `host`, `port`, `user`, `password`, and `fullpath`. Your `parse_url()` should focus on the pieces that are specific to your service, then return a `dict` whose keys match your `__init__()` signature.
+Apprise determines what the `schema://` it has been provided and then launches the Notification Plugin's `YourPlugin.parse_url()` call to do the rest.
+
+Usually the first call made in your `parse_url()` function is to call the parent one (from `NotifyBase`). Doing so allows Apprise to extract further common URL parts such as `schema`, `host`, `port`, `user`, `password`, and `fullpath`. Your `parse_url()` should focus on the pieces that are specific to your service, then return a `dict` whose keys match your `__init__()` signature.
 
 A key rule that the unit tests enforce is that your template metadata must map cleanly to `__init__()` arguments, either directly (same name) or through `map_to`.
 
@@ -529,7 +531,7 @@ def url_identifier(self):
 the url_identifier effectively gives the URL you defined a destinct reusable unique key to identify by. This same key is used in choosing a unique file location for the Persistent Storage engine to store cached information which avoids clobbering cache from another instance.
 :::
 
-## Targets and **len**
+## Targets and \_\_len\_\_
 
 `__len__()` allows authors and tooling to identify how many targets are loaded into a plugin.
 

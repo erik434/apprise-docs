@@ -1,6 +1,8 @@
 ---
 title: "Formatting Issues"
 description: "Understand how Apprise manages HTML, TEXT, and Markdown"
+sidebar:
+  order: 10
 ---
 
 ## Introduction
@@ -9,7 +11,7 @@ If your upstream server is not correctly interpreting the information you're pas
 
 The thing with Apprise is it doesn't know what you're feeding it (the format the text is in); so by default it just passes exactly what you hand it right along to the upstream service. Since Email operates using HTML formatting (by default), if you feed it raw text, it may not interpret the new lines correctly (because HTML ignores these charaters).
 
-### Apprise URL Manipulation
+## Apprise URL Manipulation
 
 You can force the upstream service you're working with the push it's content using `text`, `html`, or `markdown` by specifying it on the Apprise URL you construct. For example, the below tells the mailto:// to transmit the content it's provided as `text`:
 
@@ -19,11 +21,11 @@ You can force the upstream service you're working with the push it's content usi
 This does not work in every case; the service needs to support the action. It is harmless to enforce a `format=` not supported by a service; it's simply ignored if this is the case.
 :::
 
-### Apprise CLI
+## Apprise CLI
 
 By default, the `apprise` tool interprets everything it receives as `text`. If you know that the data you're feeding it is of `markdown`, or `html`, you can let Apprise know this by specifying `--input-format <format>` (`-i <format>`). Doing so allows Apprise to make smart decisions with the data it's passed.
 
-### Developers
+## Developers
 
 For developers, your call to `notify()` to include should include the `body_format` value set:
 

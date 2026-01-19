@@ -6,6 +6,8 @@ sidebar:
   order: 1
 ---
 
+The name **Apprise** (/əˈpraɪz/) is pronounced like “uh-prise”, similar to _surprise_ or _arise_, with emphasis on the second syllable.
+
 **Apprise** is a notification routing library that standardizes how messages are delivered to dozens of different services. It takes the complexity out of sending notifications.
 
 It does not replace chat platforms, email providers, or alerting systems. Instead, it provides a single, consistent way to send notifications to them.

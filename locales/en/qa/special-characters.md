@@ -1,6 +1,8 @@
 ---
 title: "URL Construction"
 description: "Apprise URL Construction Troubleshooting"
+sidebar:
+  order: 10
 ---
 
 ## Introduction

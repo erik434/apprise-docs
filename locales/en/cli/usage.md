@@ -60,14 +60,7 @@ Apprise supports a persistent storage cache. You can tune it with the flags belo
 | `-D`  | `--debug`         | Debug mode, useful for troubleshooting.                                                       |
 | `-V`  | `--version`       | Print version and exit.                                                                       |
 
-## Tag Filtering
-
-Tag filtering behaves differently depending on how you pass `--tag`.
-
-- `-g "tagA" -g "tagB"`: Match `tagA` OR `tagB` (union).
-- `-g "tagA,tagB"`: Match `tagA` AND `tagB` (intersection).
-- `-g "all"`: Notify ALL services (tagged and untagged).
-- If omitted: Notify untagged services only.
+## Environment Variables
 
 You can pre-set default behaviors using environment variables. This is useful for containerized environments or setting system-wide defaults.
 
@@ -129,7 +122,7 @@ Use `--tag` (`-g`) to specify one or more tags to filter which services to notif
 
 - `-g "tagA" -g "tagB"`: Match tagA **OR** tagB (Union).
 - `-g "tagA,tagB"`: Match tagA **AND** tagB (Strict).
-- `-g "all"`: Notify **ALL** services.
+- `-g "all"`: Notify **ALL** services (tagged and untagged).
 - `(Omitted)`: Notify **untagged** services only.
 
 Another way to look at it:
@@ -275,7 +268,7 @@ apprise storage
 ```
 
 For the full explanation (UIDs, cache locations, screenshots, and cleanup workflows),
-see [Persistent Storage](/getting-started/persistent-storage/).
+see [Persistent Storage](/cli/persistent-storage/).
 
 ## Exit Status
 
@@ -292,7 +285,7 @@ The Apprise CLI exits with:
 
 You can link the tmux `alert-bell` hook to Apprise to get notifications when long-running commands complete.
 
-```tmux
+```bash
 # 1. Set your tmux bell-action to 'other'
 set-option -g bell-action other
 

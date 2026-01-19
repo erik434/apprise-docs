@@ -1,11 +1,13 @@
 ---
 title: "Data Overflow"
 description: "Handling upstream services that can't sustain the data you're providing it"
+sidebar:
+  order: 10
 ---
 
 ## Introduction
 
-Out of the box, Apprise passes the full message (and title) you provide right along to the notification source(s). Some sources can handle a large surplus of data while others might not. These limitations are documented (_to the best of my knowledge_) on each of the [individual services corresponding wiki pages](https://github.com/caronc/apprise/wiki#notification-services).
+Out of the box, Apprise passes the full message (and title) you provide right along to the notification source(s). Some sources can handle a large surplus of data while others might not. These limitations are documented (_to the best of my knowledge_) on each of the [individual services corresponding wiki pages](../../services/).
 
 However if you don't want to be bothered with upstream restrictions, Apprise has a somewhat _elegant_ way of handling these kinds of situations that you can leverage. You simply need to tack on the **overflow** parameter somewhere in your Apprise URL; for example:
 
@@ -27,6 +29,6 @@ Please note that the **overflow=** option isn't a perfect solution:
 
 - It can fail for services like Telegram which can take content in the format of _HTML_ (in addition to _Markdown_). If you're using _HTML_, then there is a very strong possibility that both the `overflow=split` and/or `overflow=truncate` option could cut your message in the middle of an un-closed HTML tag. Telegram doesn't fair to well to this and in the past (at the time of writing this wiki entry) would error and not display the data.
 - It does however do it's best to elegantly split/truncate messages at the end of a word (near the message limits).
-- The `overflow=split` can work against you. Consider a situation where you send thousands of log entries accidentally to you via an SMS notification service. Be prepared to get hundreds of text messages to re-construct all of the data you asked it to deliver! This may or may not be what you wanted to happen; in this case, perhaps `overflow=truncate` is a better choice. Some services might even concur extra costs on you if you exceed a certain message threshold. The point is, just be open minded when you choose to enable the _split_ option with notification services that have very small message size limits. The good news that each supported notification service on the [Apprise Wiki](https://github.com/caronc/apprise/wiki) identifies what each hard limit is set to.
+- The `overflow=split` can work against you. Consider a situation where you send thousands of log entries accidentally to you via an SMS notification service. Be prepared to get hundreds of text messages to re-construct all of the data you asked it to deliver! This may or may not be what you wanted to happen; in this case, perhaps `overflow=truncate` is a better choice. Some services might even concur extra costs on you if you exceed a certain message threshold. The point is, just be open minded when you choose to enable the _split_ option with notification services that have very small message size limits. The good news that each [supported notification plugin](../../services/) identifies what each hard limit is set to.
 
 :::

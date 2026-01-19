@@ -1,6 +1,8 @@
 ---
 title: "Tag Matching"
 description: "Issues with tag assignments and notifications triggered based on tags defined"
+sidebar:
+  order: 10
 ---
 
 ## Introduction
@@ -37,12 +39,14 @@ Once you have identified your tagging issue in your configuration to the point i
 
 General filter expressions follow:
 
-| Filter                        | Selected services                          |
-| ----------------------------- | ------------------------------------------ |
-| `--tag TagA`                  | Has `TagA`                                 |
-| `--tag TagA,TagB`             | Has `TagA` **AND** `TagB`                  |
-| `--tag 'TagA' --tag 'TagB`    | Has `TagA` **OR** `TagB`                   |
-| `--tag 'TagA,TagC --tag TagB` | Has ( `TagA` **AND** `TagC`) **OR** `TagB` |
+| Filter                        | Selected services                                                               |
+| ----------------------------- | ------------------------------------------------------------------------------- |
+| `--tag TagA`                  | Match `TagA`                                                                    |
+| `--tag TagA,TagB`             | Match `TagA` **AND** `TagB` (Strict)                                            |
+| `--tag 'TagA' --tag 'TagB`    | Match `TagA` **OR** `TagB` (Union)                                              |
+| `--tag 'TagA,TagC --tag TagB` | Match ( `TagA` **AND** `TagC`) **OR** `TagB`. This is a mix of Strict and Union |
+| `--tag all`                   | Match **ALL** services (tagged and untagged).                                   |
+| `(Omitted)`                   | Notify **untagged** services only.                                              |
 
 :::note
 When you use a comma, you are applying a filter: you are telling Apprise to narrow down the list to only those specific services that possess every tag you listed. To widen the list to include multiple different groups, simply repeat the -g switch.

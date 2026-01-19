@@ -12,6 +12,7 @@
       "api": "Apprise API",
       "library": "Python Library",
       "services": "Supported Services",
+      "qa": "Troubleshooting",
       "contributing": "Project & Community",
       "tools": "Tools"
     },

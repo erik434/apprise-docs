@@ -3,6 +3,7 @@ title: "Home Assistant (HASS.IO) Integration with Apprise"
 description: "Integrate Apprise with Home Assistant"
 sidebar:
   label: "Home Assistant"
+  order: 100
 ---
 
 import { Tabs, TabItem } from "@astrojs/starlight/components";
@@ -140,7 +141,7 @@ The `include` will only works if your Apprise API server has `APPRISE_CONFIG_LOC
 </TabItem>
 
 <TabItem label="Method 3: Remote Config (API)">
-This method is ideal for **Roaming Configurations**. If you run multiple Home Assistant instances or other services, you can centralize all your notification logic in a self-hosted [Apprise API](/api) instance.
+This method is ideal for **Roaming Configurations**. If you run multiple Home Assistant instances or other services, you can centralize all your notification logic in a self-hosted [Apprise API](/api/) instance.
 
 **Edit `configuration.yaml`**
 
