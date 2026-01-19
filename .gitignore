@@ -2,6 +2,10 @@
 dist/
 .output/
 
+# vi files
+.*.swo
+.*.swp
+
 # dependencies
 node_modules/
 
