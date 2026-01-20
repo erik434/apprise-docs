@@ -7,8 +7,6 @@ sidebar:
 
 import { Tabs, TabItem } from "@astrojs/starlight/components";
 
-## Overview
-
 Persistent storage allows Apprise plugins to safely retain **small amounts of state** between executions.
 
 This feature is intended **for plugin authors**, and exists to prevent unnecessary or repeated requests to upstream services when the information can be reused locally.
@@ -52,13 +50,34 @@ If no storage path is available, Apprise transparently falls back to **memory-on
 
 Plugins do **not** need to handle this fallback themselves.
 
+### Plugin opt-in (`storage_mode`)
+
+Persistent storage is always available through `self.store`, but **disk persistence is opt-in per plugin**.
+
+By default, plugins treat the store as **memory-only**. To allow Apprise to reuse cached state across executions (when the active `AppriseAsset` permits it), set a class-level `storage_mode` on your plugin:
+
+```python
+from apprise.common import PersistentStoreMode
+from apprise.plugins import NotifyBase
+
+
+class MyPlugin(NotifyBase):
+    # Allow persistent storage to use disk when available.
+    # Without this, the store behaves as memory-only for the plugin.
+    storage_mode = PersistentStoreMode.AUTO
+```
+
+:::note
+The final behaviour is still constrained by the active `AppriseAsset` (storage path and allowed mode). If disk storage is unavailable, Apprise degrades safely to memory.
+:::
+
 ## Persistent Storage Modes
 
-| Mode     | Behaviour                             | When to Use                                 |
-| -------- | ------------------------------------- | ------------------------------------------- |
-| `MEMORY` | In-memory only, no disk usage         | Ephemeral or restricted environments        |
-| `AUTO`   | Disk when available, otherwise memory | **Recommended default**                     |
-| `FLUSH`  | Flush to disk aggressively            | Long-running daemons with critical metadata |
+| Mode     | Behaviour                             | When to Use                                                                                                                                                 |
+| -------- | ------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `MEMORY` | In-memory only, no disk usage         | Ephemeral or restricted environments; This is the default for all plugins unless overriden with the `storage_mode` variable during it's class initialzation |
+| `AUTO`   | Disk when available, otherwise memory | Flushes to disk only when the plugin is destroyed (at end) **Recommended default**                                                                          |
+| `FLUSH`  | Flush to disk aggressively            | Trades higher I/O for more durability. Long-running daemons with critical metadata                                                                          |
 
 `AUTO` is the safest and most portable choice across containers, CI, and system services.
 

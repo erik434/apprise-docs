@@ -528,8 +528,30 @@ def url_identifier(self):
 ```
 
 :::note
-the url_identifier effectively gives the URL you defined a destinct reusable unique key to identify by. This same key is used in choosing a unique file location for the Persistent Storage engine to store cached information which avoids clobbering cache from another instance.
+the `url_identifier` effectively gives the URL you defined a destinct reusable unique key to identify by. This same key is used in choosing a unique file location for the Persistent Storage engine to store cached information which avoids clobbering cache from another instance.
 :::
+
+## Persistent storage opt-in (`storage_mode`)
+
+If your plugin performs repeated upstream lookups (OAuth tokens, discovery calls, resolved identifiers, capability checks), you should consider enabling persistent storage. It will save you from doing the check down the road and make your plugin that much faster!
+
+To opt in, set a class-level `storage_mode`:
+
+```python
+from apprise.common import PersistentStoreMode
+
+class NotifyMyService(NotifyBase):
+    # ...
+    storage_mode = PersistentStoreMode.AUTO
+```
+
+Guidance:
+
+- Use `PersistentStoreMode.AUTO` for most plugins.
+- Use `PersistentStoreMode.FLUSH` only when the cached data is expensive to recompute and you want stronger durability.
+- Leave the default behaviour (memory-only) if your plugin should never persist state, or if caching provides little benefit.
+
+When combined with a well-formed `url_identifier` (configuration identity only), multiple instances targeting different recipients can reuse the same cache for the same upstream configuration.
 
 ## Targets and \_\_len\_\_
 

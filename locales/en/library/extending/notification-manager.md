@@ -25,8 +25,6 @@ Using `force=True` is the safest and most predictable way to replace an existing
 It avoids import-order problems and does not unload previously imported modules.
 :::
 
-## Overview
-
 The **Notification Manager** is the central registry responsible for discovering, registering,
 and resolving notification plugins within Apprise.
 
