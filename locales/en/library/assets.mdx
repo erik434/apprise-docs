@@ -76,12 +76,12 @@ Fields prefixed with `_` or `__` are intentionally **not** configuration-file ad
 
 ### Content Interpretation
 
-| Field               | Type           | Default | Used by                | Notes                                                                                                                   |
-| ------------------- | -------------- | ------: | ---------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| `body_format`       | `NotifyFormat` |  `None` | `None`                 | Formatting pipeline If `None`, no pre-formatting is applied by default.                                                 |
-| `interpret_emojis`  | `bool`         |  `None` | `None`                 | Message pre-processing. If `None`, it defers to per-service configuration (for example, `emojis=yes` at the URL level). |
-| `interpret_escapes` | `bool`         | `False` | Message pre-processing | Enables `\n`, `\t`, etc. prior to sending.                                                                              |
-| `encoding`          | `str`          | `utf-8` | Encoding and salt      | Used when encoding `storage_salt` provided as a string.                                                                 |
+| Field               | Type           | Default | Used by                | Notes                                                                                                                                                       |
+| ------------------- | -------------- | ------: | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `body_format`       | `NotifyFormat` |  `None` | `None`                 | Formatting pipeline If `None`, no pre-formatting is applied by default.                                                                                     |
+| `interpret_emojis`  | `bool`         |  `None` | `None`                 | Message pre-processing. If `None`, it defers to per-service configuration (for example, `emojis=yes` at the URL level).                                     |
+| `interpret_escapes` | `bool`         | `False` | Message pre-processing | Enables `\n`, `\t`, etc. prior to sending.                                                                                                                  |
+| `encoding`          | `str`          | `utf-8` | Encoding               | Used when encoding internal strings for processing. Plays a roll in how some services output their content upstream. It is advised to leave this at `utf-8` |
 
 ### Concurrency and Delivery
 
