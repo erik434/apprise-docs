@@ -43,9 +43,10 @@ locales/
     services/
       <service>/
         index.md
-    config/
+    api/
+    cli/
+    library/
     qa/
-    dev/
     contributing/
     assets/
 ```
@@ -55,17 +56,20 @@ locales/
 - **Getting Started** (`getting-started/`)  
   Introductory material for new users
 
-- **Guides** (`guides/`)  
-  How-to articles, workflows, best practices, and troubleshooting patterns
-
-- **Config** (`config/`)  
-  Configuration syntax and reference material
-
-- **QA** (`qa/`)  
+- **Troubleshooting** (`qa/`)  
   Troubleshooting, diagnostics, and FAQs
 
-- **Dev** (`dev/`)  
+- **Apprise API** (`api/`)  
+  Documentation for web based API (Sidecar) wrapper for Apprise
+
+- **Apprise CLI** (`cli/`)  
+  Command line interface documentation
+
+- **Apprise (Python) Library** (`library/`)  
   Developer-focused documentation and internals
+
+- **Guides** (`guides/`)  
+  How-to articles, workflows, best practices, and troubleshooting patterns
 
 - **Contributing** (`contributing/`)  
   How to help improve Apprise and its ecosystem
