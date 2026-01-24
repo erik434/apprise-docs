@@ -6,9 +6,28 @@ sidebar:
 ---
 
 <style>{`
-.only-dark { display: none; }
-:root[data-theme="dark"] .only-light { display: none; }
-:root[data-theme="dark"] .only-dark  { display: block; }
+  /* Existing styling to ensure block behavior */
+  .theme-aware-sf-diagram img,
+  .theme-aware-sl-diagram img {
+    display: block;
+    width: 100%;
+  }
+
+  /* Force Dark SVG when the Astro Starlight toggle is set to 'dark' */
+  :root[data-theme="dark"] .theme-aware-sl-diagram img {
+    content: url("../images/stateless-api-integration-dark.svg");
+  }
+  :root[data-theme="dark"] .theme-aware-sf-diagram img {
+    content: url("../images/stateful-api-integration-dark.svg");
+  }
+
+  /* Force Light SVG when the Astro Starlight toggle is set to 'light' */
+  :root[data-theme="light"] .theme-aware-sl-diagram img {
+    content: url("../images/stateless-api-integration-light.svg");
+  }
+  :root[data-theme="light"] .theme-aware-sf-diagram img {
+    content: url("../images/stateful-api-integration-light.svg");
+  }
 `}</style>
 
 This guide covers the core functionality of the Apprise API: sending notifications. You can send notifications in two ways:
@@ -16,7 +35,7 @@ This guide covers the core functionality of the Apprise API: sending notificatio
 1. **Stateless:** You provide the configuration URLs in the request payload.
 1. **Stateful:** You reference a pre-saved configuration Key.
 
-## Response formats
+## Response Formats
 
 By default, endpoints return `text/plain`. If you prefer JSON, send `Accept: application/json`.
 
@@ -24,20 +43,17 @@ For notification endpoints (`/notify` and `/notify/{KEY}`), you can also request
 
 ## Stateless Notifications
 
-<img
-  className="only-light"
-  src="../images/stateless-api-integration-light.svg"
-  alt="Stateless API Integration"
-  width="100%"
-  loading="lazy"
-/>
-<img
-  className="only-dark"
-  src="../images/stateless-api-integration-dark.svg"
-  alt="Stateless API Integration"
-  width="100%"
-  loading="lazy"
-/>
+<picture class="theme-aware-sl-diagram">
+  <source
+    srcset="../images/stateless-api-integration-dark.svg"
+    media="(prefers-color-scheme: dark)"
+  />
+  <img
+    src="../images/stateless-api-integration-light.svg"
+    alt="Stateless API Integration"
+    loading="lazy"
+  />
+</picture>
 
 Stateless notifications are ideal for "sidecar" usage where you don't want to manage persistent configuration on the server. You must provide the `urls` parameter in every request.
 
@@ -80,20 +96,17 @@ curl -X POST \
 
 ## Stateful Notifications
 
-<img
-  className="only-light"
-  src="../images/stateful-api-integration-light.svg"
-  alt="Stateful API Integration"
-  width="100%"
-  loading="lazy"
-/>
-<img
-  className="only-dark"
-  src="../images/stateful-api-integration-dark.svg"
-  alt="Stateful API Integration"
-  width="100%"
-  loading="lazy"
-/>
+<picture class="theme-aware-sf-diagram">
+  <source
+    srcset="../images/stateful-api-integration-dark.svg"
+    media="(prefers-color-scheme: dark)"
+  />
+  <img
+    src="../images/stateful-api-integration-light.svg"
+    alt="Stateful API Integration"
+    loading="lazy"
+  />
+</picture>
 
 Stateful notifications allow you to simplify your client code. You store the complex URLs on the server once, assigned to a **Key**, and your client simply references that Key.
 
