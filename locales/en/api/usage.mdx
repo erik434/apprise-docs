@@ -24,16 +24,20 @@ For notification endpoints (`/notify` and `/notify/{KEY}`), you can also request
 
 ## Stateless Notifications
 
-<img className="only-light" src="../images/stateless-api-integration-light.svg"
+<img
+  className="only-light"
+  src="../images/stateless-api-integration-light.svg"
   alt="Stateless API Integration"
   width="100%"
   loading="lazy"
 />
-<img className="only-dark" src="../images/stateless-api-integration-dark.svg"
+<img
+  className="only-dark"
+  src="../images/stateless-api-integration-dark.svg"
   alt="Stateless API Integration"
   width="100%"
   loading="lazy"
- />
+/>
 
 Stateless notifications are ideal for "sidecar" usage where you don't want to manage persistent configuration on the server. You must provide the `urls` parameter in every request.
 
@@ -76,16 +80,20 @@ curl -X POST \
 
 ## Stateful Notifications
 
-<img className="only-light" src="../images/stateful-api-integration-light.svg"
+<img
+  className="only-light"
+  src="../images/stateful-api-integration-light.svg"
   alt="Stateful API Integration"
   width="100%"
   loading="lazy"
 />
-<img className="only-dark" src="../images/stateful-api-integration-dark.svg"
+<img
+  className="only-dark"
+  src="../images/stateful-api-integration-dark.svg"
   alt="Stateful API Integration"
   width="100%"
   loading="lazy"
- />
+/>
 
 Stateful notifications allow you to simplify your client code. You store the complex URLs on the server once, assigned to a **Key**, and your client simply references that Key.
 
