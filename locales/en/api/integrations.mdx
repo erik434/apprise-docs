@@ -5,13 +5,13 @@ sidebar:
   order: 5
 ---
 
-<style>
-.api-diagram {
-  color: var(--sl-color-text);
-}
-</style>
-
 import { Tabs, TabItem } from "@astrojs/starlight/components";
+
+<style>{`
+.only-dark { display: none; }
+:root[data-theme="dark"] .only-light { display: none; }
+:root[data-theme="dark"] .only-dark  { display: block; }
+`}</style>
 
 Apprise API is meant to be a single notification gateway.
 Instead of building direct webhooks to Discord, Slack, email, and SMS in every project, send to Apprise API and let it route the message.
@@ -32,13 +32,16 @@ Apprise itself is written in Python, but most integrations interact with it pure
 
 ### Stateful
 
-<img
-  class="api-diagram"
-  src="../images/stateful-api-integration.svg"
+<img className="only-light" src="../images/stateful-api-integration-light.svg"
   alt="Stateful API Integration"
   width="100%"
   loading="lazy"
 />
+<img className="only-dark" src="../images/stateful-api-integration-dark.svg"
+  alt="Stateful API Integration"
+  width="100%"
+  loading="lazy"
+ />
 
 For stateful notifications (recommended for most integrations), you call one endpoint:
 
@@ -50,13 +53,16 @@ notification URLs and any routing tags.
 
 ### Stateless
 
-<img
-  class="api-diagram"
-  src="../images/stateless-api-integration.svg"
-  alt="Stateful API Integration"
+<img className="only-light" src="../images/stateless-api-integration-light.svg"
+  alt="Stateless API Integration"
   width="100%"
   loading="lazy"
 />
+<img className="only-dark" src="../images/stateless-api-integration-dark.svg"
+  alt="Stateless API Integration"
+  width="100%"
+  loading="lazy"
+ />
 
 If you cannot (or do not want to) store configuration server-side, you can also use
 stateless notifications:
