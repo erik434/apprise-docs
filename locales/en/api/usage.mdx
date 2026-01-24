@@ -5,10 +5,16 @@ sidebar:
   order: 3
 ---
 
+<style>{`
+.only-dark { display: none; }
+:root[data-theme="dark"] .only-light { display: none; }
+:root[data-theme="dark"] .only-dark  { display: block; }
+`}</style>
+
 This guide covers the core functionality of the Apprise API: sending notifications. You can send notifications in two ways:
 
 1. **Stateless:** You provide the configuration URLs in the request payload.
-2. **Stateful:** You reference a pre-saved configuration Key.
+1. **Stateful:** You reference a pre-saved configuration Key.
 
 ## Response formats
 
@@ -17,6 +23,17 @@ By default, endpoints return `text/plain`. If you prefer JSON, send `Accept: app
 For notification endpoints (`/notify` and `/notify/{KEY}`), you can also request a simple HTML log view by sending `Accept: text/html`. This is mainly useful for human testing in a browser.
 
 ## Stateless Notifications
+
+<img className="only-light" src="../images/stateless-api-integration-light.svg"
+  alt="Stateless API Integration"
+  width="100%"
+  loading="lazy"
+/>
+<img className="only-dark" src="../images/stateless-api-integration-dark.svg"
+  alt="Stateless API Integration"
+  width="100%"
+  loading="lazy"
+ />
 
 Stateless notifications are ideal for "sidecar" usage where you don't want to manage persistent configuration on the server. You must provide the `urls` parameter in every request.
 
@@ -58,6 +75,17 @@ curl -X POST \
 ```
 
 ## Stateful Notifications
+
+<img className="only-light" src="../images/stateful-api-integration-light.svg"
+  alt="Stateful API Integration"
+  width="100%"
+  loading="lazy"
+/>
+<img className="only-dark" src="../images/stateful-api-integration-dark.svg"
+  alt="Stateful API Integration"
+  width="100%"
+  loading="lazy"
+ />
 
 Stateful notifications allow you to simplify your client code. You store the complex URLs on the server once, assigned to a **Key**, and your client simply references that Key.
 
