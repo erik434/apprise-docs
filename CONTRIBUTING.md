@@ -122,7 +122,28 @@ apprise -vv -t "My Title" -b "Message Body" \
 Markers such as `<!-- SERVICE:DETAILS -->` must be left in place. They are
 replaced automatically when documentation is rendered.
 
----
+## Documentation Markers (Important)
+
+Some pages include special comment markers used by the documentation build
+pipeline (for example service listings, counts, or generated sections).
+
+Examples include:
+
+- `<!-- SERVICE:DETAILS -->`
+- `<!-- SERVICES:COUNT -->`
+- `{/* SERVICES:COUNT */}`
+- `{/_ TEMPLATE:NEW_SERVICE _/}`
+
+These markers are **not comments for humans** and must not be modified, reformatted, or removed.
+
+Please note:
+
+- Automated formatters may rewrite marker syntax.
+- If this happens, do not "fix" the marker manually.
+- Leave the marker exactly as it appears in the file.
+
+If a marker is accidentally altered, it can cause sections of the site to stop
+updating without obvious errors.
 
 ## Editing Existing Pages
 

@@ -248,6 +248,25 @@ apprise -vv -t "My Title" -b "Message Body" \
 > The markers such as `<!-- SERVICE:DETAILS -->` are intentional and must be left in place.  
 > They are replaced automatically when the documentation is rendered.
 
+### Documentation Markers
+
+Some pages contain special comment markers such as:
+
+- `<!-- SERVICE:DETAILS -->`
+- `<!-- SERVICES:COUNT -->`
+- `<!-- SERVICES:BEGIN -->` / `<!-- SERVICES:END -->`
+
+These markers are **intentional**. They are replaced automatically during the
+documentation sync process and must be left in place.
+
+**Important notes for contributors:**
+
+- Do not remove or rename markers.
+- Markers may appear as HTML comments or MDX-style comments.
+- If a marker looks unusual, leave it as-is. It will be resolved during site generation.
+
+If you are unsure whether something is a marker, it probably is.
+
 ## Localization and Translations
 
 - Each language lives under `locales/<locale>/`
