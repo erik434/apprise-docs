@@ -69,5 +69,14 @@
     },
     "secure": "Secure",
     "insecure": "Insecure"
+  },
+  "help": {
+    "summary": "Questions or Feedback?",
+    "docs": { "title": "Documentation" },
+    "tech": { "title": "Technical Issues" }
+  },
+  "footer": {
+      "love": "Made with {love} from {flag}",
+      "love_sr": "Made with love from Canada"
   }
 }

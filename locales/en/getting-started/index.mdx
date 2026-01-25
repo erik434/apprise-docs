@@ -6,9 +6,39 @@ sidebar:
   order: 1
 ---
 
+<style>{`
+  /* Existing styling to ensure block behavior */
+  .theme-aware-a1-diagram img {
+    display: block;
+    width: 100%;
+  }
+
+  /* Force Dark SVG when the Astro Starlight toggle is set to 'dark' */
+  :root[data-theme="dark"] .theme-aware-a1-diagram img {
+    content: url("./images/apprise-notifications-dark.svg");
+  }
+
+  /* Force Light SVG when the Astro Starlight toggle is set to 'light' */
+  :root[data-theme="light"] .theme-aware-a1-diagram img {
+    content: url("./images/apprise-notifications-light.svg");
+  }
+`}</style>
+
 The name **Apprise** (/əˈpraɪz/) is pronounced like “uh-prise”, similar to _surprise_ or _arise_, with emphasis on the second syllable.
 
-**Apprise** is a notification routing library that standardizes how messages are delivered to dozens of different services. It takes the complexity out of sending notifications.
+**Apprise** is a notification routing library that standardizes how messages are delivered to more than 100+ different services. It takes the complexity out of sending notifications.
+
+<picture class="theme-aware-a1-diagram">
+  <source
+    srcset="./images/apprise-notifications-dark.svg"
+    media="(prefers-color-scheme: dark)"
+  />
+  <img
+    src="./images/apprise-notifications-light.svg"
+    alt="Stateless API Integration"
+    loading="lazy"
+  />
+</picture>
 
 It does not replace chat platforms, email providers, or alerting systems. Instead, it provides a single, consistent way to send notifications to them.
 
@@ -79,7 +109,7 @@ This is especially useful for microservices, shared infrastructure, and teams th
 
 ## Key Features
 
-- **<!-- SERVICES:COUNT --> supported services**, from popular chat platforms to specialized gateways
+- **{/_ SERVICES:COUNT _/} supported services**, from popular chat platforms to specialized gateways
 - **Format-aware delivery**, including Markdown, HTML, and plain text
 - **Attachment support**, automatically adapted to each service’s capabilities
 - **High performance**, with parallel notification delivery
