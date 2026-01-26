@@ -190,7 +190,7 @@ apprise -vv -t "My Title" -b "Message Body" \
 > The markers such as `<!-- SERVICE:DETAILS -->` are intentional and must be left in place.  
 > They are replaced automatically when the documentation is rendered.
 
-If you created an `mdx` file instead, you can use `{/* MARKER *}` insead, e.g.: `{/*- SERVICE:DETAILS */}`
+If you created an `mdx` file instead, you can use `{/* SERVICE:DETAILS *}` or `{/_ SERVICE:DETAILS _/}` insead, e.g.: `{/*- SERVICE:DETAILS */}`
 
 ## Localization and Translations
 
