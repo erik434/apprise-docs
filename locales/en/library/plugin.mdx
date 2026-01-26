@@ -61,6 +61,10 @@ This pattern is ideal for:
 - Webhook-style integrations
 - REST APIs with tokens and optional authentication
 
+:::tip
+When parsing query-string flags and values, prefer the shared helpers in `apprise.utils`. See the [Utilities Reference](./utilities/).
+:::
+
 ```python
 # apprise/plugins/demo_http.py
 import json
@@ -926,8 +930,29 @@ requirements = {
 }
 ```
 
-## Attachments, Format, and Overflow
+## Attachment Support
 
-Plugins can opt into attachment support by setting `attachment_support = True`. If you enable this, be prepared for calls where body or title may be empty.
+Plugins that support file attachments **must** explicitly declare support by
+setting the following class attribute:
+
+```python
+class NotifyExample(NotifyBase):
+    attachment_support = True
+```
+
+When enabled, attachments are provided to the plugin as a list of
+`AppriseAttachment` objects. These objects abstract file access and may be
+backed by local files, in-memory data, or remote HTTP resources.
+
+Full details on attachment handling, lifecycle management, size limits, and
+common implementation patterns are documented here:
+
+- [Attachments](./attachments.mdx)
+
+Authors are strongly encouraged to review the attachment documentation before
+implementing support, as incorrect handling can easily lead to excessive memory
+usage or failed deliveries.
+
+## Format and Overflow
 
 Also note that `NotifyBase` provides URL-level behaviour flags like `format`, `overflow`, `emojis`, and persistent storage (`store`).

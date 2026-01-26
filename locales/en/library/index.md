@@ -8,6 +8,8 @@ sidebar:
 
 The Apprise library allows you to send notifications to almost all of the most popular notification services available today (Telegram, Discord, Slack, Email, etc.) using a single, unified Python API.
 
+For common helpers used across plugins, see the [Utilities Reference](./utilities/).
+
 ## Installation
 
 Apprise is available on PyPI and can be installed via pip.

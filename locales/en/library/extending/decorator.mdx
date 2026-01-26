@@ -92,16 +92,16 @@ Failures propagate back to Apprise and affect overall notification status.
 
 Your wrapper function may accept the following parameters.
 
-| Parameter     | Required | Description                                    |
-| ------------- | -------- | ---------------------------------------------- |
-| `body`        | Yes      | Notification body                              |
-| `title`       | No       | Notification title                             |
-| `notify_type` | No       | One of `info`, `success`, `warning`, `failure` |
-| `body_format` | No       | `text`, `html`, or `markdown`                  |
-| `meta`        | No       | Parsed and merged URL metadata                 |
-| `attach`      | No       | List of `AppriseAttachment` objects            |
-| `*args`       | Yes      | Required for forward compatibility             |
-| `**kwargs`    | Yes      | Required for forward compatibility             |
+| Parameter     | Required | Description                                                                                                                               |
+| ------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `body`        | Yes      | Notification body                                                                                                                         |
+| `title`       | No       | Notification title                                                                                                                        |
+| `notify_type` | No       | One of `info`, `success`, `warning`, `failure`                                                                                            |
+| `body_format` | No       | `text`, `html`, or `markdown`                                                                                                             |
+| `meta`        | No       | Parsed and merged URL metadata                                                                                                            |
+| `attach`      | No       | List of `AppriseAttachment` objects<br/> See [Attachments](../attachments/) for how to read, validate, and forward files from decorators. |
+| `*args`       | Yes      | Required for forward compatibility                                                                                                        |
+| `**kwargs`    | Yes      | Required for forward compatibility                                                                                                        |
 
 **Always include `*args` and `**kwargs`\*\* to remain compatible with future Apprise releases.
 
