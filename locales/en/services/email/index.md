@@ -28,8 +28,6 @@ If you are using one of the following Built-In E-Mail services, then setting up 
 The following syntax works right out of the box:
 
 - mailto://{user}:{app-password}@**yahoo.com**
-- mailto://{user}:{password}@**hotmail.com**
-- mailto://{user}:{password}@**live.com**
 - mailto://{user}:{password}@**gmail.com**
 - mailto://{user}:{app-password}@**fastmail.com**
 - mailto://{user}:{password}@**zoho.com**
@@ -43,6 +41,8 @@ Secure connections are always implied whether you choose to use **mailto://** or
 **Note** Google Users using the 2 Step Verification Process will be required to generate an **app-password** from [here](https://security.google.com/settings/security/apppasswords) that you can use in the {password} field.
 
 **Note** Yahoo Users will be required to generate an **app-password** from [here](https://help.yahoo.com/kb/SLN15241.html) that you can use in the {password} field.
+
+**Note** Microsoft users must switch to using the [`azure://` Apprise plugin](/services/office365/) instead. More details can be found [here](./microsoft/).
 
 **Note** Fastmail Users are required to generate a custom App password before you can connect it up to send email to (from a 3rd party tool like this one). You must assign the _SMTP_ option to the new App you generate. This Fastmail portion of this plugin currently supports [the following 116 domains](./fastmail/). Just make sure you identify the email address you're using when you build the mailto:// url and everything will work as intended.
 
